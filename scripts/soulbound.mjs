@@ -156,22 +156,54 @@ function runeItemFor(key, bySlug) {
     return null;
 }
 
-/** Index the pack's weapon property runes by their own slug. */
+/**
+ * Index the equipment pack by slug: name, usage and level.
+ *
+ * Every entry, not only those whose usage reads "etched-onto": a few rune items
+ * carry a different usage in the pack (Bloodbane and Serrating say
+ * "held-in-one-hand", Called says "applied-to-any-item..."), and dropping them
+ * lost their level. An unreadable usage is reported to the player as such by
+ * restrictionMet.
+ */
 async function loadRuneIndex() {
     const pack = game.packs.get(SRD);
     const index = await pack.getIndex({ fields: ["type", "system.usage", "system.level", "system.slug"] });
     const bySlug = new Map();
     for (const entry of index) {
-        const usage = String(entry.system?.usage?.value ?? "");
-        if (!usage.startsWith("etched-onto")) continue;
-        if (usage.includes("armor") || usage.includes("shield")) continue;
+        if (!entry.system?.slug) continue;
         bySlug.set(entry.system.slug, {
             name: entry.name,
-            usage,
+            usage: String(entry.system?.usage?.value ?? ""),
             level: entry.system?.level?.value ?? null,
         });
     }
     return bySlug;
+}
+
+/**
+ * Every weapon property rune the system knows, with its level and restriction.
+ *
+ * The rune table itself is internal to the system bundle and not on CONFIG.
+ * The system's own list of keys is its translation table, which is what the
+ * weapon sheet's labels come from, and the level and etching restriction come
+ * from the rune's item in the equipment pack. Five keys have no item in the
+ * pack on PF2e 8.5.0 (dancing, disrupting, greaterDisrupting, speed,
+ * spellStoring); they are listed with an unknown level and left for the
+ * player to check.
+ */
+function runeCatalogue(bySlug) {
+    const table = game.i18n.translations.PF2E?.WeaponPropertyRune ?? {};
+    return Object.keys(table)
+        .map((key) => {
+            const info = runeItemFor(key, bySlug);
+            return {
+                key,
+                name: game.i18n.localize(`PF2E.WeaponPropertyRune.${key}.Name`),
+                level: info?.level ?? null,
+                usage: info?.usage ?? null,
+            };
+        })
+        .sort((a, b) => a.name.localeCompare(b.name));
 }
 
 /** The base weapons this weapon can take the form of, sorted for a dropdown. */
@@ -225,22 +257,20 @@ function restrictionMet(usage, weapon) {
     }
 }
 
-/** What happens to each currently etched rune if the weapon becomes `form`. */
-function assessRunes(weapon, form, level, bySlug) {
+/**
+ * Every rune in the catalogue, assessed against the form the weapon would take:
+ * whether it fits that form, whether it is over the level cap, and whether it
+ * is on the weapon now.
+ */
+function assessRunes(weapon, form, level, catalogue) {
     const cap = runeLevelCap(level);
-    return (weapon.system.runes?.property ?? []).map((key) => {
-        const info = runeItemFor(key, bySlug);
-        const met = info ? restrictionMet(info.usage, form) : null;
-        const overLevel = info?.level != null && info.level > cap;
-        return {
-            key,
-            name: info?.name ?? key,
-            level: info?.level ?? null,
-            usage: info?.usage ?? null,
-            fits: met,
-            overLevel,
-        };
-    });
+    const current = new Set(weapon.system.runes?.property ?? []);
+    return catalogue.map((rune) => ({
+        ...rune,
+        fits: rune.usage ? restrictionMet(rune.usage, form) : null,
+        overLevel: rune.level != null && rune.level > cap,
+        current: current.has(rune.key),
+    }));
 }
 
 /**
@@ -306,6 +336,7 @@ async function promptReshape(actor) {
 
     const level = actor.level;
     const [forms, bySlug] = await Promise.all([loadForms(), loadRuneIndex()]);
+    const catalogue = runeCatalogue(bySlug);
     const allowance = runeAllowance(level);
 
     const options = forms
@@ -362,22 +393,34 @@ each of item level ${runeLevelCap(level)} or lower.</p>
                 const token = ++latest;
                 const form = await game.packs.get(SRD).getDocument(select.value);
                 if (token !== latest) return;
-                const runes = assessRunes(weapon, form, level, bySlug);
-                if (!runes.length) {
-                    report.innerHTML = "<p><em>No property runes to carry across.</em></p>";
-                    return;
-                }
+                const runes = assessRunes(weapon, form, level, catalogue);
+                // Runes the weapon carries now stay ticked where they still fit, so
+                // a reshape that keeps them is the default and a change is a choice.
                 const rows = runes.map((r) => {
-                    const bad = r.overLevel || r.fits === false;
-                    return `<label style="display:block; margin:2px 0;">
-<input type="checkbox" name="rune" value="${r.key}" ${bad ? "" : "checked"}>
+                    const blocked = r.overLevel || r.fits === false;
+                    const checked = r.current && !blocked;
+                    return `<label style="display:block; margin:2px 0;${blocked ? " opacity:0.6;" : ""}">
+<input type="checkbox" name="rune" value="${r.key}" ${checked ? "checked" : ""} ${blocked ? "disabled data-blocked=\"1\"" : ""}>
 ${foundry.utils.escapeHTML(describeRune(r))}
 </label>`;
                 }).join("");
-                const over = runes.filter((r) => !r.overLevel && r.fits !== false).length > allowance
-                    ? `<p><strong>That is more than the ${allowance} you may carry at this level.</strong></p>`
-                    : "";
-                report.innerHTML = `<p><strong>Property runes to carry over</strong></p>${rows}${over}`;
+                report.innerHTML = `<p><strong>Property runes</strong> <span class="ascendant-rune-count"></span></p>
+<div class="ascendant-rune-list" style="max-height: 16em; overflow-y: auto; border: 1px solid var(--color-border-light-2, #999); padding: 0.25em 0.5em;">${rows}</div>`;
+
+                // The allowance is the rule's hard count: once it is reached the
+                // unticked boxes lock until one is cleared.
+                const boxes = [...report.querySelectorAll("input[name=rune]")];
+                const count = report.querySelector(".ascendant-rune-count");
+                const enforce = () => {
+                    const chosen = boxes.filter((b) => b.checked).length;
+                    for (const box of boxes) {
+                        if (box.checked) continue;
+                        box.disabled = box.dataset.blocked === "1" || chosen >= allowance;
+                    }
+                    if (count) count.textContent = `(${chosen} of ${allowance} chosen)`;
+                };
+                for (const box of boxes) box.addEventListener("change", enforce);
+                enforce();
             };
 
             select.addEventListener("change", refresh);

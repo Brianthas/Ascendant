@@ -93,7 +93,10 @@ Reasons recur, so they are named once here and cited below:
 **Soulbound Arsenal**
 - The weapon's own reactions (no hook), never being disarmed, returning to hand, acting while you
   cannot at 9th, the number of form changes per round.
-- The property rune count and level cap: stated in the reshape dialog, not enforced.
+- The property runes are chosen in the reshape dialog from the system's own list, with the
+  count and the level + 2 cap enforced there. Five rune keys have no item in the equipment pack
+  on PF2e 8.5.0 (dancing, disrupting, greater disrupting, speed, spell-storing), so their level
+  and etching restriction are not checked; the dialog says so beside them.
 - The material dial offers cold iron, silver, adamantine, dawnsilver and sovereign steel, the
   materials that bypass something (Bryan's ruling, 2026-09-14); change it on each form change.
 
