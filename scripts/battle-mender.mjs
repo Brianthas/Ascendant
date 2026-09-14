@@ -13,9 +13,12 @@ const IMMUNITY_SLUG = "effect-battle-medicine-immunity";
  * that effect as it lands, when its origin actor holds Battle Mender, removes
  * the limit for that medic and leaves every other medic's limit alone.
  *
- * The origin is read off the effect's own `origin` (PF2e resolves it from
- * `flags.pf2e.origin`); an effect with no origin is left in place rather than
- * guessed about.
+ * The medic is read off `system.context.origin.actor`, which is where PF2e
+ * records who applied an effect. Not off the effect's `origin` getter
+ * (pf2e.mjs:45470): that returns the effect's own actor when the context is
+ * missing, so an effect dragged onto a patient who holds Battle Mender would
+ * read as self-applied and be removed. An effect with no recorded origin is
+ * left in place.
  */
 function isBattleMender(actor) {
     return actor?.type === "character" && actor.itemTypes.feat.some((i) => i.slug === TALENT_SLUG);
@@ -27,7 +30,9 @@ export function registerBattleMender() {
     Hooks.on("createItem", async (item) => {
         if (!shouldWrite()) return;
         if (item.type !== "effect" || item.slug !== IMMUNITY_SLUG || !item.actor) return;
-        const origin = item.origin ?? (item.flags?.pf2e?.origin?.actor ? await fromUuid(item.flags.pf2e.origin.actor) : null);
+        const originUuid = item.system.context?.origin?.actor;
+        if (!originUuid) return;
+        const origin = await fromUuid(originUuid);
         const medic = origin?.actor ?? origin;
         if (!isBattleMender(medic)) return;
         await item.delete();
