@@ -165,7 +165,59 @@
         "slug": "weapon-expertise-damage",
         "label": "ASCENDANT.Rules.WeaponDamage",
         "type": "untyped",
-        "value": "match(when(btwn(@actor.level, 1, 4), 4), when(btwn(@actor.level, 5, 9), 6), when(btwn(@actor.level, 10, 14), 8), when(gte(@actor.level, 15), 10))"
+        "value": "2 * @actor.system.proficiencies.attacks.simple.rank",
+        "predicate": [
+          "item:category:simple"
+        ]
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "strike-damage",
+        "slug": "weapon-expertise-damage",
+        "label": "ASCENDANT.Rules.WeaponDamage",
+        "type": "untyped",
+        "value": "2 * @actor.system.proficiencies.attacks.martial.rank",
+        "predicate": [
+          "item:category:martial"
+        ]
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "strike-damage",
+        "slug": "weapon-expertise-damage",
+        "label": "ASCENDANT.Rules.WeaponDamage",
+        "type": "untyped",
+        "value": "2 * @actor.system.proficiencies.attacks.advanced.rank",
+        "predicate": [
+          "item:category:advanced"
+        ]
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "strike-damage",
+        "slug": "weapon-expertise-damage",
+        "label": "ASCENDANT.Rules.WeaponDamage",
+        "type": "untyped",
+        "value": "2 * @actor.system.proficiencies.attacks.unarmed.rank",
+        "predicate": [
+          "item:category:unarmed"
+        ]
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "strike-damage",
+        "slug": "weapon-expertise-damage-mythic",
+        "label": "ASCENDANT.Rules.WeaponDamageMythic",
+        "type": "untyped",
+        "value": 2,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
       },
       {
         "key": "FlatModifier",

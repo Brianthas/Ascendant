@@ -402,7 +402,7 @@
         "predicate": [
           "ascendant-element:fire",
           "item:category:unarmed",
-          "item:damage:die:d4"
+          "item:damage:die:faces:4"
         ]
       },
       {
@@ -416,7 +416,7 @@
         "predicate": [
           "ascendant-element:fire",
           "item:category:unarmed",
-          "item:damage:die:d6"
+          "item:damage:die:faces:6"
         ]
       },
       {
@@ -430,7 +430,7 @@
         "predicate": [
           "ascendant-element:fire",
           "item:category:unarmed",
-          "item:damage:die:d8"
+          "item:damage:die:faces:8"
         ]
       },
       {
@@ -444,7 +444,7 @@
         "predicate": [
           "ascendant-element:fire",
           "item:category:unarmed",
-          "item:damage:die:d10"
+          "item:damage:die:faces:10"
         ]
       },
       {
@@ -458,7 +458,7 @@
         "predicate": [
           "ascendant-element:fire",
           "item:category:unarmed",
-          "item:damage:die:d12"
+          "item:damage:die:faces:12"
         ]
       },
       {
@@ -472,7 +472,7 @@
         "predicate": [
           "ascendant-element:water",
           "item:category:unarmed",
-          "item:damage:die:d4"
+          "item:damage:die:faces:4"
         ]
       },
       {
@@ -486,7 +486,7 @@
         "predicate": [
           "ascendant-element:water",
           "item:category:unarmed",
-          "item:damage:die:d6"
+          "item:damage:die:faces:6"
         ]
       },
       {
@@ -500,7 +500,7 @@
         "predicate": [
           "ascendant-element:water",
           "item:category:unarmed",
-          "item:damage:die:d8"
+          "item:damage:die:faces:8"
         ]
       },
       {
@@ -514,7 +514,7 @@
         "predicate": [
           "ascendant-element:water",
           "item:category:unarmed",
-          "item:damage:die:d10"
+          "item:damage:die:faces:10"
         ]
       },
       {
@@ -528,7 +528,7 @@
         "predicate": [
           "ascendant-element:water",
           "item:category:unarmed",
-          "item:damage:die:d12"
+          "item:damage:die:faces:12"
         ]
       },
       {
@@ -542,7 +542,7 @@
         "predicate": [
           "ascendant-element:air",
           "item:category:unarmed",
-          "item:damage:die:d4"
+          "item:damage:die:faces:4"
         ]
       },
       {
@@ -556,7 +556,7 @@
         "predicate": [
           "ascendant-element:air",
           "item:category:unarmed",
-          "item:damage:die:d6"
+          "item:damage:die:faces:6"
         ]
       },
       {
@@ -570,7 +570,7 @@
         "predicate": [
           "ascendant-element:air",
           "item:category:unarmed",
-          "item:damage:die:d8"
+          "item:damage:die:faces:8"
         ]
       },
       {
@@ -584,7 +584,7 @@
         "predicate": [
           "ascendant-element:air",
           "item:category:unarmed",
-          "item:damage:die:d10"
+          "item:damage:die:faces:10"
         ]
       },
       {
@@ -598,7 +598,7 @@
         "predicate": [
           "ascendant-element:air",
           "item:category:unarmed",
-          "item:damage:die:d12"
+          "item:damage:die:faces:12"
         ]
       },
       {
@@ -612,7 +612,7 @@
         "predicate": [
           "ascendant-element:earth",
           "item:category:unarmed",
-          "item:damage:die:d4"
+          "item:damage:die:faces:4"
         ]
       },
       {
@@ -626,7 +626,7 @@
         "predicate": [
           "ascendant-element:earth",
           "item:category:unarmed",
-          "item:damage:die:d6"
+          "item:damage:die:faces:6"
         ]
       },
       {
@@ -640,7 +640,7 @@
         "predicate": [
           "ascendant-element:earth",
           "item:category:unarmed",
-          "item:damage:die:d8"
+          "item:damage:die:faces:8"
         ]
       },
       {
@@ -654,7 +654,7 @@
         "predicate": [
           "ascendant-element:earth",
           "item:category:unarmed",
-          "item:damage:die:d10"
+          "item:damage:die:faces:10"
         ]
       },
       {
@@ -668,7 +668,7 @@
         "predicate": [
           "ascendant-element:earth",
           "item:category:unarmed",
-          "item:damage:die:d12"
+          "item:damage:die:faces:12"
         ]
       },
       {
@@ -682,7 +682,7 @@
         "predicate": [
           "ascendant-element:metal",
           "item:category:unarmed",
-          "item:damage:die:d4"
+          "item:damage:die:faces:4"
         ]
       },
       {
@@ -696,7 +696,7 @@
         "predicate": [
           "ascendant-element:metal",
           "item:category:unarmed",
-          "item:damage:die:d6"
+          "item:damage:die:faces:6"
         ]
       },
       {
@@ -710,7 +710,7 @@
         "predicate": [
           "ascendant-element:metal",
           "item:category:unarmed",
-          "item:damage:die:d8"
+          "item:damage:die:faces:8"
         ]
       },
       {
@@ -724,7 +724,7 @@
         "predicate": [
           "ascendant-element:metal",
           "item:category:unarmed",
-          "item:damage:die:d10"
+          "item:damage:die:faces:10"
         ]
       },
       {
@@ -738,7 +738,7 @@
         "predicate": [
           "ascendant-element:metal",
           "item:category:unarmed",
-          "item:damage:die:d12"
+          "item:damage:die:faces:12"
         ]
       },
       {
@@ -752,7 +752,7 @@
         "predicate": [
           "ascendant-element:metal-piercing",
           "item:category:unarmed",
-          "item:damage:die:d4"
+          "item:damage:die:faces:4"
         ]
       },
       {
@@ -766,7 +766,7 @@
         "predicate": [
           "ascendant-element:metal-piercing",
           "item:category:unarmed",
-          "item:damage:die:d6"
+          "item:damage:die:faces:6"
         ]
       },
       {
@@ -780,7 +780,7 @@
         "predicate": [
           "ascendant-element:metal-piercing",
           "item:category:unarmed",
-          "item:damage:die:d8"
+          "item:damage:die:faces:8"
         ]
       },
       {
@@ -794,7 +794,7 @@
         "predicate": [
           "ascendant-element:metal-piercing",
           "item:category:unarmed",
-          "item:damage:die:d10"
+          "item:damage:die:faces:10"
         ]
       },
       {
@@ -808,7 +808,7 @@
         "predicate": [
           "ascendant-element:metal-piercing",
           "item:category:unarmed",
-          "item:damage:die:d12"
+          "item:damage:die:faces:12"
         ]
       },
       {
@@ -822,7 +822,7 @@
         "predicate": [
           "ascendant-element:wood",
           "item:category:unarmed",
-          "item:damage:die:d4"
+          "item:damage:die:faces:4"
         ]
       },
       {
@@ -836,7 +836,7 @@
         "predicate": [
           "ascendant-element:wood",
           "item:category:unarmed",
-          "item:damage:die:d6"
+          "item:damage:die:faces:6"
         ]
       },
       {
@@ -850,7 +850,7 @@
         "predicate": [
           "ascendant-element:wood",
           "item:category:unarmed",
-          "item:damage:die:d8"
+          "item:damage:die:faces:8"
         ]
       },
       {
@@ -864,7 +864,7 @@
         "predicate": [
           "ascendant-element:wood",
           "item:category:unarmed",
-          "item:damage:die:d10"
+          "item:damage:die:faces:10"
         ]
       },
       {
@@ -878,7 +878,7 @@
         "predicate": [
           "ascendant-element:wood",
           "item:category:unarmed",
-          "item:damage:die:d12"
+          "item:damage:die:faces:12"
         ]
       },
       {
@@ -894,7 +894,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d4"
+          "item:damage:die:faces:4"
         ]
       },
       {
@@ -910,7 +910,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d6"
+          "item:damage:die:faces:6"
         ]
       },
       {
@@ -926,7 +926,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d8"
+          "item:damage:die:faces:8"
         ]
       },
       {
@@ -942,7 +942,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d10"
+          "item:damage:die:faces:10"
         ]
       },
       {
@@ -958,7 +958,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d12"
+          "item:damage:die:faces:12"
         ]
       },
       {
@@ -974,7 +974,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d4"
+          "item:damage:die:faces:4"
         ]
       },
       {
@@ -990,7 +990,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d6"
+          "item:damage:die:faces:6"
         ]
       },
       {
@@ -1006,7 +1006,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d8"
+          "item:damage:die:faces:8"
         ]
       },
       {
@@ -1022,7 +1022,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d10"
+          "item:damage:die:faces:10"
         ]
       },
       {
@@ -1038,7 +1038,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d12"
+          "item:damage:die:faces:12"
         ]
       },
       {
@@ -1054,7 +1054,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d4"
+          "item:damage:die:faces:4"
         ]
       },
       {
@@ -1070,7 +1070,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d6"
+          "item:damage:die:faces:6"
         ]
       },
       {
@@ -1086,7 +1086,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d8"
+          "item:damage:die:faces:8"
         ]
       },
       {
@@ -1102,7 +1102,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d10"
+          "item:damage:die:faces:10"
         ]
       },
       {
@@ -1118,7 +1118,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d12"
+          "item:damage:die:faces:12"
         ]
       },
       {
@@ -1134,7 +1134,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d4"
+          "item:damage:die:faces:4"
         ]
       },
       {
@@ -1150,7 +1150,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d6"
+          "item:damage:die:faces:6"
         ]
       },
       {
@@ -1166,7 +1166,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d8"
+          "item:damage:die:faces:8"
         ]
       },
       {
@@ -1182,7 +1182,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d10"
+          "item:damage:die:faces:10"
         ]
       },
       {
@@ -1198,7 +1198,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d12"
+          "item:damage:die:faces:12"
         ]
       },
       {
@@ -1214,7 +1214,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d4"
+          "item:damage:die:faces:4"
         ]
       },
       {
@@ -1230,7 +1230,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d6"
+          "item:damage:die:faces:6"
         ]
       },
       {
@@ -1246,7 +1246,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d8"
+          "item:damage:die:faces:8"
         ]
       },
       {
@@ -1262,7 +1262,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d10"
+          "item:damage:die:faces:10"
         ]
       },
       {
@@ -1278,7 +1278,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d12"
+          "item:damage:die:faces:12"
         ]
       },
       {
@@ -1294,7 +1294,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d4"
+          "item:damage:die:faces:4"
         ]
       },
       {
@@ -1310,7 +1310,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d6"
+          "item:damage:die:faces:6"
         ]
       },
       {
@@ -1326,7 +1326,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d8"
+          "item:damage:die:faces:8"
         ]
       },
       {
@@ -1342,7 +1342,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d10"
+          "item:damage:die:faces:10"
         ]
       },
       {
@@ -1358,7 +1358,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d12"
+          "item:damage:die:faces:12"
         ]
       },
       {
@@ -1374,7 +1374,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d4"
+          "item:damage:die:faces:4"
         ]
       },
       {
@@ -1390,7 +1390,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d6"
+          "item:damage:die:faces:6"
         ]
       },
       {
@@ -1406,7 +1406,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d8"
+          "item:damage:die:faces:8"
         ]
       },
       {
@@ -1422,7 +1422,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d10"
+          "item:damage:die:faces:10"
         ]
       },
       {
@@ -1438,7 +1438,7 @@
           {
             "not": "item:category:unarmed"
           },
-          "item:damage:die:d12"
+          "item:damage:die:faces:12"
         ]
       },
       {

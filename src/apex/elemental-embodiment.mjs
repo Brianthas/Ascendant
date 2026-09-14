@@ -47,7 +47,9 @@ const DOMAINS = ["strike-damage", "spell-damage", "elemental-blast-damage"];
  * effect is the reminder), the riders from 13th and the gap-passing from 15th
  * are on the text.
  */
+// A Strike's die is on its roll as `item:damage:die:faces:N` (read live, 2026-09-14).
 const DICE = ["d4", "d6", "d8", "d10", "d12"];
+const faces = (die) => die.slice(1);
 const atLeastD6 = (die) => (die === "d4" ? "d6" : die);
 
 const auraEffect = effectItem({
@@ -125,7 +127,7 @@ ${ELEMENTS.filter((e) => e.table !== false).map((e) => `<tr><td>${e.value.charAt
                 diceNumber: 1,
                 dieSize: atLeastD6(die),
                 damageType: damage,
-                predicate: [`${ELEMENT_OPTION}:${value}`, "item:category:unarmed", `item:damage:die:${die}`],
+                predicate: [`${ELEMENT_OPTION}:${value}`, "item:category:unarmed", `item:damage:die:faces:${faces(die)}`],
             })),
         ),
         // Weapons: a die of element damage matching the weapon's own.
@@ -138,7 +140,7 @@ ${ELEMENTS.filter((e) => e.table !== false).map((e) => `<tr><td>${e.value.charAt
                 diceNumber: 1,
                 dieSize: die,
                 damageType: damage,
-                predicate: [`${ELEMENT_OPTION}:${value}`, { not: "item:category:unarmed" }, `item:damage:die:${die}`],
+                predicate: [`${ELEMENT_OPTION}:${value}`, { not: "item:category:unarmed" }, `item:damage:die:faces:${faces(die)}`],
             })),
         ),
         // Properties.

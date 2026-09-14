@@ -24,6 +24,7 @@
             "SpellDamageAttribute": "Spellcasting Expertise (attribute)",
             "SpellDamageProficiency": "Spellcasting Expertise (proficiency)",
             "WeaponDamage": "Weapon Expertise (proficiency)",
+            "WeaponDamageMythic": "Weapon Expertise (Mythic)",
             "EnhancedDefense": "Enhanced Defense",
             "Boost1st": "Enhanced Attribute Boost (1st level): which attribute?",
             "Boost5th": "Enhanced Attribute Boost (5th level): which attribute?",

@@ -35,6 +35,17 @@ import { registerClassChoices } from "./class-choices.mjs";
 export function registerVariants() {
     registerSettings();
 
+    // PF2e's own Free Archetype setting is the authority. A world that already has it on
+    // (found live on 2026-09-14: system true, this toggle at its default of false) would
+    // otherwise show the wrong state here, and the first person to tick this box would
+    // find nothing changed. Taking the system's value at `ready` keeps the two in step;
+    // the onChange then only ever pushes a deliberate change the other way.
+    Hooks.once("ready", () => {
+        if (!game.user.isGM) return;
+        const system = game.settings.get("pf2e", "freeArchetypeVariant");
+        if (game.settings.get(MODULE_ID, "freeArchetype") !== system) game.settings.set(MODULE_ID, "freeArchetype", system);
+    });
+
     if (game.modules.get(LEGACY_MODULE_ID)?.active) {
         console.log(`${MODULE_ID} | ${LEGACY_MODULE_ID} is active; it provides the variant rules and Ascendant's copy stands down`);
         return false;

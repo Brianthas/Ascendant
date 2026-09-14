@@ -1,5 +1,5 @@
 import { talent, uuidFor, GRANT_TAG } from "../lib/item.mjs";
-import { byLevel, mythic, rankBonusByLevel, RANK_VALUE } from "../lib/rules.mjs";
+import { byLevel, mythic, RANK_VALUE } from "../lib/rules.mjs";
 import { enhancedDefense, ENHANCED_DEFENSE_TEXT } from "./enhanced-defense.mjs";
 
 const PACK = "ascendant-core";
@@ -92,13 +92,28 @@ ${ENHANCED_DEFENSE_TEXT}
         })),
         // 15th: Mythic on the attack roll itself.
         ...mythic({ selectors: ["strike-attack-roll"], level: 15 }),
-        {
+        // "Equal to your proficiency rank": twice the stored rank of the weapon's own
+        // category (Trained 2 ... Legendary 8), read off the actor, keyed to the
+        // category by the Strike's `item:category:<c>` option. Verified live on
+        // 2026-09-14: a level-keyed ladder gave +4 to a fighter already Master at 1st.
+        // Mythic leaves the stored rank at 4, so 15th adds the last 2.
+        ...["simple", "martial", "advanced", "unarmed"].map((category) => ({
             key: "FlatModifier",
             selector: "strike-damage",
             slug: `${SLUG}-damage`,
             label: "ASCENDANT.Rules.WeaponDamage",
             type: "untyped",
-            value: rankBonusByLevel({ expert: 1, master: 5, legendary: 10, mythic: 15 }),
+            value: `2 * @actor.system.proficiencies.attacks.${category}.rank`,
+            predicate: [`item:category:${category}`],
+        })),
+        {
+            key: "FlatModifier",
+            selector: "strike-damage",
+            slug: `${SLUG}-damage-mythic`,
+            label: "ASCENDANT.Rules.WeaponDamageMythic",
+            type: "untyped",
+            value: 2,
+            predicate: [{ gte: ["self:level", 15] }],
         },
         enhancedDefense,
         ...LEVELS.map(({ level }) => ({
