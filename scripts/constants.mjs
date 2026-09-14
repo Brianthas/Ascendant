@@ -18,7 +18,10 @@ export const TIERS = [
         id: "ascendant-core",
         categoryLabel: "ASCENDANT.Category.Core",
         sectionLabel: "ASCENDANT.Section.Core",
-        slots: [{ id: "ascendant-core-track", level: 1, label: "Track" }],
+        // Unslotted: a character holds three core feats (the track, Enhanced Attribute Boosts,
+        // Expanded Investment). With one slot, PF2e's slot finder seated the track and sent the
+        // other two to Bonus Feats. Seen on the Wizard's sheet, 2026-09-14.
+        slots: null,
     },
     {
         id: "ascendant-apex",

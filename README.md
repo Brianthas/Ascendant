@@ -52,7 +52,11 @@ Mythic proficiency, the sixth rank at level + 10, appears on attack rolls and sp
    Investment**. With the boosts feat on the sheet, the **Attribute Boosts** window gains a row
    labelled *(Ascendant)* under each of PF2e's level rows: four picks at Level 1 and two at
    Levels 5, 10, 15 and 20. Pressing an attribute twice on a later row puts both picks on it.
-3. Add one talent from each of Apex, Paragon and Adept, and the party's Party Talent.
+3. Add one talent from each of Apex, Paragon and Adept, and the party's Party Talent. Drag each
+   onto the sheet or use the **Browse** button on its section; the sheet seats it in that
+   section's slot and nests its level features under it. A talent created any other way, by a
+   macro or a script, has no slot and lists under **Bonus Feats** instead; drag it onto its
+   section to seat it.
 4. Read the talent's **In Foundry** paragraph. Some need one more step: Inexhaustible Magics'
    **Triple Spell Slots** button once the spellcasting entries exist, Soulbound Arsenal's tag on
    a weapon, Bonded Soul's **Link Bonded** button after importing a base form.
