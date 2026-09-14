@@ -83,13 +83,19 @@ const FORMS = [
         strikes: [strike({ name: "Slam", die: "d8", type: "bludgeoning" })],
         description: "<p>Strikes deal +1d6 of a chosen elemental type (acid, cold, electricity, fire, sonic). Immune to that type. At the owner's 10th level the rider becomes 2d6.</p>",
         rules: [
+            // A dropdown, not a ChoiceSet: an effect embedded in an imported actor never prompts,
+            // so a ChoiceSet on it stays unresolved and disables every rule on the effect (read
+            // live on 2026-09-14: all eleven rules ignored). The toggle needs no answer and
+            // sets `ascendant-bonded-element:<type>` from its selection.
             {
-                key: "ChoiceSet",
-                slug: "bondedElement",
-                rollOption: "ascendant-bonded-element",
-                prompt: "ASCENDANT.Bonded.ElementPrompt",
-                adjustName: true,
-                choices: ELEMENTS.map((value) => ({ value, label: traitLabel(value) })),
+                key: "RollOption",
+                domain: "all",
+                option: "ascendant-bonded-element",
+                label: "ASCENDANT.Bonded.ElementPrompt",
+                toggleable: true,
+                alwaysActive: true,
+                selection: "fire",
+                suboptions: ELEMENTS.map((value) => ({ value, label: traitLabel(value) })),
             },
             ...ELEMENTS.map((type) => ({
                 key: "DamageDice",

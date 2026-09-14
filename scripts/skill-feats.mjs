@@ -1,4 +1,5 @@
 import { MODULE_ID } from "./constants.mjs";
+import { extraSectionBuilders } from "./variants/ladders.mjs";
 
 /** Slug of the Paragon talent that grants two extra skill feats every level. */
 const TALENT_SLUG = "ascendant-know-it-all";
@@ -149,7 +150,15 @@ function registerLibWrapper(target, fn, type) {
  * re-running the assignment duplicates every feat not in a numbered slot. Pushing first is the only
  * safe order.
  */
-export function registerKnowItAllSlots() {
+export function registerKnowItAllSlots({ variantsActive = false } = {}) {
+    // The variant copy already wraps prepareFeats under this module's id, and libWrapper allows
+    // one wrapper per module per method, so the section is handed to that wrapper instead. It
+    // takes the group's placement too: the copy's reorder pass files a `["skill"]` section under
+    // PF2e's own skill group.
+    if (variantsActive) {
+        extraSectionBuilders.push((actor) => (holdsKnowItAll(actor) ? [buildSection()] : []));
+        return true;
+    }
     return registerLibWrapper(
         "CONFIG.PF2E.Actor.documentClasses.character.prototype.prepareFeats",
         function (wrapped, ...args) {

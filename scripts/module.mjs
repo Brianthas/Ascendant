@@ -30,22 +30,37 @@ import { registerContainers, syncCapacity } from "./containers.mjs";
 let categoriesRegistered = false;
 let sectionsRegistered = false;
 
+/** Run one registration, reporting a throw loudly instead of aborting the hook. */
+function attempt(name, register) {
+    try {
+        return register();
+    } catch (error) {
+        console.error(`${MODULE_ID} | registering ${name} failed`, error);
+        ui.notifications?.error(`Ascendant: registering ${name} failed; see the console (F12).`, { permanent: true });
+        return false;
+    }
+}
+
 Hooks.once("init", () => {
     if (game.system?.id !== "pf2e") {
         console.error(`${MODULE_ID} | the pf2e system is not active. This module requires it.`);
         return;
     }
 
-    registerVariants();
-    registerRefreshButton();
-    registerSpellSlotButton();
-    registerKnowItAllSlots();
-    registerShapeOfHarm();
-    registerBonded();
-    registerSoulboundArsenal();
-    registerAegis();
-    registerBattleMender();
-    registerContainers();
+    // Each registration on its own, so one that throws cannot take the rest down. On
+    // 2026-09-14 the settings-menu registration threw on Foundry v14 as the second call
+    // here, every hook after it was never registered, and nothing said so because the
+    // `setup` fallback below still registered the categories.
+    const variantsActive = attempt("variants", registerVariants) === true;
+    attempt("refresh button", registerRefreshButton);
+    attempt("spell slots", registerSpellSlotButton);
+    attempt("know-it-all slots", () => registerKnowItAllSlots({ variantsActive }));
+    attempt("shape of harm", registerShapeOfHarm);
+    attempt("bonded soul", registerBonded);
+    attempt("soulbound arsenal", registerSoulboundArsenal);
+    attempt("aegis", registerAegis);
+    attempt("battle mender", registerBattleMender);
+    attempt("containers", registerContainers);
     categoriesRegistered = registerFeatCategories();
     sectionsRegistered = registerFeatSections();
     console.log(

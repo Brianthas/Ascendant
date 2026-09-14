@@ -106,6 +106,7 @@ ${levelBlock("15th Level", ["You may attune to two types at once from any group.
             rollOption: GROUP_OPTION,
             prompt: "ASCENDANT.Rules.ShapeOfHarmGroupPrompt",
             adjustName: true,
+            // The group names are the choice labels; the prompt text lists the types.
             choices: [
                 { value: "physical", label: "ASCENDANT.Rules.ShapeOfHarmPhysical" },
                 { value: "elemental", label: "ASCENDANT.Rules.ShapeOfHarmElemental" },

@@ -27,6 +27,9 @@ const SPELLSHAPES = [
     ["perfect-quickening", "Perfect Quickening", "Your next spell costs 1 fewer action, to a minimum of 1. Once per turn."],
 ];
 
+/** Roll option each learned spellshape sets, so a later pick cannot offer it again. */
+const KNOWN = "ascendant-spellshape";
+
 export const spellshapes = SPELLSHAPES.map(([slug, name, text]) =>
     actionItem({
         slug: `${SLUG}-${slug}`,
@@ -36,12 +39,17 @@ export const spellshapes = SPELLSHAPES.map(([slug, name, text]) =>
         img: IMG,
         frequency: slug === "perfect-quickening" ? { value: 1, max: 1, per: "turn" } : null,
         description: `<p>${text}</p><p><em>Unbound Spellshape. Requires no additional components, gestures, or words. It has no traits and cannot be identified, counteracted, or prevented.</em></p><hr /><p>Apply the change when you cast the spell. Once per round you may use a spellshape as a free action; from 20th level, with no frequency limit.</p>`,
+        // Live on 2026-09-14: five level picks each defaulted to the first spellshape and each
+        // granted another copy; `allowDuplicate: false` does not stop a second granter. So a
+        // learned spellshape announces itself and the choice lists exclude it.
+        rules: [{ key: "RollOption", domain: "all", option: `${KNOWN}:${slug}` }],
     }),
 );
 
 const SHAPE_CHOICES = SPELLSHAPES.filter(([slug]) => slug !== "empowered-casting").map(([slug, name]) => ({
     value: uuidFor(PACK, `${SLUG}-${slug}`),
     label: name,
+    predicate: [{ not: `${KNOWN}:${slug}` }],
 }));
 
 /** A sub-feat that asks which spellshape to learn and grants the answer. */

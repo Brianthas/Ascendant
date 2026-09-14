@@ -41,7 +41,7 @@ export function registerLadders() {
       const sections = game.pf2e?.settings?.campaign?.feats?.sections;
       if (!Array.isArray(sections)) return wrapped(...args);
 
-      const extra = buildSections(this);
+      const extra = buildSections(this).filter((section) => !sections.some((s) => s?.id === section.id));
       const paragon = paragonApplies(this);
       if (extra.length === 0 && !paragon) return wrapped(...args);
 
@@ -220,8 +220,20 @@ function removeSectionsFor(sections, supported) {
  * @returns {object[]}
  */
 export function buildSections(actor) {
-  return buildDualClassSections(actor);
+  return [...buildDualClassSections(actor), ...extraSectionBuilders.flatMap((build) => build(actor))];
 }
+
+/**
+ * Ascendant addition to the copied file: other parts of this module that need a per-actor feat
+ * section (Know-It-All's skill feat slots) register a builder here instead of wrapping
+ * `prepareFeats` themselves. libWrapper allows one wrapper per module per method, and this file
+ * already holds it; a second registration under the same id fails ("could not patch", read live
+ * on 2026-09-14). When this copy stands down for the Dual Class module, those parts wrap on
+ * their own.
+ *
+ * @type {Array<(actor: ActorPF2e) => object[]>}
+ */
+export const extraSectionBuilders = [];
 
 /**
  * Run `fn` with the character's ancestry ladder extended by Ancestry Paragon.

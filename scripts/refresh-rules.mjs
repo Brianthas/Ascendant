@@ -210,8 +210,13 @@ export async function refreshTalentRules({ dryRun = false, rules = null } = {}) 
  * hangs off `render()` rather than off a constructor or a static. Nothing is
  * ever drawn: the flow is two dialogs and a notification, and returning `this`
  * keeps the caller's chained `.render(true)` happy.
+ *
+ * Foundry v14 refuses a plain class here ("You must provide a menu type that is
+ * a FormApplication or ApplicationV2 instance or subclass", read live on
+ * 2026-09-14), and the throw inside `init` took every later registration down
+ * with it. So it extends ApplicationV2 and never renders a frame.
  */
-class RefreshTalentsApp {
+class RefreshTalentsApp extends foundry.applications.api.ApplicationV2 {
     render() {
         RefreshTalentsApp.open();
         return this;
