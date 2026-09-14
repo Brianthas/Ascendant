@@ -1,0 +1,136 @@
+{
+  "_id": "HlERkXPYudfm1Lge",
+  "name": "Living Shadow",
+  "type": "feat",
+  "img": "icons/magic/perception/shadow-stealth-eyes-purple.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>The dark stopped being somewhere you hide and started being something you are. You see through it, move without sound inside it, and when it suits you, step from one patch of it into another as easily as crossing a threshold.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>You see normally in darkness of any kind, including magical darkness.</li><li>You are never Concealed or Dazzled by low light or darkness.</li><li>While in dim light or darkness, you may Hide as a free action once per round.</li><li>You may Hide and Sneak even without cover or concealment.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>[1 action] While in dim light or darkness, become invisible until you take a hostile action, Cast a Spell, or leave dim light.<ul><li>You may Sustain this to maintain it for up to 1 minute.</li></ul></li></ul>\n<p><strong>10th Level</strong></p><ul><li>Your movement makes no sound.</li><li>You cannot be detected by hearing, scent, tremorsense, or lifesense, and you leave no tracks.</li><li>Your invisibility no longer ends when you take a hostile action, only if you leave dim light.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Gain Shadowstep.<ul><li><strong>Shadowstep</strong> [1 action] Teleport to any shadow or area of dim light you can see within 120 feet.</li></ul></li></ul>\n<hr />\n<p><strong>In Foundry:</strong> you have greater darkvision and are immune to Dazzled. <em>Fade into Shadow</em> is on your Actions tab from 5th with the <em>Living Shadow: Invisible</em> effect to apply, and Shadowstep from 15th.</p>\n<p>For the table: never being Concealed by darkness (the attacker's flat check), Hiding as a free action and without cover, silent movement and the detection immunities from 10th. A note on your Stealth checks reminds you.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "Sense",
+        "selector": "greater-darkvision"
+      },
+      {
+        "key": "Immunity",
+        "type": "dazzled"
+      },
+      {
+        "key": "Note",
+        "selector": "stealth",
+        "title": "Living Shadow",
+        "text": "ASCENDANT.Note.LivingShadowStealth"
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.taKp1Xj47Q9HpbOj",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.OESnf9ximvyrHuch",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.8Vabt2hbBcwaFGoD",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.zhhN2PkUikQoFdLC",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.Sle9N5MI3PrRFWxm",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "living-shadow",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-adept",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!HlERkXPYudfm1Lge"
+}

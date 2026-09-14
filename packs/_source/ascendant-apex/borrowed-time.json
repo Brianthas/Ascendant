@@ -1,0 +1,173 @@
+{
+  "_id": "VideI4qOZmb5Mb5F",
+  "name": "Borrowed Time",
+  "type": "feat",
+  "img": "icons/magic/time/hourglass-yellow-green.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>Time moves around you rather than through you. Where others must choose between the strike and the step, you take both and find a moment left over, and no one, least of all you, can say where that moment came from.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>You are Quickened. Use the extra action however you like.</li><li>Immune to Slowed, which does not negate your Quickened condition, and immune to Immobilized.</li><li>+20 feet to all Speeds.</li><li>When you Hustle, multiply your Speed by 10.</li><li>Your movement does not trigger reactions when you Stride, Climb, Crawl, Fly, or Swim.</li></ul>\n<p><strong>3rd Level and Every 3 Levels</strong></p><ul><li>Gain an extra reaction at the start of your turn: 2 at 3rd, 3 at 6th, 4 at 9th, 5 at 12th, 6 at 15th, 7 at 18th.</li></ul>\n<p><strong>5th / 10th / 15th / 20th Level</strong></p><ul><li>Speed bonus increases to +30, +40, +50, then +60 feet.</li></ul>\n<p><strong>7th Level</strong></p><ul><li>One extra flourish action per round, paying its normal action cost.</li></ul>\n<p><strong>13th Level</strong></p><ul><li>Any number of flourish actions per round.</li></ul>\n<hr />\n<p><strong>In Foundry:</strong> the Quickened condition is on your sheet and cannot be removed while you hold this talent, the Speed increase follows the ladder, and you are immune to Slowed and Immobilized.</p>\n<p>For the table: your reactions per turn (2 at 3rd, one more every 3 levels), the extra flourish from 7th and unlimited flourishes from 13th, Hustle at ten times your Speed, and your movement not triggering reactions. PF2e counts none of these.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl",
+        "onDeleteActions": {
+          "grantee": "restrict"
+        }
+      },
+      {
+        "key": "Immunity",
+        "type": "slowed"
+      },
+      {
+        "key": "Immunity",
+        "type": "immobilized"
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "all-speeds",
+        "slug": "ascendant-borrowed-time-speed",
+        "label": "ASCENDANT.Rules.BorrowedTimeSpeed",
+        "type": "untyped",
+        "value": "match(when(btwn(@actor.level, 1, 4), 20), when(btwn(@actor.level, 5, 9), 30), when(btwn(@actor.level, 10, 14), 40), when(btwn(@actor.level, 15, 19), 50), when(gte(@actor.level, 20), 60))"
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.LjJ3WILGrQdfFN7Z",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.yzJsLZ0gkp5Tof7D",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.aXRDo8GYXRUid8hA",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.rbj133bQA72Zghq9",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.wnPJSGN7RMMUYAOD",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              13
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.NdeCjvXPje3ifE4o",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.ZRMEZx5Rhgbpu3YP",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              20
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "borrowed-time",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-apex",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!VideI4qOZmb5Mb5F"
+}

@@ -1,0 +1,29 @@
+{
+    "name": "ascendant",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "description": "Dev tooling only. The module version lives in module.json.",
+    "scripts": {
+        "build": "node tools/build-packs.mjs",
+        "clean": "node tools/clean.mjs",
+        "extract": "node tools/extract-packs.mjs",
+        "install:live": "node tools/build-packs.mjs --install",
+        "push": "node tools/build-packs.mjs --install && node tools/push-live.mjs",
+        "lint": "node tools/build-packs.mjs && node tools/lint-rules.mjs",
+        "lint:js": "eslint .",
+        "check-imports": "node tools/check-imports.mjs",
+        "check-lang": "node tools/check-lang.mjs",
+        "test": "node tools/check-imports.mjs && node tools/test-reorder.mjs && node tools/test-fold.mjs",
+        "check": "node tools/build-packs.mjs && node tools/lint-rules.mjs && node tools/check-imports.mjs && node tools/check-lang.mjs",
+        "release:zip": "node tools/package-release.mjs"
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@foundryvtt/foundryvtt-cli": "^3.0.4",
+        "classic-level": "^3.0.0",
+        "eslint": "^10.9.1",
+        "fvtt-types": "npm:@league-of-foundry-developers/foundry-vtt-types@^13",
+        "marked": "^16.0.0"
+    }
+}

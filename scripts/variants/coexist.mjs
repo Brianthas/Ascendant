@@ -1,0 +1,287 @@
+import { MODULE_ID, SECONDARY_CLASS_FLAG, EXTRA_CLASSES_FLAG } from "./constants.mjs";
+import { moduleEnabled, maxClasses } from "./settings.mjs";
+import { registerLibWrapper, notifyDualClass, getExtraClassIds } from "./util.mjs";
+
+/**
+ * Letting an actor hold two class items at once.
+ *
+ * PF2e deletes every existing ancestry, background, class, heritage and deity whenever an incoming
+ * item shares that type. The code is in `ItemPF2e.createDocuments` (pf2e.mjs:44932-44939 on 8.4.1):
+ *
+ *   let a = ["ancestry","background","class","heritage","deity"]
+ *     .filter((e) => n.some((t) => t.type === e))   // types present in the incoming batch
+ *     .flatMap((e) => r.itemTypes[e]);              // ALL the actor's existing items of those types
+ *   ...
+ *   o.length > 0 && await r.deleteEmbeddedDocuments("Item", o, { render: false });
+ *
+ * There is no option to switch it off - nothing in the method reads the context object for one.
+ * Adding a second class today deletes the first silently, along with the class features it granted,
+ * with no error and no notification.
+ *
+ * The purge is bypassed by pairing two wrappers: one on `createDocuments` that records which class
+ * ids to keep for the duration of the call, and one on `deleteEmbeddedDocuments` that removes those
+ * ids from the deletion list while that record is live.
+ *
+ * ## Why it is armed rather than always on
+ *
+ * Preserving the old class on every class drop would break replacing a class, which is what a drop
+ * normally means. So the bypass only applies after the sheet's "add a second class" control has
+ * armed it for that actor. Anyone who never touches that control sees PF2e's stock behaviour.
+ *
+ * ## What is fragile here
+ *
+ * This depends on the purge being a `deleteEmbeddedDocuments` call made from inside
+ * `createDocuments`. That is an implementation detail of the system, not a documented API, and a
+ * PF2e release can change it. `verifyPurgeBypass` is the guard: after an armed create, the actor is
+ * re-read and the module says so loudly if a class went missing anyway.
+ */
+
+/** Armed state, set by the sheet control and consumed by the next class create on that actor. */
+let armed = null;
+
+/** Live during an armed `createDocuments` call: the class ids the purge must not delete. */
+let preserve = null;
+
+/** How long an arm stays valid. Long enough to pick a class from a browser, short enough to lapse. */
+const ARM_TIMEOUT_MS = 120000;
+
+/**
+ * Arm the next class-item create on this actor to keep the existing class instead of replacing it.
+ * @param {ActorPF2e} actor
+ */
+export function armSecondClass(actor) {
+  armed = { actorId: actor.id, at: Date.now() };
+}
+
+/** Whether an arm is currently valid for this actor. */
+function isArmed(actor) {
+  if (!armed || armed.actorId !== actor?.id) return false;
+  if (Date.now() - armed.at > ARM_TIMEOUT_MS) {
+    armed = null;
+    return false;
+  }
+  return true;
+}
+
+export function clearArm() {
+  armed = null;
+}
+
+/**
+ * Confirm the bypass actually worked, and say so if it did not.
+ *
+ * Rule: assert on what the actor holds afterwards, not on the fact that the wrapper ran. The
+ * wrapper running proves the patch registered; only re-reading the actor proves PF2e did not delete
+ * the class by some other route.
+ *
+ * @param {ActorPF2e} actor
+ * @param {string[]} expectedIds Class ids that should still be present.
+ */
+function verifyPurgeBypass(actor, expectedIds) {
+  const missing = expectedIds.filter((id) => !actor.items.get(id));
+  if (missing.length === 0) return;
+
+  const version = game.system.version;
+  console.error(
+    `${MODULE_ID} | the class-purge bypass failed on pf2e ${version}: `
+    + `${missing.length} class item(s) were deleted anyway (${missing.join(", ")}).`
+  );
+  notifyDualClass(
+    "error",
+    `Dual Class Items (PF2e): adding the second class deleted the first anyway. This module has not been `
+    + `verified against pf2e ${version}. Undo with Ctrl+Z if the sheet is wrong, and report this.`
+  );
+}
+
+/**
+ * Stop deleting one class from taking the other class's features with it.
+ *
+ * Deleting an item on a creature expands the list to include that item's linked items
+ * (`CreaturePF2e#deleteEmbeddedDocuments`, pf2e.mjs:33091-33096). For a class, "linked" is computed
+ * by `ABCItemPF2e#getLinkedItems` (45084) as every feat whose `system.location` is *any* class item
+ * id on the actor:
+ *
+ *   let e = this.actor.itemTypes[this.type].map((e) => e.id);
+ *   return this.actor.itemTypes.feat.filter((t) => e.includes(t.system.location ?? ""));
+ *
+ * and `ClassPF2e` widens it again to every `classfeature` on the actor that nothing else granted.
+ * With one class both are exactly right. With two, removing either class deletes both classes'
+ * features - measured: removing a Wizard took the Fighter's granted feature with it.
+ *
+ * A dual-class actor gets the narrow answer instead: the feats this class item actually granted,
+ * which `createGrantedItems` marks by stamping its own id into `system.location` (45099). Features
+ * granted in turn by those features carry `flags.pf2e.grantedBy` and are already removed with their
+ * granter, so they do not need listing here.
+ *
+ * This guards deleting a class by any route, not only the module's own Remove Second Class - a class
+ * dragged out of the items list would otherwise take the other class's features with it.
+ */
+function registerLinkedItemNarrowing() {
+  return registerLibWrapper(
+    "CONFIG.PF2E.Item.documentClasses.class.prototype.getLinkedItems",
+    function (wrapped) {
+      const actor = this.actor;
+      if (!moduleEnabled() || actor?.type !== "character") return wrapped();
+
+      // Two classes on the actor is the obvious case, and it is not the only one. During an *add*
+      // the system purges the existing class before creating the new one, so at that moment the
+      // actor still holds exactly one class and a count test falls through to the system's own
+      // implementation - which collects every feat located to any class item on the actor. The
+      // create wrapper filters the class ids out of that delete, but the feats are not class items
+      // and went through untouched, so adding a second class kept the first class and destroyed its
+      // features. Measured on 2026-09-09: a Fighter with four features had all four removed when a
+      // Sorcerer was added, and the Fighter item itself survived.
+      //
+      // So narrow whenever a create on this actor is preserving classes, whatever the count is
+      // right now.
+      const preserving = preserve?.actorId === actor.id;
+      if (!preserving && actor.itemTypes.class.length < 2) return wrapped();
+
+      return actor.itemTypes.feat.filter((f) => f.system.location === this.id);
+    },
+    "MIXED"
+  );
+}
+
+export function registerCoexistence() {
+  let ok = registerLinkedItemNarrowing();
+
+  ok = registerLibWrapper(
+    "CONFIG.Item.documentClass.createDocuments",
+    async function (wrapped, data = [], operation = {}) {
+      const actor = operation.parent;
+      const addsClass = Array.isArray(data) && data.some((d) => d?.type === "class");
+
+      if (!moduleEnabled() || !addsClass || actor?.type !== "character") {
+        return wrapped(data, operation);
+      }
+
+      const existing = actor.itemTypes.class.map((c) => c.id);
+      if (existing.length === 0) return wrapped(data, operation);
+
+      // A class dropped straight onto the sheet, rather than added through the Second Class control,
+      // arms nothing - and the system's purge then replaces the class the character already has,
+      // taking its features with it and saying nothing. In a world running this variant that is
+      // almost never what was meant, so a second class is kept by default and the fact is reported.
+      // Getting rid of a class is still one click in the items list, and now safe: a class only
+      // takes its own features with it.
+      //
+      // Up to what this character is entitled to. An unarmed add that would take them past that is
+      // left to behave as the system normally would, with a warning rather than a silent
+      // replacement, since at that point replacing a class is the likelier intent.
+      const limit = maxClasses(actor);
+      if (!isArmed(actor)) {
+        if (existing.length >= limit) {
+          notifyDualClass("warn", game.i18n.format("PF2EDC.Coexist.UnarmedManyClasses", {
+            actor: actor.name,
+            count: existing.length,
+            limit
+          }));
+          return wrapped(data, operation);
+        }
+        const kept = actor.itemTypes.class.map((c) => c.name).join(", ");
+        notifyDualClass("info", game.i18n.format("PF2EDC.Coexist.KeptFirstClass", {
+          actor: actor.name,
+          class: kept
+        }));
+      }
+
+      // The class items and everything they granted. Preserving only the class ids keeps the class
+      // and loses its features: the purge expands each class to its linked items, and a granted
+      // feature is a feat rather than a class item, so it is not in `existing` and goes through the
+      // delete untouched. Measured on 2026-09-09 before this line existed - adding a Sorcerer to a
+      // Fighter left the Fighter item in place with all four of its features removed.
+      const granted = actor.itemTypes.feat
+        .filter((f) => existing.includes(f.system.location))
+        .map((f) => f.id);
+
+      preserve = { actorId: actor.id, ids: new Set([...existing, ...granted]) };
+      armed = null;
+      try {
+        const created = await wrapped(data, operation);
+        verifyPurgeBypass(actor, existing);
+        await flagNewClassAsSecondary(actor, created);
+        return created;
+      } finally {
+        preserve = null;
+      }
+    },
+    "MIXED"
+  ) && ok;
+
+  ok = registerLibWrapper(
+    "CONFIG.Actor.documentClass.prototype.deleteEmbeddedDocuments",
+    function (wrapped, embeddedName, ids = [], operation = {}) {
+      if (!preserve || preserve.actorId !== this.id || embeddedName !== "Item") {
+        return wrapped(embeddedName, ids, operation);
+      }
+
+      const kept = ids.filter((id) => !preserve.ids.has(id));
+      if (kept.length === ids.length) return wrapped(embeddedName, ids, operation);
+
+      // Everything in this delete was a class we are preserving, so there is nothing left to do.
+      // Calling through with an empty list would be harmless but pointless.
+      if (kept.length === 0) return Promise.resolve([]);
+      return wrapped(embeddedName, kept, operation);
+    },
+    "MIXED"
+  ) && ok;
+
+  return ok;
+}
+
+/**
+ * Mark the newly added class as the secondary one.
+ *
+ * The class that was already there keeps being the actor's real class as far as PF2e is concerned,
+ * so making the new arrival secondary is both the smaller change and the one that matches what
+ * "add a second class" means. The sheet can swap which is which afterwards.
+ *
+ * @param {ActorPF2e} actor
+ * @param {ItemPF2e[]} created
+ */
+async function flagNewClassAsSecondary(actor, created) {
+  const newClass = (created ?? []).find((i) => i?.type === "class");
+  if (!newClass) return;
+
+  // Append rather than overwrite, so adding a third class keeps the second. Written as the list
+  // even when it holds one id, which is also what migrates a character off the old single-id flag:
+  // `getExtraClassIds` reads the old one, and this writes the new one on the next class change.
+  const ids = [...getExtraClassIds(actor).filter((id) => id !== newClass.id), newClass.id];
+  await actor.setFlag(MODULE_ID, EXTRA_CLASSES_FLAG, ids);
+}
+
+/**
+ * Keep the flag honest when a class item goes away.
+ *
+ * A dangling flag would leave `getSecondaryClass` returning null while the actor still looked
+ * dual-classed to anything reading the raw flag, so clear it at the source instead.
+ */
+export function onDeleteClassItem(item) {
+  const actor = item?.parent;
+  if (item?.type !== "class" || actor?.type !== "character") return;
+
+  const ids = getExtraClassIds(actor);
+  if (ids.length === 0) return;
+
+  // Drop the deleted class from the list, and drop the whole list once fewer than two classes are
+  // left. A single remaining class still listed as an extra is not multi-class by any useful
+  // definition, and it would show up in an extra slot with the Class slot empty beside it.
+  const remaining = ids.filter((id) => id !== item.id && actor.items.get(id)?.type === "class");
+  const classCount = actor.itemTypes.class.filter((c) => c.id !== item.id).length;
+
+  if (classCount < 2 || remaining.length === 0) {
+    actor.unsetFlag(MODULE_ID, EXTRA_CLASSES_FLAG);
+    if (actor.getFlag(MODULE_ID, SECONDARY_CLASS_FLAG) !== undefined) {
+      actor.unsetFlag(MODULE_ID, SECONDARY_CLASS_FLAG);
+    }
+    return;
+  }
+
+  // Written as the list even when the character came in on the old single-id flag, which retires
+  // that flag rather than leaving two sources of truth behind.
+  actor.setFlag(MODULE_ID, EXTRA_CLASSES_FLAG, remaining);
+  if (actor.getFlag(MODULE_ID, SECONDARY_CLASS_FLAG) !== undefined) {
+    actor.unsetFlag(MODULE_ID, SECONDARY_CLASS_FLAG);
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "_id": "BFJffsw8zwaTY0iN",
+  "name": "Mender's Last Word",
+  "type": "action",
+  "img": "icons/magic/life/cross-worn-green.webp",
+  "system": {
+    "description": {
+      "value": "<p>Once per day, you may return a creature that died within the last minute to life at 1 Hit Point.</p><hr /><p>PF2e counts the daily use here. Set the creature's Hit Points to 1 and remove Dying and Unconscious.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "battle-mender-revive",
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "healing",
+        "manipulate"
+      ],
+      "rarity": "common"
+    },
+    "actionType": {
+      "value": "action"
+    },
+    "actions": {
+      "value": 3
+    },
+    "category": null,
+    "frequency": {
+      "value": 1,
+      "max": 1,
+      "per": "day"
+    },
+    "selfEffect": null,
+    "deathNote": false
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!BFJffsw8zwaTY0iN"
+}

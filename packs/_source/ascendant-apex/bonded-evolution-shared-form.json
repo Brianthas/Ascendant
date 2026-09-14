@@ -1,0 +1,53 @@
+{
+  "_id": "WTS9xXvHFhPOEFkg",
+  "name": "Evolution 4: Shared Form",
+  "type": "effect",
+  "img": "icons/magic/life/heart-cross-strong-flame-purple-orange.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>4 points.</strong> Choose one evolution of 3 points or fewer. The owner gains its benefits while the Bonded is manifested within 30 feet of them. Add a copy of that evolution's effect to the owner's sheet while it applies.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "bonded-evolution-shared-form",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "duration": {
+      "value": -1,
+      "unit": "unlimited",
+      "sustained": false,
+      "expiry": null
+    },
+    "start": {
+      "value": 0,
+      "initiative": null
+    },
+    "badge": null,
+    "tokenIcon": {
+      "show": false
+    },
+    "context": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!WTS9xXvHFhPOEFkg"
+}

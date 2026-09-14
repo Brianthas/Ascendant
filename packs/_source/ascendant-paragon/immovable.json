@@ -1,0 +1,188 @@
+{
+  "_id": "qH94qpcmEYslQAON",
+  "name": "Immovable",
+  "type": "feat",
+  "img": "icons/magic/earth/barrier-stone-explosion-debris.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>The world has agreed to stop asking you to move. Nothing shoves, drags, trips, or teleports you anywhere you did not intend to be, and the ground around you has taken on some of the same stubbornness, to the considerable inconvenience of anyone trying to cross it.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>You cannot be pushed, pulled, or repositioned against your will.</li><li>Immune to Prone.</li><li>Aura 10 feet: enemies treat squares within it as difficult terrain.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>Immune to Grabbed and Restrained.</li><li>You cannot be flanked.</li><li>Aura increases to 15 feet, and allies within it are also immune to forced movement.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>Aura increases to 20 feet.</li><li>A creature that fails to move you or an ally in your aura takes damage equal to twice your level.</li><li>Enemies cannot Step within your aura.</li><li>Enemies that end their turn in your aura are Off-Guard until the end of their next turn.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Aura increases to 30 feet.</li><li>You cannot be knocked from a surface, including while climbing or flying.</li><li>Enemies cannot teleport into, out of, or within your aura.</li></ul>\n<hr />\n<p><strong>In Foundry:</strong> the three condition immunities apply, you cannot be flanked from 5th, and <em>Immovable</em> in your effects panel draws the aura at the right radius. Enemies inside carry <em>Stubborn Ground</em>, which states what the aura does to them at your level, and allies carry <em>Anchored</em> from 5th.</p>\n<p>For the table: forced movement, the difficult terrain, the Step ban, the end-of-turn Off-Guard, the damage for a failed move, and teleportation. None of these has an actor-side hook in PF2e; the effects on the creatures inside are the reminder.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "Immunity",
+        "type": "prone"
+      },
+      {
+        "key": "Immunity",
+        "type": "grabbed",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Immunity",
+        "type": "restrained",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "override",
+        "path": "system.attributes.flanking.flankable",
+        "value": false,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "ascendant-immovable",
+        "label": "ASCENDANT.Rules.ImmovableToggle",
+        "toggleable": true,
+        "value": true
+      },
+      {
+        "key": "Aura",
+        "slug": "immovable",
+        "radius": "match(when(btwn(@actor.level, 1, 4), 10), when(btwn(@actor.level, 5, 9), 15), when(btwn(@actor.level, 10, 14), 20), when(gte(@actor.level, 15), 30))",
+        "effects": [
+          {
+            "uuid": "Compendium.ascendant.ascendant-paragon.Item.fqkUIauukdPeEWdR",
+            "affects": "enemies",
+            "events": [
+              "enter"
+            ],
+            "removeOnExit": true
+          },
+          {
+            "uuid": "Compendium.ascendant.ascendant-paragon.Item.kUxivYnfRe2UeqeB",
+            "affects": "allies",
+            "events": [
+              "enter"
+            ],
+            "removeOnExit": true,
+            "predicate": [
+              {
+                "gte": [
+                  "origin:level",
+                  5
+                ]
+              }
+            ]
+          }
+        ],
+        "appearance": {
+          "border": {
+            "color": "#7a5c3a",
+            "alpha": 0.75
+          },
+          "highlight": {
+            "color": "#7a5c3a",
+            "alpha": 0.2
+          }
+        },
+        "predicate": [
+          "ascendant-immovable"
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.DHqmbt95lMrgp9Yw",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.1oStblHJ7xUY3XX1",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.lRNlvFS5lsQ7UKKW",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "immovable",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-paragon",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!qH94qpcmEYslQAON"
+}

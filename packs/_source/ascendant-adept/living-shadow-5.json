@@ -1,0 +1,53 @@
+{
+  "_id": "8Vabt2hbBcwaFGoD",
+  "name": "Living Shadow (5th)",
+  "type": "feat",
+  "img": "icons/magic/perception/shadow-stealth-eyes-purple.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>[1 action] While in dim light or darkness, become invisible until you take a hostile action, Cast a Spell, or leave dim light.<ul><li>You may Sustain this to maintain it for up to 1 minute.</li></ul></li></ul><p>Granted automatically by Living Shadow at 5th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "living-shadow-5",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 5
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!8Vabt2hbBcwaFGoD"
+}

@@ -1,0 +1,53 @@
+{
+  "_id": "zNQDm6KFbF1Sa5l9",
+  "name": "Deathless (19th)",
+  "type": "feat",
+  "img": "icons/magic/life/heart-shadow-red.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>19th Level</strong></p><p><strong>19th Level</strong></p><ul><li>You no longer gain the Unconscious condition at 0 Hit Points unless your regeneration is deactivated. You are instead Slowed 1 until you begin a turn above 0 Hit Points.</li></ul><p>Granted automatically by Deathless at 19th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "deathless-19",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 19
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!zNQDm6KFbF1Sa5l9"
+}

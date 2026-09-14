@@ -1,0 +1,53 @@
+{
+  "_id": "QWFUkfErO90ls4FT",
+  "name": "Spellcasting Expertise (5th)",
+  "type": "feat",
+  "img": "icons/magic/symbols/runes-star-pentagon-blue.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>5th Level</strong></p><ul><li>Your spell attack and spell DC proficiency becomes <strong>Master</strong>.</li></ul><p>Granted automatically by Spellcasting Expertise at 5th level. The rank change is applied by the track itself; this feat records that it has arrived.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "spellcasting-expertise-5",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 5
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!QWFUkfErO90ls4FT"
+}

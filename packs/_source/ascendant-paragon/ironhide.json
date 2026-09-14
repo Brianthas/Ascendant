@@ -1,0 +1,144 @@
+{
+  "_id": "7jvcduWgeeX0XMDG",
+  "name": "Ironhide",
+  "type": "feat",
+  "img": "icons/skills/melee/shield-block-gray-orange.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>Harm reaches you at a discount. What would break another's ribs rearranges yours slightly, poisons thin to a bad taste, and the blow struck perfectly, at the perfect angle, at the perfect moment, lands about as well as any other.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>When you roll a Fortitude save, improve the degree of success by one.</li><li>Resist All equal to 2 + half your level.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>Immune to Precision damage.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>Immune to Persistent damage.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Critical hits against you are treated as normal hits.</li></ul>\n<hr />\n<p><strong>In Foundry:</strong> every clause applies automatically. Your Fortitude saves are improved one degree on the roll, the resistance to all damage scales with your level, and the three immunities arrive at their levels.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "AdjustDegreeOfSuccess",
+        "selector": "fortitude",
+        "adjustment": {
+          "criticalFailure": "one-degree-better",
+          "failure": "one-degree-better",
+          "success": "one-degree-better"
+        }
+      },
+      {
+        "key": "Resistance",
+        "type": "all-damage",
+        "value": "2 + floor(@actor.level / 2)"
+      },
+      {
+        "key": "Immunity",
+        "type": "precision",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Immunity",
+        "type": "persistent-damage",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Immunity",
+        "type": "critical-hits",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.Gr8tQPGvxMl9Fq5Q",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.hWKzuHMML3YPyS8I",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.0JgNg6gaV2WcA6rN",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "ironhide",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-paragon",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!7jvcduWgeeX0XMDG"
+}

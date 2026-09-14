@@ -1,0 +1,11 @@
+node_modules/
+.build/
+.extract/
+*.log
+
+# Compiled LevelDB packs. packs/_source/ is the committed form; the build regenerates these.
+packs/*
+!packs/_source/
+
+# Release zips are filed in Supporting Documents, never here.
+*.zip

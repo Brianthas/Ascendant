@@ -1,0 +1,53 @@
+{
+  "_id": "aXRDo8GYXRUid8hA",
+  "name": "Borrowed Time (7th)",
+  "type": "feat",
+  "img": "icons/magic/time/hourglass-yellow-green.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>7th Level</strong></p><p><strong>7th Level</strong></p><ul><li>One extra flourish action per round, paying its normal action cost.</li></ul><p>Granted automatically by Borrowed Time at 7th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "borrowed-time-7",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 7
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!aXRDo8GYXRUid8hA"
+}

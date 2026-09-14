@@ -1,0 +1,218 @@
+{
+  "_id": "McLDEYlvcFWHOF6W",
+  "name": "Bonded Undead",
+  "type": "npc",
+  "img": "icons/creatures/magical/humanoid-silhouette-dashing-blue.webp",
+  "system": {
+    "abilities": {
+      "str": {
+        "mod": 0
+      },
+      "dex": {
+        "mod": 0
+      },
+      "con": {
+        "mod": 0
+      },
+      "int": {
+        "mod": 0
+      },
+      "wis": {
+        "mod": 0
+      },
+      "cha": {
+        "mod": 0
+      }
+    },
+    "attributes": {
+      "ac": {
+        "details": "",
+        "value": 10
+      },
+      "allSaves": {
+        "value": ""
+      },
+      "hp": {
+        "details": "Shared with the owner; synced from their sheet.",
+        "max": 10,
+        "temp": 0,
+        "value": 10
+      },
+      "speed": {
+        "otherSpeeds": [],
+        "value": 25
+      }
+    },
+    "details": {
+      "blurb": "",
+      "languages": {
+        "details": "",
+        "value": []
+      },
+      "level": {
+        "value": 1
+      },
+      "privateNotes": "",
+      "publicNotes": "<p>A Bonded Soul companion in its Undead base form. Link it to its owner with <strong>Sync Bonded</strong> on the owner's sheet: it then has the owner's level, AC, saves, Perception and Hit Points, and its Strikes use the owner's best attack modifier with their highest attribute to damage. Drag evolutions from the Apex Talents compendium onto it; the pool is 3 + the owner's level points, reallocated during daily preparations.</p><p>Void healing: healed by void, harmed by vitality. Immune to disease and poison. Doesn't breathe.</p><p>Void healing follows from the undead trait, which PF2e reads for it.</p>"
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "perception": {
+      "details": "",
+      "mod": 0,
+      "senses": []
+    },
+    "resources": {},
+    "saves": {
+      "fortitude": {
+        "saveDetail": "",
+        "value": 0
+      },
+      "reflex": {
+        "saveDetail": "",
+        "value": 0
+      },
+      "will": {
+        "saveDetail": "",
+        "value": 0
+      }
+    },
+    "skills": {
+      "athletics": {
+        "base": 0
+      }
+    },
+    "traits": {
+      "rarity": "unique",
+      "size": {
+        "value": "med"
+      },
+      "value": [
+        "undead"
+      ]
+    }
+  },
+  "items": [
+    {
+      "_id": "P7Od1ntFWqbRtaO2",
+      "name": "Claws",
+      "type": "melee",
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "system": {
+        "attack": {
+          "value": ""
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "bonus": {
+          "value": 0
+        },
+        "damageRolls": {
+          "0": {
+            "damage": "1d6",
+            "damageType": "slashing"
+          }
+        },
+        "description": {
+          "value": ""
+        },
+        "publication": {
+          "title": "Ascendant: Mythic Rebuilt",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "range": null,
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "agile"
+          ]
+        }
+      },
+      "sort": 100000,
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!actors.items!McLDEYlvcFWHOF6W.P7Od1ntFWqbRtaO2"
+    },
+    {
+      "_id": "EcLlX5IMiGUYJ9SB",
+      "name": "Base Form: Undead",
+      "type": "effect",
+      "img": "icons/creatures/magical/humanoid-silhouette-dashing-blue.webp",
+      "system": {
+        "description": {
+          "value": "<p>Void healing: healed by void, harmed by vitality. Immune to disease and poison. Doesn't breathe.</p><p>Void healing follows from the undead trait, which PF2e reads for it.</p>",
+          "gm": ""
+        },
+        "publication": {
+          "title": "Ascendant: Mythic Rebuilt",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "rules": [
+          {
+            "key": "Immunity",
+            "type": "disease"
+          },
+          {
+            "key": "Immunity",
+            "type": "poison"
+          }
+        ],
+        "slug": "bonded-base-form-undead",
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "unique"
+        },
+        "level": {
+          "value": 1
+        },
+        "duration": {
+          "value": -1,
+          "unit": "unlimited",
+          "sustained": false,
+          "expiry": null
+        },
+        "start": {
+          "value": 0,
+          "initiative": null
+        },
+        "badge": null,
+        "tokenIcon": {
+          "show": false
+        },
+        "context": null
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!actors.items!McLDEYlvcFWHOF6W.EcLlX5IMiGUYJ9SB"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!actors!McLDEYlvcFWHOF6W"
+}

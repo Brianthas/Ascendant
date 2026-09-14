@@ -1,0 +1,53 @@
+{
+  "_id": "JDVQnGj81WUIT7GG",
+  "name": "Haven (10th)",
+  "type": "feat",
+  "img": "icons/environment/settlement/house-two-stories-small.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>Opening the door is a single action rather than a 10-minute activity.</li><li>In Fortress mode, creatures inside cannot be scried, tracked, or located by any magic.</li></ul><p>Granted automatically by Haven at 10th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "haven-10",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 10
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!JDVQnGj81WUIT7GG"
+}

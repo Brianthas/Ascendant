@@ -1,0 +1,53 @@
+{
+  "_id": "9ZbwaP9skdJ6peq2",
+  "name": "Evolution 4: Warded",
+  "type": "effect",
+  "img": "icons/magic/life/heart-cross-strong-flame-purple-orange.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>4 points.</strong> When targeted by a spell, it may attempt to counteract that spell as a reaction, using the owner's class DC and half their level as the counteract rank.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "bonded-evolution-warded",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "duration": {
+      "value": -1,
+      "unit": "unlimited",
+      "sustained": false,
+      "expiry": null
+    },
+    "start": {
+      "value": 0,
+      "initiative": null
+    },
+    "badge": null,
+    "tokenIcon": {
+      "show": false
+    },
+    "context": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!9ZbwaP9skdJ6peq2"
+}

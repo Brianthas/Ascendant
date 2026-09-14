@@ -1,0 +1,160 @@
+{
+  "_id": "tNihDKoeRbs8nD1S",
+  "name": "Lifeline",
+  "type": "feat",
+  "img": "icons/magic/life/heart-shadow-red.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>You have tied your life to theirs with something that cannot be cut from the outside. Their wounds arrive in your body, their afflictions find your veins, and every protection you raise for yourself settles over all of them at once, which works splendidly until you fall.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>You gain the Vital Bond focus spell, and add 1 to your maximum focus pool as normal.</li><li>When you restore Hit Points, add twice your spell proficiency bonus to each target: +4 Trained, +8 Expert, +12 Master, +16 Legendary, +20 Mythic.</li><li>You may restore Hit Points at a range of 60 feet regardless of a spell's normal range.</li></ul>\n<p><strong>Vital Bond</strong> [1 action] (concentrate, focus) <strong>Range</strong> 60 feet; <strong>Targets</strong> any number of allies; <strong>Duration</strong> until your next daily preparations.</p>\n<ul>\n<li>While a target is bonded, whenever it would take damage you may take any amount of that damage yourself instead. This requires no action and has no frequency limit.</li>\n<li>Damage taken this way applies your own immunities, resistances, and weaknesses rather than the target's.</li>\n<li>The bond is suspended while a target is further than 60 feet from you, and ends entirely if you fall unconscious.</li>\n</ul>\n<p><strong>5th Level</strong></p><ul><li>Bonded allies gain your resistances and immunities while within the bond's range.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>The bond's range increases to 120 feet.</li><li>When you Cast a Spell that targets a single creature and does not restore Hit Points, deal damage, or impose a condition, every bonded ally gains its effects as well.</li><li>A 2-action spell restoring Hit Points to a single bonded ally costs 1 action instead and ignores the spell's normal range.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>When a bonded ally would gain a condition, you may gain it yourself instead.</li><li>Bonded allies cannot be reduced below 1 Hit Point while you are conscious and above 0 Hit Points.</li></ul>\n<p><strong>20th Level</strong></p><ul><li>Once per day, as a free action, restore every ally within 60 feet to full Hit Points and remove all conditions from them.</li></ul>\n<hr />\n<p><strong>In Foundry:</strong> Vital Bond is added to your sheet (move it into a focus spellcasting entry) and your focus pool maximum rises by 1. Every healing spell you cast adds the bonus for your rank to its roll. Apply <em>Lifeline: Bonded</em> to each bonded ally as a reminder.</p>\n<p>For the table: everything the bond does. Taking an ally's damage, the shared resistances from 5th, the shared spells and the range from 10th, the condition transfer and the floor of 1 Hit Point from 15th, and the daily restoration from 20th all reach other actors, where no rule element from your sheet can act.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "add",
+        "path": "system.resources.focus.{item|flags.ascendant.focusField}",
+        "value": 1
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "add",
+        "path": "system.resources.focus.cap",
+        "value": 1
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.Zp2qPwilLpTVh0QS",
+        "allowDuplicate": false
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "spell-healing",
+        "slug": "lifeline-healing",
+        "label": "ASCENDANT.Rules.Lifeline",
+        "type": "untyped",
+        "value": "4 * @actor.system.proficiencies.spellcasting.rank"
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "spell-healing",
+        "slug": "lifeline-healing-mythic",
+        "label": "ASCENDANT.Rules.LifelineMythic",
+        "type": "untyped",
+        "value": 4,
+        "predicate": [
+          "feat:spellcasting-expertise",
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Note",
+        "selector": "spell-healing",
+        "title": "Lifeline",
+        "text": "ASCENDANT.Note.LifelineRange"
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.3K6V9CWx8Ud20BFP",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.qT0Ebqxs2wq5ECK1",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.SwT003dETCnzLihs",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.GOoX471hO5O9Jgyr",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              20
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "lifeline",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-apex",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "ascendant": {
+      "focusField": "max"
+    }
+  },
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!tNihDKoeRbs8nD1S"
+}

@@ -1,0 +1,53 @@
+{
+  "_id": "fHzJJX6xOm3bi706",
+  "name": "Elemental Embodiment (5th)",
+  "type": "feat",
+  "img": "icons/creatures/magical/spirit-fire-orange.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>You no longer need to eat, drink, breathe, or sleep, and are unaffected by environmental conditions related to your element.</li><li>Creatures that touch you, or hit you with an unarmed or melee attack, take damage equal to half your level.</li></ul><p>Granted automatically by Elemental Embodiment at 5th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "elemental-embodiment-5",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 5
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!fHzJJX6xOm3bi706"
+}

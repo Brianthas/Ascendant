@@ -1,0 +1,94 @@
+{
+  "_id": "RjAsCEZ25fa6LnTn",
+  "name": "Second Wind",
+  "type": "feat",
+  "img": "icons/magic/life/heart-glowing-red.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>The blow lands, the world goes briefly white, and something in you objects. You are back on your feet before anyone has finished deciding you were down, with a great deal more left in you than the situation warranted.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>Once per encounter, when you are reduced to 0 Hit Points, you immediately regain Hit Points equal to half your maximum and are not knocked unconscious.<ul><li>This triggers even against damage that would normally kill you outright.</li></ul></li></ul>\n<p><strong>5th Level</strong></p><ul><li>When this triggers, you also gain regeneration 5 for 1 minute.</li><li>You do not increase your Wounded value.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>You may use Second Wind twice per encounter.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>When this triggers, you also reduce your Doomed value by 1.</li><li>You gain a +2 status bonus to attack rolls and saves until the end of your next turn.</li></ul>\n<hr />\n<p><strong>In Foundry:</strong> when damage applied through a chat card leaves you at 0 Hit Points during an encounter, you are set to half your maximum and a message says so. From 5th the regeneration effect is applied with it, and from 15th the surge. Uses are counted per combat: one, or two from 10th.</p>\n<p>For the table: damage applied by editing the sheet by hand does not trigger it; the Doomed reduction from 15th; and any use outside a tracked combat.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.OP3wTXgLaKieTkHA",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.V3PWNmKS7oXOjFt4",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.3wRMAfItJI3NPh0W",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "second-wind",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-adept",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!RjAsCEZ25fa6LnTn"
+}

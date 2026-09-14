@@ -1,0 +1,45 @@
+{
+  "_id": "6XZfvbCm9BkfPINa",
+  "name": "Reshape Bonded Weapon",
+  "type": "action",
+  "img": "icons/weapons/swords/sword-guard-purple.webp",
+  "system": {
+    "description": {
+      "value": "<p>As a free action once per round, your bonded weapon takes the form of any simple, martial, or advanced melee or ranged weapon. Ranged forms generate their own ammunition and never need reloading.</p>\n<ul>\n<li>From 3rd level, whenever you change its form, choose one precious material. It counts as that material for overcoming resistances, weaknesses, and immunities.</li>\n<li>From 5th level, choose a weapon group whose critical specialization effect it has, changeable whenever you change its form.</li>\n<li>Twice per round from 11th; any number of times from 19th.</li>\n</ul>\n<hr />\n<p>Press <strong>Reshape</strong> on the card this posts and pick the new form. Set the material and critical specialization group in the dropdowns in your effects panel.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "soulbound-arsenal-reshape",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "common"
+    },
+    "actionType": {
+      "value": "free"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": null,
+    "frequency": null,
+    "selfEffect": null,
+    "deathNote": false
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!6XZfvbCm9BkfPINa"
+}

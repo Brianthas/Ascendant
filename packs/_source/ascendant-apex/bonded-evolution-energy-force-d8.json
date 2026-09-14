@@ -1,0 +1,62 @@
+{
+  "_id": "DNgMflQzklTv00yj",
+  "name": "Evolution 2: Energy Attacks (force, d8)",
+  "type": "effect",
+  "img": "icons/magic/life/heart-cross-strong-flame-purple-orange.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>2 points.</strong> Strikes deal additional force damage equal to its base Strike's damage die, for a d8 base Strike.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "bonded-energy-force",
+        "diceNumber": 1,
+        "dieSize": "d8",
+        "damageType": "force"
+      }
+    ],
+    "slug": "bonded-evolution-energy-force-d8",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "duration": {
+      "value": -1,
+      "unit": "unlimited",
+      "sustained": false,
+      "expiry": null
+    },
+    "start": {
+      "value": 0,
+      "initiative": null
+    },
+    "badge": null,
+    "tokenIcon": {
+      "show": false
+    },
+    "context": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!DNgMflQzklTv00yj"
+}

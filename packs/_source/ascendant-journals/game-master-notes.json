@@ -1,0 +1,269 @@
+{
+  "_id": "EhjRzfNZsi9mIAAv",
+  "name": "Game Master Notes",
+  "pages": [
+    {
+      "_id": "aHVq21ZfMgn0uttc",
+      "name": "What the Numbers Say",
+      "type": "text",
+      "title": {
+        "show": false,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Every figure in this section was computed against the creature-building tables in GM Core, across the full d20 range including natural 1s and 20s. Three findings drive every recommendation that follows.</p>\n<ul>\n<li><strong>Player offence rises steeply.</strong> Attack rolls and spell DCs run roughly +2 over standard math at 1st and 5th level, +6 by 10th, +7 by 15th, settling to +5 at 20th.</li>\n<li><strong>That bonus crosses the critical threshold.</strong> Because Pathfinder triggers a critical hit at ten over the target number, the increase converts ordinary hits into critical hits rather than misses into hits. Against Extreme AC, critical hits rise from 5 percent to between 25 and 30 percent.</li>\n<li><strong>Player defence keeps pace.</strong> Enhanced Defense reduces an Extreme attacker from 80 percent hits and 30 percent criticals against a well-built character to 60 percent and 10 percent by 15th level.</li>\n</ul>\n<p><em>The practical consequence is narrow and specific. Your creatures need substantially more Hit Points, modestly better Armour Class and saves, and the same attack bonus they already had.</em></p>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!EhjRzfNZsi9mIAAv.aHVq21ZfMgn0uttc"
+    },
+    {
+      "_id": "JgUcL7F6ibq4Es5e",
+      "name": "Raise Hit Points First",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>This is the single most effective adjustment, and for most encounters it is the only one you need. Damage per round against Extreme-difficulty opposition runs between 1.9 and 3.3 times standard, rising to 5.4 times for a character with Unbroken Tempo. A fight built to the ordinary budget ends in a third of the expected rounds.</p>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Damage vs standard</th>\n<th>With Unbroken Tempo</th>\n<th>Suggested HP</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1st</td>\n<td>1.9x</td>\n<td>2.2x</td>\n<td>x2</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>2.4x</td>\n<td>2.9x</td>\n<td>x2.5</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>3.0x</td>\n<td>3.9x</td>\n<td>x3</td>\n</tr>\n<tr>\n<td>15th</td>\n<td>3.3x</td>\n<td>5.4x</td>\n<td>x3.5</td>\n</tr>\n<tr>\n<td>20th</td>\n<td>2.6x</td>\n<td>4.3x</td>\n<td>x3</td>\n</tr>\n</tbody></table>\n<p><em>Where the party includes a character with Unbroken Tempo, Warmage, or Bonded Soul, use the upper figure. Each of those roughly doubles a character&#39;s effective actions on top of the track bonuses.</em></p>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 100000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!EhjRzfNZsi9mIAAv.JgUcL7F6ibq4Es5e"
+    },
+    {
+      "_id": "mrUXEWbYKE30Ki1F",
+      "name": "Raise Defences Modestly",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Moderate and High arrays stop challenging these characters after the early levels. Extreme arrays remain meaningful throughout, and are the sensible default from 5th level onward.</p>\n<ul>\n<li>Use the Extreme band for Armour Class and saving throws from 5th level.</li>\n<li>Add 2 to those values from 15th, where the offensive gap is widest.</li>\n<li>Below 5th level, the High band is sufficient.</li>\n</ul>\n<p><em>Against spell DCs the picture is starker. A creature with a Moderate save fails against these casters 75 to 80 percent of the time, and critically fails between 25 and 35 percent, against a standard 5 percent. Creatures you expect to resist magic need the Extreme save band, not merely a good one.</em></p>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 200000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!EhjRzfNZsi9mIAAv.mrUXEWbYKE30Ki1F"
+    },
+    {
+      "_id": "EJ3SzdDcrMbGvf15",
+      "name": "Leave Attack and Damage Alone",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Enhanced Defense has already closed most of the gap on the receiving end. A creature that hits harder or more often is not compensating for anything; it is simply killing player characters.</p>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Without Enhanced Defense</th>\n<th>With it</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1st</td>\n<td>80% / 30% crit</td>\n<td>75% / 25%</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>80% / 30%</td>\n<td>70% / 20%</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>80% / 30%</td>\n<td>65% / 15%</td>\n</tr>\n<tr>\n<td>15th</td>\n<td>80% / 30%</td>\n<td>60% / 10%</td>\n</tr>\n<tr>\n<td>20th</td>\n<td>80% / 30%</td>\n<td>60% / 10%</td>\n</tr>\n</tbody></table>\n<p><em>An Extreme-attack creature of the party&#39;s level, unmodified, remains a genuine threat at every level. That is the correct baseline.</em></p>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 300000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!EhjRzfNZsi9mIAAv.EJ3SzdDcrMbGvf15"
+    },
+    {
+      "_id": "qxkdR5XZ8tRnH1yT",
+      "name": "Do Not Raise Monster Level",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>It is the obvious correction and it is the wrong one. Restoring standard hit rates requires creatures four to five levels above the party, and their attack bonus scales with them.</p>\n<table>\n<thead>\n<tr>\n<th>Party Level</th>\n<th>Level Needed</th>\n<th>That Creature vs a PC</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1st</td>\n<td>2nd</td>\n<td>85% hits, 35% criticals</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>8th</td>\n<td>95% hits, 45% criticals</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>14th</td>\n<td>95% hits, 45% criticals</td>\n</tr>\n<tr>\n<td>15th</td>\n<td>20th</td>\n<td>95% hits, 50% criticals</td>\n</tr>\n<tr>\n<td>20th</td>\n<td>24th</td>\n<td>90% hits, 40% criticals</td>\n</tr>\n</tbody></table>\n<p><em>A creature four levels above the party critically hits a well-built character roughly half the time. Raise Hit Points and defences instead, and reserve level adjustment for a single climactic opponent where the lethality is the point.</em></p>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 400000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!EhjRzfNZsi9mIAAv.qxkdR5XZ8tRnH1yT"
+    },
+    {
+      "_id": "AzWKr1WMZcaa7PJk",
+      "name": "The Low Levels Are the Dangerous Ones",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Spellcasting Expertise adds two riders to every creature a spell damages: the proficiency bonus and the caster&#39;s spellcasting attribute modifier. Both apply per creature, so an area spell multiplies the pair across every target.</p>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Rider</th>\n<th>Across 6</th>\n<th>Low-HP Creature</th>\n<th>Share of Its HP</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1st</td>\n<td>8</td>\n<td>48</td>\n<td>16</td>\n<td>50%</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>12</td>\n<td>72</td>\n<td>59</td>\n<td>20%</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>15</td>\n<td>90</td>\n<td>135</td>\n<td>11%</td>\n</tr>\n<tr>\n<td>15th</td>\n<td>18</td>\n<td>108</td>\n<td>210</td>\n<td>9%</td>\n</tr>\n<tr>\n<td>20th</td>\n<td>19</td>\n<td>114</td>\n<td>285</td>\n<td>7%</td>\n</tr>\n</tbody></table>\n<p>This runs opposite to intuition. The riders are most devastating at 1st level, where they alone account for half a lesser creature&#39;s Hit Points before a single die is rolled, and become a rounding error by the midgame.</p>\n<ul>\n<li>Groups of weak creatures do not function as encounters against an area caster at levels 1 through 4. Use them as spectacle.</li>\n<li>From 5th level the problem resolves itself, and ordinary encounter budgets work again.</li>\n<li>Budget Hit Points per encounter rather than applying one flat multiplier. A single-target martial and an area caster strain entirely different parts of the budget.</li>\n</ul>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 500000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!EhjRzfNZsi9mIAAv.AzWKr1WMZcaa7PJk"
+    },
+    {
+      "_id": "3fSvGEGFRJYROfmv",
+      "name": "Talents That Remove Your Tools",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Most of this ruleset adjusts numbers, and numbers can be answered with numbers. A handful of Talents instead remove a category of encounter design outright. These are worth knowing before they surprise you at the table.</p>\n<ul>\n<li><strong>Unbound Casting</strong> at 10th and <strong>Unbroken Tempo</strong> at 15th — action denial stops working. Slowed, Stunned, and Paralyzed no longer prevent that character from acting. Damage, unconsciousness, and physically removing them from the fight still do.</li>\n<li><strong>Dread Presence</strong> at 17th — nothing in the game is immune to the aura, including mindless and fear-immune creatures.</li>\n<li><strong>Immovable</strong> at 15th — an anti-teleport aura. Creatures that rely on translocation to escape or reposition lose that option near this character.</li>\n<li><strong>Sovereign Mind</strong> at 10th and <strong>Piercing Gleam</strong> at 15th — Will-based incapacitation, illusions, and most mental effects stop landing.</li>\n<li><strong>Flicker Step</strong> from 1st — the whole party relocates 100 feet per action through solid obstacles, scaling to a mile. This reshapes maps and journeys more than fights.</li>\n<li><strong>Haven</strong> and <strong>The Ledger</strong> — attrition, encumbrance, and supply pressure largely stop being levers you can pull.</li>\n</ul>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 600000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!EhjRzfNZsi9mIAAv.3fSvGEGFRJYROfmv"
+    },
+    {
+      "_id": "cgWffTY1a8NYyxrM",
+      "name": "What Still Works",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Nothing in this ruleset is genuinely uncounterable. Every numerical bonus can be answered by a numerical adjustment on your side of the screen, and where a Talent removes an immunity or an outcome, it does so narrowly and the creature still rolls.</p>\n<ul>\n<li><strong>Hit Points and action economy.</strong> More creatures, better positioned, acting more often, is the most reliable pressure available to you. It scales smoothly and it never feels arbitrary.</li>\n<li><strong>Terrain and objectives.</strong> A fight the party cannot win by damage alone is a fight their damage multiplier does not solve. Hostages, timers, collapsing ground, and objectives that must be reached rather than killed all remain fully effective.</li>\n<li><strong>The talents themselves.</strong> Every character has exactly three, and each covers a narrow slice. A party that has spent its picks on offence is genuinely fragile; one that has spent them on defence is genuinely slow. Design against the gaps rather than the strengths.</li>\n<li><strong>Their own weaknesses.</strong> Deathless names a damage type that switches it off. Living Shadow needs dim light. Trail Breaker leaves allies falling when a fight starts mid-flight. These are written into the Talents deliberately, and using them is fair play rather than spite.</li>\n</ul>\n<p><em>Favour Extreme arrays, apply templates freely, multiply Hit Points without apology, and leave attack bonuses where the Bestiary put them. That combination holds up at every level this ruleset covers.</em></p>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 700000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!EhjRzfNZsi9mIAAv.cgWffTY1a8NYyxrM"
+    }
+  ],
+  "folder": null,
+  "sort": 500000,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "ascendant": {
+      "publication": "Ascendant: Mythic Rebuilt"
+    }
+  },
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!journal!EhjRzfNZsi9mIAAv"
+}

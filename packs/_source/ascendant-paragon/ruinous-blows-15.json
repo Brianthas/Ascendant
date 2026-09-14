@@ -1,0 +1,53 @@
+{
+  "_id": "SeaWesifPwBKmSzH",
+  "name": "Ruinous Blows (15th)",
+  "type": "feat",
+  "img": "icons/skills/melee/strike-hammer-destructive-orange.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Your Strikes ignore immunity to your damage type, dealing half damage instead of none.</li><li>The AC penalty increases to -3.</li></ul><p>Granted automatically by Ruinous Blows at 15th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ruinous-blows-15",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 15
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!SeaWesifPwBKmSzH"
+}

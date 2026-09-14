@@ -1,0 +1,63 @@
+{
+  "_id": "130jBBxI6yjMXiBE",
+  "name": "Dread Form",
+  "type": "effect",
+  "img": "icons/magic/life/heart-cross-strong-flame-purple-orange.webp",
+  "system": {
+    "description": {
+      "value": "<p>You began your turn within 30 feet of a Bonded with Dread Form and failed a Will save against its owner's class DC: Frightened 1.</p><hr /><p>The aura applies Frightened 1 as the reminder; roll the save when your turn begins inside it and remove this effect on a success.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL",
+        "inMemoryOnly": true
+      }
+    ],
+    "slug": "bonded-dread-form-frightened",
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "emotion",
+        "fear",
+        "mental"
+      ],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "duration": {
+      "value": -1,
+      "unit": "unlimited",
+      "sustained": false,
+      "expiry": null
+    },
+    "start": {
+      "value": 0,
+      "initiative": null
+    },
+    "badge": null,
+    "tokenIcon": {
+      "show": true
+    },
+    "context": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!130jBBxI6yjMXiBE"
+}

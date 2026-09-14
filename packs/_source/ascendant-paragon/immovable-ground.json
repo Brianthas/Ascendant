@@ -1,0 +1,53 @@
+{
+  "_id": "fqkUIauukdPeEWdR",
+  "name": "Immovable: Stubborn Ground",
+  "type": "effect",
+  "img": "icons/magic/earth/barrier-stone-explosion-debris.webp",
+  "system": {
+    "description": {
+      "value": "<p>You are inside an <strong>Immovable</strong> character's aura. Every square in it is difficult terrain for you.</p>\n<p>From the owner's 10th level: you cannot Step here, and if you end your turn inside you are Off-Guard until the end of your next turn. If you fail to move the owner or an ally in the aura, you take damage equal to twice the owner's level. From their 15th level you cannot teleport into, out of, or within the aura.</p>\n<hr />\n<p>This effect arrives and leaves with the aura. It does not need removing by hand.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "immovable-ground",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "duration": {
+      "value": -1,
+      "unit": "unlimited",
+      "sustained": false,
+      "expiry": null
+    },
+    "start": {
+      "value": 0,
+      "initiative": null
+    },
+    "badge": null,
+    "tokenIcon": {
+      "show": true
+    },
+    "context": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!fqkUIauukdPeEWdR"
+}

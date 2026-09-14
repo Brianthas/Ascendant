@@ -1,0 +1,90 @@
+{
+  "_id": "JmMLOFm4CpP8ebEt",
+  "name": "Piercing Gleam (5th+)",
+  "type": "effect",
+  "img": "icons/magic/light/beam-rays-yellow.webp",
+  "system": {
+    "description": {
+      "value": "<p>You are inside a <strong>Piercing Gleam</strong> aura. You see as though in bright light regardless of actual conditions, and gain a +2 status bonus to saves against illusion, emotion and mental effects.</p>\n<p>You see through illusions, morphs and polymorphs, perceiving things as they truly are, and are immune to visual illusion effects. This never reveals an ally who wishes to remain hidden, and never helps an enemy see through anything.</p>\n\n<hr />\n<p>This effect arrives and leaves with the aura. It does not need removing by hand.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "Sense",
+        "selector": "darkvision"
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "saving-throw",
+        "slug": "ascendant-piercing-gleam",
+        "label": "ASCENDANT.Rules.PiercingGleam",
+        "type": "status",
+        "value": 2,
+        "predicate": [
+          {
+            "or": [
+              "item:trait:illusion",
+              "item:trait:emotion",
+              "item:trait:mental"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Sense",
+        "selector": "truesight",
+        "acuity": "precise"
+      },
+      {
+        "key": "Immunity",
+        "type": "visual",
+        "exceptions": [],
+        "definition": [
+          "item:trait:illusion"
+        ]
+      }
+    ],
+    "slug": "piercing-gleam-effect-5",
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "light"
+      ],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "duration": {
+      "value": -1,
+      "unit": "unlimited",
+      "sustained": false,
+      "expiry": null
+    },
+    "start": {
+      "value": 0,
+      "initiative": null
+    },
+    "badge": null,
+    "tokenIcon": {
+      "show": false
+    },
+    "context": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!JmMLOFm4CpP8ebEt"
+}

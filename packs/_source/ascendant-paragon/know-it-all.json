@@ -1,0 +1,206 @@
+{
+  "_id": "pnSnfmB2iVRIzSFO",
+  "name": "Know-It-All",
+  "type": "feat",
+  "img": "icons/sundries/books/book-open-purple.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>There is no subject on which you lack an opinion, and irritatingly, you are usually right. Locks, languages, lineages, poisons, the tensile strength of a rope bridge: you have read about all of it, and you will explain it now whether or not anyone asked.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>You do not gain Skill Increases. Instead you are Expert in all non-Lore skills.<ul><li>Lore skills from your background match these ranks.</li></ul></li><li>You gain two extra Skill Feats every level.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>Once per turn, you may Recall Knowledge as a free action.</li><li>When you Recall Knowledge, treat a success as a critical success.</li></ul>\n<p><strong>7th Level</strong></p><ul><li>Master in all non-Lore skills.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Legendary in all non-Lore skills.</li></ul>\n<hr />\n<p><strong>In Foundry:</strong> every non-Lore skill is at least Expert, Master from 7th and Legendary from 15th. A <em>Know-It-All</em> feat group with two skill feat slots per level appears on your Feats tab. From 5th a Recall Knowledge success is a critical success on the roll.</p>\n<p>For the table: do not spend your class's skill increases; raise your background Lore skills to match by hand; and Recall Knowledge as a free action once per turn.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.skills.acrobatics.rank",
+        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.skills.arcana.rank",
+        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.skills.athletics.rank",
+        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.skills.crafting.rank",
+        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.skills.deception.rank",
+        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.skills.diplomacy.rank",
+        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.skills.intimidation.rank",
+        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.skills.medicine.rank",
+        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.skills.nature.rank",
+        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.skills.occultism.rank",
+        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.skills.performance.rank",
+        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.skills.religion.rank",
+        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.skills.society.rank",
+        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.skills.stealth.rank",
+        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.skills.survival.rank",
+        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.skills.thievery.rank",
+        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+      },
+      {
+        "key": "AdjustDegreeOfSuccess",
+        "selector": "skill-check",
+        "adjustment": {
+          "success": "one-degree-better"
+        },
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          },
+          "action:recall-knowledge"
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.Pbdk6d4p6fZ5fd5G",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.xZxKQksWrgFAyn2v",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.NdJdmI4OrwPsTz7N",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "know-it-all",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-paragon",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!pnSnfmB2iVRIzSFO"
+}

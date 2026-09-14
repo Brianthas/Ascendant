@@ -1,0 +1,198 @@
+{
+  "_id": "HDoiSht0wsLU4Fgw",
+  "name": "Evolution 3: Regeneration",
+  "type": "effect",
+  "img": "icons/magic/life/heart-cross-strong-flame-purple-orange.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>3 points.</strong> Regeneration equal to half the owner's level, deactivated by the damage type matching the base form: spirit for Fiend and Celestial, vitality for Undead, void for Beast, mental for Aberration, or its chosen elemental type for Elemental. Choose the deactivating type when adding this.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "ChoiceSet",
+        "slug": "bondedRegen",
+        "rollOption": "ascendant-bonded-regen",
+        "prompt": "ASCENDANT.Bonded.RegenPrompt",
+        "adjustName": true,
+        "choices": [
+          {
+            "value": "spirit",
+            "label": "PF2E.TraitSpirit"
+          },
+          {
+            "value": "vitality",
+            "label": "PF2E.TraitVitality"
+          },
+          {
+            "value": "void",
+            "label": "PF2E.TraitVoid"
+          },
+          {
+            "value": "mental",
+            "label": "PF2E.TraitMental"
+          },
+          {
+            "value": "acid",
+            "label": "PF2E.TraitAcid"
+          },
+          {
+            "value": "cold",
+            "label": "PF2E.TraitCold"
+          },
+          {
+            "value": "electricity",
+            "label": "PF2E.TraitElectricity"
+          },
+          {
+            "value": "fire",
+            "label": "PF2E.TraitFire"
+          },
+          {
+            "value": "sonic",
+            "label": "PF2E.TraitSonic"
+          }
+        ]
+      },
+      {
+        "key": "FastHealing",
+        "type": "regeneration",
+        "value": "floor(@actor.level / 2)",
+        "deactivatedBy": [
+          "spirit"
+        ],
+        "predicate": [
+          "ascendant-bonded-regen:spirit"
+        ]
+      },
+      {
+        "key": "FastHealing",
+        "type": "regeneration",
+        "value": "floor(@actor.level / 2)",
+        "deactivatedBy": [
+          "vitality"
+        ],
+        "predicate": [
+          "ascendant-bonded-regen:vitality"
+        ]
+      },
+      {
+        "key": "FastHealing",
+        "type": "regeneration",
+        "value": "floor(@actor.level / 2)",
+        "deactivatedBy": [
+          "void"
+        ],
+        "predicate": [
+          "ascendant-bonded-regen:void"
+        ]
+      },
+      {
+        "key": "FastHealing",
+        "type": "regeneration",
+        "value": "floor(@actor.level / 2)",
+        "deactivatedBy": [
+          "mental"
+        ],
+        "predicate": [
+          "ascendant-bonded-regen:mental"
+        ]
+      },
+      {
+        "key": "FastHealing",
+        "type": "regeneration",
+        "value": "floor(@actor.level / 2)",
+        "deactivatedBy": [
+          "acid"
+        ],
+        "predicate": [
+          "ascendant-bonded-regen:acid"
+        ]
+      },
+      {
+        "key": "FastHealing",
+        "type": "regeneration",
+        "value": "floor(@actor.level / 2)",
+        "deactivatedBy": [
+          "cold"
+        ],
+        "predicate": [
+          "ascendant-bonded-regen:cold"
+        ]
+      },
+      {
+        "key": "FastHealing",
+        "type": "regeneration",
+        "value": "floor(@actor.level / 2)",
+        "deactivatedBy": [
+          "electricity"
+        ],
+        "predicate": [
+          "ascendant-bonded-regen:electricity"
+        ]
+      },
+      {
+        "key": "FastHealing",
+        "type": "regeneration",
+        "value": "floor(@actor.level / 2)",
+        "deactivatedBy": [
+          "fire"
+        ],
+        "predicate": [
+          "ascendant-bonded-regen:fire"
+        ]
+      },
+      {
+        "key": "FastHealing",
+        "type": "regeneration",
+        "value": "floor(@actor.level / 2)",
+        "deactivatedBy": [
+          "sonic"
+        ],
+        "predicate": [
+          "ascendant-bonded-regen:sonic"
+        ]
+      }
+    ],
+    "slug": "bonded-evolution-regeneration",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "duration": {
+      "value": -1,
+      "unit": "unlimited",
+      "sustained": false,
+      "expiry": null
+    },
+    "start": {
+      "value": 0,
+      "initiative": null
+    },
+    "badge": null,
+    "tokenIcon": {
+      "show": false
+    },
+    "context": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!HDoiSht0wsLU4Fgw"
+}

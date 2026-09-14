@@ -1,0 +1,82 @@
+{
+  "_id": "e03Gpa7qR7g5mpPs",
+  "name": "Haven Storage",
+  "type": "backpack",
+  "img": "icons/environment/settlement/house-two-stories-small.webp",
+  "system": {
+    "description": {
+      "value": "<p>Your room in Haven. It holds 20 Bulk per party member, and nothing inside spoils, rots or ages.</p>\n<hr />\n<p>Drag items onto this container on your Inventory tab to leave them in Haven. Its capacity follows the party's size on its own.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-haven-storage",
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "extradimensional",
+        "magical"
+      ],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "quantity": 1,
+    "baseItem": null,
+    "bulk": {
+      "value": 0,
+      "heldOrStowed": 0,
+      "capacity": 20,
+      "ignored": 999
+    },
+    "hp": {
+      "value": 0,
+      "max": 0
+    },
+    "hardness": 0,
+    "price": {
+      "value": {}
+    },
+    "equipped": {
+      "carryType": "worn",
+      "invested": null
+    },
+    "containerId": null,
+    "size": "med",
+    "material": {
+      "type": null,
+      "grade": null
+    },
+    "identification": {
+      "status": "identified",
+      "unidentified": {
+        "data": {},
+        "img": "",
+        "name": ""
+      },
+      "misidentified": {}
+    },
+    "collapsed": false,
+    "stowing": true,
+    "usage": {
+      "value": "worn"
+    },
+    "subitems": []
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!e03Gpa7qR7g5mpPs"
+}

@@ -1,0 +1,47 @@
+{
+  "_id": "fUBT30NGGk9XTpG2",
+  "name": "Reactive Spellstrike",
+  "type": "action",
+  "img": "icons/magic/fire/dagger-rune-enchant-flame-blue-yellow.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>Trigger</strong> A creature within your reach uses an action that would trigger a Reactive Strike, or moves within your reach.</p><p><strong>Effect</strong> You Spellstrike that creature.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "warmage-reactive-spellstrike",
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "magical"
+      ],
+      "rarity": "common"
+    },
+    "actionType": {
+      "value": "reaction"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": null,
+    "frequency": null,
+    "selfEffect": null,
+    "deathNote": false
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!fUBT30NGGk9XTpG2"
+}

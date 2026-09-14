@@ -1,0 +1,127 @@
+{
+  "_id": "U8brUOZu3msplW4m",
+  "name": "Ruinous Blows",
+  "type": "feat",
+  "img": "icons/skills/melee/strike-hammer-destructive-orange.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>Every defense is an argument about what will and will not give way, and you have never lost one. Plate parts, wards unravel, and the wall that was meant to hold the line remembers that it was only ever stacked stone.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>Your Strikes ignore hardness and resistance equal to your level.</li><li>When you hit a creature with a Strike, it takes a -1 status penalty to AC until the end of your next turn.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>Your Strikes against objects deal double damage to their Hit Points.<ul><li>Magical barriers and wall effects count as objects for this purpose, and you may Strike and damage them even if they are immune to physical damage, immune to being damaged, or otherwise impervious to attack.</li></ul></li><li>The AC penalty increases to -2.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>When you critically hit a creature, its resistances are halved against all damage until the end of your next turn.</li><li>When you critically hit a creature or object, you may attempt to counteract one magical effect on it, once per round.<ul><li>Your counteract rank is half your level rounded up, and your counteract check is your attack roll modifier with the weapon you used.</li></ul></li></ul>\n<p><strong>15th Level</strong></p><ul><li>Your Strikes ignore immunity to your damage type, dealing half damage instead of none.</li><li>The AC penalty increases to -3.</li></ul>\n<p><em>The AC penalty does not stack with itself; additional hits refresh its duration. Barriers without Hit Points are addressed by the 10th-level counteract rather than by Striking them.</em></p>\n<hr />\n<p><strong>In Foundry:</strong> after a hit, apply <em>Ruinous Blows: AC Penalty</em> to the target; set its badge to 1, 2 or 3 for your level. Every Strike carries a note listing what else this talent does to the target.</p>\n<p>For the table: hardness and resistance ignored up to your level (reduce the target's resistance by hand when applying damage), double damage to objects, halved resistances and the counteract on a critical hit, and half damage through immunity from 15th. All of these act on the target's side, where no rule element from your sheet reaches.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "Note",
+        "selector": "strike-attack-roll",
+        "title": "Ruinous Blows",
+        "text": "ASCENDANT.Note.RuinousBlowsHit",
+        "outcome": [
+          "success",
+          "criticalSuccess"
+        ]
+      },
+      {
+        "key": "Note",
+        "selector": "strike-attack-roll",
+        "title": "Ruinous Blows",
+        "text": "ASCENDANT.Note.RuinousBlowsCritical",
+        "outcome": [
+          "criticalSuccess"
+        ],
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Note",
+        "selector": "strike-damage",
+        "title": "Ruinous Blows",
+        "text": "ASCENDANT.Note.RuinousBlowsDamage"
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.fTpsDA2bu4aZUXJn",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.gZGrkae0AxDvFfGA",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.SeaWesifPwBKmSzH",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "ruinous-blows",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-paragon",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!U8brUOZu3msplW4m"
+}

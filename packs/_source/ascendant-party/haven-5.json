@@ -1,0 +1,53 @@
+{
+  "_id": "i3ojq1owFuWgj2wK",
+  "name": "Haven (5th)",
+  "type": "feat",
+  "img": "icons/environment/settlement/house-two-stories-small.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>Nothing within Haven ages, spoils, or decays. Afflictions do not progress, conditions with durations do not advance, and dying creatures remain stable.</li><li>Haven's rooms include whatever workspace a member requires, such as a forge, a laboratory, a library, or a shrine, and count as a fully equipped workshop for any downtime or crafting activity.</li></ul><p>Granted automatically by Haven at 5th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "haven-5",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 5
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!i3ojq1owFuWgj2wK"
+}

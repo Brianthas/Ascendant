@@ -1,0 +1,53 @@
+{
+  "_id": "9XdRXQRAfYZvLPut",
+  "name": "Deathless (13th)",
+  "type": "feat",
+  "img": "icons/magic/life/heart-shadow-red.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>13th Level</strong></p><p><strong>13th Level</strong></p><ul><li>Gain Resist All 5.</li></ul><p>Granted automatically by Deathless at 13th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "deathless-13",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 13
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!9XdRXQRAfYZvLPut"
+}

@@ -1,0 +1,53 @@
+{
+  "_id": "fbdfghFZ0SCQCDmw",
+  "name": "Trail Breaker (15th)",
+  "type": "feat",
+  "img": "icons/skills/movement/figure-running-gray.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>You may Hover as a free action.</li><li>Allies traveling with you may use your fly Speed.</li></ul><p>Granted automatically by Trail Breaker at 15th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "trail-breaker-15",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 15
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!fbdfghFZ0SCQCDmw"
+}

@@ -1,0 +1,53 @@
+{
+  "_id": "ZK6SwWb6rrbrJh34",
+  "name": "Peerless Crafter (15th)",
+  "type": "feat",
+  "img": "icons/tools/smithing/anvil.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Gain Reforging.<ul><li><strong>Reforging</strong> Once per day, during a 10-minute rest, convert any item into any other item of equal or lower level that you know the formula for, at no cost. The original item is consumed.</li><li>This includes runes, letting you convert one rune directly into another.</li></ul></li></ul><p>Granted automatically by Peerless Crafter at 15th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "peerless-crafter-15",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 15
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!ZK6SwWb6rrbrJh34"
+}

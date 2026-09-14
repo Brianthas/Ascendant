@@ -1,0 +1,53 @@
+{
+  "_id": "VvDVSfyZvxYawAdq",
+  "name": "Shape of Harm (15th)",
+  "type": "feat",
+  "img": "icons/commodities/tech/dial-meter-gauge-blue.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>You may attune to two types at once from any group.</li><li>Your attacks count as both types for overcoming resistances, weaknesses, and immunities, and deal damage as whichever of the two is more effective against the target.</li></ul><p>Granted automatically by Shape of Harm at 15th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "shape-of-harm-15",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 15
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!VvDVSfyZvxYawAdq"
+}

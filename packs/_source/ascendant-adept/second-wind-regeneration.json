@@ -1,0 +1,59 @@
+{
+  "_id": "ccY03WIGN2R4nTnX",
+  "name": "Second Wind: Regeneration",
+  "type": "effect",
+  "img": "icons/magic/life/heart-glowing-red.webp",
+  "system": {
+    "description": {
+      "value": "<p>Regeneration 5 for 1 minute, from Second Wind at 5th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "FastHealing",
+        "type": "regeneration",
+        "value": 5
+      }
+    ],
+    "slug": "second-wind-regeneration",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "duration": {
+      "value": 1,
+      "unit": "minutes",
+      "sustained": false,
+      "expiry": "turn-start"
+    },
+    "start": {
+      "value": 0,
+      "initiative": null
+    },
+    "badge": null,
+    "tokenIcon": {
+      "show": true
+    },
+    "context": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!ccY03WIGN2R4nTnX"
+}

@@ -1,0 +1,96 @@
+{
+  "_id": "1pTc05iFAKQ4i7lB",
+  "name": "Unbound Casting (13th)",
+  "type": "feat",
+  "img": "icons/magic/symbols/runes-carved-stone-purple.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>13th Level</strong></p><p><strong>13th Level</strong></p><ul><li>You may apply two spellshapes to the same spell, rather than one. This limit does not increase.</li><li>Learn another spellshape.</li></ul><p>Granted automatically by Unbound Casting at 13th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "ChoiceSet",
+        "slug": "spellshapeE",
+        "rollOption": "ascendant-spellshape-e",
+        "prompt": "ASCENDANT.Rules.SpellshapePrompt",
+        "adjustName": true,
+        "choices": [
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.k3YbjGHzg750UuIw",
+            "label": "Split Casting"
+          },
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.xZk484Xdz2jUjzsi",
+            "label": "Bouncing Casting"
+          },
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.JEKc2rIt2PlRnFlb",
+            "label": "Delayed Casting"
+          },
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.M1hnWoPnKMgHlQuZ",
+            "label": "Anchored Casting"
+          },
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.jJVzAMNK4tuF2vZX",
+            "label": "Piercing Casting"
+          },
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.UhBNBR3Q7orshmNb",
+            "label": "Perfect Reach"
+          },
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.z5mXTn9ts4beZs3Z",
+            "label": "Perfect Quickening"
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "{item|flags.pf2e.rulesSelections.spellshapeE}",
+        "allowDuplicate": false
+      }
+    ],
+    "slug": "unbound-casting-13",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 13
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!1pTc05iFAKQ4i7lB"
+}

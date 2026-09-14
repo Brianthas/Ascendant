@@ -1,0 +1,141 @@
+{
+  "_id": "vYJ09P3lLOKOVoqh",
+  "name": "What Doesn't Kill You",
+  "type": "feat",
+  "img": "icons/magic/defensive/barrier-shield-dome-deflect-teal.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>The first time something tries to kill you, it works about as well as it would on anyone else. The second time, your body has already taken notes, and it does not need your permission, or even your attention, to make sure that particular death never works again.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>Your body is closed to the outside world. You do not need to breathe, eat, drink, or sleep, though you may still rest to regain resources.</li><li>Immune to Drowning, Suffocation, disease, and poison.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>The first time each day you take environmental damage or gain an environmental condition, you adapt to it. For the next 24 hours you are immune to that source.<ul><li>You may be adapted to any number of sources at once.</li></ul></li><li>You gain a climb Speed and a swim Speed equal to your land Speed, and act normally underwater without penalty.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>You adapt instantly, before taking damage from a source for the first time.</li><li>You gain a fly Speed equal to your land Speed.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Adaptations you gain become permanent.</li><li>You may travel through the void, the depths, or any environment you have previously survived indefinitely, without rest, shelter, or supplies.</li></ul>\n<p><em>You adapt to environmental types, such as extreme heat, vacuum, or crushing pressure, rather than to individual instances. You only adapt to sources that would meaningfully threaten a creature of your level.</em></p>\n<hr />\n<p><strong>In Foundry:</strong> immunity to disease and poison, and the climb, swim and fly Speeds, apply automatically.</p>\n<p>For the table: drowning and suffocation (PF2e has no immunity type for either), acting underwater without penalty, and the adaptations. When you adapt to a source, add its damage type as a resistance or immunity effect on your sheet for the day, or permanently from 15th.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "Immunity",
+        "type": "disease"
+      },
+      {
+        "key": "Immunity",
+        "type": "poison"
+      },
+      {
+        "key": "BaseSpeed",
+        "selector": "climb",
+        "value": "@actor.system.movement.speeds.land.value",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "BaseSpeed",
+        "selector": "swim",
+        "value": "@actor.system.movement.speeds.land.value",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "BaseSpeed",
+        "selector": "fly",
+        "value": "@actor.system.movement.speeds.land.value",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.XMqwU4dlbpFd0wuq",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.OcEuzPjCZv1Jdmyd",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.guXM5MGTxofcxdmN",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "what-doesnt-kill-you",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-adept",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!vYJ09P3lLOKOVoqh"
+}

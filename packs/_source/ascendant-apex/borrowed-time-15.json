@@ -1,0 +1,53 @@
+{
+  "_id": "NdeCjvXPje3ifE4o",
+  "name": "Borrowed Time (15th)",
+  "type": "feat",
+  "img": "icons/magic/time/hourglass-yellow-green.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Speed bonus increases to +50 feet.</li></ul><p>Granted automatically by Borrowed Time at 15th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "borrowed-time-15",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 15
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!NdeCjvXPje3ifE4o"
+}

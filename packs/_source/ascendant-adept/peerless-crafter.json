@@ -1,0 +1,144 @@
+{
+  "_id": "Lvi9WGFNtkmrcb50",
+  "name": "Peerless Crafter",
+  "type": "feat",
+  "img": "icons/tools/smithing/anvil.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>Given materials, a surface, and a few uninterrupted minutes, there is not much you cannot produce. Your work does not fail, does not require a workshop, and does not much care whether you had the correct components to begin with.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>You gain the Alchemical Crafting, Magical Crafting, and Snare Crafting skill feats.</li><li>You may Craft any item whose level is no greater than your level + 2.</li><li>Each level, you learn formulas equal to your Crafting proficiency rank: 2 Trained, 4 Expert, 6 Master, 8 Legendary.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>When you would succeed at a Crafting check, you critically succeed instead.</li><li>You may Craft without a workshop, using only what you carry.</li><li>You may substitute any raw materials for any others of equal or greater value.</li><li>Crafting an item takes 1 day and costs 75% of the item's Price.<ul><li>This cost is fixed and cannot be reduced by spending additional time.</li></ul></li></ul>\n<p><strong>10th Level</strong></p><ul><li>You may Craft during a 10-minute rest.</li><li>Salvaging an item recovers 75% of its value in materials rather than half.</li><li>You may transfer or swap runes during a 10-minute rest at no cost, regardless of the rune's level or your proficiency rank.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Gain Reforging.<ul><li><strong>Reforging</strong> Once per day, during a 10-minute rest, convert any item into any other item of equal or lower level that you know the formula for, at no cost. The original item is consumed.</li><li>This includes runes, letting you convert one rune directly into another.</li></ul></li></ul>\n<hr />\n<p><strong>In Foundry:</strong> the three skill feats are granted, a Crafting success is a critical success from 5th, and Reforging is on your Actions tab from 15th with its daily use counted.</p>\n<p>For the table: the crafting economy. The level + 2 cap, formulas learned per level, crafting without a workshop, material substitution, the 1-day time and 75% cost, salvage at 75%, and free rune transfers are all applied when you craft; PF2e's crafting has no rule element for any of them. A note on Crafting checks lists them.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.pf2e.feats-srd.Item.is3Oz9wt11lNq62K",
+        "allowDuplicate": false
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.pf2e.feats-srd.Item.xWY5omyIcILNR7y1",
+        "allowDuplicate": false
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.pf2e.feats-srd.Item.DMetdzt1VJL2Y62i",
+        "allowDuplicate": false
+      },
+      {
+        "key": "AdjustDegreeOfSuccess",
+        "selector": "crafting",
+        "adjustment": {
+          "success": "one-degree-better"
+        },
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Note",
+        "selector": "crafting",
+        "title": "Peerless Crafter",
+        "text": "ASCENDANT.Note.PeerlessCrafter"
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.TKxmkD9v9MiTE06J",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.tYMAlpt2X0vkNkLL",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.UaI5B7UJIVzBRohF",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.ZK6SwWb6rrbrJh34",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "peerless-crafter",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-adept",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!Lvi9WGFNtkmrcb50"
+}

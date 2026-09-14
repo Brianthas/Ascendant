@@ -1,0 +1,53 @@
+{
+  "_id": "yX8Tjn2TwHVUhzvK",
+  "name": "Dread Presence (3rd)",
+  "type": "feat",
+  "img": "icons/magic/control/fear-fright-monster-grin-green.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>3rd Level</strong></p><p><strong>3rd Level</strong></p><ul><li>Creatures affected by your aura are Off-Guard to you.</li><li>When a creature Frightened by your aura is reduced to 0 Hit Points by any source, you restore Hit Points equal to half your level. This triggers no more than once per round.</li></ul><p>Granted automatically by Dread Presence at 3rd level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "dread-presence-3",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 3
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!yX8Tjn2TwHVUhzvK"
+}

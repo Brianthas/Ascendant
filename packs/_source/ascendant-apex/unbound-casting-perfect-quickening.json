@@ -1,0 +1,49 @@
+{
+  "_id": "z5mXTn9ts4beZs3Z",
+  "name": "Perfect Quickening",
+  "type": "action",
+  "img": "icons/magic/symbols/runes-carved-stone-purple.webp",
+  "system": {
+    "description": {
+      "value": "<p>Your next spell costs 1 fewer action, to a minimum of 1. Once per turn.</p><p><em>Unbound Spellshape. Requires no additional components, gestures, or words. It has no traits and cannot be identified, counteracted, or prevented.</em></p><hr /><p>Apply the change when you cast the spell. Once per round you may use a spellshape as a free action; from 20th level, with no frequency limit.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "unbound-casting-perfect-quickening",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "common"
+    },
+    "actionType": {
+      "value": "free"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": null,
+    "frequency": {
+      "value": 1,
+      "max": 1,
+      "per": "turn"
+    },
+    "selfEffect": null,
+    "deathNote": false
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!z5mXTn9ts4beZs3Z"
+}

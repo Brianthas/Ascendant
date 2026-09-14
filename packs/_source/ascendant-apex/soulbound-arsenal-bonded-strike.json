@@ -1,0 +1,45 @@
+{
+  "_id": "HYnY83HgI8qpFUol",
+  "name": "Bonded Strike",
+  "type": "action",
+  "img": "icons/weapons/swords/sword-guard-purple.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>Trigger</strong> An enemy moves within the weapon's reach.</p>\n<p><strong>Effect</strong> The weapon Strikes that enemy. This Strike neither counts toward nor against your multiattack penalty.</p>\n<hr />\n<p>The weapon has its own reaction each round for this, separate from yours; a second from 15th level. From 9th it may use Bonded Strike even while you are Grabbed, Restrained, Immobilized, or unconscious. Roll the Strike from your Actions tab and ignore the multiple attack penalty on it.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "soulbound-arsenal-bonded-strike",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "common"
+    },
+    "actionType": {
+      "value": "reaction"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": null,
+    "frequency": null,
+    "selfEffect": null,
+    "deathNote": false
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!HYnY83HgI8qpFUol"
+}

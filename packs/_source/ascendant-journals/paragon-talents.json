@@ -1,0 +1,424 @@
+{
+  "_id": "hz5HnbbKBDwQsLIW",
+  "name": "Paragon Talents",
+  "pages": [
+    {
+      "_id": "8prNtjikSlMi4fmx",
+      "name": "Paragon Talents",
+      "type": "text",
+      "title": {
+        "show": false,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Choose one at 1st level. Paragon Talents develop through 15th level. Where an Apex Talent is an identity, a Paragon Talent is a specialty: one thing you are genuinely exceptional at.</em></p>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!hz5HnbbKBDwQsLIW.8prNtjikSlMi4fmx"
+    },
+    {
+      "_id": "usNqxu1mPxhLVzQc",
+      "name": "Abundant Vitality",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>What you give, you give in quantities that embarrass more careful healers. A wound you close stays closed, a blessing meant for one settles over two, and the party has learned to stop asking whether you have enough left for them.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>When you restore Hit Points to a creature, whether through a spell or through Medicine, restore an additional amount based on your spell proficiency rank or your Medicine proficiency rank, whichever is higher: +4 Trained, +8 Expert, +12 Master, +16 Legendary, +20 Mythic.</li>\n<li>When you Cast a Spell that targets a single willing creature other than yourself, you may target a second willing creature within range at no additional cost.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>When you Cast a Spell that targets a single willing creature, you may include yourself as an additional target at no cost.</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>Beneficial spells you cast with a duration of 1 minute or less last twice as long.</li>\n<li>Sustaining a spell is a free action once per round.</li>\n<li>Compositions you cast last 1 minute rather than until the end of your next turn, and once per round you may cast a composition as a free action.<ul>\n<li>This does not stack with other effects that reduce the action cost of focus spells.</li>\n</ul>\n</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>When you Cast a Spell that targets willing creatures, you may target any number of willing creatures within range.</li>\n</ul>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 100000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!hz5HnbbKBDwQsLIW.usNqxu1mPxhLVzQc"
+    },
+    {
+      "_id": "JL7w5friPWbjeYbT",
+      "name": "Elusive",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>You are, as a rule, not where the danger arrived expecting you. Blasts find the space you occupied a moment ago, grasping hands close on nothing, and the ground itself seems to decline to slow you down.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>When you roll a Reflex save, improve the degree of success by one.</li>\n<li>+5 feet to all Speeds, increasing by another 5 feet every 3 levels.</li>\n<li>Your Move actions do not trigger reactions.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>Move normally through difficult terrain.</li>\n<li>Immune to Immobilized.</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>At the start of your turn, gain an extra action usable only for actions with the move trait.<ul>\n<li>When you are Slowed, this extra action is lost first, and the Slowed value is reduced by 1 for determining how many of your remaining actions you lose.</li>\n</ul>\n</li>\n<li>Move normally through greater difficult terrain.</li>\n<li>Immune to Restrained.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>Immune to Slowed.</li>\n</ul>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 200000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!hz5HnbbKBDwQsLIW.JL7w5friPWbjeYbT"
+    },
+    {
+      "_id": "GZQ9itYQLcaGdm15",
+      "name": "Flicker Step",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>Distance has become a formality you observe only when convenient. You step out of one place and into another without troubling the space between, and those who travel with you have grown used to arriving somewhere they did not walk to.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>Gain Flicker.<ul>\n<li><strong>Flicker</strong> [1 action] (concentrate, teleportation) — Teleport up to 100 feet to a space you can see or have seen. You do not need line of effect, only knowledge of the destination. Your arrival does not trigger reactions.</li>\n</ul>\n</li>\n<li>You may bring up to four willing adjacent creatures with you, placing them in spaces adjacent to your arrival.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>Gain Flicker Strike.<ul>\n<li><strong>Flicker Strike</strong> [1 action] (concentrate, teleportation) — Flicker, then Strike.</li>\n</ul>\n</li>\n<li>Range increases to 250 feet.</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>Range increases to 500 feet.</li>\n<li>Flicker is a free action once per round.</li>\n<li>You no longer need knowledge of your destination; you may specify a direction and distance instead.<ul>\n<li>As you pass through, you perceive the destination. If it cannot hold you, the GM tells you before you commit, and you may redirect or abort without spending the action.</li>\n</ul>\n</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>Range increases to one mile.</li>\n<li>When you Flicker, you may bring one adjacent creature against its will. It attempts a Will save against your Class DC or Spell DC, whichever is higher.<ul>\n<li>On a failure it is teleported with you and is Off-Guard until the end of your next turn.</li>\n</ul>\n</li>\n</ul>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 300000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!hz5HnbbKBDwQsLIW.GZQ9itYQLcaGdm15"
+    },
+    {
+      "_id": "oDx8gp6NKbqgMwY0",
+      "name": "Immovable",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>The world has agreed to stop asking you to move. Nothing shoves, drags, trips, or teleports you anywhere you did not intend to be — and the ground around you has taken on some of the same stubbornness, to the considerable inconvenience of anyone trying to cross it.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>You cannot be pushed, pulled, or repositioned against your will.</li>\n<li>Immune to Prone.</li>\n<li>Aura 10 feet: enemies treat squares within it as difficult terrain.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>Immune to Grabbed and Restrained.</li>\n<li>You cannot be flanked.</li>\n<li>Aura increases to 15 feet, and allies within it are also immune to forced movement.</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>Aura increases to 20 feet.</li>\n<li>A creature that fails to move you or an ally in your aura takes damage equal to twice your level.</li>\n<li>Enemies cannot Step within your aura.</li>\n<li>Enemies that end their turn in your aura are Off-Guard until the end of their next turn.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>Aura increases to 30 feet.</li>\n<li>You cannot be knocked from a surface, including while climbing or flying.</li>\n<li>Enemies cannot teleport into, out of, or within your aura.</li>\n</ul>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 400000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!hz5HnbbKBDwQsLIW.oDx8gp6NKbqgMwY0"
+    },
+    {
+      "_id": "dC7f8B2gBCUM92SA",
+      "name": "Ironhide",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>Harm reaches you at a discount. What would break another&#39;s ribs rearranges yours slightly, poisons thin to a bad taste, and the blow struck perfectly, at the perfect angle, at the perfect moment, lands about as well as any other.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>When you roll a Fortitude save, improve the degree of success by one.</li>\n<li>Resist All equal to 2 + half your level.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>Immune to Precision damage.</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>Immune to Persistent damage.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>Critical hits against you are treated as normal hits.</li>\n</ul>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 500000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!hz5HnbbKBDwQsLIW.dC7f8B2gBCUM92SA"
+    },
+    {
+      "_id": "IlHmkS6hpNPw8JPp",
+      "name": "Know-It-All",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>There is no subject on which you lack an opinion, and irritatingly, you are usually right. Locks, languages, lineages, poisons, the tensile strength of a rope bridge — you have read about all of it, and you will explain it now whether or not anyone asked.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>You do not gain Skill Increases. Instead you are Expert in all non-Lore skills.<ul>\n<li>Lore skills from your background match these ranks.</li>\n</ul>\n</li>\n<li>You gain two extra Skill Feats every level.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>Once per turn, you may Recall Knowledge as a free action.</li>\n<li>When you Recall Knowledge, treat a success as a critical success.</li>\n</ul>\n<p><strong>7th Level</strong></p>\n<ul>\n<li>Master in all non-Lore skills.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>Legendary in all non-Lore skills.</li>\n</ul>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 600000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!hz5HnbbKBDwQsLIW.IlHmkS6hpNPw8JPp"
+    },
+    {
+      "_id": "LhImw1E20YCaADBu",
+      "name": "Overwhelm",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>Your magic does not target so much as occupy. It fills the room, folds around the people you would rather it spared, and leaves everyone else with the discovery that there was nowhere in the room that would have helped.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>When you Cast a Spell with an area, you may exclude a number of creatures from that area equal to your spellcasting attribute modifier.</li>\n<li>You may convert a burst into a cone or line of equivalent size, or the reverse.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>Once per round, when you Cast a Spell with an area, creatures in that area treat their degree of success as one lower, to a minimum of a failure.<ul>\n<li>Creatures that critically succeed or critically fail are unaffected.</li>\n</ul>\n</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>Double the size of your spell areas.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>The effect from 5th level now also applies to creatures that critically succeed, reducing their result to a success.</li>\n</ul>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 700000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!hz5HnbbKBDwQsLIW.LhImw1E20YCaADBu"
+    },
+    {
+      "_id": "VX0xNbeSUgQvwQMu",
+      "name": "Ruinous Blows",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>Every defense is an argument about what will and will not give way, and you have never lost one. Plate parts, wards unravel, and the wall that was meant to hold the line remembers that it was only ever stacked stone.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>Your Strikes ignore hardness and resistance equal to your level.</li>\n<li>When you hit a creature with a Strike, it takes a -1 status penalty to AC until the end of your next turn.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>Your Strikes against objects deal double damage to their Hit Points.<ul>\n<li>Magical barriers and wall effects count as objects for this purpose, and you may Strike and damage them even if they are immune to physical damage, immune to being damaged, or otherwise impervious to attack.</li>\n</ul>\n</li>\n<li>The AC penalty increases to -2.</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>When you critically hit a creature, its resistances are halved against all damage until the end of your next turn.</li>\n<li>When you critically hit a creature or object, you may attempt to counteract one magical effect on it, once per round.<ul>\n<li>Your counteract rank is half your level rounded up, and your counteract check is your attack roll modifier with the weapon you used.</li>\n</ul>\n</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>Your Strikes ignore immunity to your damage type, dealing half damage instead of none.</li>\n<li>The AC penalty increases to -3.</li>\n</ul>\n<p><em>The AC penalty does not stack with itself; additional hits refresh its duration. Barriers without Hit Points are addressed by the 10th-level counteract rather than by Striking them.</em></p>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 800000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!hz5HnbbKBDwQsLIW.VX0xNbeSUgQvwQMu"
+    },
+    {
+      "_id": "Pbm9TIbXZ9BWV670",
+      "name": "Sovereign Mind",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>Your thoughts are the one territory that has never been successfully invaded. Compulsions slide off, terrors find no purchase, and the whispered suggestion that would unmake another arrives in your head and is simply declined.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>When you roll a Will save, improve the degree of success by one.</li>\n<li>Resistance 5 to mental damage, increasing by 5 every 4 levels.</li>\n<li>Immune to Controlled and Fascinated.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>Immune to Confused and Stupefied.</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>Immune to Incapacitation effects that call for a Will save.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>Immune to mental damage.</li>\n<li>Immune to Emotion effects unless you choose otherwise.</li>\n</ul>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 900000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!hz5HnbbKBDwQsLIW.Pbm9TIbXZ9BWV670"
+    },
+    {
+      "_id": "39w8TBgTM7bDMApF",
+      "name": "Spell Volley",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>Casting was never meant to be this fast. The words compress, the gestures fall away, and what should have been one careful working becomes three — each arriving with the same unhurried accuracy as if you had taken your time.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>Single-target spells and cantrips with the attack trait that cost 2 or more actions instead cost 1 action.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>Your multiattack penalty is -4 instead of -5, and -8 instead of -10.</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>Your multiattack penalty is -3 instead of -5, and -6 instead of -10.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>Your multiattack penalty is -2 instead of -5, and -4 instead of -10.</li>\n<li>Any attack-trait spell costs 1 action.</li>\n</ul>\n<p><em>These reductions apply only to your spell attack rolls and Spellstrikes, not to ordinary Strikes, even though all of them share the same multiattack penalty.</em></p>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 1000000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!hz5HnbbKBDwQsLIW.39w8TBgTM7bDMApF"
+    },
+    {
+      "_id": "5eNndyupZ4euzF8M",
+      "name": "Tireless Aegis",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>The shield is not raised, because it was never lowered. It occupies no hand, demands no attention, turns aside what it can and endures what it cannot, and on the rare occasion something manages to shatter it, it is whole again before you have finished being surprised.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>Gain the Aegis: a +3 circumstance bonus to AC, permanently active.</li>\n<li>It takes no hands and functions even with weapons in both hands.</li>\n<li>Hardness 5 + 2 per level above 1st. HP 30 + 10 per level above 1st, with a Broken Threshold of half.</li>\n<li>It cannot be sundered, disarmed, or left behind, and reforms at full Hit Points at the start of your turn if destroyed.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>Once per turn, you may Shield Block without spending a reaction.</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>The Aegis gains Regeneration equal to your level.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>The Aegis covers you from every direction. You cannot be flanked, and you gain its bonus against attacks from any source.</li>\n<li>When you Shield Block, the attacker takes damage equal to the amount the Aegis absorbed.</li>\n</ul>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 1100000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!hz5HnbbKBDwQsLIW.5eNndyupZ4euzF8M"
+    },
+    {
+      "_id": "9pqk5kAiScAIuQGX",
+      "name": "Unerring Shot",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>Cover, darkness, distance, and the frantic dodging of a target who knows what is coming — you have stopped regarding any of it as relevant. You decide where the shot lands, and then it lands there.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>Your ranged Strikes and spell attacks ignore the flat check from concealment and take no circumstance penalty from cover less than greater cover.</li>\n<li>Range increments for your ranged weapons and spells double.</li>\n<li>When you hit the same creature with a second or later ranged Strike or spell attack in the same round, that attack ignores the target&#39;s resistances.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>Gain Aim.<ul>\n<li><strong>Aim</strong> [free action, once per round] — Your next ranged Strike or spell attack this turn treats a failure as a success.</li>\n</ul>\n</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>Ignore greater cover entirely.</li>\n<li>Target creatures you can sense but not see with no flat check.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>Aim has no frequency limit.</li>\n<li>Your ranged Strikes and spell attacks cannot be blocked, redirected, or targeted by reactions.</li>\n</ul>\n<p><em>Aim upgrades a failure only. A critical failure still misses.</em></p>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 1200000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!hz5HnbbKBDwQsLIW.9pqk5kAiScAIuQGX"
+    }
+  ],
+  "folder": null,
+  "sort": 200000,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "ascendant": {
+      "publication": "Ascendant: Mythic Rebuilt"
+    }
+  },
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!journal!hz5HnbbKBDwQsLIW"
+}

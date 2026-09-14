@@ -1,0 +1,11 @@
+/* Granted sub-feats and picks: present on the sheet, collapsed by default so the tier sections read first. */
+.sheet.actor.character .tab.feats .feat-group[data-group-id="ascendant-grant"] > header {
+    opacity: 0.8;
+}
+
+.ascendant-refresh-list {
+    max-height: 18em;
+    overflow-y: auto;
+    margin: 0.5em 0;
+    padding-left: 1.5em;
+}

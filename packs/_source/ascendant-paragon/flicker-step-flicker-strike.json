@@ -1,0 +1,48 @@
+{
+  "_id": "hiCcaUkpA9EPVVbv",
+  "name": "Flicker Strike",
+  "type": "action",
+  "img": "icons/magic/movement/trail-streak-zigzag-teal.webp",
+  "system": {
+    "description": {
+      "value": "<p>Flicker, then Strike.</p>\n<hr />\n<p>Roll the Strike from your Actions tab. The range is 100 feet at 1st, 250 at 5th, 500 at 10th and one mile at 15th.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "flicker-step-flicker-strike",
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "concentrate",
+        "teleportation"
+      ],
+      "rarity": "common"
+    },
+    "actionType": {
+      "value": "action"
+    },
+    "actions": {
+      "value": 1
+    },
+    "category": null,
+    "frequency": null,
+    "selfEffect": null,
+    "deathNote": false
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!hiCcaUkpA9EPVVbv"
+}

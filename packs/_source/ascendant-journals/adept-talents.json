@@ -1,0 +1,424 @@
+{
+  "_id": "T9VUTcwu3RISvbX8",
+  "name": "Adept Talents",
+  "pages": [
+    {
+      "_id": "rEPv4mvYjEqZ43Sw",
+      "name": "Adept Talents",
+      "type": "text",
+      "title": {
+        "show": false,
+        "level": 1
+      },
+      "text": {
+        "content": "<p><em>Choose one at 1st level. Adept Talents develop through 15th level. These are tools rather than identities: narrower than a Paragon Talent, but each one solves a specific kind of problem well.</em></p>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!T9VUTcwu3RISvbX8.rEPv4mvYjEqZ43Sw"
+    },
+    {
+      "_id": "scvkYy4d5Rv209GA",
+      "name": "Battle Mender",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>You work with steady hands in conditions that would make a surgeon weep. Wounds close under fire, poisons come out at a distance, and the ally you reached in time tends not to remember how close it was — which suits you, since you do.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>Battle Medicine has no daily limit per target.</li>\n<li>You cannot critically fail a check to Treat Wounds or administer Battle Medicine.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>You may administer Battle Medicine or First Aid at a range of 30 feet.</li>\n<li>Treat Wounds takes 1 minute rather than 10.</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>When you restore Hit Points by Treating Wounds or administering Battle Medicine, also reduce the target&#39;s Wounded value by 1 and remove one condition of your choice.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>Once per day, you may return a creature that died within the last minute to life at 1 Hit Point.</li>\n</ul>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 100000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!T9VUTcwu3RISvbX8.scvkYy4d5Rv209GA"
+    },
+    {
+      "_id": "OilVF1JNBe3Xbr85",
+      "name": "Grasping Reach",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>Your reach extends considerably past where your reach ought to end. Enemies who thought themselves safely spaced find themselves seized, dragged, and repositioned, and objects on the far side of a room are no longer meaningfully on the far side of anything.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>Your melee unarmed Strikes and melee weapons you wield gain the reach trait, or increase their reach by 5 feet if they already have it.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>Your reach increases by another 5 feet.</li>\n<li>You may Interact with objects anywhere within your reach.</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>Once per round, when you hit a creature within your reach, you may move it up to 10 feet in any direction as a free action.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>Your reach increases by another 5 feet.</li>\n<li>The forced movement increases to 15 feet.</li>\n<li>Once per round, you may Grab, Shove, Trip, or Disarm a creature within your reach as a free action.</li>\n</ul>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 200000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!T9VUTcwu3RISvbX8.OilVF1JNBe3Xbr85"
+    },
+    {
+      "_id": "Y8ckbKXX5HPOXmTP",
+      "name": "Living Shadow",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>The dark stopped being somewhere you hide and started being something you are. You see through it, move without sound inside it, and when it suits you, step from one patch of it into another as easily as crossing a threshold.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>You see normally in darkness of any kind, including magical darkness.</li>\n<li>You are never Concealed or Dazzled by low light or darkness.</li>\n<li>While in dim light or darkness, you may Hide as a free action once per round.</li>\n<li>You may Hide and Sneak even without cover or concealment.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>[1 action] While in dim light or darkness, become invisible until you take a hostile action, Cast a Spell, or leave dim light.<ul>\n<li>You may Sustain this to maintain it for up to 1 minute.</li>\n</ul>\n</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>Your movement makes no sound.</li>\n<li>You cannot be detected by hearing, scent, tremorsense, or lifesense, and you leave no tracks.</li>\n<li>Your invisibility no longer ends when you take a hostile action, only if you leave dim light.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>Gain Shadowstep.<ul>\n<li><strong>Shadowstep</strong> [1 action] — Teleport to any shadow or area of dim light you can see within 120 feet.</li>\n</ul>\n</li>\n</ul>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 300000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!T9VUTcwu3RISvbX8.Y8ckbKXX5HPOXmTP"
+    },
+    {
+      "_id": "tLvf8zkd1z2KTb2y",
+      "name": "Overreaction",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>Where others get one answer, you get several. The opening, the spell, the ally about to be struck — each of them gets a response, and the effects that normally take a person&#39;s reactions away discover they have not taken nearly enough.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>You gain an additional reaction at the start of each of your turns.</li>\n<li>You gain Reactive Strike if you don&#39;t have it.<ul>\n<li><strong>Reactive Strike</strong> [reaction] — When a creature within your reach uses a manipulate or move action, or leaves a square during a move action, make a melee Strike against it.</li>\n</ul>\n</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>You may use reactions even while Off-Guard, Prone, or Grabbed.</li>\n<li>You may use Reactive Strike when a creature within your reach Casts a Spell, whether or not that spell has the manipulate trait.</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>You gain a second additional reaction.</li>\n<li>Once per round, when an ally within 30 feet would be hit by an attack, you may Stride toward that ally and then make a Strike against the attacker as a reaction.<ul>\n<li>If you end this movement adjacent to the ally, the attack takes a -2 circumstance penalty.</li>\n</ul>\n</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>You gain a third additional reaction.</li>\n<li>You may use reactions on other creatures&#39; turns even when their triggers would normally be denied to you.</li>\n<li>You cannot be prevented from taking reactions by any effect.</li>\n</ul>\n<p><em>Additional reactions from this talent stack with those granted by other sources, including Borrowed Time.</em></p>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 400000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!T9VUTcwu3RISvbX8.tLvf8zkd1z2KTb2y"
+    },
+    {
+      "_id": "RhxBFdlYDeJ8YSBL",
+      "name": "Peerless Crafter",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>Given materials, a surface, and a few uninterrupted minutes, there is not much you cannot produce. Your work does not fail, does not require a workshop, and does not much care whether you had the correct components to begin with.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>You gain the Alchemical Crafting, Magical Crafting, and Snare Crafting skill feats.</li>\n<li>You may Craft any item whose level is no greater than your level + 2.</li>\n<li>Each level, you learn formulas equal to your Crafting proficiency rank: 2 Trained, 4 Expert, 6 Master, 8 Legendary.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>When you would succeed at a Crafting check, you critically succeed instead.</li>\n<li>You may Craft without a workshop, using only what you carry.</li>\n<li>You may substitute any raw materials for any others of equal or greater value.</li>\n<li>Crafting an item takes 1 day and costs 75% of the item&#39;s Price.<ul>\n<li>This cost is fixed and cannot be reduced by spending additional time.</li>\n</ul>\n</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>You may Craft during a 10-minute rest.</li>\n<li>Salvaging an item recovers 75% of its value in materials rather than half.</li>\n<li>You may transfer or swap runes during a 10-minute rest at no cost, regardless of the rune&#39;s level or your proficiency rank.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>Gain Reforging.<ul>\n<li><strong>Reforging</strong> — Once per day, during a 10-minute rest, convert any item into any other item of equal or lower level that you know the formula for, at no cost. The original item is consumed.</li>\n<li>This includes runes, letting you convert one rune directly into another.</li>\n</ul>\n</li>\n</ul>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 500000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!T9VUTcwu3RISvbX8.RhxBFdlYDeJ8YSBL"
+    },
+    {
+      "_id": "ec7c5jgO3amRfG8P",
+      "name": "Piercing Gleam",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>A clarity radiates from you that does not much care what the light is doing. Illusions come apart, the hidden are simply standing there, and the lie meant to take root in a companion&#39;s mind arrives to find the ground already turned.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>As a free action, activate or deactivate an aura with a radius of 20 feet + 5 feet per even level.</li>\n<li>Within it, you and your allies see as though in bright light regardless of actual conditions.</li>\n<li>You and your allies within it gain a +2 status bonus to saves against illusion, emotion, and mental effects.</li>\n<li>When you activate the aura, you may choose whether it sheds actual light.<ul>\n<li>If it does, it illuminates the area as bright light and creatures affected by sunlight are affected normally.</li>\n</ul>\n</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>You and your allies within the aura see through illusions, morphs, and polymorphs, perceiving things as they truly are.</li>\n<li>You and your allies within it are immune to visual illusion effects.<ul>\n<li>This never reveals an ally who wishes to remain hidden, and never helps an enemy see through anything.</li>\n</ul>\n</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>Creatures within your aura cannot be Concealed, Hidden, or Undetected from you or your allies.</li>\n<li>You and your allies in the aura improve your degree of success by one on saves against effects that would make you Fascinated, Confused, or Controlled.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>Your aura is imperceptible to enemies. They gain no benefit from its light and cannot tell it exists.</li>\n<li>You and your allies within it automatically succeed at saves against illusion and mental effects of a rank equal to or lower than half your level.</li>\n</ul>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 600000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!T9VUTcwu3RISvbX8.ec7c5jgO3amRfG8P"
+    },
+    {
+      "_id": "wZXP8jvHVtYv4XCT",
+      "name": "Renewed Focus",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>The reserve that other practitioners must retreat and rebuild returns to you almost as fast as you spend it. You gather yourself in moments rather than minutes, mid-fight if the fight demands it, and the working that should have cost you dearly costs almost nothing at all.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>Your focus pool increases by 1, exceeding the normal maximum.</li>\n<li>Refocus takes 1 minute instead of 10, and restores all spent Focus Points.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>Your focus pool increases by 1 more.</li>\n<li>Once per encounter, you may Refocus as a 3-action activity.</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>Once per round, reduce the action cost of a focus spell by 1.<ul>\n<li>A focus spell that costs 1 action becomes a free action.</li>\n</ul>\n</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>Once per round, casting a focus spell costs no Focus Point.</li>\n</ul>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 700000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!T9VUTcwu3RISvbX8.wZXP8jvHVtYv4XCT"
+    },
+    {
+      "_id": "eiVFjsCyvqvuUwK9",
+      "name": "Second Wind",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>The blow lands, the world goes briefly white, and something in you objects. You are back on your feet before anyone has finished deciding you were down, with a great deal more left in you than the situation warranted.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>Once per encounter, when you are reduced to 0 Hit Points, you immediately regain Hit Points equal to half your maximum and are not knocked unconscious.<ul>\n<li>This triggers even against damage that would normally kill you outright.</li>\n</ul>\n</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>When this triggers, you also gain regeneration 5 for 1 minute.</li>\n<li>You do not increase your Wounded value.</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>You may use Second Wind twice per encounter.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>When this triggers, you also reduce your Doomed value by 1.</li>\n<li>You gain a +2 status bonus to attack rolls and saves until the end of your next turn.</li>\n</ul>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 800000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!T9VUTcwu3RISvbX8.eiVFjsCyvqvuUwK9"
+    },
+    {
+      "_id": "VepVPK50vuCd3Ea1",
+      "name": "Shape of Harm",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>You have stopped thinking of damage as a fixed property of the thing you are holding. Cold, flame, iron, the awful weight of the void — these are settings rather than limitations, adjusted between one breath and the next to suit whatever is in front of you.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>Choose one group permanently: physical (bludgeoning, piercing, slashing) or elemental (acid, cold, electricity, fire, sonic).</li>\n<li>As a free action once per round, attune to any single damage type within that group. Your Strikes, spells, and impulses deal that type instead of their normal type until you change it.</li>\n<li>Physical types you choose also count as cold iron or silver, your choice.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>You gain access to the other of those two groups.</li>\n<li>Physical types you choose also count as adamantine.</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>You gain access to the esoteric group: force, mental, poison, spirit, vitality, and void.</li>\n<li>You may also change your attunement as a free action when you roll initiative.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>You may attune to two types at once from any group.</li>\n<li>Your attacks count as both types for overcoming resistances, weaknesses, and immunities, and deal damage as whichever of the two is more effective against the target.</li>\n</ul>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 900000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!T9VUTcwu3RISvbX8.VepVPK50vuCd3Ea1"
+    },
+    {
+      "_id": "Um87zoXLYb3JnQ6g",
+      "name": "Trail Breaker",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>You go first, and the route exists behind you. Cliffs, currents, and trackless country slow you very little, and the people following in your line find the passage rather easier than it has any right to be.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>You gain a climb Speed and a swim Speed equal to half your land Speed.</li>\n<li>During exploration and travel, allies who remain within 30 feet of you may use your movement Speeds in place of their own.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>Your climb and swim Speeds equal your land Speed.</li>\n<li>You automatically succeed at Acrobatics checks to Balance and Athletics checks to Climb or Swim against DCs of your level or lower.</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>You gain a fly Speed equal to your land Speed.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>You may Hover as a free action.</li>\n<li>Allies traveling with you may use your fly Speed.</li>\n</ul>\n<p><em>Allies only borrow your Speeds outside of encounters. If an encounter begins while allies are using them, they retain them until the end of their first turn. An ally still airborne after that descends 60 feet per round until they land, taking no falling damage.</em></p>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 1000000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!T9VUTcwu3RISvbX8.Um87zoXLYb3JnQ6g"
+    },
+    {
+      "_id": "Tq6VdPFnmprOi8Gn",
+      "name": "Uncanny Instinct",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>You have never once been genuinely surprised. The ambush announces itself in some small wrongness you could not name if pressed, and the blow arriving from behind finds you already turning, already moving, already somewhere less convenient to hit.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>You cannot be surprised.</li>\n<li>+2 circumstance bonus to initiative and to Perception checks to Seek.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>You automatically Seek in a 30-foot emanation at the start of each of your turns without spending an action.</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>You are never Off-Guard to creatures you can perceive.</li>\n<li>You cannot be flanked.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>Once per round, when you are hit by an attack, you may reduce the damage by half as a reaction.</li>\n</ul>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 1100000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!T9VUTcwu3RISvbX8.Tq6VdPFnmprOi8Gn"
+    },
+    {
+      "_id": "FYk4oNtE5tP6cpRp",
+      "name": "What Doesn't Kill You",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<blockquote>\n<p><em>The first time something tries to kill you, it works about as well as it would on anyone else. The second time, your body has already taken notes — and it does not need your permission, or even your attention, to make sure that particular death never works again.</em></p>\n</blockquote>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>Your body is closed to the outside world. You do not need to breathe, eat, drink, or sleep, though you may still rest to regain resources.</li>\n<li>Immune to Drowning, Suffocation, disease, and poison.</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>The first time each day you take environmental damage or gain an environmental condition, you adapt to it. For the next 24 hours you are immune to that source.<ul>\n<li>You may be adapted to any number of sources at once.</li>\n</ul>\n</li>\n<li>You gain a climb Speed and a swim Speed equal to your land Speed, and act normally underwater without penalty.</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>You adapt instantly, before taking damage from a source for the first time.</li>\n<li>You gain a fly Speed equal to your land Speed.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>Adaptations you gain become permanent.</li>\n<li>You may travel through the void, the depths, or any environment you have previously survived indefinitely, without rest, shelter, or supplies.</li>\n</ul>\n<p><em>You adapt to environmental types, such as extreme heat, vacuum, or crushing pressure, rather than to individual instances. You only adapt to sources that would meaningfully threaten a creature of your level.</em></p>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 1200000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!T9VUTcwu3RISvbX8.FYk4oNtE5tP6cpRp"
+    }
+  ],
+  "folder": null,
+  "sort": 300000,
+  "categories": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "ascendant": {
+      "publication": "Ascendant: Mythic Rebuilt"
+    }
+  },
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!journal!T9VUTcwu3RISvbX8"
+}

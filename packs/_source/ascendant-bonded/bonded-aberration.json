@@ -1,0 +1,234 @@
+{
+  "_id": "VNkyf6KXIfqwwhkF",
+  "name": "Bonded Aberration",
+  "type": "npc",
+  "img": "icons/creatures/magical/spirit-undead-horned-blue.webp",
+  "system": {
+    "abilities": {
+      "str": {
+        "mod": 0
+      },
+      "dex": {
+        "mod": 0
+      },
+      "con": {
+        "mod": 0
+      },
+      "int": {
+        "mod": 0
+      },
+      "wis": {
+        "mod": 0
+      },
+      "cha": {
+        "mod": 0
+      }
+    },
+    "attributes": {
+      "ac": {
+        "details": "",
+        "value": 10
+      },
+      "allSaves": {
+        "value": ""
+      },
+      "hp": {
+        "details": "Shared with the owner; synced from their sheet.",
+        "max": 10,
+        "temp": 0,
+        "value": 10
+      },
+      "speed": {
+        "otherSpeeds": [
+          {
+            "type": "climb",
+            "value": 25
+          }
+        ],
+        "value": 25
+      }
+    },
+    "details": {
+      "blurb": "",
+      "languages": {
+        "details": "",
+        "value": []
+      },
+      "level": {
+        "value": 1
+      },
+      "privateNotes": "",
+      "publicNotes": "<p>A Bonded Soul companion in its Aberration base form. Link it to its owner with <strong>Sync Bonded</strong> on the owner's sheet: it then has the owner's level, AC, saves, Perception and Hit Points, and its Strikes use the owner's best attack modifier with their highest attribute to damage. Drag evolutions from the Apex Talents compendium onto it; the pool is 3 + the owner's level points, reallocated during daily preparations.</p><p>Climb. Tentacle Strikes have the grapple trait. At the owner's 5th, creatures it has Grabbed take mental damage equal to half their level at the start of their turn.</p>"
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "perception": {
+      "details": "",
+      "mod": 0,
+      "senses": []
+    },
+    "resources": {},
+    "saves": {
+      "fortitude": {
+        "saveDetail": "",
+        "value": 0
+      },
+      "reflex": {
+        "saveDetail": "",
+        "value": 0
+      },
+      "will": {
+        "saveDetail": "",
+        "value": 0
+      }
+    },
+    "skills": {
+      "athletics": {
+        "base": 0
+      }
+    },
+    "traits": {
+      "rarity": "unique",
+      "size": {
+        "value": "med"
+      },
+      "value": [
+        "aberration"
+      ]
+    }
+  },
+  "items": [
+    {
+      "_id": "gI2KET2hTv1T1o6G",
+      "name": "Tentacle",
+      "type": "melee",
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "system": {
+        "attack": {
+          "value": ""
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "bonus": {
+          "value": 0
+        },
+        "damageRolls": {
+          "0": {
+            "damage": "1d6",
+            "damageType": "bludgeoning"
+          }
+        },
+        "description": {
+          "value": ""
+        },
+        "publication": {
+          "title": "Ascendant: Mythic Rebuilt",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "range": null,
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "grapple",
+            "reach-10"
+          ]
+        }
+      },
+      "sort": 100000,
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!actors.items!VNkyf6KXIfqwwhkF.gI2KET2hTv1T1o6G"
+    },
+    {
+      "_id": "AtvUVdzp1FJwBgKa",
+      "name": "Base Form: Aberration",
+      "type": "effect",
+      "img": "icons/creatures/magical/spirit-undead-horned-blue.webp",
+      "system": {
+        "description": {
+          "value": "<p>Climb. Tentacle Strikes have the grapple trait. At the owner's 5th, creatures it has Grabbed take mental damage equal to half their level at the start of their turn.</p>",
+          "gm": ""
+        },
+        "publication": {
+          "title": "Ascendant: Mythic Rebuilt",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "rules": [
+          {
+            "key": "Note",
+            "selector": "strike-attack-roll",
+            "title": "Constrict",
+            "text": "ASCENDANT.Bonded.AberrationGrab",
+            "outcome": [
+              "success",
+              "criticalSuccess"
+            ],
+            "predicate": [
+              {
+                "gte": [
+                  "self:level",
+                  5
+                ]
+              }
+            ]
+          }
+        ],
+        "slug": "bonded-base-form-aberration",
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "unique"
+        },
+        "level": {
+          "value": 1
+        },
+        "duration": {
+          "value": -1,
+          "unit": "unlimited",
+          "sustained": false,
+          "expiry": null
+        },
+        "start": {
+          "value": 0,
+          "initiative": null
+        },
+        "badge": null,
+        "tokenIcon": {
+          "show": false
+        },
+        "context": null
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!actors.items!VNkyf6KXIfqwwhkF.AtvUVdzp1FJwBgKa"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!actors!VNkyf6KXIfqwwhkF"
+}

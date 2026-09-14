@@ -1,0 +1,220 @@
+{
+  "_id": "9IxfvD5014xNmOuX",
+  "name": "Spell Volley",
+  "type": "feat",
+  "img": "icons/magic/fire/projectile-fireball-orange-yellow.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>Casting was never meant to be this fast. The words compress, the gestures fall away, and what should have been one careful working becomes three, each arriving with the same unhurried accuracy as if you had taken your time.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>Single-target spells and cantrips with the attack trait that cost 2 or more actions instead cost 1 action.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>Your multiattack penalty is -4 instead of -5, and -8 instead of -10.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>Your multiattack penalty is -3 instead of -5, and -6 instead of -10.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Your multiattack penalty is -2 instead of -5, and -4 instead of -10.</li><li>Any attack-trait spell costs 1 action.</li></ul>\n<p><em>These reductions apply only to your spell attack rolls and Spellstrikes, not to ordinary Strikes, even though all of them share the same multiattack penalty.</em></p>\n<hr />\n<p><strong>In Foundry:</strong> the reduced multiple attack penalty applies to your spell attack rolls (and to Spellstrikes, if you are a Warmage) from 5th level.</p>\n<p>For the table: the action cost. PF2e cannot change what a spell costs, so cast the spell and spend one action. A note on every attack-trait spell reminds you which ones this covers.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "MultipleAttackPenalty",
+        "selector": "spell-attack",
+        "value": -4,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          },
+          {
+            "lt": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "MultipleAttackPenalty",
+        "selector": "strike-attack-roll",
+        "value": -4,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          },
+          {
+            "lt": [
+              "self:level",
+              10
+            ]
+          },
+          "action:spellstrike"
+        ]
+      },
+      {
+        "key": "MultipleAttackPenalty",
+        "selector": "spell-attack",
+        "value": -3,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          },
+          {
+            "lt": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "MultipleAttackPenalty",
+        "selector": "strike-attack-roll",
+        "value": -3,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          },
+          {
+            "lt": [
+              "self:level",
+              15
+            ]
+          },
+          "action:spellstrike"
+        ]
+      },
+      {
+        "key": "MultipleAttackPenalty",
+        "selector": "spell-attack",
+        "value": -2,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          },
+          {
+            "lt": [
+              "self:level",
+              21
+            ]
+          }
+        ]
+      },
+      {
+        "key": "MultipleAttackPenalty",
+        "selector": "strike-attack-roll",
+        "value": -2,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          },
+          {
+            "lt": [
+              "self:level",
+              21
+            ]
+          },
+          "action:spellstrike"
+        ]
+      },
+      {
+        "key": "Note",
+        "selector": "spell-attack",
+        "title": "Spell Volley",
+        "text": "ASCENDANT.Note.SpellVolleyCost",
+        "predicate": [
+          "item:trait:attack"
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.jMIv5lq5wdOZrHqu",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.YYmgbweAkLPUewmu",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.0wnVUkoujKbDT9TR",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "spell-volley",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-paragon",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!9IxfvD5014xNmOuX"
+}

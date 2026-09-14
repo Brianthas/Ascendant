@@ -1,0 +1,53 @@
+{
+  "_id": "zQybNnuy4n8e87Dt",
+  "name": "Lifeline: Bonded",
+  "type": "effect",
+  "img": "icons/magic/life/heart-shadow-red.webp",
+  "system": {
+    "description": {
+      "value": "<p>You are bonded to a Lifeline character. Whenever you would take damage, they may take any amount of it instead. The bond is suspended while you are more than 60 feet from them (120 from their 10th level) and ends if they fall unconscious.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "lifeline-bonded",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "duration": {
+      "value": 1,
+      "unit": "days",
+      "sustained": false,
+      "expiry": "turn-start"
+    },
+    "start": {
+      "value": 0,
+      "initiative": null
+    },
+    "badge": null,
+    "tokenIcon": {
+      "show": true
+    },
+    "context": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!zQybNnuy4n8e87Dt"
+}

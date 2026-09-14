@@ -1,0 +1,128 @@
+{
+  "_id": "BWdZ1Dp9kcaljIOP",
+  "name": "Overreaction",
+  "type": "feat",
+  "img": "icons/skills/melee/strike-sword-slashing-red.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>Where others get one answer, you get several. The opening, the spell, the ally about to be struck: each of them gets a response, and the effects that normally take a person's reactions away discover they have not taken nearly enough.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>You gain an additional reaction at the start of each of your turns.</li><li>You gain Reactive Strike if you don't have it.<ul><li><strong>Reactive Strike</strong> [reaction] When a creature within your reach uses a manipulate or move action, or leaves a square during a move action, make a melee Strike against it.</li></ul></li></ul>\n<p><strong>5th Level</strong></p><ul><li>You may use reactions even while Off-Guard, Prone, or Grabbed.</li><li>You may use Reactive Strike when a creature within your reach Casts a Spell, whether or not that spell has the manipulate trait.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>You gain a second additional reaction.</li><li>Once per round, when an ally within 30 feet would be hit by an attack, you may Stride toward that ally and then make a Strike against the attacker as a reaction.<ul><li>If you end this movement adjacent to the ally, the attack takes a -2 circumstance penalty.</li></ul></li></ul>\n<p><strong>15th Level</strong></p><ul><li>You gain a third additional reaction.</li><li>You may use reactions on other creatures' turns even when their triggers would normally be denied to you.</li><li>You cannot be prevented from taking reactions by any effect.</li></ul>\n<p><em>Additional reactions from this talent stack with those granted by other sources, including Borrowed Time.</em></p>\n<hr />\n<p><strong>In Foundry:</strong> Reactive Strike is on your Actions tab (PF2e's own, skipped if you already have it), and Interpose joins it at 10th.</p>\n<p>For the table: PF2e does not count reactions, so track the extra ones yourself: two per turn at 1st, three at 10th, four at 15th, plus any from Borrowed Time. Reacting while Off-Guard, Prone or Grabbed, to spellcasting, and through denial effects are yours to apply.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.pf2e.classfeatures.Item.hmShTfPOcTaKgbf4",
+        "allowDuplicate": false
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.CUmWj7qnaeXvZgt9",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Note",
+        "selector": "strike-attack-roll",
+        "title": "Overreaction",
+        "text": "ASCENDANT.Note.OverreactionReactions",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          },
+          "action:reactive-strike"
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.WKTrHO6mPJLnf9YQ",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.ilApOAcExgOKLAUx",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.B3w6PtbSNFWKCS7S",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "overreaction",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-adept",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!BWdZ1Dp9kcaljIOP"
+}

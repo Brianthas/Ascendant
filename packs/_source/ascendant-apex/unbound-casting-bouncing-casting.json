@@ -1,0 +1,45 @@
+{
+  "_id": "xZk484Xdz2jUjzsi",
+  "name": "Bouncing Casting",
+  "type": "action",
+  "img": "icons/magic/symbols/runes-carved-stone-purple.webp",
+  "system": {
+    "description": {
+      "value": "<p>If your next spell has no effect on its target, through a successful save, a miss, an immunity, or a counteract, it immediately retargets a different creature within range of your choice. It may bounce once.<ul><li>A spell bounces only if the target takes no damage and suffers no condition.</li></ul></p><p><em>Unbound Spellshape. Requires no additional components, gestures, or words. It has no traits and cannot be identified, counteracted, or prevented.</em></p><hr /><p>Apply the change when you cast the spell. Once per round you may use a spellshape as a free action; from 20th level, with no frequency limit.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "unbound-casting-bouncing-casting",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "common"
+    },
+    "actionType": {
+      "value": "free"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": null,
+    "frequency": null,
+    "selfEffect": null,
+    "deathNote": false
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!xZk484Xdz2jUjzsi"
+}

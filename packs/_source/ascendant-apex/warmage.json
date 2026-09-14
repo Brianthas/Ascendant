@@ -1,0 +1,287 @@
+{
+  "_id": "GaI0YMuWSl1HlkWx",
+  "name": "Warmage",
+  "type": "feat",
+  "img": "icons/magic/fire/dagger-rune-enchant-flame-blue-yellow.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>You were never able to see why the choice was necessary. The blade goes where the spell goes, arrives in the same instant, and draws on the same trained certainty, and the enemy who prepared for one of them prepared for half a problem.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>For all Strikes, spell attack rolls, and spell DCs, use the higher of your weapon statistics or your spell statistics, covering both proficiency rank and attribute modifier.</li><li>Gain Spellstrike.<ul><li><strong>Spellstrike</strong> [2 actions] Make a melee Strike and Cast a Spell as part of the same activity. The spell may be any spell you can cast with a casting time of 3 actions or fewer, targeting whatever it normally targets.</li><li>If the spell requires a spell attack roll against the creature you Struck, use the Strike's attack roll for both.</li></ul></li></ul>\n<p><strong>5th Level</strong></p><ul><li>Spellstrike costs 1 action.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>On a critical hit with the Strike, a spell delivered against that target is also critical.</li><li>Spellstrike no longer counts against your multiattack penalty.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Gain Reactive Spellstrike.<ul><li><strong>Reactive Spellstrike</strong> [reaction] <strong>Trigger</strong> A creature within your reach uses an action that would trigger a Reactive Strike, or moves within your reach. <strong>Effect</strong> You Spellstrike that creature.</li></ul></li></ul>\n<p><strong>20th Level</strong></p><ul><li>When you Spellstrike, you may Cast two spells rather than one.</li></ul>\n<hr />\n<p><strong>In Foundry:</strong> name your spellcasting attribute when you take this talent. Your weapon proficiency ranks and your spellcasting rank are each raised to the higher of the two; your Strikes use the higher of the weapon's attribute and your spellcasting attribute, and your spell attack and DC the higher of your spellcasting attribute and Strength or Dexterity. The attack breakdown names whichever attribute won. Spellstrike is on your Actions tab, replaced by the 1-action version at 5th, and Reactive Spellstrike arrives at 15th.</p>\n<p>For the table: the critical-hit carry and MAP exemption from 10th, and the second spell from 20th. A note on every Strike reminds you.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.proficiencies.attacks.simple.rank",
+        "phase": "applyAEs",
+        "value": "ternary(gte(@actor.system.proficiencies.attacks.simple.rank, 1), @actor.system.proficiencies.spellcasting.rank, 0)"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.proficiencies.attacks.martial.rank",
+        "phase": "applyAEs",
+        "value": "ternary(gte(@actor.system.proficiencies.attacks.martial.rank, 1), @actor.system.proficiencies.spellcasting.rank, 0)"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.proficiencies.attacks.advanced.rank",
+        "phase": "applyAEs",
+        "value": "ternary(gte(@actor.system.proficiencies.attacks.advanced.rank, 1), @actor.system.proficiencies.spellcasting.rank, 0)"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.proficiencies.attacks.unarmed.rank",
+        "phase": "applyAEs",
+        "value": "ternary(gte(@actor.system.proficiencies.attacks.unarmed.rank, 1), @actor.system.proficiencies.spellcasting.rank, 0)"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.proficiencies.spellcasting.rank",
+        "phase": "applyAEs",
+        "value": "max(@actor.system.proficiencies.attacks.simple.rank, @actor.system.proficiencies.attacks.martial.rank, @actor.system.proficiencies.attacks.advanced.rank, @actor.system.proficiencies.attacks.unarmed.rank)"
+      },
+      {
+        "key": "FlatModifier",
+        "selector": [
+          "spell-attack",
+          "spell-dc"
+        ],
+        "slug": "warmage-str",
+        "label": "PF2E.AbilityStr",
+        "type": "ability",
+        "ability": "str",
+        "hideIfDisabled": true
+      },
+      {
+        "key": "FlatModifier",
+        "selector": [
+          "spell-attack",
+          "spell-dc"
+        ],
+        "slug": "warmage-dex",
+        "label": "PF2E.AbilityDex",
+        "type": "ability",
+        "ability": "dex",
+        "hideIfDisabled": true
+      },
+      {
+        "key": "ChoiceSet",
+        "slug": "warmageAttribute",
+        "rollOption": "ascendant-warmage-attribute",
+        "prompt": "ASCENDANT.Rules.WarmageAttributePrompt",
+        "adjustName": false,
+        "choices": [
+          {
+            "value": "int",
+            "label": "PF2E.AbilityInt"
+          },
+          {
+            "value": "wis",
+            "label": "PF2E.AbilityWis"
+          },
+          {
+            "value": "cha",
+            "label": "PF2E.AbilityCha"
+          }
+        ]
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "strike-attack-roll",
+        "slug": "warmage-strike-int",
+        "label": "PF2E.AbilityInt",
+        "type": "ability",
+        "ability": "int",
+        "predicate": [
+          "ascendant-warmage-attribute:int"
+        ],
+        "hideIfDisabled": true
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "strike-attack-roll",
+        "slug": "warmage-strike-wis",
+        "label": "PF2E.AbilityWis",
+        "type": "ability",
+        "ability": "wis",
+        "predicate": [
+          "ascendant-warmage-attribute:wis"
+        ],
+        "hideIfDisabled": true
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "strike-attack-roll",
+        "slug": "warmage-strike-cha",
+        "label": "PF2E.AbilityCha",
+        "type": "ability",
+        "ability": "cha",
+        "predicate": [
+          "ascendant-warmage-attribute:cha"
+        ],
+        "hideIfDisabled": true
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.CqpsTfaf7QauZfY8",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              1
+            ]
+          },
+          {
+            "lt": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.G7Hg0B8aeKAXoHap",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.fUBT30NGGk9XTpG2",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Note",
+        "selector": "strike-attack-roll",
+        "title": "Warmage",
+        "text": "ASCENDANT.Note.Warmage",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          },
+          "item:melee"
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.qEor9Ll60YL0kBaJ",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.e5r1JNZc4buTgEht",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.YnBRU4kAlcXUBMPf",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.IzKhZEcJnoKun4xq",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              20
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "warmage",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-apex",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!GaI0YMuWSl1HlkWx"
+}

@@ -1,0 +1,127 @@
+{
+    "id": "ascendant",
+    "title": "Ascendant: Mythic Rebuilt (PF2e)",
+    "description": "A Mythic alternative for Pathfinder Second Edition. Replaces the official Mythic rules with Expertise Tracks, Apex, Paragon, Adept and Party Talents that scale to 20th level, Mythic proficiency, enhanced attribute boosts and an expanded investiture limit. Carries the Dual Class, Ancestry Paragon and Free Archetype variant rules the ruleset is played with.",
+    "version": "0.1.0",
+    "compatibility": {
+        "minimum": "12",
+        "verified": "14"
+    },
+    "authors": [
+        {
+            "name": "Brianthas",
+            "url": "https://github.com/Brianthas"
+        }
+    ],
+    "esmodules": [
+        "scripts/module.mjs"
+    ],
+    "styles": [
+        "styles/ascendant.css",
+        "styles/dual-class.css"
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        }
+    ],
+    "packs": [
+        {
+            "name": "ascendant-core",
+            "label": "Ascendant: Core",
+            "path": "packs/ascendant-core",
+            "type": "Item",
+            "system": "pf2e",
+            "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" }
+        },
+        {
+            "name": "ascendant-apex",
+            "label": "Ascendant: Apex Talents",
+            "path": "packs/ascendant-apex",
+            "type": "Item",
+            "system": "pf2e",
+            "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" }
+        },
+        {
+            "name": "ascendant-paragon",
+            "label": "Ascendant: Paragon Talents",
+            "path": "packs/ascendant-paragon",
+            "type": "Item",
+            "system": "pf2e",
+            "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" }
+        },
+        {
+            "name": "ascendant-adept",
+            "label": "Ascendant: Adept Talents",
+            "path": "packs/ascendant-adept",
+            "type": "Item",
+            "system": "pf2e",
+            "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" }
+        },
+        {
+            "name": "ascendant-party",
+            "label": "Ascendant: Party Talents",
+            "path": "packs/ascendant-party",
+            "type": "Item",
+            "system": "pf2e",
+            "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" }
+        },
+        {
+            "name": "ascendant-bonded",
+            "label": "Ascendant: Bonded Souls",
+            "path": "packs/ascendant-bonded",
+            "type": "Actor",
+            "system": "pf2e",
+            "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" }
+        },
+        {
+            "name": "ascendant-journals",
+            "label": "Ascendant: Rules",
+            "path": "packs/ascendant-journals",
+            "type": "JournalEntry",
+            "system": "pf2e",
+            "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" }
+        }
+    ],
+    "packFolders": [
+        {
+            "name": "Ascendant: Mythic Rebuilt",
+            "sorting": "m",
+            "color": "#5b2a86",
+            "packs": [
+                "ascendant-core",
+                "ascendant-apex",
+                "ascendant-paragon",
+                "ascendant-adept",
+                "ascendant-party",
+                "ascendant-bonded",
+                "ascendant-journals"
+            ]
+        }
+    ],
+    "relationships": {
+        "systems": [
+            {
+                "id": "pf2e",
+                "type": "system",
+                "compatibility": {
+                    "minimum": "8.0.0",
+                    "verified": "8.5.0"
+                }
+            }
+        ],
+        "requires": [
+            {
+                "id": "lib-wrapper",
+                "type": "module",
+                "compatibility": {
+                    "minimum": "1.12"
+                }
+            }
+        ]
+    },
+    "url": "https://github.com/Brianthas/Ascendant",
+    "license": "LICENSE"
+}

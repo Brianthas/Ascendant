@@ -1,0 +1,155 @@
+{
+  "_id": "hvqDFCZUCLTkxs93",
+  "name": "Uncanny Instinct",
+  "type": "feat",
+  "img": "icons/magic/perception/eye-ringed-glow-angry-red.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>You have never once been genuinely surprised. The ambush announces itself in some small wrongness you could not name if pressed, and the blow arriving from behind finds you already turning, already moving, already somewhere less convenient to hit.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>You cannot be surprised.</li><li>+2 circumstance bonus to initiative and to Perception checks to Seek.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>You automatically Seek in a 30-foot emanation at the start of each of your turns without spending an action.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>You are never Off-Guard to creatures you can perceive.</li><li>You cannot be flanked.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Once per round, when you are hit by an attack, you may reduce the damage by half as a reaction.</li></ul>\n<hr />\n<p><strong>In Foundry:</strong> the initiative and Seek bonuses apply, you cannot be flanked or made Off-Guard by flanking from 10th, and Instinctive Guard is on your Actions tab from 15th.</p>\n<p>For the table: not being surprised, the free Seek each turn from 5th (roll Perception from your sheet), and Off-Guard from sources other than flanking against creatures you can perceive.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "FlatModifier",
+        "selector": "initiative",
+        "slug": "uncanny-instinct-initiative",
+        "label": "ASCENDANT.Rules.UncannyInstinct",
+        "type": "circumstance",
+        "value": 2
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "perception",
+        "slug": "uncanny-instinct-seek",
+        "label": "ASCENDANT.Rules.UncannyInstinct",
+        "type": "circumstance",
+        "value": 2,
+        "predicate": [
+          "action:seek"
+        ]
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "override",
+        "path": "system.attributes.flanking.flankable",
+        "value": false,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "override",
+        "path": "system.attributes.flanking.offGuardable",
+        "value": false,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.ssRnX3A5wX5FN0D6",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.lxuBUKO2laGipfCc",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.vm0P3QYzWMVw14uD",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.vKRbCmSR7Hz8IOVp",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "uncanny-instinct",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-adept",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!hvqDFCZUCLTkxs93"
+}

@@ -1,0 +1,327 @@
+{
+  "_id": "t7xftsGSw9wgobim",
+  "name": "Bonded Elemental",
+  "type": "npc",
+  "img": "icons/magic/fire/elemental-fire-humanoid.webp",
+  "system": {
+    "abilities": {
+      "str": {
+        "mod": 0
+      },
+      "dex": {
+        "mod": 0
+      },
+      "con": {
+        "mod": 0
+      },
+      "int": {
+        "mod": 0
+      },
+      "wis": {
+        "mod": 0
+      },
+      "cha": {
+        "mod": 0
+      }
+    },
+    "attributes": {
+      "ac": {
+        "details": "",
+        "value": 10
+      },
+      "allSaves": {
+        "value": ""
+      },
+      "hp": {
+        "details": "Shared with the owner; synced from their sheet.",
+        "max": 10,
+        "temp": 0,
+        "value": 10
+      },
+      "speed": {
+        "otherSpeeds": [],
+        "value": 30
+      }
+    },
+    "details": {
+      "blurb": "",
+      "languages": {
+        "details": "",
+        "value": []
+      },
+      "level": {
+        "value": 1
+      },
+      "privateNotes": "",
+      "publicNotes": "<p>A Bonded Soul companion in its Elemental base form. Link it to its owner with <strong>Sync Bonded</strong> on the owner's sheet: it then has the owner's level, AC, saves, Perception and Hit Points, and its Strikes use the owner's best attack modifier with their highest attribute to damage. Drag evolutions from the Apex Talents compendium onto it; the pool is 3 + the owner's level points, reallocated during daily preparations.</p><p>Strikes deal +1d6 of a chosen elemental type (acid, cold, electricity, fire, sonic). Immune to that type. At the owner's 10th level the rider becomes 2d6.</p>"
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "perception": {
+      "details": "",
+      "mod": 0,
+      "senses": []
+    },
+    "resources": {},
+    "saves": {
+      "fortitude": {
+        "saveDetail": "",
+        "value": 0
+      },
+      "reflex": {
+        "saveDetail": "",
+        "value": 0
+      },
+      "will": {
+        "saveDetail": "",
+        "value": 0
+      }
+    },
+    "skills": {
+      "athletics": {
+        "base": 0
+      }
+    },
+    "traits": {
+      "rarity": "unique",
+      "size": {
+        "value": "med"
+      },
+      "value": [
+        "elemental"
+      ]
+    }
+  },
+  "items": [
+    {
+      "_id": "P12tUiYdsLcjjfQL",
+      "name": "Slam",
+      "type": "melee",
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "system": {
+        "attack": {
+          "value": ""
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "bonus": {
+          "value": 0
+        },
+        "damageRolls": {
+          "0": {
+            "damage": "1d8",
+            "damageType": "bludgeoning"
+          }
+        },
+        "description": {
+          "value": ""
+        },
+        "publication": {
+          "title": "Ascendant: Mythic Rebuilt",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "range": null,
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": []
+        }
+      },
+      "sort": 100000,
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!actors.items!t7xftsGSw9wgobim.P12tUiYdsLcjjfQL"
+    },
+    {
+      "_id": "MOATfjqDvF37vxde",
+      "name": "Base Form: Elemental",
+      "type": "effect",
+      "img": "icons/magic/fire/elemental-fire-humanoid.webp",
+      "system": {
+        "description": {
+          "value": "<p>Strikes deal +1d6 of a chosen elemental type (acid, cold, electricity, fire, sonic). Immune to that type. At the owner's 10th level the rider becomes 2d6.</p>",
+          "gm": ""
+        },
+        "publication": {
+          "title": "Ascendant: Mythic Rebuilt",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "rules": [
+          {
+            "key": "ChoiceSet",
+            "slug": "bondedElement",
+            "rollOption": "ascendant-bonded-element",
+            "prompt": "ASCENDANT.Bonded.ElementPrompt",
+            "adjustName": true,
+            "choices": [
+              {
+                "value": "acid",
+                "label": "PF2E.TraitAcid"
+              },
+              {
+                "value": "cold",
+                "label": "PF2E.TraitCold"
+              },
+              {
+                "value": "electricity",
+                "label": "PF2E.TraitElectricity"
+              },
+              {
+                "value": "fire",
+                "label": "PF2E.TraitFire"
+              },
+              {
+                "value": "sonic",
+                "label": "PF2E.TraitSonic"
+              }
+            ]
+          },
+          {
+            "key": "DamageDice",
+            "selector": "strike-damage",
+            "slug": "bonded-elemental-rider",
+            "diceNumber": "match(when(btwn(@actor.level, 1, 9), 1), when(gte(@actor.level, 10), 2))",
+            "dieSize": "d6",
+            "damageType": "acid",
+            "predicate": [
+              "ascendant-bonded-element:acid"
+            ]
+          },
+          {
+            "key": "DamageDice",
+            "selector": "strike-damage",
+            "slug": "bonded-elemental-rider",
+            "diceNumber": "match(when(btwn(@actor.level, 1, 9), 1), when(gte(@actor.level, 10), 2))",
+            "dieSize": "d6",
+            "damageType": "cold",
+            "predicate": [
+              "ascendant-bonded-element:cold"
+            ]
+          },
+          {
+            "key": "DamageDice",
+            "selector": "strike-damage",
+            "slug": "bonded-elemental-rider",
+            "diceNumber": "match(when(btwn(@actor.level, 1, 9), 1), when(gte(@actor.level, 10), 2))",
+            "dieSize": "d6",
+            "damageType": "electricity",
+            "predicate": [
+              "ascendant-bonded-element:electricity"
+            ]
+          },
+          {
+            "key": "DamageDice",
+            "selector": "strike-damage",
+            "slug": "bonded-elemental-rider",
+            "diceNumber": "match(when(btwn(@actor.level, 1, 9), 1), when(gte(@actor.level, 10), 2))",
+            "dieSize": "d6",
+            "damageType": "fire",
+            "predicate": [
+              "ascendant-bonded-element:fire"
+            ]
+          },
+          {
+            "key": "DamageDice",
+            "selector": "strike-damage",
+            "slug": "bonded-elemental-rider",
+            "diceNumber": "match(when(btwn(@actor.level, 1, 9), 1), when(gte(@actor.level, 10), 2))",
+            "dieSize": "d6",
+            "damageType": "sonic",
+            "predicate": [
+              "ascendant-bonded-element:sonic"
+            ]
+          },
+          {
+            "key": "Immunity",
+            "type": "acid",
+            "predicate": [
+              "ascendant-bonded-element:acid"
+            ]
+          },
+          {
+            "key": "Immunity",
+            "type": "cold",
+            "predicate": [
+              "ascendant-bonded-element:cold"
+            ]
+          },
+          {
+            "key": "Immunity",
+            "type": "electricity",
+            "predicate": [
+              "ascendant-bonded-element:electricity"
+            ]
+          },
+          {
+            "key": "Immunity",
+            "type": "fire",
+            "predicate": [
+              "ascendant-bonded-element:fire"
+            ]
+          },
+          {
+            "key": "Immunity",
+            "type": "sonic",
+            "predicate": [
+              "ascendant-bonded-element:sonic"
+            ]
+          }
+        ],
+        "slug": "bonded-base-form-elemental",
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "unique"
+        },
+        "level": {
+          "value": 1
+        },
+        "duration": {
+          "value": -1,
+          "unit": "unlimited",
+          "sustained": false,
+          "expiry": null
+        },
+        "start": {
+          "value": 0,
+          "initiative": null
+        },
+        "badge": null,
+        "tokenIcon": {
+          "show": false
+        },
+        "context": null
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!actors.items!t7xftsGSw9wgobim.MOATfjqDvF37vxde"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!actors!t7xftsGSw9wgobim"
+}

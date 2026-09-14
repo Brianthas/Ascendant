@@ -1,0 +1,53 @@
+{
+  "_id": "ilApOAcExgOKLAUx",
+  "name": "Overreaction (10th)",
+  "type": "feat",
+  "img": "icons/skills/melee/strike-sword-slashing-red.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>You gain a second additional reaction.</li><li>Once per round, when an ally within 30 feet would be hit by an attack, you may Stride toward that ally and then make a Strike against the attacker as a reaction.<ul><li>If you end this movement adjacent to the ally, the attack takes a -2 circumstance penalty.</li></ul></li></ul><p>Granted automatically by Overreaction at 10th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "overreaction-10",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 10
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!ilApOAcExgOKLAUx"
+}

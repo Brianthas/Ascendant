@@ -1,0 +1,53 @@
+{
+  "_id": "nwgCbNfFtD4q1Q4I",
+  "name": "Trail Breaker (5th)",
+  "type": "feat",
+  "img": "icons/skills/movement/figure-running-gray.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>Your climb and swim Speeds equal your land Speed.</li><li>You automatically succeed at Acrobatics checks to Balance and Athletics checks to Climb or Swim against DCs of your level or lower.</li></ul><p>Granted automatically by Trail Breaker at 5th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "trail-breaker-5",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 5
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!nwgCbNfFtD4q1Q4I"
+}

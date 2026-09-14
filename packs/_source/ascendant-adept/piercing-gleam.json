@@ -1,0 +1,253 @@
+{
+  "_id": "7pYBjN0gO6dFR3nX",
+  "name": "Piercing Gleam",
+  "type": "feat",
+  "img": "icons/magic/light/beam-rays-yellow.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>A clarity radiates from you that does not much care what the light is doing. Illusions come apart, the hidden are simply standing there, and the lie meant to take root in a companion's mind arrives to find the ground already turned.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>As a free action, activate or deactivate an aura with a radius of 20 feet + 5 feet per even level.</li><li>Within it, you and your allies see as though in bright light regardless of actual conditions.</li><li>You and your allies within it gain a +2 status bonus to saves against illusion, emotion, and mental effects.</li><li>When you activate the aura, you may choose whether it sheds actual light.<ul><li>If it does, it illuminates the area as bright light and creatures affected by sunlight are affected normally.</li></ul></li></ul>\n<p><strong>5th Level</strong></p><ul><li>You and your allies within the aura see through illusions, morphs, and polymorphs, perceiving things as they truly are.</li><li>You and your allies within it are immune to visual illusion effects.<ul><li>This never reveals an ally who wishes to remain hidden, and never helps an enemy see through anything.</li></ul></li></ul>\n<p><strong>10th Level</strong></p><ul><li>Creatures within your aura cannot be Concealed, Hidden, or Undetected from you or your allies.</li><li>You and your allies in the aura improve your degree of success by one on saves against effects that would make you Fascinated, Confused, or Controlled.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Your aura is imperceptible to enemies. They gain no benefit from its light and cannot tell it exists.</li><li>You and your allies within it automatically succeed at saves against illusion and mental effects of a rank equal to or lower than half your level.</li></ul>\n<hr />\n<p><strong>In Foundry:</strong> switch <em>Piercing Gleam</em> on in your effects panel. Everyone on your side inside the radius receives the aura's effect: darkvision (seeing as in bright light), the +2 status bonus, and from 5th truesight and immunity to visual illusions. Switch <em>Piercing Gleam: Light</em> on as well to shed real light.</p>\n<p>For the table: the 10th-level degree improvement is a toggle on the aura's effect that each ally switches on for a save against an effect that would Fascinate, Confuse or Control them; concealment inside the aura from 10th; and from 15th the aura being invisible to enemies and the automatic successes against low-rank illusion and mental effects.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "ascendant-piercing-gleam",
+        "label": "ASCENDANT.Rules.PiercingGleamToggle",
+        "toggleable": true,
+        "value": false
+      },
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "ascendant-piercing-gleam-light",
+        "label": "ASCENDANT.Rules.PiercingGleamLight",
+        "toggleable": true,
+        "value": false
+      },
+      {
+        "key": "Aura",
+        "slug": "piercing-gleam-1",
+        "radius": "match(when(btwn(@actor.level, 1, 1), 20), when(btwn(@actor.level, 2, 2), 25), when(btwn(@actor.level, 3, 3), 25), when(btwn(@actor.level, 4, 4), 30), when(btwn(@actor.level, 5, 5), 30), when(btwn(@actor.level, 6, 6), 35), when(btwn(@actor.level, 7, 7), 35), when(btwn(@actor.level, 8, 8), 40), when(btwn(@actor.level, 9, 9), 40), when(btwn(@actor.level, 10, 10), 45), when(btwn(@actor.level, 11, 11), 45), when(btwn(@actor.level, 12, 12), 50), when(btwn(@actor.level, 13, 13), 50), when(btwn(@actor.level, 14, 14), 55), when(btwn(@actor.level, 15, 15), 55), when(btwn(@actor.level, 16, 16), 60), when(btwn(@actor.level, 17, 17), 60), when(btwn(@actor.level, 18, 18), 65), when(btwn(@actor.level, 19, 19), 65), when(gte(@actor.level, 20), 70))",
+        "traits": [
+          "light"
+        ],
+        "effects": [
+          {
+            "uuid": "Compendium.ascendant.ascendant-adept.Item.RYNIBahTuke5kmuJ",
+            "affects": "allies",
+            "events": [
+              "enter"
+            ],
+            "removeOnExit": true,
+            "includesSelf": true
+          }
+        ],
+        "appearance": {
+          "border": {
+            "color": "#f5e26b",
+            "alpha": 0.75
+          },
+          "highlight": {
+            "color": "#f5e26b",
+            "alpha": 0.2
+          }
+        },
+        "predicate": [
+          "ascendant-piercing-gleam",
+          {
+            "gte": [
+              "self:level",
+              1
+            ]
+          },
+          {
+            "lt": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Aura",
+        "slug": "piercing-gleam-5",
+        "radius": "match(when(btwn(@actor.level, 1, 1), 20), when(btwn(@actor.level, 2, 2), 25), when(btwn(@actor.level, 3, 3), 25), when(btwn(@actor.level, 4, 4), 30), when(btwn(@actor.level, 5, 5), 30), when(btwn(@actor.level, 6, 6), 35), when(btwn(@actor.level, 7, 7), 35), when(btwn(@actor.level, 8, 8), 40), when(btwn(@actor.level, 9, 9), 40), when(btwn(@actor.level, 10, 10), 45), when(btwn(@actor.level, 11, 11), 45), when(btwn(@actor.level, 12, 12), 50), when(btwn(@actor.level, 13, 13), 50), when(btwn(@actor.level, 14, 14), 55), when(btwn(@actor.level, 15, 15), 55), when(btwn(@actor.level, 16, 16), 60), when(btwn(@actor.level, 17, 17), 60), when(btwn(@actor.level, 18, 18), 65), when(btwn(@actor.level, 19, 19), 65), when(gte(@actor.level, 20), 70))",
+        "traits": [
+          "light"
+        ],
+        "effects": [
+          {
+            "uuid": "Compendium.ascendant.ascendant-adept.Item.JmMLOFm4CpP8ebEt",
+            "affects": "allies",
+            "events": [
+              "enter"
+            ],
+            "removeOnExit": true,
+            "includesSelf": true
+          }
+        ],
+        "appearance": {
+          "border": {
+            "color": "#f5e26b",
+            "alpha": 0.75
+          },
+          "highlight": {
+            "color": "#f5e26b",
+            "alpha": 0.2
+          }
+        },
+        "predicate": [
+          "ascendant-piercing-gleam",
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          },
+          {
+            "lt": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Aura",
+        "slug": "piercing-gleam-10",
+        "radius": "match(when(btwn(@actor.level, 1, 1), 20), when(btwn(@actor.level, 2, 2), 25), when(btwn(@actor.level, 3, 3), 25), when(btwn(@actor.level, 4, 4), 30), when(btwn(@actor.level, 5, 5), 30), when(btwn(@actor.level, 6, 6), 35), when(btwn(@actor.level, 7, 7), 35), when(btwn(@actor.level, 8, 8), 40), when(btwn(@actor.level, 9, 9), 40), when(btwn(@actor.level, 10, 10), 45), when(btwn(@actor.level, 11, 11), 45), when(btwn(@actor.level, 12, 12), 50), when(btwn(@actor.level, 13, 13), 50), when(btwn(@actor.level, 14, 14), 55), when(btwn(@actor.level, 15, 15), 55), when(btwn(@actor.level, 16, 16), 60), when(btwn(@actor.level, 17, 17), 60), when(btwn(@actor.level, 18, 18), 65), when(btwn(@actor.level, 19, 19), 65), when(gte(@actor.level, 20), 70))",
+        "traits": [
+          "light"
+        ],
+        "effects": [
+          {
+            "uuid": "Compendium.ascendant.ascendant-adept.Item.ZzwzFKaA8Yp59Rfb",
+            "affects": "allies",
+            "events": [
+              "enter"
+            ],
+            "removeOnExit": true,
+            "includesSelf": true
+          }
+        ],
+        "appearance": {
+          "border": {
+            "color": "#f5e26b",
+            "alpha": 0.75
+          },
+          "highlight": {
+            "color": "#f5e26b",
+            "alpha": 0.2
+          }
+        },
+        "predicate": [
+          "ascendant-piercing-gleam",
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          },
+          {
+            "lt": [
+              "self:level",
+              21
+            ]
+          }
+        ]
+      },
+      {
+        "key": "TokenLight",
+        "value": {
+          "bright": "match(when(btwn(@actor.level, 1, 1), 20), when(btwn(@actor.level, 2, 2), 25), when(btwn(@actor.level, 3, 3), 25), when(btwn(@actor.level, 4, 4), 30), when(btwn(@actor.level, 5, 5), 30), when(btwn(@actor.level, 6, 6), 35), when(btwn(@actor.level, 7, 7), 35), when(btwn(@actor.level, 8, 8), 40), when(btwn(@actor.level, 9, 9), 40), when(btwn(@actor.level, 10, 10), 45), when(btwn(@actor.level, 11, 11), 45), when(btwn(@actor.level, 12, 12), 50), when(btwn(@actor.level, 13, 13), 50), when(btwn(@actor.level, 14, 14), 55), when(btwn(@actor.level, 15, 15), 55), when(btwn(@actor.level, 16, 16), 60), when(btwn(@actor.level, 17, 17), 60), when(btwn(@actor.level, 18, 18), 65), when(btwn(@actor.level, 19, 19), 65), when(gte(@actor.level, 20), 70))",
+          "dim": "match(when(btwn(@actor.level, 1, 1), 20), when(btwn(@actor.level, 2, 2), 25), when(btwn(@actor.level, 3, 3), 25), when(btwn(@actor.level, 4, 4), 30), when(btwn(@actor.level, 5, 5), 30), when(btwn(@actor.level, 6, 6), 35), when(btwn(@actor.level, 7, 7), 35), when(btwn(@actor.level, 8, 8), 40), when(btwn(@actor.level, 9, 9), 40), when(btwn(@actor.level, 10, 10), 45), when(btwn(@actor.level, 11, 11), 45), when(btwn(@actor.level, 12, 12), 50), when(btwn(@actor.level, 13, 13), 50), when(btwn(@actor.level, 14, 14), 55), when(btwn(@actor.level, 15, 15), 55), when(btwn(@actor.level, 16, 16), 60), when(btwn(@actor.level, 17, 17), 60), when(btwn(@actor.level, 18, 18), 65), when(btwn(@actor.level, 19, 19), 65), when(gte(@actor.level, 20), 70))"
+        },
+        "predicate": [
+          "ascendant-piercing-gleam",
+          "ascendant-piercing-gleam-light"
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.kQT9c6cvRQAq3zn4",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.m4hUSfAGQVBvJKxY",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.bZhODAIMpBMUrURc",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "piercing-gleam",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-adept",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!7pYBjN0gO6dFR3nX"
+}

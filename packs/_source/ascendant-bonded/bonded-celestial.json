@@ -1,0 +1,245 @@
+{
+  "_id": "7d0G2Q0wMCTjla2J",
+  "name": "Bonded Celestial",
+  "type": "npc",
+  "img": "icons/creatures/magical/humanoid-silhouette-glowing-pink.webp",
+  "system": {
+    "abilities": {
+      "str": {
+        "mod": 0
+      },
+      "dex": {
+        "mod": 0
+      },
+      "con": {
+        "mod": 0
+      },
+      "int": {
+        "mod": 0
+      },
+      "wis": {
+        "mod": 0
+      },
+      "cha": {
+        "mod": 0
+      }
+    },
+    "attributes": {
+      "ac": {
+        "details": "",
+        "value": 10
+      },
+      "allSaves": {
+        "value": ""
+      },
+      "hp": {
+        "details": "Shared with the owner; synced from their sheet.",
+        "max": 10,
+        "temp": 0,
+        "value": 10
+      },
+      "speed": {
+        "otherSpeeds": [
+          {
+            "type": "fly",
+            "value": 20
+          }
+        ],
+        "value": 25
+      }
+    },
+    "details": {
+      "blurb": "",
+      "languages": {
+        "details": "",
+        "value": []
+      },
+      "level": {
+        "value": 1
+      },
+      "privateNotes": "",
+      "publicNotes": "<p>A Bonded Soul companion in its Celestial base form. Link it to its owner with <strong>Sync Bonded</strong> on the owner's sheet: it then has the owner's level, AC, saves, Perception and Hit Points, and its Strikes use the owner's best attack modifier with their highest attribute to damage. Drag evolutions from the Apex Talents compendium onto it; the pool is 3 + the owner's level points, reallocated during daily preparations.</p><p>The holy trait. At the owner's 5th, once per encounter it may restore Hit Points equal to their level to an adjacent creature as an action, and its Strikes deal +1d6 spirit to unholy creatures.</p>"
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "perception": {
+      "details": "",
+      "mod": 0,
+      "senses": []
+    },
+    "resources": {},
+    "saves": {
+      "fortitude": {
+        "saveDetail": "",
+        "value": 0
+      },
+      "reflex": {
+        "saveDetail": "",
+        "value": 0
+      },
+      "will": {
+        "saveDetail": "",
+        "value": 0
+      }
+    },
+    "skills": {
+      "athletics": {
+        "base": 0
+      }
+    },
+    "traits": {
+      "rarity": "unique",
+      "size": {
+        "value": "med"
+      },
+      "value": [
+        "celestial",
+        "holy"
+      ]
+    }
+  },
+  "items": [
+    {
+      "_id": "P12tUiYdsLcjjfQL",
+      "name": "Slam",
+      "type": "melee",
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "system": {
+        "attack": {
+          "value": ""
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "bonus": {
+          "value": 0
+        },
+        "damageRolls": {
+          "0": {
+            "damage": "1d8",
+            "damageType": "bludgeoning"
+          }
+        },
+        "description": {
+          "value": ""
+        },
+        "publication": {
+          "title": "Ascendant: Mythic Rebuilt",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "range": null,
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": []
+        }
+      },
+      "sort": 100000,
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!actors.items!7d0G2Q0wMCTjla2J.P12tUiYdsLcjjfQL"
+    },
+    {
+      "_id": "2LdPQ8MdUF4NcVGf",
+      "name": "Base Form: Celestial",
+      "type": "effect",
+      "img": "icons/creatures/magical/humanoid-silhouette-glowing-pink.webp",
+      "system": {
+        "description": {
+          "value": "<p>The holy trait. At the owner's 5th, once per encounter it may restore Hit Points equal to their level to an adjacent creature as an action, and its Strikes deal +1d6 spirit to unholy creatures.</p>",
+          "gm": ""
+        },
+        "publication": {
+          "title": "Ascendant: Mythic Rebuilt",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "strike-damage",
+            "slug": "bonded-celestial-spirit",
+            "diceNumber": 1,
+            "dieSize": "d6",
+            "damageType": "spirit",
+            "predicate": [
+              {
+                "gte": [
+                  "self:level",
+                  5
+                ]
+              },
+              "target:trait:unholy"
+            ]
+          },
+          {
+            "key": "GrantItem",
+            "uuid": "Compendium.ascendant.ascendant-apex.Item.meImaFEcrLaufzm3",
+            "allowDuplicate": false,
+            "reevaluateOnUpdate": true,
+            "predicate": [
+              {
+                "gte": [
+                  "self:level",
+                  5
+                ]
+              }
+            ]
+          }
+        ],
+        "slug": "bonded-base-form-celestial",
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "unique"
+        },
+        "level": {
+          "value": 1
+        },
+        "duration": {
+          "value": -1,
+          "unit": "unlimited",
+          "sustained": false,
+          "expiry": null
+        },
+        "start": {
+          "value": 0,
+          "initiative": null
+        },
+        "badge": null,
+        "tokenIcon": {
+          "show": false
+        },
+        "context": null
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!actors.items!7d0G2Q0wMCTjla2J.2LdPQ8MdUF4NcVGf"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!actors!7d0G2Q0wMCTjla2J"
+}

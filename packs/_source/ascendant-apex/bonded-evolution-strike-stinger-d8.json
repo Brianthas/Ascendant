@@ -1,0 +1,51 @@
+{
+  "_id": "suQ4DFOaJoXhF3ne",
+  "name": "Evolution 1: Extra Strike, Stinger (d8)",
+  "type": "melee",
+  "img": "systems/pf2e/icons/default-icons/melee.svg",
+  "system": {
+    "attack": {
+      "value": ""
+    },
+    "attackEffects": {
+      "value": []
+    },
+    "bonus": {
+      "value": 0
+    },
+    "damageRolls": {
+      "0": {
+        "damage": "1d8",
+        "damageType": "piercing"
+      }
+    },
+    "description": {
+      "value": "<p>Extra Strike (1 point, maximum 2). Deals damage equal to your base Strike's die: this is the d8 version. Re-run Sync Bonded after adding it so it takes the owner's attack modifier and damage bonus.</p>"
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "range": null,
+    "rules": [],
+    "slug": "bonded-evolution-strike-stinger-d8",
+    "traits": {
+      "rarity": "common",
+      "value": [
+        "finesse"
+      ]
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!suQ4DFOaJoXhF3ne"
+}
