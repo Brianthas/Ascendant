@@ -1,5 +1,5 @@
 import { MODULE_ID } from "./constants.mjs";
-import { registerFeatCategories, registerFeatSections, dropDuplicateSections } from "./categories.mjs";
+import { registerFeatCategories, registerFeatSections, dropDuplicateSections, pruneStoredSections } from "./categories.mjs";
 import { registerVariants } from "./variants/register.mjs";
 import { registerRefreshButton, refreshTalentRules } from "./refresh-rules.mjs";
 import { registerRegenerationDeactivation } from "./deathless.mjs";
@@ -92,7 +92,9 @@ Hooks.once("setup", () => {
     }
 });
 
-Hooks.once("ready", () => {
+Hooks.once("ready", async () => {
+    if (await pruneStoredSections()) console.log(`${MODULE_ID} | removed this module's section ids from the persisted campaignFeatSections setting`);
+
     // Another module may add a section matching one of ours after we register,
     // since `ready` is later than our registration. On the first load after that
     // happens we may have added a duplicate; stand down and let theirs be the one.

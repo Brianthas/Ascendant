@@ -16,3 +16,6 @@ ladders at every boundary, and the runtime scripts against real combat, damage a
   regeneration, Second Wind trigger, Battle Mender immunity removal, party container capacities.
 - Variant rules: Dual Class, third class, Ancestry Paragon and Free Archetype settings.
 - Rules compendium built from the rules text.
+- At `ready`, the GM's client removes this module's section ids from PF2e's persisted
+  `campaignFeatSections` setting if another module saved them there, so disabling Ascendant leaves
+  no raw section rows behind on character sheets.

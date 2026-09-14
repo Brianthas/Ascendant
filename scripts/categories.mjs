@@ -53,6 +53,44 @@ export function dropDuplicateSections() {
 }
 
 /**
+ * Take our section ids back out of PF2e's persisted `campaignFeatSections` setting.
+ *
+ * The in-memory list this module pushes to is the same object PF2e persists in
+ * that world setting, and any module that saves the list wholesale writes our
+ * entries into it. Once persisted they outlive this module: on 2026-09-14 a
+ * world showed five raw localization-key rows left by a module that was
+ * off, and our six ids were sitting beside them. The GM alone writes the
+ * setting, and the write happens only when one of our ids is stored.
+ *
+ * The check reads the setting document's `_source.value`, never
+ * `game.settings.get`. That getter returns the document's derived value, which
+ * is the same array object as the live list (reference equality measured on
+ * Foundry 14.367), so by `ready` it already holds the sections this module
+ * pushed at `init`; comparing against it would find our ids on every load and
+ * write the setting each time. `_source.value` is the JSON string the server
+ * holds, and it is a string on both v12 and v14.
+ */
+export async function pruneStoredSections() {
+    if (!game.user.isGM) return false;
+    const doc = game.settings.storage.get("world")?.getSetting("pf2e.campaignFeatSections");
+    const source = doc?._source?.value;
+    let stored;
+    try {
+        stored = typeof source === "string" ? JSON.parse(source) : source;
+    } catch {
+        return false;
+    }
+    if (!Array.isArray(stored)) return false;
+    const ours = new Set(TIERS.map((t) => t.id));
+    const kept = stored.filter((s) => !ours.has(s?.id));
+    if (kept.length === stored.length) return false;
+    await game.settings.set("pf2e", "campaignFeatSections", kept);
+    // PF2e replaces the live array from the setting on change; put ours back.
+    registerFeatSections();
+    return true;
+}
+
+/**
  * Add a character sheet section per tier.
  *
  * CharacterPF2e#prepareFeats creates a FeatGroup for every entry in
