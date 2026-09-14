@@ -13,6 +13,19 @@
     min-height: 0;
     flex: 1 1 auto;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* When the window is taller than its rows, the summary row sits at the bottom instead of where the rows end. */
+#attribute-builder .attribute-rows {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+}
+
+#attribute-builder .attribute-rows > .summary-row {
+    margin-top: auto;
 }
 
 /* Enhanced Attribute Boosts rows in the Attribute Boosts window. */
