@@ -1,0 +1,53 @@
+{
+  "_id": "xCccuvnUG6mlJF17",
+  "name": "Borrowed Time (13th)",
+  "type": "feat",
+  "img": "icons/magic/time/hourglass-yellow-green.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>13th Level</strong></p><p><strong>13th Level</strong></p><ul><li>Any number of flourish actions per round.</li></ul><p>Granted automatically by Borrowed Time at 13th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-borrowed-time-13",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 13
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!xCccuvnUG6mlJF17"
+}

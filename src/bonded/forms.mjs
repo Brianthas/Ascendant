@@ -1,4 +1,4 @@
-import { idFor, effectItem, actionItem, PUBLICATION } from "../lib/item.mjs";
+import { idFor, effectItem, actionItem, uuidFor, PUBLICATION } from "../lib/item.mjs";
 import { byLevel } from "../lib/rules.mjs";
 
 /**
@@ -144,7 +144,7 @@ const FORMS = [
                 damageType: "spirit",
                 predicate: [{ gte: ["self:level", 5] }, "target:trait:unholy"],
             },
-            { key: "GrantItem", uuid: `Compendium.ascendant.ascendant-apex.Item.${idFor("bonded-celestial-mend")}`, allowDuplicate: false, reevaluateOnUpdate: true, predicate: [{ gte: ["self:level", 5] }] },
+            { key: "GrantItem", uuid: uuidFor("ascendant-apex", "bonded-celestial-mend"), allowDuplicate: false, reevaluateOnUpdate: true, predicate: [{ gte: ["self:level", 5] }] },
         ],
     },
     {

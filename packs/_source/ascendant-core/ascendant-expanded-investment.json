@@ -1,0 +1,58 @@
+{
+  "_id": "3jV2f1ZckyYc1zlV",
+  "name": "Expanded Investment",
+  "type": "feat",
+  "img": "icons/commodities/currency/coin-embossed-crown-gold.webp",
+  "system": {
+    "description": {
+      "value": "<p>The normal limit of 10 invested magic items increases to 20.</p>\n<hr />\n<p><strong>In Foundry:</strong> the investiture limit on your inventory reads 20. Applied automatically.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.resources.investiture.max",
+        "value": 20
+      }
+    ],
+    "slug": "ascendant-expanded-investment",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-core",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!3jV2f1ZckyYc1zlV"
+}

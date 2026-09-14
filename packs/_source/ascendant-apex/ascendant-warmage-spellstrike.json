@@ -1,0 +1,47 @@
+{
+  "_id": "pqkJHF094IKfpnKi",
+  "name": "Spellstrike",
+  "type": "action",
+  "img": "icons/magic/fire/dagger-rune-enchant-flame-blue-yellow.webp",
+  "system": {
+    "description": {
+      "value": "<p>Make a melee Strike and Cast a Spell as part of the same activity. The spell may be any spell you can cast with a casting time of 3 actions or fewer, targeting whatever it normally targets.</p>\n<ul><li>If the spell requires a spell attack roll against the creature you Struck, use the Strike's attack roll for both.</li></ul>\n<hr />\n<p>Roll the Strike from your Actions tab, then cast the spell from your Spellcasting tab. From 10th a critical hit makes a spell delivered against that target critical too, and this Strike does not count against your multiple attack penalty; from 20th you may cast two spells.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-warmage-spellstrike",
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "magical"
+      ],
+      "rarity": "common"
+    },
+    "actionType": {
+      "value": "action"
+    },
+    "actions": {
+      "value": 2
+    },
+    "category": null,
+    "frequency": null,
+    "selfEffect": null,
+    "deathNote": false
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!pqkJHF094IKfpnKi"
+}

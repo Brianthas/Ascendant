@@ -1,0 +1,119 @@
+{
+  "_id": "7h2eavQmffjRBaMJ",
+  "name": "Grasping Reach",
+  "type": "feat",
+  "img": "icons/skills/melee/strike-polearm-glowing-white.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>Your reach extends considerably past where your reach ought to end. Enemies who thought themselves safely spaced find themselves seized, dragged, and repositioned, and objects on the far side of a room are no longer meaningfully on the far side of anything.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>Your melee unarmed Strikes and melee weapons you wield gain the reach trait, or increase their reach by 5 feet if they already have it.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>Your reach increases by another 5 feet.</li><li>You may Interact with objects anywhere within your reach.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>Once per round, when you hit a creature within your reach, you may move it up to 10 feet in any direction as a free action.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Your reach increases by another 5 feet.</li><li>The forced movement increases to 15 feet.</li><li>Once per round, you may Grab, Shove, Trip, or Disarm a creature within your reach as a free action.</li></ul>\n<hr />\n<p><strong>In Foundry:</strong> your reach is raised automatically: 5 feet at 1st, 10 at 5th, 15 at 15th, on top of any reach a weapon already has.</p>\n<p>For the table: Interacting at reach, the forced movement on a hit from 10th (a note on your melee hits reminds you), and the free maneuver from 15th.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "add",
+        "path": "system.attributes.reach.base",
+        "value": "match(when(btwn(@actor.level, 1, 4), 5), when(btwn(@actor.level, 5, 14), 10), when(gte(@actor.level, 15), 15))"
+      },
+      {
+        "key": "Note",
+        "selector": "strike-attack-roll",
+        "title": "Grasping Reach",
+        "text": "ASCENDANT.Note.GraspingReachMove",
+        "outcome": [
+          "success",
+          "criticalSuccess"
+        ],
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          },
+          "item:melee"
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.NnJL73GQz1Zgtfzc",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.FMncy1v7x23BSVNR",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.9eEe0i4SOLkYEJFC",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "ascendant-grasping-reach",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-adept",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!7h2eavQmffjRBaMJ"
+}

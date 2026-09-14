@@ -146,7 +146,7 @@
       "_key": "!actors.items!l3LwBsyby9fwBPpY.7QbDrb12k0lInXOi"
     },
     {
-      "_id": "beazdy2EMYuAxaBs",
+      "_id": "gHpISNPuXoWam0N2",
       "name": "Base Form: Beast",
       "type": "effect",
       "img": "icons/creatures/mammals/wolf-howl-moon-forest-blue.webp",
@@ -173,7 +173,7 @@
             ]
           }
         ],
-        "slug": "bonded-base-form-beast",
+        "slug": "ascendant-bonded-base-form-beast",
         "traits": {
           "otherTags": [],
           "value": [],
@@ -207,7 +207,7 @@
       "_stats": {
         "systemId": "pf2e"
       },
-      "_key": "!actors.items!l3LwBsyby9fwBPpY.beazdy2EMYuAxaBs"
+      "_key": "!actors.items!l3LwBsyby9fwBPpY.gHpISNPuXoWam0N2"
     }
   ],
   "effects": [],

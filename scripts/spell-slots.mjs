@@ -1,7 +1,7 @@
 import { MODULE_ID } from "./constants.mjs";
 
 /** Slug of the Apex talent that triples spell slots and cantrips. */
-const TALENT_SLUG = "inexhaustible-magics";
+const TALENT_SLUG = "ascendant-inexhaustible-magics";
 
 /** Where the untripled maxima are kept, so tripling is reversible and idempotent. */
 const FLAG = "untripledSlots";

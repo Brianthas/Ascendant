@@ -1,0 +1,48 @@
+{
+  "_id": "bFsBnCngttdgceI4",
+  "name": "Shadowstep",
+  "type": "action",
+  "img": "icons/magic/perception/shadow-stealth-eyes-purple.webp",
+  "system": {
+    "description": {
+      "value": "<p>Teleport to any shadow or area of dim light you can see within 120 feet.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-living-shadow-shadowstep",
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "shadow",
+        "teleportation"
+      ],
+      "rarity": "common"
+    },
+    "actionType": {
+      "value": "action"
+    },
+    "actions": {
+      "value": 1
+    },
+    "category": null,
+    "frequency": null,
+    "selfEffect": null,
+    "deathNote": false
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!bFsBnCngttdgceI4"
+}

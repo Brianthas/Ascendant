@@ -1,0 +1,53 @@
+{
+  "_id": "8jfjguglTAtrcaw4",
+  "name": "Ruinous Blows (5th)",
+  "type": "feat",
+  "img": "icons/skills/melee/strike-hammer-destructive-orange.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>Your Strikes against objects deal double damage to their Hit Points.<ul><li>Magical barriers and wall effects count as objects for this purpose, and you may Strike and damage them even if they are immune to physical damage, immune to being damaged, or otherwise impervious to attack.</li></ul></li><li>The AC penalty increases to -2.</li></ul><p>Granted automatically by Ruinous Blows at 5th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-ruinous-blows-5",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 5
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!8jfjguglTAtrcaw4"
+}

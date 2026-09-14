@@ -1,0 +1,116 @@
+{
+  "_id": "8pO6fy0fnBIvh57d",
+  "name": "Dread Presence: Low Save",
+  "type": "effect",
+  "img": "icons/magic/control/fear-fright-monster-grin-green.webp",
+  "system": {
+    "description": {
+      "value": "<p>Applied automatically while you save against an effect from a character whose Dread Presence is active. If you are Frightened and roll a number on the die equal to or less than your frightened value, the result is one degree worse.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "AdjustDegreeOfSuccess",
+        "selector": "saving-throw",
+        "adjustment": {
+          "all": "one-degree-worse"
+        },
+        "predicate": [
+          "self:condition:frightened:1",
+          "check:total:natural:1"
+        ]
+      },
+      {
+        "key": "AdjustDegreeOfSuccess",
+        "selector": "saving-throw",
+        "adjustment": {
+          "all": "one-degree-worse"
+        },
+        "predicate": [
+          "self:condition:frightened:2",
+          {
+            "or": [
+              "check:total:natural:1",
+              "check:total:natural:2"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "AdjustDegreeOfSuccess",
+        "selector": "saving-throw",
+        "adjustment": {
+          "all": "one-degree-worse"
+        },
+        "predicate": [
+          "self:condition:frightened:3",
+          {
+            "or": [
+              "check:total:natural:1",
+              "check:total:natural:2",
+              "check:total:natural:3"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "AdjustDegreeOfSuccess",
+        "selector": "saving-throw",
+        "adjustment": {
+          "all": "one-degree-worse"
+        },
+        "predicate": [
+          "self:condition:frightened:4",
+          {
+            "or": [
+              "check:total:natural:1",
+              "check:total:natural:2",
+              "check:total:natural:3",
+              "check:total:natural:4"
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "ascendant-dread-presence-low-roll",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "duration": {
+      "value": -1,
+      "unit": "unlimited",
+      "sustained": false,
+      "expiry": null
+    },
+    "start": {
+      "value": 0,
+      "initiative": null
+    },
+    "badge": null,
+    "tokenIcon": {
+      "show": false
+    },
+    "context": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!8pO6fy0fnBIvh57d"
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "ubAGfOn0dbElLwv2",
+  "name": "Release Attunement",
+  "type": "action",
+  "img": "icons/commodities/tech/dial-meter-gauge-blue.webp",
+  "system": {
+    "description": {
+      "value": "<p>Your Strikes, spells and impulses return to their normal damage types.</p><hr /><p>Press the button on the card this posts.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-shape-of-harm-release",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "common"
+    },
+    "actionType": {
+      "value": "free"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": null,
+    "frequency": null,
+    "selfEffect": null,
+    "deathNote": false
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!ubAGfOn0dbElLwv2"
+}

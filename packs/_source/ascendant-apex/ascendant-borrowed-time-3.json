@@ -1,0 +1,53 @@
+{
+  "_id": "KYJ2NoTmuQBPPMy1",
+  "name": "Borrowed Time (3rd)",
+  "type": "feat",
+  "img": "icons/magic/time/hourglass-yellow-green.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>3rd Level</strong></p><p><strong>3rd Level and Every 3 Levels</strong></p><ul><li>Gain an extra reaction at the start of your turn: 2 at 3rd, 3 at 6th, 4 at 9th, 5 at 12th, 6 at 15th, 7 at 18th.</li></ul><p>Granted automatically by Borrowed Time at 3rd level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-borrowed-time-3",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 3
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!KYJ2NoTmuQBPPMy1"
+}

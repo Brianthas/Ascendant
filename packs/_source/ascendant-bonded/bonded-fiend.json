@@ -149,7 +149,7 @@
       "_key": "!actors.items!Udd2swNWt3S3q6Cs.P7Od1ntFWqbRtaO2"
     },
     {
-      "_id": "W4dxmruaar6tHPHi",
+      "_id": "TP6qtnDXcdfcWNrd",
       "name": "Base Form: Fiend",
       "type": "effect",
       "img": "icons/creatures/unholy/demon-horned-winged-laughing.webp",
@@ -202,7 +202,7 @@
             ]
           }
         ],
-        "slug": "bonded-base-form-fiend",
+        "slug": "ascendant-bonded-base-form-fiend",
         "traits": {
           "otherTags": [],
           "value": [],
@@ -236,7 +236,7 @@
       "_stats": {
         "systemId": "pf2e"
       },
-      "_key": "!actors.items!Udd2swNWt3S3q6Cs.W4dxmruaar6tHPHi"
+      "_key": "!actors.items!Udd2swNWt3S3q6Cs.TP6qtnDXcdfcWNrd"
     }
   ],
   "effects": [],

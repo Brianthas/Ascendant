@@ -1,0 +1,96 @@
+{
+  "_id": "8Ffg8wCMKGN5cgub",
+  "name": "Unbound Casting (7th)",
+  "type": "feat",
+  "img": "icons/magic/symbols/runes-carved-stone-purple.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>7th Level</strong></p><p><strong>7th Level</strong></p><ul><li>All your spells are considered subtle.</li><li>Learn another spellshape.</li></ul><p>Granted automatically by Unbound Casting at 7th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "ChoiceSet",
+        "slug": "spellshapeC",
+        "rollOption": "ascendant-spellshape-c",
+        "prompt": "ASCENDANT.Rules.SpellshapePrompt",
+        "adjustName": true,
+        "choices": [
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.HiJSfR7WszLD9Izl",
+            "label": "Split Casting"
+          },
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.ed3aDsJkQ2HN1IYU",
+            "label": "Bouncing Casting"
+          },
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.ji5hfoCial3C9wqB",
+            "label": "Delayed Casting"
+          },
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.tdbjNiwpbthwqVLN",
+            "label": "Anchored Casting"
+          },
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.MHyZRsyERYtk5qfm",
+            "label": "Piercing Casting"
+          },
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.ehXTaUkJtBUFXCB1",
+            "label": "Perfect Reach"
+          },
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.vL9GK7vWKVAXHTvk",
+            "label": "Perfect Quickening"
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "{item|flags.pf2e.rulesSelections.spellshapeC}",
+        "allowDuplicate": false
+      }
+    ],
+    "slug": "ascendant-unbound-casting-7",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 7
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!8Ffg8wCMKGN5cgub"
+}

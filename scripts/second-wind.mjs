@@ -1,8 +1,8 @@
 import { MODULE_ID } from "./constants.mjs";
 
-const TALENT_SLUG = "second-wind";
-const REGEN_SLUG = "second-wind-regeneration";
-const SURGE_SLUG = "second-wind-surge";
+const TALENT_SLUG = "ascendant-second-wind";
+const REGEN_SLUG = "ascendant-second-wind-regeneration";
+const SURGE_SLUG = "ascendant-second-wind-surge";
 const USES_FLAG = "secondWind";
 
 /**

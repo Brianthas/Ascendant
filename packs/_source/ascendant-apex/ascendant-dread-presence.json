@@ -1,0 +1,371 @@
+{
+  "_id": "ZTYrowpJC04lvIHj",
+  "name": "Dread Presence",
+  "type": "feat",
+  "img": "icons/magic/control/fear-fright-monster-grin-green.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>Something in you registers below thought, in the part of the mind that predates language and still knows what it is to be prey. Brave creatures find their hands unsteady near you, and the mindless, who should feel nothing at all, discover they would rather be elsewhere.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>As a free action once per round, activate or deactivate an aura with a radius of 10 feet + 5 feet per even level.</li><li>When an enemy first enters the aura, or your movement first places them inside, they attempt a Will save against the higher of your Class DC or Spell DC.<ul><li><strong>Critical Success</strong> Frightened 1. <strong>Success</strong> Frightened 2. <strong>Failure</strong> Frightened 3.</li><li><strong>Critical Failure</strong> Frightened 4. The creature drops anything it is holding and cannot use reactions while in your aura.</li><li>While inside the aura, and for 1 round after leaving, they cannot reduce their Frightened value below the result rolled. On a critical failure this lasts 1 minute.</li><li>An enemy that leaves and re-enters rerolls, taking the worse result.</li></ul></li><li>Creatures immune to fear or emotion effects are not immune to your aura, but treat their save result as one degree better.<ul><li>At 10th level they roll normally, and creatures that are mindless or immune to mental effects become affected, treating their result as one degree better.</li><li>At 17th level, nothing is immune to your aura and all creatures roll normally.</li></ul></li></ul>\n<p><strong>3rd Level</strong></p><ul><li>Creatures affected by your aura are Off-Guard to you.</li><li>When a creature Frightened by your aura is reduced to 0 Hit Points by any source, you restore Hit Points equal to half your level. This triggers no more than once per round.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>A creature Frightened by your aura that rolls at or below its Frightened value on a save against any of your effects treats the result as one degree worse.</li></ul>\n<p><strong>7th Level</strong></p><ul><li>Enemies cannot reduce their Frightened value below 2 while in your aura.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>The healing from your aura increases to your level, and may trigger twice per round.</li></ul>\n<p><strong>13th Level</strong></p><ul><li>Enemies cannot reduce their Frightened value below 3 while in your aura.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Enemies in your aura take a status penalty to attack rolls against you equal to their Frightened value, in addition to the normal Frightened penalty.</li></ul>\n<p><strong>20th Level</strong></p><ul><li>Enemies cannot willingly move closer to you while inside your aura. They may still attack, cast, and move within or out of it.</li></ul>\n<p><em>Dropped items may be retrieved normally with an Interact action.</em></p>\n<hr />\n<p><strong>In Foundry:</strong> switch <em>Dread Presence</em> on in your effects panel. The aura is drawn at the right radius and applies <strong>Frightened 1</strong> to enemies inside it, which ends when they leave; fear- and mental-immune creatures are skipped until the level at which the rules bring them in. Affected creatures are Off-Guard to your attacks from 3rd. From 5th, an affected creature saving against any effect of yours that rolls its Frightened value or less on the die has the result worsened one degree. From 15th their attacks against you take the extra penalty.</p>\n<p>For the table: roll the Will save when an enemy first enters and raise their Frightened value to match, apply the floors on reducing it, the healing when one drops, and the 20th-level approach ban. PF2e's aura save is pass or fail and it has no floor on a condition.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "ascendant-dread-presence",
+        "label": "ASCENDANT.Rules.DreadPresenceToggle",
+        "toggleable": true,
+        "value": false
+      },
+      {
+        "key": "Aura",
+        "slug": "dread-presence-1",
+        "radius": "10 + (floor(@actor.level / 2) * 5)",
+        "traits": [
+          "emotion",
+          "fear",
+          "mental",
+          "visual"
+        ],
+        "effects": [
+          {
+            "uuid": "Compendium.ascendant.ascendant-apex.Item.I0jDdPAMuex0n1av",
+            "affects": "enemies",
+            "events": [
+              "enter"
+            ],
+            "removeOnExit": true,
+            "predicate": [
+              {
+                "nor": [
+                  "target:immunity:mental",
+                  "target:immunity:fear",
+                  "target:immunity:emotion"
+                ]
+              }
+            ]
+          }
+        ],
+        "appearance": {
+          "border": {
+            "color": "#8b0000",
+            "alpha": 0.75
+          },
+          "highlight": {
+            "color": "#8b0000",
+            "alpha": 0.25
+          }
+        },
+        "predicate": [
+          "ascendant-dread-presence",
+          {
+            "lt": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Aura",
+        "slug": "dread-presence-10",
+        "radius": "10 + (floor(@actor.level / 2) * 5)",
+        "traits": [
+          "emotion",
+          "fear",
+          "mental",
+          "visual"
+        ],
+        "effects": [
+          {
+            "uuid": "Compendium.ascendant.ascendant-apex.Item.I0jDdPAMuex0n1av",
+            "affects": "enemies",
+            "events": [
+              "enter"
+            ],
+            "removeOnExit": true,
+            "predicate": [
+              {
+                "nor": [
+                  "target:immunity:mental",
+                  "target:trait:mindless"
+                ]
+              }
+            ]
+          }
+        ],
+        "appearance": {
+          "border": {
+            "color": "#8b0000",
+            "alpha": 0.75
+          },
+          "highlight": {
+            "color": "#8b0000",
+            "alpha": 0.25
+          }
+        },
+        "predicate": [
+          "ascendant-dread-presence",
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          },
+          {
+            "lt": [
+              "self:level",
+              17
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Aura",
+        "slug": "dread-presence-17",
+        "radius": "10 + (floor(@actor.level / 2) * 5)",
+        "traits": [
+          "emotion",
+          "fear",
+          "mental",
+          "visual"
+        ],
+        "effects": [
+          {
+            "uuid": "Compendium.ascendant.ascendant-apex.Item.I0jDdPAMuex0n1av",
+            "affects": "enemies",
+            "events": [
+              "enter"
+            ],
+            "removeOnExit": true,
+            "predicate": []
+          }
+        ],
+        "appearance": {
+          "border": {
+            "color": "#8b0000",
+            "alpha": 0.75
+          },
+          "highlight": {
+            "color": "#8b0000",
+            "alpha": 0.25
+          }
+        },
+        "predicate": [
+          "ascendant-dread-presence",
+          {
+            "gte": [
+              "self:level",
+              17
+            ]
+          }
+        ]
+      },
+      {
+        "key": "EphemeralEffect",
+        "affects": "target",
+        "selectors": [
+          "strike-attack-roll",
+          "spell-attack"
+        ],
+        "uuid": "Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg",
+        "predicate": [
+          "ascendant-dread-presence",
+          {
+            "gte": [
+              "self:level",
+              3
+            ]
+          },
+          "target:effect:ascendant-dread-presence-frightened"
+        ]
+      },
+      {
+        "key": "EphemeralEffect",
+        "affects": "target",
+        "selectors": [
+          "saving-throw",
+          "fortitude",
+          "reflex",
+          "will"
+        ],
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.8pO6fy0fnBIvh57d",
+        "predicate": [
+          "ascendant-dread-presence",
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Note",
+        "selector": "all",
+        "title": "Dread Presence",
+        "text": "ASCENDANT.Note.DreadPresenceHealing",
+        "predicate": [
+          "ascendant-dread-presence",
+          {
+            "gte": [
+              "self:level",
+              3
+            ]
+          },
+          "target:condition:frightened"
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.iegPfpeGnlSLSD0r",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.AAhpvhpphxUeoUPi",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.5crrPn93b4QV42qs",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.kgwBv3kHyy7cL2EC",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.qMnQ3GQAkUvMudV2",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              13
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.xAAmucPlk4oWxs72",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.a5lrJK1WAdHixSP4",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              17
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.jQxDEh4wRFdI7DwR",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              20
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "ascendant-dread-presence",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-apex",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!ZTYrowpJC04lvIHj"
+}

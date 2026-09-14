@@ -1,0 +1,94 @@
+{
+  "_id": "N1BErd9Mts0LUnA7",
+  "name": "Bonded Soul",
+  "type": "feat",
+  "img": "icons/magic/life/heart-cross-strong-flame-purple-orange.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>Somewhere in the working that shaped you, a second thing arrived and declined to leave. It wears whatever form the bond permits and shares every wound you take, which makes the arrangement less a partnership than a single life, awkwardly divided between two bodies.</em></p></blockquote>\n<p><strong>Statistics</strong></p>\n<ul>\n<li>The Bonded is your level. It uses your AC, saving throw modifiers, Perception, and class DC.</li>\n<li>Its Strikes use the higher of your weapon attack modifier or your spell attack modifier, and add your highest attribute modifier to damage.</li>\n<li>It has its own multiple attack penalty.</li>\n<li>It uses your skill modifiers. Its Athletics modifier is the higher of your Athletics or your best attack modifier.</li>\n</ul>\n<p><strong>Shared Life</strong></p>\n<ul>\n<li>You and the Bonded share a single Hit Point pool. Damage to either reduces it; healing either restores it.<ul><li>If both are affected by the same area effect, apply the greater result once.</li></ul></li>\n<li>You share conditions, taking the worse of the two.</li>\n</ul>\n<p><strong>Manifesting</strong></p>\n<ul>\n<li>Manifest it in an open space within 30 feet as a 2-action activity. It remains indefinitely and may travel any distance from you.</li>\n<li>You may dismiss it as a free action, and it may dismiss itself as a free action.</li>\n<li>If your shared Hit Points drop to one quarter of maximum or lower, it immediately unmanifests.</li>\n</ul>\n<p><strong>Actions and Damage</strong></p>\n<ul>\n<li>It acts on your initiative, immediately after your turn, with 2 actions. At 10th level it gains a third action.</li>\n<li>Its Strikes gain an additional damage die at 5th, 10th, and 15th level.</li>\n</ul>\n<p><strong>Evolution Pool</strong></p>\n<ul><li>You have evolution points equal to 3 + your level, reallocated freely during daily preparations.</li></ul>\n<p><strong>Base Form</strong> Choose one at 1st level, permanently: Elemental, Fiend, Celestial, Beast, Aberration or Undead. The full table and the evolution list are in the Rules compendium.</p>\n<hr />\n<p><strong>In Foundry:</strong> import the base form you chose from the <em>Bonded Souls</em> compendium, then press <strong>Link Bonded</strong> in your sheet's header and pick it. That writes your level, AC, saves, Perception and Hit Points onto it, gives its Strikes your best attack modifier and highest attribute, and adds the extra dice for your level. Press it again whenever your numbers change; it also runs when you level. Damage or healing applied to either of you through a chat card is mirrored to the other, and a message says so when the pool drops to a quarter. Evolutions are the <em>Evolution N: ...</em> items in this compendium: drag them onto the Bonded (re-run the sync after adding a Strike).</p>\n<p>For the table: the evolution point budget (3 + your level), shared conditions, manifesting and dismissing, the area-effect rule, and the effects of Limbs, Improved Damage, Grab, Knockdown, Warded and Shared Form.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.oye1NSj1U2tZjt2f",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.sfKeO676CtQKstj4",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.Qwa7EoBeZIUeiKhE",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "ascendant-bonded-soul",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-apex",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!N1BErd9Mts0LUnA7"
+}

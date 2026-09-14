@@ -1,0 +1,204 @@
+{
+  "_id": "MVRXypaczIaCvkI7",
+  "name": "Sovereign Mind",
+  "type": "feat",
+  "img": "icons/magic/perception/eye-ringed-glow-angry-small-red.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>Your thoughts are the one territory that has never been successfully invaded. Compulsions slide off, terrors find no purchase, and the whispered suggestion that would unmake another arrives in your head and is simply declined.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>When you roll a Will save, improve the degree of success by one.</li><li>Resistance 5 to mental damage, increasing by 5 every 4 levels.</li><li>Immune to Controlled and Fascinated.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>Immune to Confused and Stupefied.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>Immune to Incapacitation effects that call for a Will save.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Immune to mental damage.</li><li>Immune to Emotion effects unless you choose otherwise.</li></ul>\n<hr />\n<p><strong>In Foundry:</strong> the Will improvement, the mental resistance (5 at 1st, 10 at 5th, 15 at 9th, 20 at 13th) and every immunity apply automatically, including immunity to mental damage and emotion effects from 15th.</p>\n<p>For the table: the 10th-level immunity to incapacitation effects that call for a Will save. PF2e's immunity type covers every incapacitation effect, including those with Fortitude and Reflex saves, so it is not applied; a note appears on your Will saves instead. To accept an emotion effect from 15th level, switch the immunity off in your effects panel for that roll.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "AdjustDegreeOfSuccess",
+        "selector": "will",
+        "adjustment": {
+          "criticalFailure": "one-degree-better",
+          "failure": "one-degree-better",
+          "success": "one-degree-better"
+        }
+      },
+      {
+        "key": "Resistance",
+        "type": "mental",
+        "value": "match(when(btwn(@actor.level, 1, 4), 5), when(btwn(@actor.level, 5, 8), 10), when(btwn(@actor.level, 9, 12), 15), when(gte(@actor.level, 13), 20))",
+        "predicate": [
+          {
+            "lt": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Immunity",
+        "type": "controlled"
+      },
+      {
+        "key": "Immunity",
+        "type": "fascinated"
+      },
+      {
+        "key": "Immunity",
+        "type": "confused",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Immunity",
+        "type": "stupefied",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Note",
+        "selector": "will",
+        "title": "Sovereign Mind",
+        "text": "ASCENDANT.Note.SovereignMindIncapacitation",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          },
+          "item:trait:incapacitation"
+        ]
+      },
+      {
+        "key": "Immunity",
+        "type": "mental",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "ascendant-sovereign-mind-emotion",
+        "label": "ASCENDANT.Rules.SovereignMindEmotion",
+        "toggleable": true,
+        "value": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Immunity",
+        "type": "emotion",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          },
+          "ascendant-sovereign-mind-emotion"
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.T9UIhDdfUC1d9iE1",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.Qmv193qtAQpVTq5f",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.IxCNWTBRUq9WsPvd",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "ascendant-sovereign-mind",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-paragon",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!MVRXypaczIaCvkI7"
+}

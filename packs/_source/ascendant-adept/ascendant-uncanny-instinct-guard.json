@@ -1,0 +1,49 @@
+{
+  "_id": "gaoAPFH3pS9P7VMZ",
+  "name": "Instinctive Guard",
+  "type": "action",
+  "img": "icons/magic/perception/eye-ringed-glow-angry-red.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>Trigger</strong> You are hit by an attack.</p>\n<p><strong>Effect</strong> Reduce the damage by half.</p>\n<hr />\n<p>Halve the damage when applying it. PF2e counts the once-per-round use here.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-uncanny-instinct-guard",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "common"
+    },
+    "actionType": {
+      "value": "reaction"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": null,
+    "frequency": {
+      "value": 1,
+      "max": 1,
+      "per": "round"
+    },
+    "selfEffect": null,
+    "deathNote": false
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!gaoAPFH3pS9P7VMZ"
+}

@@ -1,0 +1,53 @@
+{
+  "_id": "xamCIOeFzkd60aZA",
+  "name": "Unbroken Tempo (20th)",
+  "type": "feat",
+  "img": "icons/skills/melee/strikes-sword-scimitar.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>20th Level</strong></p><p><strong>20th Level</strong></p><ul><li>Once per round, when you critically hit with a Strike, you may immediately make another Strike against the same target with the same weapon as a free action.</li></ul><p>Granted automatically by Unbroken Tempo at 20th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-unbroken-tempo-20",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 20
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!xamCIOeFzkd60aZA"
+}

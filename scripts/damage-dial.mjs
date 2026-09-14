@@ -15,9 +15,9 @@ import { MODULE_ID } from "./constants.mjs";
  */
 
 const DIAL_OPTION = "ascendant-shape-of-harm";
-const TALENT_SLUG = "shape-of-harm";
-const ACTION_SET = "shape-of-harm-attune";
-const ACTION_RESET = "shape-of-harm-release";
+const TALENT_SLUG = "ascendant-shape-of-harm";
+const ACTION_SET = "ascendant-shape-of-harm-attune";
+const ACTION_RESET = "ascendant-shape-of-harm-release";
 
 /** The rule element that owns the dial on this actor, or null. */
 function dialRule(actor) {

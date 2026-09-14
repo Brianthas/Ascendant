@@ -1,0 +1,53 @@
+{
+  "_id": "eAOghFSdKOt0PldB",
+  "name": "Unerring Shot (15th)",
+  "type": "feat",
+  "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Aim has no frequency limit.</li><li>Your ranged Strikes and spell attacks cannot be blocked, redirected, or targeted by reactions.</li></ul><p>Granted automatically by Unerring Shot at 15th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-unerring-shot-15",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 15
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!eAOghFSdKOt0PldB"
+}

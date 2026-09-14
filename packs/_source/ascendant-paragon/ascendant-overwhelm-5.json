@@ -1,0 +1,53 @@
+{
+  "_id": "BUE465a0A8XgqCmo",
+  "name": "Overwhelm (5th)",
+  "type": "feat",
+  "img": "icons/magic/fire/explosion-fireball-large-orange.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>Once per round, when you Cast a Spell with an area, creatures in that area treat their degree of success as one lower, to a minimum of a failure.<ul><li>Creatures that critically succeed or critically fail are unaffected.</li></ul></li></ul><p>Granted automatically by Overwhelm at 5th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-overwhelm-5",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 5
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!BUE465a0A8XgqCmo"
+}

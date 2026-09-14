@@ -1,6 +1,6 @@
 import { MODULE_ID } from "./constants.mjs";
 
-const TALENT_SLUG = "battle-mender";
+const TALENT_SLUG = "ascendant-battle-mender";
 
 /** PF2e's own immunity effect, applied to a Battle Medicine patient by the system's macro. */
 const IMMUNITY_SLUG = "effect-battle-medicine-immunity";

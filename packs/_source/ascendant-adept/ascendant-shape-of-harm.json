@@ -1,0 +1,428 @@
+{
+  "_id": "eXRrj56pMJoEgNem",
+  "name": "Shape of Harm",
+  "type": "feat",
+  "img": "icons/commodities/tech/dial-meter-gauge-blue.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>You have stopped thinking of damage as a fixed property of the thing you are holding. Cold, flame, iron, the awful weight of the void: these are settings rather than limitations, adjusted between one breath and the next to suit whatever is in front of you.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>Choose one group permanently: physical (bludgeoning, piercing, slashing) or elemental (acid, cold, electricity, fire, sonic).</li><li>As a free action once per round, attune to any single damage type within that group. Your Strikes, spells, and impulses deal that type instead of their normal type until you change it.</li><li>Physical types you choose also count as cold iron or silver, your choice.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>You gain access to the other of those two groups.</li><li>Physical types you choose also count as adamantine.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>You gain access to the esoteric group: force, mental, poison, spirit, vitality, and void.</li><li>You may also change your attunement as a free action when you roll initiative.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>You may attune to two types at once from any group.</li><li>Your attacks count as both types for overcoming resistances, weaknesses, and immunities, and deal damage as whichever of the two is more effective against the target.</li></ul>\n<hr />\n<p><strong>In Foundry:</strong> choose your group when you take this talent. Use <strong>Attune</strong> from your Actions tab and pick a type on the card it posts; your Strikes, spells and elemental blasts deal that type until you <strong>Release</strong> it. The <em>Shape of Harm</em> dropdown in your effects panel does the same. While a physical type is attuned your Strikes count as cold iron and silver (use the one you chose), and adamantine from 5th.</p>\n<p>For the table: the two-type attunement from 15th. Attune to the type you expect to matter and apply the other by hand when it would do more.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "ChoiceSet",
+        "slug": "shapeOfHarmGroup",
+        "rollOption": "ascendant-shape-of-harm-group",
+        "prompt": "ASCENDANT.Rules.ShapeOfHarmGroupPrompt",
+        "adjustName": true,
+        "choices": [
+          {
+            "value": "physical",
+            "label": "ASCENDANT.Rules.ShapeOfHarmPhysical"
+          },
+          {
+            "value": "elemental",
+            "label": "ASCENDANT.Rules.ShapeOfHarmElemental"
+          }
+        ]
+      },
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "ascendant-shape-of-harm",
+        "label": "ASCENDANT.Rules.ShapeOfHarm",
+        "toggleable": true,
+        "suboptions": [
+          {
+            "value": "bludgeoning",
+            "label": "PF2E.TraitBludgeoning",
+            "predicate": [
+              {
+                "or": [
+                  "ascendant-shape-of-harm-group:physical",
+                  {
+                    "gte": [
+                      "self:level",
+                      5
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "value": "piercing",
+            "label": "PF2E.TraitPiercing",
+            "predicate": [
+              {
+                "or": [
+                  "ascendant-shape-of-harm-group:physical",
+                  {
+                    "gte": [
+                      "self:level",
+                      5
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "value": "slashing",
+            "label": "PF2E.TraitSlashing",
+            "predicate": [
+              {
+                "or": [
+                  "ascendant-shape-of-harm-group:physical",
+                  {
+                    "gte": [
+                      "self:level",
+                      5
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "value": "acid",
+            "label": "PF2E.TraitAcid",
+            "predicate": [
+              {
+                "or": [
+                  "ascendant-shape-of-harm-group:elemental",
+                  {
+                    "gte": [
+                      "self:level",
+                      5
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "value": "cold",
+            "label": "PF2E.TraitCold",
+            "predicate": [
+              {
+                "or": [
+                  "ascendant-shape-of-harm-group:elemental",
+                  {
+                    "gte": [
+                      "self:level",
+                      5
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "value": "electricity",
+            "label": "PF2E.TraitElectricity",
+            "predicate": [
+              {
+                "or": [
+                  "ascendant-shape-of-harm-group:elemental",
+                  {
+                    "gte": [
+                      "self:level",
+                      5
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "value": "fire",
+            "label": "PF2E.TraitFire",
+            "predicate": [
+              {
+                "or": [
+                  "ascendant-shape-of-harm-group:elemental",
+                  {
+                    "gte": [
+                      "self:level",
+                      5
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "value": "sonic",
+            "label": "PF2E.TraitSonic",
+            "predicate": [
+              {
+                "or": [
+                  "ascendant-shape-of-harm-group:elemental",
+                  {
+                    "gte": [
+                      "self:level",
+                      5
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "value": "force",
+            "label": "PF2E.TraitForce",
+            "predicate": [
+              {
+                "gte": [
+                  "self:level",
+                  10
+                ]
+              }
+            ]
+          },
+          {
+            "value": "mental",
+            "label": "PF2E.TraitMental",
+            "predicate": [
+              {
+                "gte": [
+                  "self:level",
+                  10
+                ]
+              }
+            ]
+          },
+          {
+            "value": "poison",
+            "label": "PF2E.TraitPoison",
+            "predicate": [
+              {
+                "gte": [
+                  "self:level",
+                  10
+                ]
+              }
+            ]
+          },
+          {
+            "value": "spirit",
+            "label": "PF2E.TraitSpirit",
+            "predicate": [
+              {
+                "gte": [
+                  "self:level",
+                  10
+                ]
+              }
+            ]
+          },
+          {
+            "value": "vitality",
+            "label": "PF2E.TraitVitality",
+            "predicate": [
+              {
+                "gte": [
+                  "self:level",
+                  10
+                ]
+              }
+            ]
+          },
+          {
+            "value": "void",
+            "label": "PF2E.TraitVoid",
+            "predicate": [
+              {
+                "gte": [
+                  "self:level",
+                  10
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "strike-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "{item|flags.system.rulesSelections.ascendantShapeOfHarm}",
+        "predicate": [
+          "ascendant-shape-of-harm"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "spell-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "{item|flags.system.rulesSelections.ascendantShapeOfHarm}",
+        "predicate": [
+          "ascendant-shape-of-harm"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "elemental-blast-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "{item|flags.system.rulesSelections.ascendantShapeOfHarm}",
+        "predicate": [
+          "ascendant-shape-of-harm"
+        ]
+      },
+      {
+        "key": "AdjustStrike",
+        "mode": "add",
+        "property": "materials",
+        "definition": [],
+        "value": "cold-iron",
+        "predicate": [
+          {
+            "or": [
+              "ascendant-shape-of-harm:bludgeoning",
+              "ascendant-shape-of-harm:piercing",
+              "ascendant-shape-of-harm:slashing"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "AdjustStrike",
+        "mode": "add",
+        "property": "materials",
+        "definition": [],
+        "value": "silver",
+        "predicate": [
+          {
+            "or": [
+              "ascendant-shape-of-harm:bludgeoning",
+              "ascendant-shape-of-harm:piercing",
+              "ascendant-shape-of-harm:slashing"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "AdjustStrike",
+        "mode": "add",
+        "property": "materials",
+        "definition": [],
+        "value": "adamantine",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          },
+          {
+            "or": [
+              "ascendant-shape-of-harm:bludgeoning",
+              "ascendant-shape-of-harm:piercing",
+              "ascendant-shape-of-harm:slashing"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.fpsblbL4EJ4SjccZ",
+        "allowDuplicate": false
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.ubAGfOn0dbElLwv2",
+        "allowDuplicate": false
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.cVJwdac8L0cWCHLu",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.SgaAGiTbU1ahA3WA",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.sfe3FSMEPIDnlUAg",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "ascendant-shape-of-harm",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-adept",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!eXRrj56pMJoEgNem"
+}

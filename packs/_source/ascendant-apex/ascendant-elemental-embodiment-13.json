@@ -1,0 +1,53 @@
+{
+  "_id": "XdEdJOEb9FKb5fcb",
+  "name": "Elemental Embodiment (13th)",
+  "type": "feat",
+  "img": "icons/creatures/magical/spirit-fire-orange.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>13th Level</strong></p><p><strong>13th Level</strong></p><ul><li>Creatures damaged by your element suffer your element's rider.</li></ul><p>Granted automatically by Elemental Embodiment at 13th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-elemental-embodiment-13",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 13
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!XdEdJOEb9FKb5fcb"
+}

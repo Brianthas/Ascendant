@@ -1,6 +1,6 @@
 import { MODULE_ID } from "./constants.mjs";
 
-const SHIELD_SLUG = "tireless-aegis-shield";
+const SHIELD_SLUG = "ascendant-tireless-aegis-shield";
 
 /** The level the Aegis starts regenerating. */
 const REGEN_FROM = 10;

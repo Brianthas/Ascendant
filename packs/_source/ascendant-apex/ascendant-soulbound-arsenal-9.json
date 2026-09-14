@@ -1,0 +1,53 @@
+{
+  "_id": "wR3hiF30cZhDqUjA",
+  "name": "Soulbound Arsenal (9th)",
+  "type": "feat",
+  "img": "icons/weapons/swords/sword-guard-purple.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>9th Level</strong></p><p><strong>9th Level</strong></p><ul><li>+2 greater striking, two property runes.</li><li>The weapon acts independently using your statistics, and may use Bonded Strike even while you are Grabbed, Restrained, Immobilized, or unconscious.</li></ul><p>Granted automatically by Soulbound Arsenal at 9th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-soulbound-arsenal-9",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 9
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!wR3hiF30cZhDqUjA"
+}

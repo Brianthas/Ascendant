@@ -99,7 +99,7 @@ export function mergeRules(packRules, ownedRules) {
  * button more than once.
  */
 async function compendiumRules() {
-    const bySlug = new Map();
+    const byUuid = new Map();
     let found = 0;
     for (const name of ITEM_PACKS) {
         const pack = game.packs.get(`${MODULE_ID}.${name}`);
@@ -107,12 +107,24 @@ async function compendiumRules() {
         found += 1;
         const index = await pack.getIndex();
         const docs = await Promise.all([...index].map((entry) => pack.getDocument(entry._id)));
-        for (const doc of docs) {
-            const slug = doc?.system?.slug;
-            if (slug) bySlug.set(slug, doc._source.system.rules ?? []);
-        }
+        for (const doc of docs) byUuid.set(doc.uuid, doc._source.system.rules ?? []);
     }
-    return found ? bySlug : null;
+    return found ? byUuid : null;
+}
+
+/**
+ * The compendium document an owned item was created from, if it is one of ours.
+ *
+ * Keyed by source uuid rather than slug. On 2026-09-14 a refresh keyed by slug
+ * matched the Wizard's own 11th-level class feature, whose slug is
+ * `weapon-expertise` like the core talent's, and overwrote the system's rules
+ * with ours. Foundry records the source on every item created from a compendium
+ * (`_stats.compendiumSource`, read off a live granted sub-feat), and an item
+ * with no source in our packs is not ours to touch.
+ */
+function sourceOf(item) {
+    const source = item._stats?.compendiumSource ?? item.flags?.core?.sourceId ?? null;
+    return source && source.startsWith(`Compendium.${MODULE_ID}.`) ? source : null;
 }
 
 /**
@@ -156,10 +168,10 @@ export async function refreshTalentRules({ dryRun = false, rules = null } = {}) 
     for (const actor of game.actors) {
         const updates = [];
         for (const item of actor.items) {
-            const slug = item.system?.slug;
-            if (!slug || !bySlug.has(slug)) continue;
+            const source = sourceOf(item);
+            if (!source || !bySlug.has(source)) continue;
             scanned += 1;
-            const { stale, merged } = planRefresh(item, bySlug.get(slug));
+            const { stale, merged } = planRefresh(item, bySlug.get(source));
             if (!stale) continue;
             updates.push({ _id: item.id, "system.rules": merged });
             updated.push(`${actor.name}: ${item.name}`);
@@ -182,8 +194,8 @@ export async function refreshTalentRules({ dryRun = false, rules = null } = {}) 
         for (const id of ids) {
             const item = actor.items.get(id);
             if (!item) { failed.push(`${actor.name}: ${id}`); continue; }
-            const slug = item.system?.slug;
-            if (slug && planRefresh(item, bySlug.get(slug)).stale) failed.push(`${actor.name}: ${item.name}`);
+            const source = sourceOf(item);
+            if (source && planRefresh(item, bySlug.get(source)).stale) failed.push(`${actor.name}: ${item.name}`);
         }
         actor.reset();
     }

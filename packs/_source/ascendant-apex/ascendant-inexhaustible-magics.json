@@ -1,0 +1,110 @@
+{
+  "_id": "ZWISqw1Q1dEeK0DI",
+  "name": "Inexhaustible Magics",
+  "type": "feat",
+  "img": "icons/magic/symbols/rune-sigil-black-pink.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>Other casters ration. They count what remains, weigh the encounter against the road ahead, and hold something back for whatever comes next. You have never had to learn the habit, and it shows in the careless generosity with which you spend.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>Triple the spell slots and cantrips you gain from every spellcasting class or archetype.</li><li>Your focus pool is 3 regardless of how many focus spells you have.<ul><li>It increases to 4 at 4th, 5 at 7th, 6 at 10th, 7 at 13th, 8 at 16th, and 9 at 19th level.</li></ul></li><li>Refocus restores all spent Focus Points.</li></ul>\n<p><strong>7th Level</strong></p><ul><li>Refocus takes 5 minutes.</li></ul>\n<p><strong>12th Level</strong></p><ul><li>Refocus takes 1 minute.</li></ul>\n<p><strong>17th Level</strong></p><ul><li>Refocus takes 1 round.</li></ul>\n<hr />\n<p><strong>In Foundry:</strong> press <strong>Triple Spell Slots</strong> in your character sheet's header once your spellcasting entries are set up. It multiplies every slot and cantrip maximum by three and can be undone with the same button. Run it again after adding a new spellcasting entry. Your focus pool maximum follows the ladder automatically.</p>\n<p>For the table: Refocus restores every Focus Point rather than one, and takes 5 minutes from 7th, 1 minute from 12th and 1 round from 17th. Set your focus points to the maximum by hand after refocusing.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.resources.focus.{item|flags.ascendant.focusField}",
+        "value": "match(when(btwn(@actor.level, 1, 3), 3), when(btwn(@actor.level, 4, 6), 4), when(btwn(@actor.level, 7, 9), 5), when(btwn(@actor.level, 10, 12), 6), when(btwn(@actor.level, 13, 15), 7), when(btwn(@actor.level, 16, 18), 8), when(gte(@actor.level, 19), 9))"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.resources.focus.cap",
+        "value": "match(when(btwn(@actor.level, 1, 3), 3), when(btwn(@actor.level, 4, 6), 4), when(btwn(@actor.level, 7, 9), 5), when(btwn(@actor.level, 10, 12), 6), when(btwn(@actor.level, 13, 15), 7), when(btwn(@actor.level, 16, 18), 8), when(gte(@actor.level, 19), 9))"
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.IE7bZL42xaI7aTNW",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.FPMyzmGfAde2z8Fa",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              12
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.TntHvO0G0uKCkM1X",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              17
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "ascendant-inexhaustible-magics",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-apex",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "ascendant": {
+      "focusField": "max"
+    }
+  },
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!ZWISqw1Q1dEeK0DI"
+}

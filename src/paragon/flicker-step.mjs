@@ -90,7 +90,7 @@ ${levelBlock("15th Level", ["Range increases to one mile.", "When you Flicker, y
             selector: "strike-attack-roll",
             title: "Flicker Step",
             text: "ASCENDANT.Note.FlickerStepUnwilling",
-            predicate: [atLeast(15), "action:flicker-strike"],
+            predicate: [atLeast(15), "action:ascendant-flicker-step-flicker-strike"],
         },
         ...grants,
     ],

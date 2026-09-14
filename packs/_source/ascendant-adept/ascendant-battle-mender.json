@@ -1,0 +1,144 @@
+{
+  "_id": "ylvs5q1t9ldnsjqT",
+  "name": "Battle Mender",
+  "type": "feat",
+  "img": "icons/magic/life/cross-worn-green.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>You work with steady hands in conditions that would make a surgeon weep. Wounds close under fire, poisons come out at a distance, and the ally you reached in time tends not to remember how close it was, which suits you, since you do.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>Battle Medicine has no daily limit per target.</li><li>You cannot critically fail a check to Treat Wounds or administer Battle Medicine.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>You may administer Battle Medicine or First Aid at a range of 30 feet.</li><li>Treat Wounds takes 1 minute rather than 10.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>When you restore Hit Points by Treating Wounds or administering Battle Medicine, also reduce the target's Wounded value by 1 and remove one condition of your choice.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Once per day, you may return a creature that died within the last minute to life at 1 Hit Point.</li></ul>\n<hr />\n<p><strong>In Foundry:</strong> a critical failure on Treat Wounds or Battle Medicine is a failure on the roll, and PF2e's Battle Medicine immunity effect is removed from your patients as it is applied, so the daily limit never bites. Mender's Last Word is on your Actions tab from 15th.</p>\n<p>For the table: the 30-foot range and 1-minute Treat Wounds from 5th, and the Wounded reduction and condition removal from 10th. A note under every Medicine check reminds you.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "AdjustDegreeOfSuccess",
+        "selector": "medicine",
+        "adjustment": {
+          "criticalFailure": "one-degree-better"
+        },
+        "predicate": [
+          {
+            "or": [
+              "action:treat-wounds",
+              "action:battle-medicine"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Note",
+        "selector": "medicine",
+        "title": "Battle Mender",
+        "text": "ASCENDANT.Note.BattleMender",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          },
+          {
+            "or": [
+              "action:treat-wounds",
+              "action:battle-medicine",
+              "action:administer-first-aid"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.Fe7q3rV2Sa3MiFpr",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.fowJjYHwruxV8JYD",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.u3QcXDzHDTdsn1Ax",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.aNItg8wV4Kh1Y05s",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "ascendant-battle-mender",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-adept",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!ylvs5q1t9ldnsjqT"
+}

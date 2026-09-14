@@ -1,0 +1,157 @@
+{
+  "_id": "M3p5vO9UzTAaqY7D",
+  "name": "Unerring Shot",
+  "type": "feat",
+  "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>Cover, darkness, distance, and the frantic dodging of a target who knows what is coming: you have stopped regarding any of it as relevant. You decide where the shot lands, and then it lands there.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>Your ranged Strikes and spell attacks ignore the flat check from concealment and take no circumstance penalty from cover less than greater cover.</li><li>Range increments for your ranged weapons and spells double.</li><li>When you hit the same creature with a second or later ranged Strike or spell attack in the same round, that attack ignores the target's resistances.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>Gain Aim.<ul><li><strong>Aim</strong> [free action, once per round] Your next ranged Strike or spell attack this turn treats a failure as a success.</li></ul></li></ul>\n<p><strong>10th Level</strong></p><ul><li>Ignore greater cover entirely.</li><li>Target creatures you can sense but not see with no flat check.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Aim has no frequency limit.</li><li>Your ranged Strikes and spell attacks cannot be blocked, redirected, or targeted by reactions.</li></ul>\n<p><em>Aim upgrades a failure only. A critical failure still misses.</em></p>\n<hr />\n<p><strong>In Foundry:</strong> your ranged weapons' range increments are doubled on the sheet. From 5th, switch <em>Aim</em> on in your effects panel before the attack: a failed ranged Strike or spell attack is a success on the roll. Switch it off after, once per round until 15th.</p>\n<p>For the table: spell ranges (double the printed range), the concealment flat check (skip it), cover penalties (do not apply them; from 10th not even greater cover), targeting a creature you sense but cannot see, ignoring resistance on a second hit, and the reaction immunity from 15th. A note on every ranged attack lists them.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "AdjustStrike",
+        "definition": [
+          "item:ranged"
+        ],
+        "mode": "multiply",
+        "property": "range-increment",
+        "value": 2
+      },
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "ascendant-aim",
+        "label": "ASCENDANT.Rules.Aim",
+        "toggleable": true,
+        "value": false,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "AdjustDegreeOfSuccess",
+        "selector": "strike-attack-roll",
+        "adjustment": {
+          "failure": "one-degree-better"
+        },
+        "predicate": [
+          "ascendant-aim",
+          "item:ranged"
+        ]
+      },
+      {
+        "key": "AdjustDegreeOfSuccess",
+        "selector": "spell-attack",
+        "adjustment": {
+          "failure": "one-degree-better"
+        },
+        "predicate": [
+          "ascendant-aim"
+        ]
+      },
+      {
+        "key": "Note",
+        "selector": [
+          "strike-attack-roll",
+          "spell-attack"
+        ],
+        "title": "Unerring Shot",
+        "text": "ASCENDANT.Note.UnerringShot",
+        "predicate": [
+          {
+            "or": [
+              "item:ranged",
+              "item:type:spell"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.8UhOyxWtjTw2xtKd",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.kBKBOqvI5KrhuYMw",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.eAOghFSdKOt0PldB",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "ascendant-unerring-shot",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-paragon",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!M3p5vO9UzTAaqY7D"
+}

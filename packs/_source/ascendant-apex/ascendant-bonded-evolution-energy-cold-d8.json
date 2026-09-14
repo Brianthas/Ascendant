@@ -1,0 +1,62 @@
+{
+  "_id": "2Y2dPwGJs35y4JOo",
+  "name": "Evolution 2: Energy Attacks (cold, d8)",
+  "type": "effect",
+  "img": "icons/magic/life/heart-cross-strong-flame-purple-orange.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>2 points.</strong> Strikes deal additional cold damage equal to its base Strike's damage die, for a d8 base Strike.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "bonded-energy-cold",
+        "diceNumber": 1,
+        "dieSize": "d8",
+        "damageType": "cold"
+      }
+    ],
+    "slug": "ascendant-bonded-evolution-energy-cold-d8",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "duration": {
+      "value": -1,
+      "unit": "unlimited",
+      "sustained": false,
+      "expiry": null
+    },
+    "start": {
+      "value": 0,
+      "initiative": null
+    },
+    "badge": null,
+    "tokenIcon": {
+      "show": false
+    },
+    "context": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!2Y2dPwGJs35y4JOo"
+}

@@ -4,7 +4,7 @@ import { levelChain, grantNow, atLeast, flavour, levelBlock } from "../lib/grant
 
 const PACK = "ascendant-paragon";
 const SLUG = "tireless-aegis";
-const SHIELD = "tireless-aegis-shield";
+const SHIELD = "ascendant-tireless-aegis-shield";
 const IMG = "icons/equipment/shield/round-wooden-boss-steel-brown.webp";
 
 /** Hardness 5 + 2 per level above 1st; HP 30 + 10 per level above 1st. */

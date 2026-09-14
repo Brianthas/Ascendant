@@ -1,0 +1,99 @@
+{
+  "_id": "9BCzjXqPhTadlltz",
+  "name": "Haven",
+  "type": "feat",
+  "img": "icons/environment/settlement/house-two-stories-small.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>Somewhere adjacent to everywhere, a door waits that only your company can open. Behind it is warmth, quiet, a room appointed to each of your tastes, and the particular luxury of a place where nothing that wants you dead is able to follow.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>After 10 minutes, any party member may open a door to an extradimensional refuge.<ul><li>It holds a common room, a private room for each member furnished to their comfort, and storage for 20 Bulk per member.</li></ul></li><li>Time passes normally inside.</li><li>You may bring in any creature you choose, though the common room comfortably holds no more than twice the party's number.<ul><li>Private rooms are accessible only to their owners.</li></ul></li><li>When you open the door, choose a mode.<ul><li><strong>Fortress</strong> The refuge is undetectable and unenterable from outside. You cannot perceive anything outside it. Reopening the door is a 10-minute activity.</li><li><strong>Peephole</strong> A door remains visible outside, and you can see and hear through it as though standing in the doorway. Creatures outside may find it with a Perception check against DC 10 + the highest Level + key ability modifier + proficiency bonus in the party. Once found, it can be opened with a successful counteract check against that DC.</li></ul></li></ul>\n<p><strong>5th Level</strong></p><ul><li>Nothing within Haven ages, spoils, or decays. Afflictions do not progress, conditions with durations do not advance, and dying creatures remain stable.</li><li>Haven's rooms include whatever workspace a member requires, such as a forge, a laboratory, a library, or a shrine, and count as a fully equipped workshop for any downtime or crafting activity.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>Opening the door is a single action rather than a 10-minute activity.</li><li>In Fortress mode, creatures inside cannot be scried, tracked, or located by any magic.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Haven and its contents persist between visits and may be entered from anywhere in the world.</li><li>A creature that died within the last day may be brought inside. After a full rest there it returns to life at 1 Hit Point, once per week.</li></ul>\n<p><em>You always exit Haven in the space where you entered it. When the last party member leaves, Haven closes; its contents remain, but any living creature still inside is ejected into the nearest open space. If you enter during an encounter, no one in the party gains the benefits of rest until an hour has passed outside.</em></p>\n<p><em>Peephole proficiency scales with party level: Trained at 1, Expert at 3, Master at 7, Legendary at 11, Mythic at 15.</em></p>\n<hr />\n<p><strong>In Foundry:</strong> add this talent to every member. Each gets a <em>Haven Storage</em> container on their Inventory tab, sized to 20 Bulk per party member.</p>\n<p>For the table: everything else. Haven is a place the GM runs; the Rules compendium carries the full text.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-party.Item.e03Gpa7qR7g5mpPs",
+        "allowDuplicate": false
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-party.Item.FdoxsT6X8JRrn40M",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-party.Item.6U7y35fh85xjKclF",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-party.Item.NOS3UDdp1lA74ofv",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "ascendant-haven",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-party",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!9BCzjXqPhTadlltz"
+}

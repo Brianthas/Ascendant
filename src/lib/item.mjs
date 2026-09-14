@@ -25,8 +25,20 @@ export const MODULE_ID = "ascendant";
 /** Tag carried by every level sub-feat and pick item, so a chooser can leave them out. */
 export const GRANT_TAG = "ascendant-grant";
 
+/**
+ * Every slug this module writes starts with `ascendant-`.
+ *
+ * PF2e's own content uses plain slugs, and the Wizard's 11th-level class feature
+ * is `weapon-expertise`. Found live on 2026-09-14: the refresh matched that
+ * feature by slug and overwrote its rules with the core talent's. A prefix makes a
+ * collision impossible for slugs, ids (which derive from them) and the `feat:<slug>`
+ * roll options predicates test. Idempotent, so a slug written with the prefix
+ * already is left alone.
+ */
+export const withPrefix = (slug) => (slug.startsWith(`${MODULE_ID}-`) ? slug : `${MODULE_ID}-${slug}`);
+
 /** Compendium uuid of an item in one of this module's packs. */
-export const uuidFor = (pack, slug, type = "Item") => `Compendium.${MODULE_ID}.${pack}.${type}.${idFor(slug)}`;
+export const uuidFor = (pack, slug, type = "Item") => `Compendium.${MODULE_ID}.${pack}.${type}.${idFor(withPrefix(slug))}`;
 
 export function idFor(slug) {
     const digest = crypto.createHash("sha256").update(slug).digest();
@@ -72,6 +84,7 @@ export function talent({
     otherTags = [],
     flags = {},
 }) {
+    slug = withPrefix(slug);
     return {
         _id: idFor(slug),
         name,
@@ -134,6 +147,7 @@ export function effectItem({
     badge = null,
     flags = {},
 }) {
+    slug = withPrefix(slug);
     return {
         _id: idFor(slug),
         name,
@@ -186,6 +200,7 @@ export function actionItem({
     frequency = null,
     flags = {},
 }) {
+    slug = withPrefix(slug);
     return {
         _id: idFor(slug),
         name,

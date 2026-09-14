@@ -146,7 +146,7 @@
       "_key": "!actors.items!7d0G2Q0wMCTjla2J.P12tUiYdsLcjjfQL"
     },
     {
-      "_id": "2LdPQ8MdUF4NcVGf",
+      "_id": "OiG7c6Ha2zFqJSrf",
       "name": "Base Form: Celestial",
       "type": "effect",
       "img": "icons/creatures/magical/humanoid-silhouette-glowing-pink.webp",
@@ -181,7 +181,7 @@
           },
           {
             "key": "GrantItem",
-            "uuid": "Compendium.ascendant.ascendant-apex.Item.meImaFEcrLaufzm3",
+            "uuid": "Compendium.ascendant.ascendant-apex.Item.gVTtV1XalfC602wB",
             "allowDuplicate": false,
             "reevaluateOnUpdate": true,
             "predicate": [
@@ -194,7 +194,7 @@
             ]
           }
         ],
-        "slug": "bonded-base-form-celestial",
+        "slug": "ascendant-bonded-base-form-celestial",
         "traits": {
           "otherTags": [],
           "value": [],
@@ -228,7 +228,7 @@
       "_stats": {
         "systemId": "pf2e"
       },
-      "_key": "!actors.items!7d0G2Q0wMCTjla2J.2LdPQ8MdUF4NcVGf"
+      "_key": "!actors.items!7d0G2Q0wMCTjla2J.OiG7c6Ha2zFqJSrf"
     }
   ],
   "effects": [],

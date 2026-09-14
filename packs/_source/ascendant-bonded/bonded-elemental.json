@@ -140,7 +140,7 @@
       "_key": "!actors.items!t7xftsGSw9wgobim.P12tUiYdsLcjjfQL"
     },
     {
-      "_id": "MOATfjqDvF37vxde",
+      "_id": "WccPvRBwzqVK3sfv",
       "name": "Base Form: Elemental",
       "type": "effect",
       "img": "icons/magic/fire/elemental-fire-humanoid.webp",
@@ -276,7 +276,7 @@
             ]
           }
         ],
-        "slug": "bonded-base-form-elemental",
+        "slug": "ascendant-bonded-base-form-elemental",
         "traits": {
           "otherTags": [],
           "value": [],
@@ -310,7 +310,7 @@
       "_stats": {
         "systemId": "pf2e"
       },
-      "_key": "!actors.items!t7xftsGSw9wgobim.MOATfjqDvF37vxde"
+      "_key": "!actors.items!t7xftsGSw9wgobim.WccPvRBwzqVK3sfv"
     }
   ],
   "effects": [],

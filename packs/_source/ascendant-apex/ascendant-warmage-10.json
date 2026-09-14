@@ -1,0 +1,53 @@
+{
+  "_id": "cP75wSf8i4MWurLm",
+  "name": "Warmage (10th)",
+  "type": "feat",
+  "img": "icons/magic/fire/dagger-rune-enchant-flame-blue-yellow.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>On a critical hit with the Strike, a spell delivered against that target is also critical.</li><li>Spellstrike no longer counts against your multiattack penalty.</li></ul><p>Granted automatically by Warmage at 10th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-warmage-10",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 10
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!cP75wSf8i4MWurLm"
+}

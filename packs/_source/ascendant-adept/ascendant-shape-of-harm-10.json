@@ -1,0 +1,53 @@
+{
+  "_id": "SgaAGiTbU1ahA3WA",
+  "name": "Shape of Harm (10th)",
+  "type": "feat",
+  "img": "icons/commodities/tech/dial-meter-gauge-blue.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>You gain access to the esoteric group: force, mental, poison, spirit, vitality, and void.</li><li>You may also change your attunement as a free action when you roll initiative.</li></ul><p>Granted automatically by Shape of Harm at 10th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-shape-of-harm-10",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 10
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!SgaAGiTbU1ahA3WA"
+}

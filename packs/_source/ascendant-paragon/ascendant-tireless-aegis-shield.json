@@ -1,0 +1,79 @@
+{
+  "_id": "uBJ3c8O9lLTyUJ8C",
+  "name": "The Aegis",
+  "type": "shield",
+  "img": "icons/equipment/shield/round-wooden-boss-steel-brown.webp",
+  "system": {
+    "description": {
+      "value": "<p>A shield that is never lowered. +3 circumstance bonus to AC, permanently active; it takes no hands and functions with weapons in both hands. It cannot be sundered, disarmed, or left behind, and reforms at full Hit Points at the start of your turn if destroyed.</p>\n<p>Its <strong>Hardness</strong> is 5 plus 2 per character level above 1st, and its <strong>Hit Points</strong> are 30 plus 10 per character level above 1st, with a broken threshold of half that.</p>\n<hr />\n<p>Hardness and hit points follow your level on their own. Shield Block with PF2e's button on a damage card as normal; you do not need to Raise it, the +3 is already on your AC.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-tireless-aegis-shield",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique",
+      "integrated": null
+    },
+    "level": {
+      "value": 1
+    },
+    "quantity": 1,
+    "baseItem": null,
+    "bulk": {
+      "value": 0
+    },
+    "hp": {
+      "value": 30,
+      "max": 30
+    },
+    "hardness": 5,
+    "price": {
+      "value": {}
+    },
+    "equipped": {
+      "carryType": "held",
+      "handsHeld": 1,
+      "invested": null
+    },
+    "containerId": null,
+    "size": "med",
+    "material": {
+      "type": null,
+      "grade": null
+    },
+    "identification": {
+      "status": "identified",
+      "unidentified": {
+        "data": {},
+        "img": "",
+        "name": ""
+      },
+      "misidentified": {}
+    },
+    "acBonus": 3,
+    "speedPenalty": 0,
+    "runes": {
+      "reinforcing": 0
+    },
+    "specific": null,
+    "subitems": []
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!uBJ3c8O9lLTyUJ8C"
+}

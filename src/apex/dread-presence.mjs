@@ -6,7 +6,7 @@ const PACK = "ascendant-apex";
 const SLUG = "dread-presence";
 const IMG = "icons/magic/control/fear-fright-monster-grin-green.webp";
 const TOGGLE = "ascendant-dread-presence";
-const AURA_EFFECT = `${SLUG}-frightened`;
+const AURA_EFFECT = `ascendant-${SLUG}-frightened`;
 const SAVE_EFFECT = `${SLUG}-low-roll`;
 
 /** PF2e's Frightened and Off-Guard conditions, read off the installed system's packs. */

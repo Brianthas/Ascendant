@@ -1,0 +1,236 @@
+{
+  "_id": "ROF3VIOrbcEaQsfV",
+  "name": "Unbound Casting",
+  "type": "feat",
+  "img": "icons/magic/symbols/runes-carved-stone-purple.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>Magic in other hands is a negotiation: the right words, the right gestures, the right undisturbed moment. You have dispensed with the formalities. Bound, silenced, mid-fall, or barely conscious, the working arrives exactly as intended and reshapes itself on the way out.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>Your spells lose the manipulate trait.</li><li>You gain Empowered Casting and one other Unbound Spellshape of your choice.</li><li>Once per round, you may use a spellshape as a free action.</li></ul>\n<p><strong>3rd Level</strong></p><ul><li>Your spells lose the concentrate trait.</li><li>Learn another spellshape.</li></ul>\n<p><strong>7th Level</strong></p><ul><li>All your spells are considered subtle.</li><li>Learn another spellshape.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>You may Cast a Spell even while Paralyzed, Stunned, Slowed, or otherwise unable to act, though you must still be conscious.</li><li>Learn another spellshape.</li></ul>\n<p><strong>13th Level</strong></p><ul><li>You may apply two spellshapes to the same spell, rather than one. This limit does not increase.</li><li>Learn another spellshape.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Your spells remove the incapacitation trait.</li></ul>\n<p><strong>20th Level</strong></p><ul><li>Your spells cannot be dispelled.</li><li>You may use spellshapes as free actions with no frequency limit, except Perfect Quickening, which remains once per turn.</li></ul>\n<h3>Unbound Spellshapes</h3>\n<p><em>These require no additional components, gestures, or words. They have no traits and cannot be identified, counteracted, or prevented.</em></p>\n<ul><li><strong>Empowered Casting</strong> [free action] Increase the damage dice of your next spell by half, rounded down.</li><li><strong>Split Casting</strong> [free action] Your next spell that targets one creature targets two instead, at full effect against each.</li><li><strong>Bouncing Casting</strong> [free action] If your next spell has no effect on its target, through a successful save, a miss, an immunity, or a counteract, it immediately retargets a different creature within range of your choice. It may bounce once.<ul><li>A spell bounces only if the target takes no damage and suffers no condition.</li></ul></li><li><strong>Delayed Casting</strong> [free action] Your next spell doesn't take effect until the start of your next turn. You choose its targets and areas when it resolves.</li><li><strong>Anchored Casting</strong> [free action] Your next spell with a duration of 1 minute or less doesn't require Sustain and lasts its full duration.</li><li><strong>Piercing Casting</strong> [free action] Your next spell ignores cover and concealment and requires no line of effect, only line of sight or knowledge of the target's location.</li><li><strong>Perfect Reach</strong> [free action] Your next spell's range becomes 500 feet, or it gains a range of 500 feet if it normally has a range of touch.</li><li><strong>Perfect Quickening</strong> [free action] Your next spell costs 1 fewer action, to a minimum of 1. Once per turn.</li></ul>\n<hr />\n<p><strong>In Foundry:</strong> your spells lose manipulate, lose concentrate from 3rd, gain subtle from 7th and lose incapacitation from 15th, on the spell cards themselves. Empowered Casting is on your Actions tab, and each level that teaches a spellshape asks which one and adds it.</p>\n<p>For the table: applying a spellshape's change to the spell you cast (nothing in PF2e alters a spell's targets, area, range, duration or cost from outside it), casting while unable to act from 10th, and the dispel immunity from 20th.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "ItemAlteration",
+        "itemType": "spell",
+        "mode": "remove",
+        "property": "traits",
+        "value": "manipulate",
+        "predicate": []
+      },
+      {
+        "key": "ItemAlteration",
+        "itemType": "spell",
+        "mode": "remove",
+        "property": "traits",
+        "value": "concentrate",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "key": "ItemAlteration",
+        "itemType": "spell",
+        "mode": "add",
+        "property": "traits",
+        "value": "subtle",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "key": "ItemAlteration",
+        "itemType": "spell",
+        "mode": "remove",
+        "property": "traits",
+        "value": "incapacitation",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.FAoh4fyYEsP2dfS0",
+        "allowDuplicate": false
+      },
+      {
+        "key": "ChoiceSet",
+        "slug": "spellshapeA",
+        "rollOption": "ascendant-spellshape-a",
+        "prompt": "ASCENDANT.Rules.SpellshapePrompt",
+        "adjustName": true,
+        "choices": [
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.HiJSfR7WszLD9Izl",
+            "label": "Split Casting"
+          },
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.ed3aDsJkQ2HN1IYU",
+            "label": "Bouncing Casting"
+          },
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.ji5hfoCial3C9wqB",
+            "label": "Delayed Casting"
+          },
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.tdbjNiwpbthwqVLN",
+            "label": "Anchored Casting"
+          },
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.MHyZRsyERYtk5qfm",
+            "label": "Piercing Casting"
+          },
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.ehXTaUkJtBUFXCB1",
+            "label": "Perfect Reach"
+          },
+          {
+            "value": "Compendium.ascendant.ascendant-apex.Item.vL9GK7vWKVAXHTvk",
+            "label": "Perfect Quickening"
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "{item|flags.pf2e.rulesSelections.spellshapeA}",
+        "allowDuplicate": false
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.9hyfOVhl1kFRA047",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.8Ffg8wCMKGN5cgub",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.FcAceBCqndd196Rc",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.rpAK3ybpU8bYIZj1",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              13
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.8K4cO9GaX4kp54e7",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.Ud81ZLZe2p2eNXaY",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              20
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "ascendant-unbound-casting",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-apex",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!ROF3VIOrbcEaQsfV"
+}

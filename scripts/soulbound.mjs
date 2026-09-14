@@ -51,8 +51,8 @@ import { MODULE_ID } from "./constants.mjs";
  */
 
 const MARK = "soulbound-arsenal";
-const TALENT_SLUG = "soulbound-arsenal";
-const ACTION_SLUG = "soulbound-arsenal-reshape";
+const TALENT_SLUG = "ascendant-soulbound-arsenal";
+const ACTION_SLUG = "ascendant-soulbound-arsenal-reshape";
 const SRD = "pf2e.equipment-srd";
 
 /**

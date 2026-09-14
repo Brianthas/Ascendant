@@ -5,7 +5,7 @@ import { levelChain, grantNow, atLeast, flavour, levelBlock } from "../lib/grant
 const PACK = "ascendant-apex";
 const SLUG = "lifeline";
 const IMG = "icons/magic/life/heart-shadow-red.webp";
-const SPELL = `${SLUG}-vital-bond`;
+const SPELL = `ascendant-${SLUG}-vital-bond`;
 const BOND_EFFECT = `${SLUG}-bonded`;
 
 const SPELL_RANK = "@actor.system.proficiencies.spellcasting.rank";
@@ -132,7 +132,7 @@ ${levelBlock("20th Level", ["Once per day, as a free action, restore every ally 
             label: "ASCENDANT.Rules.LifelineMythic",
             type: "untyped",
             value: 4,
-            predicate: ["feat:spellcasting-expertise", atLeast(15)],
+            predicate: ["feat:ascendant-spellcasting-expertise", atLeast(15)],
         },
         {
             key: "Note",

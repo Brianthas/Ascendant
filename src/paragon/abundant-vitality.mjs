@@ -69,7 +69,7 @@ ${levelBlock("15th Level", ["When you Cast a Spell that targets willing creature
             label: "ASCENDANT.Rules.AbundantVitalityMythic",
             type: "untyped",
             value: 4,
-            predicate: ["feat:spellcasting-expertise", atLeast(15)],
+            predicate: ["feat:ascendant-spellcasting-expertise", atLeast(15)],
         },
         {
             key: "Note",

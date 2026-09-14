@@ -1,7 +1,7 @@
 import { MODULE_ID } from "./constants.mjs";
 
 /** Slug of the Paragon talent that grants two extra skill feats every level. */
-const TALENT_SLUG = "know-it-all";
+const TALENT_SLUG = "ascendant-know-it-all";
 
 /**
  * The section id, and the root of every slot id under it.

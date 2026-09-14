@@ -142,7 +142,7 @@
       "_key": "!actors.items!McLDEYlvcFWHOF6W.P7Od1ntFWqbRtaO2"
     },
     {
-      "_id": "EcLlX5IMiGUYJ9SB",
+      "_id": "Savue77ybiXzEa4w",
       "name": "Base Form: Undead",
       "type": "effect",
       "img": "icons/creatures/magical/humanoid-silhouette-dashing-blue.webp",
@@ -167,7 +167,7 @@
             "type": "poison"
           }
         ],
-        "slug": "bonded-base-form-undead",
+        "slug": "ascendant-bonded-base-form-undead",
         "traits": {
           "otherTags": [],
           "value": [],
@@ -201,7 +201,7 @@
       "_stats": {
         "systemId": "pf2e"
       },
-      "_key": "!actors.items!McLDEYlvcFWHOF6W.EcLlX5IMiGUYJ9SB"
+      "_key": "!actors.items!McLDEYlvcFWHOF6W.Savue77ybiXzEa4w"
     }
   ],
   "effects": [],

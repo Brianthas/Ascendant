@@ -1,0 +1,53 @@
+{
+  "_id": "0Zd9DnZM0fg0q7QG",
+  "name": "Elemental Embodiment (10th)",
+  "type": "feat",
+  "img": "icons/creatures/magical/spirit-fire-orange.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>Your element's damage ignores resistance.</li><li>Creatures within 10 feet take damage equal to half your level when they end their turn there.</li></ul><p>Granted automatically by Elemental Embodiment at 10th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-elemental-embodiment-10",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 10
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!0Zd9DnZM0fg0q7QG"
+}

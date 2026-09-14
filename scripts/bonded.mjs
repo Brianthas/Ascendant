@@ -1,6 +1,6 @@
 import { MODULE_ID } from "./constants.mjs";
 
-const TALENT_SLUG = "bonded-soul";
+const TALENT_SLUG = "ascendant-bonded-soul";
 /** Flag on the owner holding the Bonded actor's id, and on the Bonded holding the owner's. */
 const LINK_FLAG = "bondedId";
 const OWNER_FLAG = "bondedOwnerId";

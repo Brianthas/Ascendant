@@ -1,0 +1,53 @@
+{
+  "_id": "hEb8JrABQCvt9Haf",
+  "name": "Charmed Life (5th)",
+  "type": "feat",
+  "img": "icons/magic/control/buff-luck-fortune-clover-green.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>5th Level</strong></p><ul><li>When you fail or critically fail a saving throw, roll a DC 11 flat check. On a success, treat the save as one degree better.<ul><li>As with any check, you may spend a Hero Point to reroll this flat check.</li></ul></li></ul><p>Granted automatically by Charmed Life at 5th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-charmed-life-5",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 5
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!hEb8JrABQCvt9Haf"
+}

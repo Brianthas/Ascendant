@@ -148,7 +148,7 @@
       "_key": "!actors.items!VNkyf6KXIfqwwhkF.gI2KET2hTv1T1o6G"
     },
     {
-      "_id": "AtvUVdzp1FJwBgKa",
+      "_id": "NXO1c1Fhai0gO3i8",
       "name": "Base Form: Aberration",
       "type": "effect",
       "img": "icons/creatures/magical/spirit-undead-horned-blue.webp",
@@ -183,7 +183,7 @@
             ]
           }
         ],
-        "slug": "bonded-base-form-aberration",
+        "slug": "ascendant-bonded-base-form-aberration",
         "traits": {
           "otherTags": [],
           "value": [],
@@ -217,7 +217,7 @@
       "_stats": {
         "systemId": "pf2e"
       },
-      "_key": "!actors.items!VNkyf6KXIfqwwhkF.AtvUVdzp1FJwBgKa"
+      "_key": "!actors.items!VNkyf6KXIfqwwhkF.NXO1c1Fhai0gO3i8"
     }
   ],
   "effects": [],

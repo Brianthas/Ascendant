@@ -1,0 +1,1731 @@
+{
+  "_id": "pUyDwtMzVLCoM5vF",
+  "name": "Elemental Embodiment",
+  "type": "feat",
+  "img": "icons/creatures/magical/spirit-fire-orange.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote><p><em>The distinction between the one who wields and the thing wielded has quietly collapsed. You do not summon your element or command it; you are what it does when it decides to take a shape and walk around.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>Choose one element permanently. You are immune to your element's damage type.</li><li>All damage you deal may be converted to your element as a free action.</li><li>Your unarmed Strikes deal elemental damage equal to their own damage die, or 1d6 if that die is smaller, and gain the reach trait.</li><li>Your weapon Strikes deal additional damage of your element equal to the weapon's damage die.</li><li>You gain your element's property.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>You no longer need to eat, drink, breathe, or sleep, and are unaffected by environmental conditions related to your element.</li><li>Creatures that touch you, or hit you with an unarmed or melee attack, take damage equal to half your level.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>Your element's damage ignores resistance.</li><li>Creatures within 10 feet take damage equal to half your level when they end their turn there.</li></ul>\n<p><strong>13th Level</strong></p><ul><li>Creatures damaged by your element suffer your element's rider.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>You become your element. You are immune to precision damage and critical hits, and cannot be Grabbed or Restrained.</li><li>You gain a fly Speed equal to your land Speed.</li><li>You may pass through any gap your element could.</li></ul>\n<p><strong>20th Level</strong></p><ul><li>Your element's damage ignores immunity, dealing half damage instead of none.</li><li>The damaging area around you extends to 20 feet.</li></ul>\n<table><thead><tr><th>Element</th><th>Damage</th><th>Property</th><th>Rider (13th)</th></tr></thead><tbody>\n<tr><td>Fire</td><td>fire</td><td>-</td><td>Persistent fire damage equal to your level</td></tr><tr><td>Water</td><td>cold</td><td>-</td><td>Slowed 1 until the end of their next turn</td></tr><tr><td>Air</td><td>electricity</td><td>-</td><td>Damage chains to one other creature within 15 feet</td></tr><tr><td>Earth</td><td>bludgeoning</td><td>You cannot be moved, pushed, pulled, or knocked Prone against your will</td><td>Speeds reduced by 10 feet and cannot Fly or Leap, until the end of your next turn</td></tr><tr><td>Metal</td><td>slashing or piercing</td><td>Counts as cold iron, dawnsilver, or adamantine, your choice</td><td>Resistances and hardness halved until the end of your next turn</td></tr><tr><td>Wood</td><td>bludgeoning</td><td>Strikes gain grapple and trip; on a hit you may Grapple or Trip as a free action</td><td>Immobilized until they Escape, and you restore Hit Points equal to the damage dealt, once per turn</td></tr>\n</tbody></table>\n<hr />\n<p><strong>In Foundry:</strong> choose your element when you take this talent; Metal is offered as slashing or as piercing, chosen once. You are immune to its damage type; switch <em>Convert damage</em> on in your effects panel to deal every Strike, spell and blast as your element. Unarmed Strikes gain reach and a die of element damage (d6 at least), weapon Strikes a die of element damage matching the weapon's. Earth is immune to Prone, Metal's Strikes count as cold iron, dawnsilver and adamantine, Wood's Strikes gain grapple and trip. From 10th an aura marks the creatures within 10 feet (20 from 20th). From 15th you are immune to precision damage and critical hits, to Grabbed and Restrained, and fly at your land Speed.</p>\n<p>For the table: touch damage from 5th, the end-of-turn aura damage, resistance and immunity being ignored, the 13th-level riders, and passing through gaps. Notes on your damage rolls list them.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "ChoiceSet",
+        "slug": "element",
+        "rollOption": "ascendant-element",
+        "prompt": "ASCENDANT.Rules.ElementPrompt",
+        "adjustName": true,
+        "choices": [
+          {
+            "value": "fire",
+            "label": "PF2E.TraitFire"
+          },
+          {
+            "value": "water",
+            "label": "PF2E.TraitWater"
+          },
+          {
+            "value": "air",
+            "label": "PF2E.TraitAir"
+          },
+          {
+            "value": "earth",
+            "label": "PF2E.TraitEarth"
+          },
+          {
+            "value": "metal",
+            "label": "ASCENDANT.Rules.ElementMetalSlashing"
+          },
+          {
+            "value": "metal-piercing",
+            "label": "ASCENDANT.Rules.ElementMetalPiercing"
+          },
+          {
+            "value": "wood",
+            "label": "PF2E.TraitWood"
+          }
+        ]
+      },
+      {
+        "key": "Immunity",
+        "type": "fire",
+        "predicate": [
+          "ascendant-element:fire"
+        ]
+      },
+      {
+        "key": "Immunity",
+        "type": "cold",
+        "predicate": [
+          "ascendant-element:water"
+        ]
+      },
+      {
+        "key": "Immunity",
+        "type": "electricity",
+        "predicate": [
+          "ascendant-element:air"
+        ]
+      },
+      {
+        "key": "Immunity",
+        "type": "bludgeoning",
+        "predicate": [
+          "ascendant-element:earth"
+        ]
+      },
+      {
+        "key": "Immunity",
+        "type": "slashing",
+        "predicate": [
+          "ascendant-element:metal"
+        ]
+      },
+      {
+        "key": "Immunity",
+        "type": "piercing",
+        "predicate": [
+          "ascendant-element:metal-piercing"
+        ]
+      },
+      {
+        "key": "Immunity",
+        "type": "bludgeoning",
+        "predicate": [
+          "ascendant-element:wood"
+        ]
+      },
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "ascendant-elemental-convert",
+        "label": "ASCENDANT.Rules.ElementalConvert",
+        "toggleable": true,
+        "value": false
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "strike-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "fire",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:fire"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "spell-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "fire",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:fire"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "elemental-blast-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "fire",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:fire"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "strike-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "cold",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:water"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "spell-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "cold",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:water"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "elemental-blast-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "cold",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:water"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "strike-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "electricity",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:air"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "spell-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "electricity",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:air"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "elemental-blast-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "electricity",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:air"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "strike-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "bludgeoning",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:earth"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "spell-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "bludgeoning",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:earth"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "elemental-blast-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "bludgeoning",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:earth"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "strike-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "slashing",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:metal"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "spell-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "slashing",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:metal"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "elemental-blast-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "slashing",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:metal"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "strike-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "piercing",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:metal-piercing"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "spell-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "piercing",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:metal-piercing"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "elemental-blast-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "piercing",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:metal-piercing"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "strike-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "bludgeoning",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:wood"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "spell-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "bludgeoning",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:wood"
+        ]
+      },
+      {
+        "key": "DamageAlteration",
+        "selectors": [
+          "elemental-blast-damage"
+        ],
+        "mode": "override",
+        "property": "damage-type",
+        "value": "bludgeoning",
+        "predicate": [
+          "ascendant-elemental-convert",
+          "ascendant-element:wood"
+        ]
+      },
+      {
+        "key": "AdjustStrike",
+        "mode": "add",
+        "property": "traits",
+        "definition": [
+          "item:category:unarmed"
+        ],
+        "value": "reach"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d4",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "fire",
+        "predicate": [
+          "ascendant-element:fire",
+          "item:category:unarmed",
+          "item:damage:die:faces:4"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d6",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "fire",
+        "predicate": [
+          "ascendant-element:fire",
+          "item:category:unarmed",
+          "item:damage:die:faces:6"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d8",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d8",
+        "damageType": "fire",
+        "predicate": [
+          "ascendant-element:fire",
+          "item:category:unarmed",
+          "item:damage:die:faces:8"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d10",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d10",
+        "damageType": "fire",
+        "predicate": [
+          "ascendant-element:fire",
+          "item:category:unarmed",
+          "item:damage:die:faces:10"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d12",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d12",
+        "damageType": "fire",
+        "predicate": [
+          "ascendant-element:fire",
+          "item:category:unarmed",
+          "item:damage:die:faces:12"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d4",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "cold",
+        "predicate": [
+          "ascendant-element:water",
+          "item:category:unarmed",
+          "item:damage:die:faces:4"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d6",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "cold",
+        "predicate": [
+          "ascendant-element:water",
+          "item:category:unarmed",
+          "item:damage:die:faces:6"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d8",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d8",
+        "damageType": "cold",
+        "predicate": [
+          "ascendant-element:water",
+          "item:category:unarmed",
+          "item:damage:die:faces:8"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d10",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d10",
+        "damageType": "cold",
+        "predicate": [
+          "ascendant-element:water",
+          "item:category:unarmed",
+          "item:damage:die:faces:10"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d12",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d12",
+        "damageType": "cold",
+        "predicate": [
+          "ascendant-element:water",
+          "item:category:unarmed",
+          "item:damage:die:faces:12"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d4",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "electricity",
+        "predicate": [
+          "ascendant-element:air",
+          "item:category:unarmed",
+          "item:damage:die:faces:4"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d6",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "electricity",
+        "predicate": [
+          "ascendant-element:air",
+          "item:category:unarmed",
+          "item:damage:die:faces:6"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d8",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d8",
+        "damageType": "electricity",
+        "predicate": [
+          "ascendant-element:air",
+          "item:category:unarmed",
+          "item:damage:die:faces:8"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d10",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d10",
+        "damageType": "electricity",
+        "predicate": [
+          "ascendant-element:air",
+          "item:category:unarmed",
+          "item:damage:die:faces:10"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d12",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d12",
+        "damageType": "electricity",
+        "predicate": [
+          "ascendant-element:air",
+          "item:category:unarmed",
+          "item:damage:die:faces:12"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d4",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:earth",
+          "item:category:unarmed",
+          "item:damage:die:faces:4"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d6",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:earth",
+          "item:category:unarmed",
+          "item:damage:die:faces:6"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d8",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d8",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:earth",
+          "item:category:unarmed",
+          "item:damage:die:faces:8"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d10",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d10",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:earth",
+          "item:category:unarmed",
+          "item:damage:die:faces:10"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d12",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d12",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:earth",
+          "item:category:unarmed",
+          "item:damage:die:faces:12"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d4",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "slashing",
+        "predicate": [
+          "ascendant-element:metal",
+          "item:category:unarmed",
+          "item:damage:die:faces:4"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d6",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "slashing",
+        "predicate": [
+          "ascendant-element:metal",
+          "item:category:unarmed",
+          "item:damage:die:faces:6"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d8",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d8",
+        "damageType": "slashing",
+        "predicate": [
+          "ascendant-element:metal",
+          "item:category:unarmed",
+          "item:damage:die:faces:8"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d10",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d10",
+        "damageType": "slashing",
+        "predicate": [
+          "ascendant-element:metal",
+          "item:category:unarmed",
+          "item:damage:die:faces:10"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d12",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d12",
+        "damageType": "slashing",
+        "predicate": [
+          "ascendant-element:metal",
+          "item:category:unarmed",
+          "item:damage:die:faces:12"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d4",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "piercing",
+        "predicate": [
+          "ascendant-element:metal-piercing",
+          "item:category:unarmed",
+          "item:damage:die:faces:4"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d6",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "piercing",
+        "predicate": [
+          "ascendant-element:metal-piercing",
+          "item:category:unarmed",
+          "item:damage:die:faces:6"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d8",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d8",
+        "damageType": "piercing",
+        "predicate": [
+          "ascendant-element:metal-piercing",
+          "item:category:unarmed",
+          "item:damage:die:faces:8"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d10",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d10",
+        "damageType": "piercing",
+        "predicate": [
+          "ascendant-element:metal-piercing",
+          "item:category:unarmed",
+          "item:damage:die:faces:10"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d12",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d12",
+        "damageType": "piercing",
+        "predicate": [
+          "ascendant-element:metal-piercing",
+          "item:category:unarmed",
+          "item:damage:die:faces:12"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d4",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:wood",
+          "item:category:unarmed",
+          "item:damage:die:faces:4"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d6",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:wood",
+          "item:category:unarmed",
+          "item:damage:die:faces:6"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d8",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d8",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:wood",
+          "item:category:unarmed",
+          "item:damage:die:faces:8"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d10",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d10",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:wood",
+          "item:category:unarmed",
+          "item:damage:die:faces:10"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-unarmed-d12",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d12",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:wood",
+          "item:category:unarmed",
+          "item:damage:die:faces:12"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d4",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d4",
+        "damageType": "fire",
+        "predicate": [
+          "ascendant-element:fire",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:4"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d6",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "fire",
+        "predicate": [
+          "ascendant-element:fire",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:6"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d8",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d8",
+        "damageType": "fire",
+        "predicate": [
+          "ascendant-element:fire",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:8"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d10",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d10",
+        "damageType": "fire",
+        "predicate": [
+          "ascendant-element:fire",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:10"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d12",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d12",
+        "damageType": "fire",
+        "predicate": [
+          "ascendant-element:fire",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:12"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d4",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d4",
+        "damageType": "cold",
+        "predicate": [
+          "ascendant-element:water",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:4"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d6",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "cold",
+        "predicate": [
+          "ascendant-element:water",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:6"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d8",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d8",
+        "damageType": "cold",
+        "predicate": [
+          "ascendant-element:water",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:8"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d10",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d10",
+        "damageType": "cold",
+        "predicate": [
+          "ascendant-element:water",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:10"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d12",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d12",
+        "damageType": "cold",
+        "predicate": [
+          "ascendant-element:water",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:12"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d4",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d4",
+        "damageType": "electricity",
+        "predicate": [
+          "ascendant-element:air",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:4"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d6",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "electricity",
+        "predicate": [
+          "ascendant-element:air",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:6"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d8",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d8",
+        "damageType": "electricity",
+        "predicate": [
+          "ascendant-element:air",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:8"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d10",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d10",
+        "damageType": "electricity",
+        "predicate": [
+          "ascendant-element:air",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:10"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d12",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d12",
+        "damageType": "electricity",
+        "predicate": [
+          "ascendant-element:air",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:12"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d4",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d4",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:earth",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:4"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d6",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:earth",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:6"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d8",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d8",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:earth",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:8"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d10",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d10",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:earth",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:10"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d12",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d12",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:earth",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:12"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d4",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d4",
+        "damageType": "slashing",
+        "predicate": [
+          "ascendant-element:metal",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:4"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d6",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "slashing",
+        "predicate": [
+          "ascendant-element:metal",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:6"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d8",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d8",
+        "damageType": "slashing",
+        "predicate": [
+          "ascendant-element:metal",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:8"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d10",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d10",
+        "damageType": "slashing",
+        "predicate": [
+          "ascendant-element:metal",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:10"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d12",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d12",
+        "damageType": "slashing",
+        "predicate": [
+          "ascendant-element:metal",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:12"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d4",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d4",
+        "damageType": "piercing",
+        "predicate": [
+          "ascendant-element:metal-piercing",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:4"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d6",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "piercing",
+        "predicate": [
+          "ascendant-element:metal-piercing",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:6"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d8",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d8",
+        "damageType": "piercing",
+        "predicate": [
+          "ascendant-element:metal-piercing",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:8"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d10",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d10",
+        "damageType": "piercing",
+        "predicate": [
+          "ascendant-element:metal-piercing",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:10"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d12",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d12",
+        "damageType": "piercing",
+        "predicate": [
+          "ascendant-element:metal-piercing",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:12"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d4",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d4",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:wood",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:4"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d6",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:wood",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:6"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d8",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d8",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:wood",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:8"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d10",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d10",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:wood",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:10"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "slug": "elemental-embodiment-weapon-d12",
+        "label": "ASCENDANT.Rules.ElementalDamage",
+        "diceNumber": 1,
+        "dieSize": "d12",
+        "damageType": "bludgeoning",
+        "predicate": [
+          "ascendant-element:wood",
+          {
+            "not": "item:category:unarmed"
+          },
+          "item:damage:die:faces:12"
+        ]
+      },
+      {
+        "key": "Immunity",
+        "type": "prone",
+        "predicate": [
+          "ascendant-element:earth"
+        ]
+      },
+      {
+        "key": "AdjustStrike",
+        "mode": "add",
+        "property": "materials",
+        "definition": [],
+        "value": "cold-iron",
+        "predicate": [
+          {
+            "or": [
+              "ascendant-element:metal",
+              "ascendant-element:metal-piercing"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "AdjustStrike",
+        "mode": "add",
+        "property": "materials",
+        "definition": [],
+        "value": "dawnsilver",
+        "predicate": [
+          {
+            "or": [
+              "ascendant-element:metal",
+              "ascendant-element:metal-piercing"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "AdjustStrike",
+        "mode": "add",
+        "property": "materials",
+        "definition": [],
+        "value": "adamantine",
+        "predicate": [
+          {
+            "or": [
+              "ascendant-element:metal",
+              "ascendant-element:metal-piercing"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "AdjustStrike",
+        "mode": "add",
+        "property": "traits",
+        "definition": [],
+        "value": "grapple",
+        "predicate": [
+          "ascendant-element:wood"
+        ]
+      },
+      {
+        "key": "AdjustStrike",
+        "mode": "add",
+        "property": "traits",
+        "definition": [],
+        "value": "trip",
+        "predicate": [
+          "ascendant-element:wood"
+        ]
+      },
+      {
+        "key": "Aura",
+        "slug": "elemental-embodiment",
+        "radius": "ternary(gte(@actor.level, 20), 20, 10)",
+        "effects": [
+          {
+            "uuid": "Compendium.ascendant.ascendant-apex.Item.o3jCqZCmAtRyazuF",
+            "affects": "enemies",
+            "events": [
+              "enter"
+            ],
+            "removeOnExit": true
+          }
+        ],
+        "appearance": {
+          "border": {
+            "color": "#e07b00",
+            "alpha": 0.75
+          },
+          "highlight": {
+            "color": "#e07b00",
+            "alpha": 0.2
+          }
+        },
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Immunity",
+        "type": "precision",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Immunity",
+        "type": "critical-hits",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Immunity",
+        "type": "grabbed",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Immunity",
+        "type": "restrained",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "BaseSpeed",
+        "selector": "fly",
+        "value": "@actor.system.movement.speeds.land.value",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "Note",
+        "selector": [
+          "strike-damage",
+          "spell-damage"
+        ],
+        "title": "Elemental Embodiment",
+        "text": "ASCENDANT.Note.ElementalDamage",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.VPxhcOwVASvdknbW",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.0Zd9DnZM0fg0q7QG",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.XdEdJOEb9FKb5fcb",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              13
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.aXt2oilQQi0avlfY",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-apex.Item.sXTNRCJaqof66VDf",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              20
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "ascendant-elemental-embodiment",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "ascendant-apex",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!pUyDwtMzVLCoM5vF"
+}

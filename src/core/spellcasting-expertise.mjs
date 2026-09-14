@@ -70,15 +70,33 @@ ${ENHANCED_DEFENSE_TEXT}
 <p><strong>In Foundry:</strong> your spell attack and DC are at least Expert from 1st, Master from 5th and Legendary from 10th, and read <strong>Mythic</strong> from 15th, worth your level + 10. Both damage riders (4/6/8/10 for the rank, plus your spellcasting attribute) are added to every damaging spell's roll automatically and follow whichever spellcasting entry cast the spell. Enhanced Defense applies automatically.</p>
 `.trim(),
     rules: [
+        // Expert 1, Master 5, Legendary 10 on the stored rank. Mythic is NOT the
+        // AdjustModifier override used for Strikes: a spellcasting entry's statistic
+        // is built while the entry prepares, before any rule element has registered
+        // an adjustment, so its proficiency modifier carries none (read live on
+        // 2026-09-14: the adjustment was registered under every spell domain and
+        // `modifier.adjustments` was empty; a Strike, built after the rules, took
+        // it). So Mythic on spells is a flat untyped +2 in the `spell-attack-dc`
+        // domain, which the statistic, its check and its DC all share, labelled
+        // Mythic. The breakdown reads "Legendary +N, Mythic +2"; the number is
+        // level + 10.
         ...proficiencyLadder({
             path: "system.proficiencies.spellcasting.rank",
-            selectors: ["spell-attack", "spell-dc"],
+            selectors: [],
             expert: 1,
             master: 5,
             legendary: 10,
-            mythicLevel: 15,
             slug: SLUG,
         }),
+        {
+            key: "FlatModifier",
+            selector: "spell-attack-dc",
+            slug: `${SLUG}-mythic`,
+            label: "ASCENDANT.Proficiency.Mythic",
+            type: "untyped",
+            value: 2,
+            predicate: [{ gte: ["self:level", 15] }],
+        },
         ...spellDamageBonus({ slug: SLUG, ranks: { expert: 1, master: 5, legendary: 10, mythic: 15 } }),
         enhancedDefense,
         ...LEVELS.map(({ level }) => ({

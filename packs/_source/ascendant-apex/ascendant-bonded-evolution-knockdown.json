@@ -1,0 +1,64 @@
+{
+  "_id": "cEvSDJkbqDtV8UBV",
+  "name": "Evolution 2: Knockdown",
+  "type": "effect",
+  "img": "icons/magic/life/heart-cross-strong-flame-purple-orange.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>2 points.</strong> Choose a Strike. On a hit the Bonded may attempt to Trip as a free action.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "Note",
+        "selector": "strike-attack-roll",
+        "title": "Knockdown",
+        "text": "ASCENDANT.Bonded.Knockdown",
+        "outcome": [
+          "success",
+          "criticalSuccess"
+        ]
+      }
+    ],
+    "slug": "ascendant-bonded-evolution-knockdown",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "duration": {
+      "value": -1,
+      "unit": "unlimited",
+      "sustained": false,
+      "expiry": null
+    },
+    "start": {
+      "value": 0,
+      "initiative": null
+    },
+    "badge": null,
+    "tokenIcon": {
+      "show": false
+    },
+    "context": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!cEvSDJkbqDtV8UBV"
+}

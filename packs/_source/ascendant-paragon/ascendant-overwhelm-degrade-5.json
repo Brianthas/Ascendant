@@ -1,0 +1,64 @@
+{
+  "_id": "sU4XIRTG0b4GDihl",
+  "name": "Overwhelm (save degraded)",
+  "type": "effect",
+  "img": "icons/magic/fire/explosion-fireball-large-orange.webp",
+  "system": {
+    "description": {
+      "value": "<p>Applied automatically while you save against an area spell from a character using Overwhelm. A success is treated as a failure. Critical successes and critical failures are unaffected.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "AdjustDegreeOfSuccess",
+        "selector": "saving-throw",
+        "adjustment": {
+          "success": "one-degree-worse"
+        },
+        "predicate": [
+          "area-effect"
+        ]
+      }
+    ],
+    "slug": "ascendant-overwhelm-degrade-5",
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "duration": {
+      "value": -1,
+      "unit": "unlimited",
+      "sustained": false,
+      "expiry": null
+    },
+    "start": {
+      "value": 0,
+      "initiative": null
+    },
+    "badge": null,
+    "tokenIcon": {
+      "show": false
+    },
+    "context": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!sU4XIRTG0b4GDihl"
+}

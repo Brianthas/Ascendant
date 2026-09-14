@@ -1,0 +1,53 @@
+{
+  "_id": "nBysr3J03YaAkfAa",
+  "name": "What Doesn't Kill You (5th)",
+  "type": "feat",
+  "img": "icons/magic/defensive/barrier-shield-dome-deflect-teal.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>The first time each day you take environmental damage or gain an environmental condition, you adapt to it. For the next 24 hours you are immune to that source.<ul><li>You may be adapted to any number of sources at once.</li></ul></li><li>You gain a climb Speed and a swim Speed equal to your land Speed, and act normally underwater without penalty.</li></ul><p>Granted automatically by What Doesn't Kill You at 5th level.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-what-doesnt-kill-you-5",
+    "traits": {
+      "otherTags": [
+        "ascendant-grant"
+      ],
+      "value": [],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 5
+    },
+    "category": "ascendant-grant",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "location": null
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!nBysr3J03YaAkfAa"
+}
