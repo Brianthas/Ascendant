@@ -12,6 +12,7 @@ import { registerAegis, repairAegis } from "./aegis.mjs";
 import { registerSecondWind } from "./second-wind.mjs";
 import { registerBattleMender } from "./battle-mender.mjs";
 import { registerContainers, syncCapacity } from "./containers.mjs";
+import { registerAttributeBoosts } from "./attribute-boosts.mjs";
 
 /**
  * Registration timing.
@@ -61,6 +62,7 @@ Hooks.once("init", () => {
     attempt("aegis", registerAegis);
     attempt("battle mender", registerBattleMender);
     attempt("containers", registerContainers);
+    attempt("attribute boosts", registerAttributeBoosts);
     categoriesRegistered = registerFeatCategories();
     sectionsRegistered = registerFeatSections();
     console.log(

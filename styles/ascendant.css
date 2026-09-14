@@ -3,6 +3,36 @@
     opacity: 0.8;
 }
 
+/*
+ * The Attribute Boosts window is height auto and clamps to the viewport. Its rows container
+ * already has overflow-y auto, but as a column flex child with min-height auto it never
+ * shrinks, so on a short screen the last rows and the summary are cut off and nothing
+ * scrolls. Five Ascendant rows make that worse. min-height 0 lets it shrink and scroll.
+ */
+#attribute-builder .window-content > .scrollable {
+    min-height: 0;
+    flex: 1 1 auto;
+    overflow-y: auto;
+}
+
+/* Enhanced Attribute Boosts rows in the Attribute Boosts window. */
+button.attribute-button .ascendant-boost-count {
+    margin-left: 0.3em;
+    font-weight: bold;
+}
+
+/* Only used when no PF2e badge was on screen to clone; otherwise the cloned badge keeps PF2e's style. */
+.row-heading .ascendant-remaining {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    border: 1px solid var(--color-border-dark, #7a7971);
+    font-weight: bold;
+}
+
 .ascendant-refresh-list {
     max-height: 18em;
     overflow-y: auto;

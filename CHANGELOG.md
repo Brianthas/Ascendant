@@ -8,6 +8,9 @@ ladders at every boundary, and the runtime scripts against real combat, damage a
 
 - Core: Weapon Expertise and Spellcasting Expertise tracks with Mythic proficiency at 15th,
   Enhanced Defense, Enhanced Attribute Boosts with caps, Expanded Investment.
+- Enhanced Attribute Boosts are picked on rows added to PF2e's Attribute Boosts window and
+  stored in an actor flag, replacing the granted pick items. The 1st-level picks follow PF2e's
+  own half-step rule for a score at 18 or above; the pick items gave nothing there.
 - All twelve Apex, twelve Paragon and twelve Adept Talents, and both Party Talents, as feats with
   level features granted on levelling.
 - Bonded Soul: six base-form NPC actors, evolution items, link and sync button, shared Hit Points.

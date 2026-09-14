@@ -23,10 +23,10 @@ Reasons recur, so they are named once here and cited below:
 
 ## Core
 
-- **Enhanced Attribute Boosts, 1st level.** A boost on a score already at 18 adds nothing on the
-  sheet. PF2e stores modifiers; +1 to an 18 is half a modifier point, every later boost is a whole
-  +2, and an odd score never rounds up, so no number the sheet shows ever differs. The "no two on
-  the same score" rule is enforced by hiding attributes a sibling pick already took.
+- **Enhanced Attribute Boosts.** Automated in the Attribute Boosts window. The 1st-level picks use
+  PF2e's own half-step rule for a score already at 18, so two half steps combine into a whole
+  modifier point as they do for PF2e's own boosts. Listed because the window's Manual Entry mode
+  switches the picks off along with PF2e's boosts, and the rows are hidden while it is on.
 - **Expanded Investment.** Automated; listed because the path it writes is checked live before
   release.
 

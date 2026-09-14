@@ -20,17 +20,18 @@
         "Proficiency": {
             "Mythic": "Mythic"
         },
+        "Boosts": {
+            "Row": "Level {level} (Ascendant)",
+            "RowLabel": "Ascendant boosts at Level {level}",
+            "Remaining": "{count} selections remaining",
+            "Twice": "x2"
+        },
         "Rules": {
             "SpellDamageAttribute": "Spellcasting Expertise (attribute)",
             "SpellDamageProficiency": "Spellcasting Expertise (proficiency)",
             "WeaponDamage": "Weapon Expertise (proficiency)",
             "WeaponDamageMythic": "Weapon Expertise (Mythic)",
             "EnhancedDefense": "Enhanced Defense",
-            "Boost1st": "Enhanced Attribute Boost (1st level): which attribute?",
-            "Boost5th": "Enhanced Attribute Boost (5th level): which attribute?",
-            "Boost10th": "Enhanced Attribute Boost (10th level): which attribute?",
-            "Boost15th": "Enhanced Attribute Boost (15th level): which attribute?",
-            "Boost20th": "Enhanced Attribute Boost (20th level): which attribute?",
             "AbundantVitality": "Abundant Vitality",
             "AbundantVitalityMythic": "Abundant Vitality (Mythic)",
             "Aegis": "Tireless Aegis",

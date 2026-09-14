@@ -49,7 +49,9 @@ Mythic proficiency, the sixth rank at level + 10, appears on attack rolls and sp
 
 1. Build the character as normal, including the ordinary attribute boosts.
 2. From **Ascendant: Core**, add an Expertise Track, **Enhanced Attribute Boosts** and **Expanded
-   Investment**. The boosts ask their four 1st-level questions when added.
+   Investment**. With the boosts feat on the sheet, the **Attribute Boosts** window gains a row
+   labelled *(Ascendant)* under each of PF2e's level rows: four picks at Level 1 and two at
+   Levels 5, 10, 15 and 20. Pressing an attribute twice on a later row puts both picks on it.
 3. Add one talent from each of Apex, Paragon and Adept, and the party's Party Talent.
 4. Read the talent's **In Foundry** paragraph. Some need one more step: Inexhaustible Magics'
    **Triple Spell Slots** button once the spellcasting entries exist, Soulbound Arsenal's tag on

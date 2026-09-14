@@ -1,4 +1,3 @@
-import { talent, uuidFor } from "./item.mjs";
 /**
  * Shared PF2e rule element builders.
  *
@@ -123,11 +122,6 @@ export function rankBonusByLevel({ expert, master, legendary, mythic: mythicLeve
 
 /** The six attributes, for choices that name one. */
 export const ATTRIBUTES = ["str", "dex", "con", "int", "wis", "cha"];
-
-export const ATTRIBUTE_CHOICES = ATTRIBUTES.map((a) => ({
-    value: a,
-    label: `PF2E.Ability${a.charAt(0).toUpperCase()}${a.slice(1)}`,
-}));
 
 /**
  * The recurring spell damage clause, quoted from the document:
@@ -261,83 +255,5 @@ export function attributeWrite(rule, attribute) {
     return [
         { ...rule, path: `system.abilities.${attribute}.mod` },
         { ...rule, path: `system.abilities.${attribute}.base` },
-    ];
-}
-
-/**
- * A level-gated ability boost, as an item that arrives when the level does.
- *
- * A ChoiceSet on the talent itself would ask every boost the moment the talent
- * is added. Splitting the boost into its own item and granting it with a level
- * predicate moves the question to the level it belongs to (verified live: the
- * grant fires on levelling past its predicate and the ChoiceSet prompts then).
- *
- * Returns the item and the grant rule to put on the talent.
- *
- * @param {object} options
- * @param {string} options.slug Unique slug for the granted item.
- * @param {string} options.name
- * @param {string} options.prompt Localisation key for the question.
- * @param {number|string} options.value The modifier to raise the attribute to, or add.
- * @param {number} options.level Level at which the boost, and the question, arrive.
- * @param {string} [options.mode] "upgrade" to raise to a value, "add" to add on top.
- * @param {string[]} [options.predicate] Extra conditions on the grant.
- * @param {string} options.description Body text for the granted item.
- * @param {object[]} [options.choices] The attribute choices, with any per-choice predicates.
- */
-export function boostPick({ slug, name, prompt, value, level, mode = "upgrade", predicate = [], description, choices = ATTRIBUTE_CHOICES }) {
-    const gate = `ascendant-boost-${slug}`;
-    return {
-        item: talent({
-            name,
-            slug,
-            category: "ascendant-grant",
-            otherTags: ["ascendant-grant"],
-            level,
-            img: "icons/magic/life/heart-cross-strong-blue.webp",
-            description,
-            rules: [
-                { key: "ChoiceSet", slug, rollOption: gate, prompt, adjustName: false, choices },
-                ...ATTRIBUTES.flatMap((attribute) => attributeWrite({
-                    key: "ActiveEffectLike",
-                    mode,
-                    phase: "applyAEs",
-                    // Priority 60: after any item that overrides an attribute in
-                    // this phase, so an override landing last cannot wipe the boost.
-                    priority: 60,
-                    value,
-                    predicate: [`${gate}:${attribute}`, ...predicate],
-                }, attribute)),
-            ],
-        }),
-        grant: {
-            key: "GrantItem",
-            uuid: uuidFor("ascendant-core", slug),
-            allowDuplicate: false,
-            reevaluateOnUpdate: true,
-            predicate: [{ gte: ["self:level", level] }, ...predicate],
-        },
-    };
-}
-
-export function abilityBoost({ slug, prompt, value, predicate = [], mode = "upgrade" }) {
-    const gate = `ascendant-boost-${slug}`;
-    return [
-        {
-            key: "ChoiceSet",
-            slug,
-            rollOption: gate,
-            prompt,
-            adjustName: false,
-            choices: ATTRIBUTE_CHOICES,
-        },
-        ...ATTRIBUTES.flatMap((attribute) => attributeWrite({
-            key: "ActiveEffectLike",
-            mode,
-            phase: "applyAEs",
-            priority: 60,
-            value,
-            predicate: [`${gate}:${attribute}`, ...predicate],
-        }, attribute)),
     ];
 }
