@@ -84,8 +84,19 @@ export async function pruneStoredSections() {
     const ours = new Set(TIERS.map((t) => t.id));
     const kept = stored.filter((s) => !ours.has(s?.id));
     if (kept.length === stored.length) return false;
+
+    // PF2e's onChange assigns the stored array over the live list and resets every
+    // character, and the stored array holds nobody's in-memory sections. Writing it
+    // therefore drops every other module's live sections along with ours, so the
+    // whole live list is snapshotted first and anything missing is pushed back.
+    const before = [...(game.pf2e?.settings?.campaign?.feats?.sections ?? [])];
     await game.settings.set("pf2e", "campaignFeatSections", kept);
-    // PF2e replaces the live array from the setting on change; put ours back.
+    const live = game.pf2e?.settings?.campaign?.feats?.sections;
+    if (Array.isArray(live)) {
+        for (const section of before) {
+            if (!live.some((s) => s?.id === section?.id)) live.push(section);
+        }
+    }
     registerFeatSections();
     return true;
 }
