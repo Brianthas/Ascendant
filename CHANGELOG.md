@@ -1,8 +1,10 @@
 # Changelog
 
-## 0.1.0 - 2026-09-13
+## 0.1.0 - 2026-09-14
 
-First build. Not yet verified in a live client.
+First build, verified live on Foundry 14.367 with PF2e 8.5.0: every talent and both tracks on a
+20th-level Fighter/Wizard with Dual Class, Ancestry Paragon and Free Archetype on, the level
+ladders at every boundary, and the runtime scripts against real combat, damage and token state.
 
 - Core: Weapon Expertise and Spellcasting Expertise tracks with Mythic proficiency at 15th,
   Enhanced Defense, Enhanced Attribute Boosts with caps, Expanded Investment.

@@ -1,4 +1,3 @@
-import { MODULE_ID, EXTRA_CLASSES_FLAG } from "./constants.mjs";
 import { moduleEnabled, maxClasses } from "./settings.mjs";
 import {
   getPrimaryClass,
@@ -6,7 +5,8 @@ import {
   getExtraClasses,
   getExtraClassIds,
   extraClassLabel,
-  notifyDualClass
+  notifyDualClass,
+  writeExtraClasses
 } from "./util.mjs";
 import { armSecondClass } from "./coexist.mjs";
 import { syncSecondaryClassFeatures } from "./features.mjs";
@@ -211,9 +211,8 @@ async function openActions(actor, secondary) {
       label: game.i18n.format("PF2EDC.Sheet.MakePrimary", { class: secondary.name }),
       // Swap in place: this class leaves the extras list and the old primary takes its position, so
       // the order of any other extra class is untouched.
-      callback: () => actor.setFlag(
-        MODULE_ID,
-        EXTRA_CLASSES_FLAG,
+      callback: () => writeExtraClasses(
+        actor,
         getExtraClassIds(actor).map((id) => (id === secondary.id ? primary.id : id))
       )
     },

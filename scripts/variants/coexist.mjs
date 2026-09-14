@@ -1,6 +1,6 @@
-import { MODULE_ID, SECONDARY_CLASS_FLAG, EXTRA_CLASSES_FLAG } from "./constants.mjs";
+import { MODULE_ID } from "./constants.mjs";
 import { moduleEnabled, maxClasses } from "./settings.mjs";
-import { registerLibWrapper, notifyDualClass, getExtraClassIds } from "./util.mjs";
+import { registerLibWrapper, notifyDualClass, getExtraClassIds, writeExtraClasses } from "./util.mjs";
 
 /**
  * Letting an actor hold two class items at once.
@@ -248,7 +248,7 @@ async function flagNewClassAsSecondary(actor, created) {
   // even when it holds one id, which is also what migrates a character off the old single-id flag:
   // `getExtraClassIds` reads the old one, and this writes the new one on the next class change.
   const ids = [...getExtraClassIds(actor).filter((id) => id !== newClass.id), newClass.id];
-  await actor.setFlag(MODULE_ID, EXTRA_CLASSES_FLAG, ids);
+  await writeExtraClasses(actor, ids);
 }
 
 /**
@@ -271,17 +271,11 @@ export function onDeleteClassItem(item) {
   const classCount = actor.itemTypes.class.filter((c) => c.id !== item.id).length;
 
   if (classCount < 2 || remaining.length === 0) {
-    actor.unsetFlag(MODULE_ID, EXTRA_CLASSES_FLAG);
-    if (actor.getFlag(MODULE_ID, SECONDARY_CLASS_FLAG) !== undefined) {
-      actor.unsetFlag(MODULE_ID, SECONDARY_CLASS_FLAG);
-    }
+    writeExtraClasses(actor, null);
     return;
   }
 
   // Written as the list even when the character came in on the old single-id flag, which retires
   // that flag rather than leaving two sources of truth behind.
-  actor.setFlag(MODULE_ID, EXTRA_CLASSES_FLAG, remaining);
-  if (actor.getFlag(MODULE_ID, SECONDARY_CLASS_FLAG) !== undefined) {
-    actor.unsetFlag(MODULE_ID, SECONDARY_CLASS_FLAG);
-  }
+  writeExtraClasses(actor, remaining);
 }

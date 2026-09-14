@@ -12,6 +12,10 @@ Reasons recur, so they are named once here and cited below:
 - **Other actor.** A rule element acts on the actor that holds it and, through auras and ephemeral
   effects, on a creature for the duration of one roll. Anything that persists on another actor,
   or that reads one actor from another, is done by hand or by a script.
+- **Auras follow token movement.** PF2e applies and removes an aura's effect when a token's move
+  finishes on the canvas, so an aura only reaches creatures whose tokens are dragged into or out
+  of it on a viewed scene. A token placed by editing coordinates, or a scene nobody is viewing,
+  does not trigger it.
 - **Defender-side.** Resistance, hardness and immunity are applied where the damage lands. There is
   no attacker-side "ignore resistance".
 - **Not modelled.** PF2e has no representation of the thing at all: a condition floor, an object's

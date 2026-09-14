@@ -84,6 +84,27 @@ export function getExtraClassIds(actor) {
 }
 
 /**
+ * Ascendant addition to the copied file: record the extra classes under both flag scopes.
+ *
+ * `setFlag` refuses a scope that is not an active package, but a plain update writes any flag
+ * key, and the Dual Class module reads only its own scope. Writing both keeps a character built
+ * here recognisable there (verified live on 2026-09-14: the Wizard ladder and DC appeared the
+ * moment the legacy key was written). `null` clears both.
+ *
+ * @param {ActorPF2e} actor
+ * @param {string[]|null} ids
+ */
+export async function writeExtraClasses(actor, ids) {
+  const update = {};
+  for (const scope of [MODULE_ID, LEGACY_MODULE_ID]) {
+    if (ids) update[`flags.${scope}.${EXTRA_CLASSES_FLAG}`] = ids;
+    else update[`flags.${scope}.-=${EXTRA_CLASSES_FLAG}`] = null;
+    if (actor.flags?.[scope]?.[SECONDARY_CLASS_FLAG] !== undefined) update[`flags.${scope}.-=${SECONDARY_CLASS_FLAG}`] = null;
+  }
+  await actor.update(update);
+}
+
+/**
  * Every class item beyond the first, in flag order, with any id that no longer resolves dropped.
  *
  * @param {ActorPF2e} actor
