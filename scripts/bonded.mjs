@@ -129,10 +129,15 @@ export async function syncBonded(owner, bonded) {
         "system.saves.will.value": stats.will,
         "system.perception.mod": stats.perception,
         "system.attributes.hp.max": stats.hpMax,
-        "system.attributes.hp.value": Math.min(stats.hp, stats.hpMax),
-        "system.attributes.hp.temp": stats.temp,
         "system.skills.athletics.base": stats.athletics,
         [`flags.${MODULE_ID}.${OWNER_FLAG}`]: owner.id,
+    }, { [MIRROR_OPTION]: true });
+    // The value in its own write: PF2e clamps a hit point value against the maximum the actor
+    // had before the update, so max and value in one call left a fresh Bonded at 10/272
+    // (read live on 2026-09-14).
+    await bonded.update({
+        "system.attributes.hp.value": Math.min(stats.hp, stats.hpMax),
+        "system.attributes.hp.temp": stats.temp,
     }, { [MIRROR_OPTION]: true });
 
     // Every Strike: the owner's best attack modifier, and the highest attribute to damage.

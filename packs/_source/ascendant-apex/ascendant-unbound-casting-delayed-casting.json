@@ -14,7 +14,13 @@
       "license": "ORC",
       "remaster": true
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "ascendant-spellshape:delayed-casting"
+      }
+    ],
     "slug": "ascendant-unbound-casting-delayed-casting",
     "traits": {
       "otherTags": [],

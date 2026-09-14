@@ -157,12 +157,14 @@
         },
         "rules": [
           {
-            "key": "ChoiceSet",
-            "slug": "bondedElement",
-            "rollOption": "ascendant-bonded-element",
-            "prompt": "ASCENDANT.Bonded.ElementPrompt",
-            "adjustName": true,
-            "choices": [
+            "key": "RollOption",
+            "domain": "all",
+            "option": "ascendant-bonded-element",
+            "label": "ASCENDANT.Bonded.ElementPrompt",
+            "toggleable": true,
+            "alwaysActive": true,
+            "selection": "fire",
+            "suboptions": [
               {
                 "value": "acid",
                 "label": "PF2E.TraitAcid"
