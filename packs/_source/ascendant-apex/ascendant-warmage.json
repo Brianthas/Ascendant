@@ -20,35 +20,69 @@
         "mode": "upgrade",
         "path": "system.proficiencies.attacks.simple.rank",
         "phase": "applyAEs",
-        "value": "ternary(gte(@actor.system.proficiencies.attacks.simple.rank, 1), @actor.system.proficiencies.spellcasting.rank, 0)"
+        "value": "ternary(gte(@actor.system.proficiencies.attacks.simple.rank, 1), max(@actor.system.proficiencies.spellcasting.rank, @actor.system.proficiencies.attacks.simple.rank, @actor.system.proficiencies.attacks.martial.rank, @actor.system.proficiencies.attacks.advanced.rank, @actor.system.proficiencies.attacks.unarmed.rank), 0)"
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.proficiencies.attacks.martial.rank",
         "phase": "applyAEs",
-        "value": "ternary(gte(@actor.system.proficiencies.attacks.martial.rank, 1), @actor.system.proficiencies.spellcasting.rank, 0)"
+        "value": "ternary(gte(@actor.system.proficiencies.attacks.martial.rank, 1), max(@actor.system.proficiencies.spellcasting.rank, @actor.system.proficiencies.attacks.simple.rank, @actor.system.proficiencies.attacks.martial.rank, @actor.system.proficiencies.attacks.advanced.rank, @actor.system.proficiencies.attacks.unarmed.rank), 0)"
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.proficiencies.attacks.advanced.rank",
         "phase": "applyAEs",
-        "value": "ternary(gte(@actor.system.proficiencies.attacks.advanced.rank, 1), @actor.system.proficiencies.spellcasting.rank, 0)"
+        "value": "ternary(gte(@actor.system.proficiencies.attacks.advanced.rank, 1), max(@actor.system.proficiencies.spellcasting.rank, @actor.system.proficiencies.attacks.simple.rank, @actor.system.proficiencies.attacks.martial.rank, @actor.system.proficiencies.attacks.advanced.rank, @actor.system.proficiencies.attacks.unarmed.rank), 0)"
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.proficiencies.attacks.unarmed.rank",
         "phase": "applyAEs",
-        "value": "ternary(gte(@actor.system.proficiencies.attacks.unarmed.rank, 1), @actor.system.proficiencies.spellcasting.rank, 0)"
+        "value": "ternary(gte(@actor.system.proficiencies.attacks.unarmed.rank, 1), max(@actor.system.proficiencies.spellcasting.rank, @actor.system.proficiencies.attacks.simple.rank, @actor.system.proficiencies.attacks.martial.rank, @actor.system.proficiencies.attacks.advanced.rank, @actor.system.proficiencies.attacks.unarmed.rank), 0)"
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.proficiencies.spellcasting.rank",
         "phase": "applyAEs",
-        "value": "max(@actor.system.proficiencies.attacks.simple.rank, @actor.system.proficiencies.attacks.martial.rank, @actor.system.proficiencies.attacks.advanced.rank, @actor.system.proficiencies.attacks.unarmed.rank)"
+        "value": "max(@actor.system.proficiencies.spellcasting.rank, @actor.system.proficiencies.attacks.simple.rank, @actor.system.proficiencies.attacks.martial.rank, @actor.system.proficiencies.attacks.advanced.rank, @actor.system.proficiencies.attacks.unarmed.rank)"
+      },
+      {
+        "key": "AdjustModifier",
+        "selector": "strike-attack-roll",
+        "slug": "proficiency",
+        "mode": "override",
+        "value": "@actor.level + 10",
+        "relabel": "ASCENDANT.Proficiency.Mythic",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          },
+          "feat:ascendant-spellcasting-expertise"
+        ]
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "spell-attack-dc",
+        "slug": "ascendant-warmage-mythic",
+        "label": "ASCENDANT.Proficiency.Mythic",
+        "type": "untyped",
+        "value": 2,
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              15
+            ]
+          },
+          "feat:ascendant-weapon-expertise"
+        ]
       },
       {
         "key": "FlatModifier",

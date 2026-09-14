@@ -1,5 +1,6 @@
 import { talent, actionItem } from "../lib/item.mjs";
 import { levelChain, grantBetween, atLeast, flavour, levelBlock } from "../lib/grants.mjs";
+import { mythic } from "../lib/rules.mjs";
 
 const PACK = "ascendant-apex";
 const SLUG = "warmage";
@@ -106,19 +107,43 @@ ${levelBlock("20th Level", ["When you Spellstrike, you may Cast two spells rathe
 `.trim(),
     rules: [
         // Rank: each side raised to the other, never lowered.
+        // Every rank is raised to the highest of all five, not to the other side's rank as it
+        // stands when the rule runs. The rules on one item apply in order, so an attack rank
+        // read the spell rank before the spell-rank rule below had raised it: measured on
+        // 2026-09-14, a character at trained spellcasting with martial at master kept advanced
+        // at expert. "The higher of" each side, applied to both sides, is the maximum of all.
         ...ATTACK_RANKS.map((path) => ({
             key: "ActiveEffectLike",
             mode: "upgrade",
             path,
             phase: "applyAEs",
-            value: `ternary(gte(@actor.${path}, 1), @actor.${SPELL_RANK}, 0)`,
+            value: `ternary(gte(@actor.${path}, 1), max(@actor.${SPELL_RANK}, ${ATTACK_RANKS.map((p) => `@actor.${p}`).join(", ")}), 0)`,
         })),
         {
             key: "ActiveEffectLike",
             mode: "upgrade",
             path: SPELL_RANK,
             phase: "applyAEs",
-            value: `max(${ATTACK_RANKS.map((p) => `@actor.${p}`).join(", ")})`,
+            value: `max(@actor.${SPELL_RANK}, ${ATTACK_RANKS.map((p) => `@actor.${p}`).join(", ")})`,
+        },
+        // Mythic crosses over too. The stored rank stops at 4, so a track's 15th-level Mythic is
+        // not in the rank the rules above copy: the weapon track overrides the Strike's proficiency
+        // modifier and the spell track adds a flat +2 (see the two track files). Each is applied
+        // to the other side here, keyed to the track the character has. Measured before this
+        // existed, 2026-09-14: a 15th-level Wizard's spell attack read 33 with Mythic and the
+        // Staff Strike 31 without it.
+        ...mythic({ selectors: ["strike-attack-roll"], level: 15 }).map((rule) => ({
+            ...rule,
+            predicate: [...rule.predicate, "feat:ascendant-spellcasting-expertise"],
+        })),
+        {
+            key: "FlatModifier",
+            selector: "spell-attack-dc",
+            slug: `ascendant-${SLUG}-mythic`,
+            label: "ASCENDANT.Proficiency.Mythic",
+            type: "untyped",
+            value: 2,
+            predicate: [{ gte: ["self:level", 15] }, "feat:ascendant-weapon-expertise"],
         },
         // Attribute: on spell attacks and DCs, the best attack attribute as an ability modifier.
         // Str and Dex are the only attributes a Strike uses, so those two are offered.
