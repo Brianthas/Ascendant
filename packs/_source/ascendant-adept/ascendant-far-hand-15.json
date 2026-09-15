@@ -1,11 +1,11 @@
 {
-  "_id": "9eEe0i4SOLkYEJFC",
-  "name": "Grasping Reach (15th)",
+  "_id": "oOuwjHKrQ5MFkFS7",
+  "name": "Far Hand (15th)",
   "type": "feat",
   "img": "icons/skills/melee/strike-polearm-glowing-white.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Your reach increases by another 5 feet.</li><li>The forced movement increases to 15 feet.</li><li>Once per round, you may Grab, Shove, Trip, or Disarm a creature within your reach as a free action.</li></ul><p>Granted automatically by Grasping Reach at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Your reach increases by another 5 feet.</li><li>The forced movement increases to 15 feet.</li><li>Once per round, you may Grab, Shove, Trip, or Disarm a creature within your reach as a free action.</li></ul><p>Granted automatically by Far Hand at 15th level.</p>",
       "gm": ""
     },
     "publication": {
@@ -15,7 +15,7 @@
       "remaster": true
     },
     "rules": [],
-    "slug": "ascendant-grasping-reach-15",
+    "slug": "ascendant-far-hand-15",
     "traits": {
       "otherTags": [
         "ascendant-grant"
@@ -49,5 +49,5 @@
   "_stats": {
     "systemId": "pf2e"
   },
-  "_key": "!items!9eEe0i4SOLkYEJFC"
+  "_key": "!items!oOuwjHKrQ5MFkFS7"
 }

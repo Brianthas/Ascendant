@@ -1,6 +1,6 @@
 {
-  "_id": "7h2eavQmffjRBaMJ",
-  "name": "Grasping Reach",
+  "_id": "STH5XeUPsV9YvCYe",
+  "name": "Far Hand",
   "type": "feat",
   "img": "icons/skills/melee/strike-polearm-glowing-white.webp",
   "system": {
@@ -24,8 +24,8 @@
       {
         "key": "Note",
         "selector": "strike-attack-roll",
-        "title": "Grasping Reach",
-        "text": "ASCENDANT.Note.GraspingReachMove",
+        "title": "Far Hand",
+        "text": "ASCENDANT.Note.FarHandMove",
         "outcome": [
           "success",
           "criticalSuccess"
@@ -42,7 +42,7 @@
       },
       {
         "key": "GrantItem",
-        "uuid": "Compendium.ascendant.ascendant-adept.Item.NnJL73GQz1Zgtfzc",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.mppmJoZRzEj8ut2M",
         "allowDuplicate": false,
         "reevaluateOnUpdate": true,
         "predicate": [
@@ -56,7 +56,7 @@
       },
       {
         "key": "GrantItem",
-        "uuid": "Compendium.ascendant.ascendant-adept.Item.FMncy1v7x23BSVNR",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.btlEwdMjIqaKlTYf",
         "allowDuplicate": false,
         "reevaluateOnUpdate": true,
         "predicate": [
@@ -70,7 +70,7 @@
       },
       {
         "key": "GrantItem",
-        "uuid": "Compendium.ascendant.ascendant-adept.Item.9eEe0i4SOLkYEJFC",
+        "uuid": "Compendium.ascendant.ascendant-adept.Item.oOuwjHKrQ5MFkFS7",
         "allowDuplicate": false,
         "reevaluateOnUpdate": true,
         "predicate": [
@@ -83,7 +83,7 @@
         ]
       }
     ],
-    "slug": "ascendant-grasping-reach",
+    "slug": "ascendant-far-hand",
     "traits": {
       "otherTags": [],
       "value": [],
@@ -115,5 +115,5 @@
   "_stats": {
     "systemId": "pf2e"
   },
-  "_key": "!items!7h2eavQmffjRBaMJ"
+  "_key": "!items!STH5XeUPsV9YvCYe"
 }
