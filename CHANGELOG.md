@@ -17,7 +17,8 @@ ladders at every boundary, and the runtime scripts against real combat, damage a
 - Flicker, Flicker Strike, the free-action Flicker and Shadowstep: **Use** on the action, or the
   **Choose destination** button on its chat card, shows the range as a ring on the map; click a
   square inside it and the token teleports there as a Foundry blink, with up to four targeted
-  adjacent allies alongside for Flicker. Until 10th the square must be one the token can see. A
+  creatures within the mover's reach alongside for Flicker, each placed in a free square adjacent
+  to the arrival on the side it came from. Until 10th the square must be one the token can see. A
   puff of smoke marks departure and arrival with a short beat between, drawn on the canvas and
   sent to every client; JB2A's smoke is used instead when Sequencer is present. World setting to
   turn it off.

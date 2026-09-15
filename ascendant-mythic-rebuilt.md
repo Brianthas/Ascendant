@@ -647,7 +647,7 @@ Choose one at 1st level, permanently.
 **1st Level**
 - Gain Flicker.
   - **Flicker** [1 action] (concentrate, teleportation) — Teleport up to 100 feet to a space you can see or have seen. You do not need line of effect, only knowledge of the destination. Your arrival does not trigger reactions.
-- You may bring up to four willing adjacent creatures with you, placing them in spaces adjacent to your arrival.
+- You may bring up to four willing creatures within your reach with you, placing them in spaces adjacent to your arrival.
 
 **5th Level**
 - Gain Flicker Strike.
@@ -662,7 +662,7 @@ Choose one at 1st level, permanently.
 
 **15th Level**
 - Range increases to one mile.
-- When you Flicker, you may bring one adjacent creature against its will. It attempts a Will save against your Class DC or Spell DC, whichever is higher.
+- When you Flicker, you may bring one creature within your reach against its will. It attempts a Will save against your Class DC or Spell DC, whichever is higher.
   - On a failure it is teleported with you and is Off-Guard until the end of your next turn.
 
 ---

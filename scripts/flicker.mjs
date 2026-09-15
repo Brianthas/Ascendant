@@ -113,7 +113,10 @@ export async function flicker(actor, action, { destination = null, token: chosen
     if (!picked) return null;
 
     const grid = canvas.grid;
-    const center = grid.getSnappedPoint(picked, { mode: CONST.GRID_SNAPPING_MODES.CENTER });
+    // A token an even number of squares wide has its centre on a grid vertex, not a cell centre;
+    // measured 2026-09-15, a 2x2 Jotunborn snapped to a cell centre landed half a square off.
+    const snapMode = (doc) => (doc.width % 2 === 0 ? CONST.GRID_SNAPPING_MODES.VERTEX : CONST.GRID_SNAPPING_MODES.CENTER);
+    const center = grid.getSnappedPoint(picked, { mode: snapMode(token.document) });
     // Centres come off the documents, not the sprites: a sprite still animating from an earlier
     // move reports a point part-way along, and a distance measured from there is wrong.
     const centerOf = (t) => ({ x: t.document.x + (t.document.width * grid.size) / 2, y: t.document.y + (t.document.height * grid.size) / 2 });
@@ -144,17 +147,37 @@ export async function flicker(actor, action, { destination = null, token: chosen
     });
     const instructions = { [token.id]: { waypoints: [{ ...topLeft(token.document, center), action: "blink" }] } };
 
-    // Companions: targeted tokens adjacent to the mover, up to the action's limit, keeping their
-    // offset from the mover.
+    // Companions: targeted tokens within the mover's reach, up to the action's limit. Reach is
+    // the actor's prepared value, so a talent that extends it (Grasping Reach) widens who can
+    // come, and the distance is PF2e's own edge-to-edge token measure where it exists, so a
+    // Large mover is not measured from its centre. Each is placed in a free square adjacent to
+    // the arrival footprint, nearest the side it left from: "placing them in spaces adjacent to
+    // your arrival". Keeping their old offset instead could put one off the map or onto another
+    // token.
     const companions = [];
     if (resolved.allies > 0) {
+        const reach = Math.max(grid.distance, actor.attributes?.reach?.base ?? 0);
+        const candidates = [];
         for (const target of game.user.targets) {
             if (target.id === token.id || target.scene !== canvas.scene) continue;
+            const apart = typeof token.distanceTo === "function" ? token.distanceTo(target) : grid.measurePath([from, centerOf(target)]).distance;
+            if (apart > reach) continue;
+            if (candidates.length >= resolved.allies) break;
+            candidates.push(target);
+        }
+        const moving = new Set([token.id, ...candidates.map((c) => c.id)]);
+        const taken = occupiedCells(moving);
+        const moverTopLeft = topLeft(token.document, center);
+        for (const cell of footprint(moverTopLeft, token.document)) taken.add(cell);
+        for (const target of candidates) {
             const tc = centerOf(target);
-            if (grid.measurePath([from, tc]).distance > grid.distance) continue;
-            if (companions.length >= resolved.allies) break;
-            const dest = grid.getSnappedPoint({ x: center.x + (tc.x - from.x), y: center.y + (tc.y - from.y) }, { mode: CONST.GRID_SNAPPING_MODES.CENTER });
-            instructions[target.id] = { waypoints: [{ ...topLeft(target.document, dest), action: "blink" }] };
+            const dest = adjacentPlacement(moverTopLeft, token.document, target.document, { x: tc.x - from.x, y: tc.y - from.y }, taken);
+            if (!dest) {
+                ui.notifications.warn(game.i18n.format("ASCENDANT.Flicker.NoRoom", { name: target.name }));
+                continue;
+            }
+            for (const cell of footprint(dest, target.document)) taken.add(cell);
+            instructions[target.id] = { waypoints: [{ ...dest, action: "blink" }] };
             companions.push(target);
         }
     }
@@ -184,6 +207,71 @@ export function registerFlickerSocket() {
     game.socket?.on(SOCKET, (data) => {
         if (data?.type === "puff" && Array.isArray(data.points) && canvas.ready) puffs(data.points);
     });
+}
+
+/** Grid cells (as "col,row" keys) a token of this document's size covers from a top-left point. */
+function footprint(topLeftPoint, doc) {
+    const g = canvas.grid.size;
+    const col = Math.round(topLeftPoint.x / g);
+    const row = Math.round(topLeftPoint.y / g);
+    const cells = [];
+    for (let dx = 0; dx < Math.max(1, Math.round(doc.width)); dx += 1) {
+        for (let dy = 0; dy < Math.max(1, Math.round(doc.height)); dy += 1) cells.push(`${col + dx},${row + dy}`);
+    }
+    return cells;
+}
+
+/** Every cell covered by a token on the scene that is not itself moving. */
+function occupiedCells(moving) {
+    const taken = new Set();
+    for (const t of canvas.tokens.placeables) {
+        if (moving.has(t.id)) continue;
+        for (const cell of footprint({ x: t.document.x, y: t.document.y }, t.document)) taken.add(cell);
+    }
+    return taken;
+}
+
+/**
+ * A top-left point for `doc` in a free spot adjacent to the mover's arrival footprint, or null
+ * when the ring around it holds no room. Candidates are the cells touching the footprint, tried
+ * in order of how close their direction from the mover is to the way the companion stood before.
+ */
+function adjacentPlacement(moverTopLeft, moverDoc, doc, offset, taken) {
+    const g = canvas.grid.size;
+    const rect = canvas.dimensions.sceneRect;
+    const cols = Math.round(rect.width / g);
+    const rows = Math.round(rect.height / g);
+    const col0 = Math.round(rect.x / g);
+    const row0 = Math.round(rect.y / g);
+    const mc = Math.round(moverTopLeft.x / g);
+    const mr = Math.round(moverTopLeft.y / g);
+    const mw = Math.max(1, Math.round(moverDoc.width));
+    const mh = Math.max(1, Math.round(moverDoc.height));
+    const w = Math.max(1, Math.round(doc.width));
+    const h = Math.max(1, Math.round(doc.height));
+    const wanted = Math.atan2(offset.y, offset.x);
+    const centre = { x: mc + mw / 2, y: mr + mh / 2 };
+
+    const candidates = [];
+    for (let c = mc - w; c <= mc + mw; c += 1) {
+        for (let r = mr - h; r <= mr + mh; r += 1) {
+            // Touching the footprint: overlapping neither it nor lying more than one cell away.
+            const overlaps = c < mc + mw && c + w > mc && r < mr + mh && r + h > mr;
+            const touches = c + w >= mc && c <= mc + mw && r + h >= mr && r <= mr + mh;
+            if (overlaps || !touches) continue;
+            if (c < col0 || r < row0 || c + w > col0 + cols || r + h > row0 + rows) continue;
+            let free = true;
+            for (let dx = 0; dx < w && free; dx += 1) for (let dy = 0; dy < h; dy += 1) if (taken.has(`${c + dx},${r + dy}`)) { free = false; break; }
+            if (!free) continue;
+            const angle = Math.atan2(r + h / 2 - centre.y, c + w / 2 - centre.x);
+            let delta = Math.abs(angle - wanted);
+            if (delta > Math.PI) delta = 2 * Math.PI - delta;
+            candidates.push({ c, r, delta });
+        }
+    }
+    candidates.sort((a, b) => a.delta - b.delta);
+    const best = candidates[0];
+    return best ? { x: best.c * g, y: best.r * g } : null;
 }
 
 /** The range as a ring on the interface layer, centred on the token's current square. */
@@ -224,7 +312,11 @@ async function puffs(points) {
 function nativePuff(point, duration = 900) {
     const layer = canvas.interface ?? canvas.stage;
     const container = new PIXI.Container();
+    // Above the token layer (z 200 on Foundry 14), so the cloud hides the token rather than
+    // sitting under it. The interface group sorts its children by z-index.
+    container.zIndex = 10000;
     layer.addChild(container);
+    layer.sortChildren?.();
     // A cloud about one square across, dark grey with lighter lobes, drifting outward and up.
     // The first version was a sixth of that and gone in half a second; measured 2026-09-15, the
     // player did not see it.

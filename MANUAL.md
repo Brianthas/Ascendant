@@ -131,8 +131,12 @@ Reasons recur, so they are named once here and cited below:
 **Flicker Step**
 - The teleport and willing passengers are automated: **Use** on the action, or the chat card's
   **Choose destination** button, shows the range as a ring and moves the token, and up to four
-  targeted adjacent allies, to the clicked square, refusing a square past the range or off the
-  map. Until 10th the square must be visible to the active vision on the picking client, which is
+  targeted creatures within the mover's reach, to the clicked square, refusing a square past the
+  range or off the map, each placed in a free square adjacent to the arrival footprint on the
+  side it left from. Passengers must be targeted first. Reach is the actor's prepared reach, so
+  anything the system already applies to it counts: Grasping Reach, Enlarge, the Bendy-Arm
+  mutagens, Giant's Stature, any size effect. Large ancestries such as Jotunborn have reach 5 in
+  the system's data unless a feat says otherwise, which matches their printed reach. Until 10th the square must be visible to the active vision on the picking client, which is
   the controlled token's; a GM with no token controlled sees everything, which is Foundry's own
   rule. Whether a passenger is willing, and the 15th-level unwilling passenger with its Will
   save, stay with the players (other actor).
