@@ -92,7 +92,11 @@ export function registerLadders() {
 export function reorderGroups(feats) {
   const entries = [...feats.entries()];
   const isOurs = (id) => id.startsWith(SECTION_ROOT);
-  if (!entries.some(([id]) => isOurs(id))) return;
+  // No early return when this module has no sections of its own on the actor. The same-support
+  // pass below also files other sections under the built-in group they extend, and Know-It-All's
+  // skill section relies on it: on 2026-09-14 a single-class Wizard rendered that section at the
+  // foot of the tab, while the dual-class Fighter had it under Skill Feats. The pass is a no-op
+  // when nothing needs moving.
 
   // Which of this module's sections belong under which built-in group. Only class feats have one:
   // skill, general and ancestry feats are merged into PF2e's own ladders rather than given sections,
