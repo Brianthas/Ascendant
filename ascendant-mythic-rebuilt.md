@@ -117,7 +117,7 @@ Every character chooses one Talent from each of the first three tiers. The party
 
 **Paragon** — Abundant Vitality, Elusive, Flicker Step, Immovable, Ironhide, Know-It-All, Overwhelm, Ruinous Blows, Sovereign Mind, Spell Volley, Tireless Aegis, Unerring Shot
 
-**Adept** — Battle Mender, Grasping Reach, Living Shadow, Overreaction, Peerless Crafter, Piercing Gleam, Renewed Focus, Second Wind, Shape of Harm, Trail Breaker, Uncanny Instinct, What Doesn't Kill You
+**Adept** — Battle Mender, Far Hand, Living Shadow, Overreaction, Peerless Crafter, Piercing Gleam, Renewed Focus, Second Wind, Shape of Harm, Trail Breaker, Uncanny Instinct, What Doesn't Kill You
 
 **Party** — Haven, The Ledger
 
@@ -895,7 +895,7 @@ Choose one at 1st level, permanently.
 
 ---
 
-## Grasping Reach
+## Far Hand
 
 > *Your reach extends considerably past where your reach ought to end. Enemies who thought themselves safely spaced find themselves seized, dragged, and repositioned, and objects on the far side of a room are no longer meaningfully on the far side of anything.*
 

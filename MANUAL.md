@@ -134,7 +134,7 @@ Reasons recur, so they are named once here and cited below:
   targeted creatures within the mover's reach, to the clicked square, refusing a square past the
   range or off the map, each placed in a free square adjacent to the arrival footprint on the
   side it left from. Passengers must be targeted first. Reach is the actor's prepared reach, so
-  anything the system already applies to it counts: Grasping Reach, Enlarge, the Bendy-Arm
+  anything the system already applies to it counts: Far Hand, Enlarge, the Bendy-Arm
   mutagens, Giant's Stature, any size effect. Large ancestries such as Jotunborn have reach 5 in
   the system's data unless a feat says otherwise, which matches their printed reach. Until 10th the square must be visible to the active vision on the picking client, which is
   the controlled token's; a GM with no token controlled sees everything, which is Foundry's own
@@ -185,7 +185,7 @@ Reasons recur, so they are named once here and cited below:
 - The daily limit removal is a script that deletes PF2e's immunity effect when a Battle Mender is
   its source; verified live before release.
 
-**Grasping Reach** (no hook)
+**Far Hand** (no hook)
 - Interacting at reach, the forced movement at 10th, the free maneuver at 15th.
 
 **Living Shadow** (not modelled)

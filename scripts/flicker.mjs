@@ -148,7 +148,7 @@ export async function flicker(actor, action, { destination = null, token: chosen
     const instructions = { [token.id]: { waypoints: [{ ...topLeft(token.document, center), action: "blink" }] } };
 
     // Companions: targeted tokens within the mover's reach, up to the action's limit. Reach is
-    // the actor's prepared value, so a talent that extends it (Grasping Reach) widens who can
+    // the actor's prepared value, so a talent that extends it (Far Hand) widens who can
     // come, and the distance is PF2e's own edge-to-edge token measure where it exists, so a
     // Large mover is not measured from its centre. Each is placed in a free square adjacent to
     // the arrival footprint, nearest the side it left from: "placing them in spaces adjacent to

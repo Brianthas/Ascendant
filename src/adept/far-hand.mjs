@@ -3,11 +3,11 @@ import { byLevel } from "../lib/rules.mjs";
 import { levelChain, atLeast, flavour, levelBlock } from "../lib/grants.mjs";
 
 const PACK = "ascendant-adept";
-const SLUG = "grasping-reach";
+const SLUG = "far-hand";
 const IMG = "icons/skills/melee/strike-polearm-glowing-white.webp";
 
 /**
- * Adept: Grasping Reach. PF2e derives every melee Strike's reach from
+ * Adept: Far Hand. PF2e derives every melee Strike's reach from
  * `system.attributes.reach.base` plus the weapon's own reach trait, so adding
  * to the base reaches every melee weapon and unarmed Strike at once (verified
  * live). 5 feet at 1st, 10 at 5th, 15 at
@@ -17,7 +17,7 @@ const IMG = "icons/skills/melee/strike-polearm-glowing-white.webp";
 const { subFeats, grants } = levelChain({
     pack: PACK,
     slug: SLUG,
-    name: "Grasping Reach",
+    name: "Far Hand",
     img: IMG,
     levels: [
         { level: 5, text: levelBlock("5th Level", ["Your reach increases by another 5 feet.", "You may Interact with objects anywhere within your reach."]) },
@@ -26,8 +26,8 @@ const { subFeats, grants } = levelChain({
     ],
 });
 
-export const graspingReach = talent({
-    name: "Grasping Reach",
+export const farHand = talent({
+    name: "Far Hand",
     slug: SLUG,
     category: "ascendant-adept",
     img: IMG,
@@ -51,8 +51,8 @@ ${levelBlock("15th Level", ["Your reach increases by another 5 feet.", "The forc
         {
             key: "Note",
             selector: "strike-attack-roll",
-            title: "Grasping Reach",
-            text: "ASCENDANT.Note.GraspingReachMove",
+            title: "Far Hand",
+            text: "ASCENDANT.Note.FarHandMove",
             outcome: ["success", "criticalSuccess"],
             predicate: [atLeast(10), "item:melee"],
         },
@@ -60,4 +60,4 @@ ${levelBlock("15th Level", ["Your reach increases by another 5 feet.", "The forc
     ],
 });
 
-export default [graspingReach, ...subFeats];
+export default [farHand, ...subFeats];
