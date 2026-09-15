@@ -5,7 +5,7 @@
   "img": "icons/magic/perception/shadow-stealth-eyes-purple.webp",
   "system": {
     "description": {
-      "value": "<p>While in dim light or darkness, become invisible until you take a hostile action, Cast a Spell, or leave dim light.</p>\n<ul><li>You may Sustain this to maintain it for up to 1 minute.</li></ul>\n<p>From 10th level, it no longer ends when you take a hostile action, only if you leave dim light.</p>\n<hr />\n<p>Drag <em>Living Shadow: Invisible</em> from the compendium onto your token, or apply it from this item's effect, and remove it when it ends.</p>",
+      "value": "<p>While in dim light or darkness, become invisible until you take a hostile action, Cast a Spell, or leave dim light.</p>\n<ul><li>You may Sustain this to maintain it for up to 1 minute.</li></ul>\n<p>From 10th level, it no longer ends when you take a hostile action, only if you leave dim light.</p>\n<hr />\n<p>Press <strong>Use</strong> on this action, then <strong>Apply Effect</strong> on its chat card with your token selected, to gain <em>Living Shadow: Invisible</em>; remove it when it ends.</p>",
       "gm": ""
     },
     "publication": {
@@ -32,7 +32,11 @@
     },
     "category": null,
     "frequency": null,
-    "selfEffect": null,
+    "selfEffect": {
+      "uuid": "Compendium.ascendant.ascendant-adept.Item.oVTLWjSEzITqo8De",
+      "name": "Living Shadow: Invisible",
+      "img": "icons/magic/perception/shadow-stealth-eyes-purple.webp"
+    },
     "deathNote": false
   },
   "folder": null,

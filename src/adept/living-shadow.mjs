@@ -1,4 +1,4 @@
-import { talent, actionItem, effectItem } from "../lib/item.mjs";
+import { talent, actionItem, effectItem, uuidFor } from "../lib/item.mjs";
 import { levelChain, grantBetween, flavour, levelBlock } from "../lib/grants.mjs";
 
 const PACK = "ascendant-adept";
@@ -51,12 +51,14 @@ export const fadeIntoShadow = actionItem({
     actions: 1,
     traits: ["concentrate", "shadow"],
     img: IMG,
+    // The sheet's Use button applies the invisibility effect to the user.
+    selfEffect: { uuid: uuidFor(PACK, `${SLUG}-invisible`), name: shadowCloak.name, img: IMG },
     description: `
 <p>While in dim light or darkness, become invisible until you take a hostile action, Cast a Spell, or leave dim light.</p>
 <ul><li>You may Sustain this to maintain it for up to 1 minute.</li></ul>
 <p>From 10th level, it no longer ends when you take a hostile action, only if you leave dim light.</p>
 <hr />
-<p>Drag <em>Living Shadow: Invisible</em> from the compendium onto your token, or apply it from this item's effect, and remove it when it ends.</p>
+<p>Press <strong>Use</strong> on this action, then <strong>Apply Effect</strong> on its chat card with your token selected, to gain <em>Living Shadow: Invisible</em>; remove it when it ends.</p>
 `.trim(),
 });
 

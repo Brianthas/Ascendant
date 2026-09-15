@@ -14,6 +14,7 @@ import { registerBattleMender } from "./battle-mender.mjs";
 import { registerContainers, syncCapacity } from "./containers.mjs";
 import { registerAttributeBoosts } from "./attribute-boosts.mjs";
 import { registerFlicker, flicker } from "./flicker.mjs";
+import { registerActionButtons } from "./actions.mjs";
 
 /**
  * Registration timing.
@@ -65,6 +66,7 @@ Hooks.once("init", () => {
     attempt("containers", registerContainers);
     attempt("attribute boosts", registerAttributeBoosts);
     attempt("flicker", registerFlicker);
+    attempt("action buttons", registerActionButtons);
     categoriesRegistered = registerFeatCategories();
     sectionsRegistered = registerFeatSections();
     console.log(

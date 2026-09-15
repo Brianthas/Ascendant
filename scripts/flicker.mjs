@@ -22,11 +22,16 @@ import { MODULE_ID } from "./constants.mjs";
 
 /** Action slugs handled, with how far they reach and whether allies may come. */
 const ACTIONS = {
-    "ascendant-flicker-step-flicker": { range: flickerRange, allies: 4 },
-    "ascendant-flicker-step-flicker-free": { range: flickerRange, allies: 4 },
-    "ascendant-flicker-step-flicker-strike": { range: flickerRange, allies: 4 },
-    "ascendant-living-shadow-shadowstep": { range: () => 120, allies: 0 },
+    // Flicker: "a space you can see or have seen" until 10th, where "you may specify a direction
+    // and distance instead". Shadowstep: "any shadow or area of dim light you can see", always.
+    "ascendant-flicker-step-flicker": { range: flickerRange, allies: 4, sight: (level) => level < 10 },
+    "ascendant-flicker-step-flicker-free": { range: flickerRange, allies: 4, sight: (level) => level < 10 },
+    "ascendant-flicker-step-flicker-strike": { range: flickerRange, allies: 4, sight: (level) => level < 10 },
+    "ascendant-living-shadow-shadowstep": { range: () => 120, allies: 0, sight: () => true },
 };
+
+/** The action slugs the destination picker serves, for the sheet's Use button. */
+export const TELEPORT_ACTIONS = new Set(Object.keys(ACTIONS));
 
 /** "100 feet ... 250 at 5th ... 500 at 10th ... one mile at 15th." One mile is 5,280 feet. */
 function flickerRange(level) {
@@ -104,7 +109,7 @@ export async function flicker(actor, action, { destination = null, token: chosen
         return null;
     }
     const range = resolved.range(actor.level);
-    const picked = destination ?? (await pickDestination(range));
+    const picked = destination ?? (await pickDestination(range, token));
     if (!picked) return null;
 
     const grid = canvas.grid;
@@ -123,6 +128,13 @@ export async function flicker(actor, action, { destination = null, token: chosen
     const distance = grid.measurePath([from, center]).distance;
     if (distance > range) {
         ui.notifications.warn(game.i18n.format("ASCENDANT.Flicker.OutOfRange", { distance: Math.round(distance), range, units: grid.units }));
+        return null;
+    }
+    // Sight is judged from the active vision on this client: the controlled token's, so a player
+    // picking for their own token is held to what that token can see. A GM with no vision source
+    // active sees everything, which is Foundry's own rule for the GM.
+    if (resolved.sight?.(actor.level) && !canvas.visibility.testVisibility(center, { tolerance: Math.floor(grid.size / 4) })) {
+        ui.notifications.warn(game.i18n.localize("ASCENDANT.Flicker.NotVisible"));
         return null;
     }
 
@@ -160,7 +172,7 @@ export async function flicker(actor, action, { destination = null, token: chosen
 
 const SOCKET = `module.${MODULE_ID}`;
 /** How long the departure smoke shows before the token jumps. */
-const PUFF_DELAY_MS = 350;
+const PUFF_DELAY_MS = 500;
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /** Other clients see the smoke too; the mover's own client draws it directly. */
@@ -172,6 +184,20 @@ export function registerFlickerSocket() {
     game.socket?.on(SOCKET, (data) => {
         if (data?.type === "puff" && Array.isArray(data.points) && canvas.ready) puffs(data.points);
     });
+}
+
+/** The range as a ring on the interface layer, centred on the token's current square. */
+function drawRangeRing(token, range) {
+    const layer = canvas.interface ?? canvas.stage;
+    if (!layer || !token) return null;
+    const grid = canvas.grid;
+    const radius = (range / grid.distance) * grid.size;
+    const center = { x: token.document.x + (token.document.width * grid.size) / 2, y: token.document.y + (token.document.height * grid.size) / 2 };
+    const ring = new PIXI.Graphics();
+    ring.beginFill(0x66ccff, 0.08).drawCircle(center.x, center.y, radius).endFill();
+    ring.lineStyle(3, 0x66ccff, 0.9).drawCircle(center.x, center.y, radius);
+    layer.addChild(ring);
+    return ring;
 }
 
 /**
@@ -195,19 +221,23 @@ async function puffs(points) {
     await Promise.all(points.map((p) => nativePuff(p)));
 }
 
-function nativePuff(point, duration = 550) {
+function nativePuff(point, duration = 900) {
     const layer = canvas.interface ?? canvas.stage;
     const container = new PIXI.Container();
     layer.addChild(container);
-    const base = canvas.grid.size * 0.16;
+    // A cloud about one square across, dark grey with lighter lobes, drifting outward and up.
+    // The first version was a sixth of that and gone in half a second; measured 2026-09-15, the
+    // player did not see it.
+    const base = canvas.grid.size * 0.32;
     const blobs = [];
-    for (let i = 0; i < 9; i += 1) {
+    for (let i = 0; i < 14; i += 1) {
         const blob = new PIXI.Graphics();
-        const shade = [0x8a8a8a, 0xa0a0a0, 0xb8b8b8][i % 3];
-        blob.beginFill(shade, 0.6).drawCircle(0, 0, base * (0.7 + Math.random() * 0.6)).endFill();
-        const angle = (i / 9) * Math.PI * 2 + Math.random() * 0.5;
-        blob.position.set(point.x + Math.cos(angle) * base * 0.4, point.y + Math.sin(angle) * base * 0.4);
-        blob.drift = { x: Math.cos(angle) * base * 0.05, y: Math.sin(angle) * base * 0.05 - base * 0.02 };
+        const shade = [0x3c3c3c, 0x555555, 0x707070, 0x8c8c8c][i % 4];
+        blob.beginFill(shade, 0.85).drawCircle(0, 0, base * (0.6 + Math.random() * 0.7)).endFill();
+        const angle = (i / 14) * Math.PI * 2 + Math.random() * 0.4;
+        const spread = base * (0.2 + Math.random() * 0.5);
+        blob.position.set(point.x + Math.cos(angle) * spread, point.y + Math.sin(angle) * spread);
+        blob.drift = { x: Math.cos(angle) * base * 0.035, y: Math.sin(angle) * base * 0.035 - base * 0.03 };
         container.addChild(blob);
         blobs.push(blob);
     }
@@ -232,10 +262,15 @@ function nativePuff(point, duration = 550) {
     });
 }
 
-/** The next left click on the canvas, or null on Escape. */
-function pickDestination(range) {
+/**
+ * The next left click on the canvas, or null on Escape. While picking, a ring around the token
+ * shows the range; it is a plain circle, so on a square grid the diagonal reach is a little
+ * inside it and the distance check afterwards is the one that decides.
+ */
+function pickDestination(range, token) {
     return new Promise((resolve) => {
         const note = ui.notifications.info(game.i18n.format("ASCENDANT.Flicker.Pick", { range, units: canvas.grid.units }), { permanent: true });
+        const ring = drawRangeRing(token, range);
         // Listened for on the canvas element, in the capture phase: a plain DOM event with client
         // coordinates, converted with the canvas's own helper. PIXI's handlers see the same event
         // afterwards, so the click still selects or deselects as it normally would.
@@ -245,6 +280,7 @@ function pickDestination(range) {
             window.removeEventListener("keydown", onKey, true);
             document.body.style.cursor = "";
             ui.notifications.remove?.(note);
+            ring?.destroy({ children: true });
             resolve(value);
         };
         const onDown = (event) => {

@@ -14,11 +14,15 @@ ladders at every boundary, and the runtime scripts against real combat, damage a
 - All twelve Apex, twelve Paragon and twelve Adept Talents, and both Party Talents, as feats with
   level features granted on levelling.
 - Bonded Soul: six base-form NPC actors, evolution items, link and sync button, shared Hit Points.
-- Flicker, Flicker Strike, the free-action Flicker and Shadowstep get a **Choose destination**
-  button on their chat card: click a square within range and the token teleports there as a
-  Foundry blink, with up to four targeted adjacent allies alongside for Flicker. A puff of smoke
-  marks departure and arrival with a short beat between, drawn on the canvas and sent to every
-  client; JB2A's smoke is used instead when Sequencer is present. World setting to turn it off.
+- Flicker, Flicker Strike, the free-action Flicker and Shadowstep: **Use** on the action, or the
+  **Choose destination** button on its chat card, shows the range as a ring on the map; click a
+  square inside it and the token teleports there as a Foundry blink, with up to four targeted
+  adjacent allies alongside for Flicker. Until 10th the square must be one the token can see. A
+  puff of smoke marks departure and arrival with a short beat between, drawn on the canvas and
+  sent to every client; JB2A's smoke is used instead when Sequencer is present. World setting to
+  turn it off.
+- Every action this module grants shows PF2e's **Use** button on the Actions tab; Fade into
+  Shadow's applies the invisibility effect.
 - Runtime: Deathless deactivation, Inexhaustible Magics slot tripling, Know-It-All skill feat slots,
   Shape of Harm attunement card, Soulbound Arsenal reshape dialog, Tireless Aegis reform and
   regeneration, Second Wind trigger, Battle Mender immunity removal, party container capacities.

@@ -147,12 +147,16 @@
             "Grab": "<p><strong>Grab:</strong> on a hit with the chosen Strike, the Bonded may attempt to Grapple as a free action.</p>",
             "Knockdown": "<p><strong>Knockdown:</strong> on a hit with the chosen Strike, the Bonded may attempt to Trip as a free action.</p>"
         },
+        "Actions": {
+            "Use": "Use"
+        },
         "Flicker": {
             "Button": "Choose destination",
             "Pick": "Click the destination on the map, up to {range} {units} away. Escape cancels.",
             "OutOfRange": "That is {distance} {units} away; the range is {range} {units}.",
             "NoToken": "{actor} has no token on this scene.",
             "OffMap": "That square is outside the map.",
+            "NotVisible": "You cannot see that square.",
             "SettingName": "Flicker: destination picker",
             "SettingHint": "Adds a Choose destination button to Flicker, Flicker Strike and Shadowstep chat cards that teleports the token to a clicked square within range. Turn off if another module animates these actions."
         },

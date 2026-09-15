@@ -129,10 +129,13 @@ Reasons recur, so they are named once here and cited below:
   extra move-only action.
 
 **Flicker Step**
-- The teleport and willing passengers are automated: the chat card's **Choose destination** button
-  moves the token, and up to four targeted adjacent allies, to the clicked square, refusing a
-  square past the range. Whether a passenger is willing, and the 15th-level unwilling passenger
-  with its Will save, stay with the players (other actor).
+- The teleport and willing passengers are automated: **Use** on the action, or the chat card's
+  **Choose destination** button, shows the range as a ring and moves the token, and up to four
+  targeted adjacent allies, to the clicked square, refusing a square past the range or off the
+  map. Until 10th the square must be visible to the active vision on the picking client, which is
+  the controlled token's; a GM with no token controlled sees everything, which is Foundry's own
+  rule. Whether a passenger is willing, and the 15th-level unwilling passenger with its Will
+  save, stay with the players (other actor).
 
 **Immovable** (no hook, other actor)
 - Forced movement, difficult terrain, the Step ban, end-of-turn Off-Guard, damage for a failed move,

@@ -198,6 +198,7 @@ export function actionItem({
     rules = [],
     img = "icons/skills/melee/strike-sword-slashing-red.webp",
     frequency = null,
+    selfEffect = null,
     flags = {},
 }) {
     slug = withPrefix(slug);
@@ -216,7 +217,8 @@ export function actionItem({
             actions: { value: actions },
             category: null,
             frequency,
-            selfEffect: null,
+            // `{ uuid, name, img }` of an effect the sheet's Use button applies to the user.
+            selfEffect,
             deathNote: false,
         },
         folder: null,
