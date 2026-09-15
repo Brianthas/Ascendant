@@ -129,7 +129,10 @@ Reasons recur, so they are named once here and cited below:
   extra move-only action.
 
 **Flicker Step**
-- The teleport itself and passengers (move the tokens); the 15th-level Will save (other actor).
+- The teleport and willing passengers are automated: the chat card's **Choose destination** button
+  moves the token, and up to four targeted adjacent allies, to the clicked square, refusing a
+  square past the range. Whether a passenger is willing, and the 15th-level unwilling passenger
+  with its Will save, stay with the players (other actor).
 
 **Immovable** (no hook, other actor)
 - Forced movement, difficult terrain, the Step ban, end-of-turn Off-Guard, damage for a failed move,

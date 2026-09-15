@@ -13,6 +13,7 @@ import { registerSecondWind } from "./second-wind.mjs";
 import { registerBattleMender } from "./battle-mender.mjs";
 import { registerContainers, syncCapacity } from "./containers.mjs";
 import { registerAttributeBoosts } from "./attribute-boosts.mjs";
+import { registerFlicker, flicker } from "./flicker.mjs";
 
 /**
  * Registration timing.
@@ -63,6 +64,7 @@ Hooks.once("init", () => {
     attempt("battle mender", registerBattleMender);
     attempt("containers", registerContainers);
     attempt("attribute boosts", registerAttributeBoosts);
+    attempt("flicker", registerFlicker);
     categoriesRegistered = registerFeatCategories();
     sectionsRegistered = registerFeatSections();
     console.log(
@@ -116,5 +118,6 @@ Hooks.once("ready", async () => {
         syncFundamentals,
         repairAegis,
         syncCapacity,
+        flicker,
     };
 });

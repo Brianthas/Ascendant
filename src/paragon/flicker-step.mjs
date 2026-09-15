@@ -78,7 +78,7 @@ ${levelBlock("5th Level", ["Gain Flicker Strike.<ul><li><strong>Flicker Strike</
 ${levelBlock("10th Level", ["Range increases to 500 feet.", "Flicker is a free action once per round.", "You no longer need knowledge of your destination; you may specify a direction and distance instead.<ul><li>As you pass through, you perceive the destination. If it cannot hold you, the GM tells you before you commit, and you may redirect or abort without spending the action.</li></ul>"])}
 ${levelBlock("15th Level", ["Range increases to one mile.", "When you Flicker, you may bring one adjacent creature against its will. It attempts a Will save against your Class DC or Spell DC, whichever is higher.<ul><li>On a failure it is teleported with you and is Off-Guard until the end of your next turn.</li></ul>"])}
 <hr />
-<p><strong>In Foundry:</strong> Flicker is on your Actions tab from 1st, Flicker Strike from 5th, and a free-action Flicker with a per-round counter from 10th. Each entry states the range for your level.</p>
+<p><strong>In Foundry:</strong> Flicker is on your Actions tab from 1st, Flicker Strike from 5th, and a free-action Flicker with a per-round counter from 10th. Each entry states the range for your level. Posting one to chat puts a <strong>Choose destination</strong> button on the card: click a square within range and your token teleports there. Target up to four adjacent allies first and they come with you, keeping their places around you. The 15th-level unwilling passenger and its Will save are yours to run.</p>
 <p>For the table: the teleport itself (move the tokens), passengers, and the 15th-level Will save against an unwilling one.</p>
 `.trim(),
     rules: [

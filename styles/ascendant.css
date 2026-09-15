@@ -28,6 +28,17 @@
     margin-top: auto;
 }
 
+/* Buttons this module adds under a chat card's content. */
+.ascendant-flicker-controls,
+.ascendant-reshape-controls {
+    margin-top: 0.4em;
+}
+
+.ascendant-flicker-controls button,
+.ascendant-reshape-controls button {
+    width: 100%;
+}
+
 /* Enhanced Attribute Boosts rows in the Attribute Boosts window. */
 button.attribute-button .ascendant-boost-count {
     margin-left: 0.3em;

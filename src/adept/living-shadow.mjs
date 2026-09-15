@@ -84,7 +84,7 @@ ${levelBlock("5th Level", ["[1 action] While in dim light or darkness, become in
 ${levelBlock("10th Level", ["Your movement makes no sound.", "You cannot be detected by hearing, scent, tremorsense, or lifesense, and you leave no tracks.", "Your invisibility no longer ends when you take a hostile action, only if you leave dim light."])}
 ${levelBlock("15th Level", ["Gain Shadowstep.<ul><li><strong>Shadowstep</strong> [1 action] Teleport to any shadow or area of dim light you can see within 120 feet.</li></ul>"])}
 <hr />
-<p><strong>In Foundry:</strong> you have greater darkvision and are immune to Dazzled. <em>Fade into Shadow</em> is on your Actions tab from 5th with the <em>Living Shadow: Invisible</em> effect to apply, and Shadowstep from 15th.</p>
+<p><strong>In Foundry:</strong> you have greater darkvision and are immune to Dazzled. <em>Fade into Shadow</em> is on your Actions tab from 5th with the <em>Living Shadow: Invisible</em> effect to apply, and Shadowstep from 15th. Posting Shadowstep to chat puts a <strong>Choose destination</strong> button on the card: click a square within 120 feet and your token teleports there; that the square is in shadow or dim light is yours to judge.</p>
 <p>For the table: never being Concealed by darkness (the attacker's flat check), Hiding as a free action and without cover, silent movement and the detection immunities from 10th. A note on your Stealth checks reminds you.</p>
 `.trim(),
     rules: [

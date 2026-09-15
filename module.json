@@ -13,6 +13,7 @@
             "url": "https://github.com/Brianthas"
         }
     ],
+    "socket": true,
     "esmodules": [
         "scripts/module.mjs"
     ],
