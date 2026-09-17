@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.1 - 2026-09-17
 
 - Variants: the two PF2e Leveler bridges from Dual Class Items, ported line for line into
   `scripts/variants`. Classes created together in one write are recorded as dual class, and
