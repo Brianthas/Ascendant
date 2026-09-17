@@ -77,6 +77,11 @@ Archetype**. If the separate Dual Class Items module is also active, Ascendant l
 five to it and says so in the console; a character built under that module opens with both classes
 here.
 
+The copy carries that module's two PF2e Leveler bridges: classes created together in one write are
+recorded as dual class, and second-class feats Leveler files under `xdy_dualclass` move into the
+class's own ladder. Both were verified live in the Dual Class Items module on 2026-09-16 and not yet
+in this one.
+
 ## Updating
 
 After installing a new version, use **Refresh talent rules** in the module's settings. It resyncs

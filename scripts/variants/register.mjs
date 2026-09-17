@@ -10,6 +10,7 @@ import { registerSkillCounter } from "./skills.mjs";
 import { registerMismatchWarning } from "./mismatch.mjs";
 import { registerLevelGate } from "./level-gate.mjs";
 import { registerClassChoices } from "./class-choices.mjs";
+import { registerPlannerSlots } from "./planner-slots.mjs";
 
 /**
  * The three variant rules Ascendant is played with: Dual Class (with the third
@@ -72,6 +73,7 @@ export function registerVariants() {
     registerSkillCounter();
     registerMismatchWarning();
     registerLevelGate();
+    registerPlannerSlots();
 
     Hooks.on("deleteItem", onDeleteClassItem);
     Hooks.on("updateActor", onUpdateActor);

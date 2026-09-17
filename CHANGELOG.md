@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Variants: the two PF2e Leveler bridges from Dual Class Items, ported line for line into
+  `scripts/variants`. Classes created together in one write are recorded as dual class, and
+  second-class feats filed under `xdy_dualclass`, `dualclass` or `dual_class` move into the class's
+  ladder when it has a slot at that level. Verified live in that module, not yet in this one.
+
 ## 0.1.0 - 2026-09-14
 
 First build, verified live on Foundry 14.367 with PF2e 8.5.0: every talent and both tracks on a
