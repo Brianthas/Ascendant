@@ -21,7 +21,7 @@ Requires the [libWrapper](https://foundryvtt.com/packages/lib-wrapper) module.
 
 Copy the `ascendant` folder from the release zip into `Data/modules/`, restart Foundry, and enable
 **Ascendant: Mythic Rebuilt (PF2e)** in the world's module settings. Foundry v12 or later, PF2e
-8.0.0 or later; verified on Foundry v14 with PF2e 8.5.0.
+8.0.0 or later; verified on Foundry 14.368 with PF2e 8.5.1.
 
 ## What it adds
 

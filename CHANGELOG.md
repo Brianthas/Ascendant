@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.2 - 2026-09-22
+
+Verified on Foundry 14.368 with PF2e 8.5.1 on the two test characters: Mythic proficiency reads
+level + 10 on every Strike, the Wizard's spell DC carries the flat +2, no Ascendant rule element is
+ignored, the six feat sections and the bonded header button render, and the variants copy stands
+down for the separate dual-class module with a single second-class ladder. No code change; the
+manifest records the version.
+
 ## 0.1.1 - 2026-09-17
 
 - Variants: the two PF2e Leveler bridges from Dual Class Items, ported line for line into
