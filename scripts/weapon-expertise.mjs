@@ -1,5 +1,5 @@
 import { MODULE_ID, WEAPON_MYTHIC_OPTION } from "./constants.mjs";
-import { weaponRanks } from "./weapon-ranks.mjs";
+import { weaponRanks, duplicateKeys } from "./weapon-ranks.mjs";
 
 /**
  * Weapon Expertise's ranks, as a rule element of our own.
@@ -107,6 +107,8 @@ function defineRuleElement() {
 
             const actor = this.actor;
             const attacks = actor.system.proficiencies.attacks;
+            // Before the raise, or PF2e deletes both of a pair the raise makes equal (duplicateKeys).
+            for (const key of duplicateKeys(attacks)) delete attacks[key];
             const results = weaponRanks({
                 level: actor.level,
                 entries: attacks,

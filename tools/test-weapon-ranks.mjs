@@ -9,7 +9,7 @@
  * class items and class features in the installed system's packs.
  */
 
-import { weaponRanks, ascendantRank } from "../scripts/weapon-ranks.mjs";
+import { weaponRanks, ascendantRank, duplicateKeys } from "../scripts/weapon-ranks.mjs";
 
 const FIGHTER_START = new Set(["unarmed", "simple", "martial"]);
 const GUNSLINGER_START = new Set(["simple-firearms-crossbows", "martial-firearms-crossbows"]);
@@ -201,6 +201,41 @@ for (const ladder of ladders) {
     failed += ladderFailed;
     if (!ladderFailed) console.log(`  ok   ${ladder.name} ladder at ${ladder.steps.length} levels`);
 }
+// Fighter Weapon Mastery and Weapon Legend on the same group carry the same definition, read off a
+// live Fighter: [group, {or: [unarmed, simple, martial]}].
+const group = ["item:group:axe", { or: ["item:category:unarmed", "item:category:simple", "item:category:martial"] }];
+const duplicateCases = [
+    {
+        name: "the lower of two identical group entries is dropped",
+        entries: { martial: { rank: 2 }, "weapon-mastery-simple-martial": { rank: 3, definition: group }, "weapon-legend-simple-martial": { rank: 4, definition: group } },
+        drop: ["weapon-mastery-simple-martial"],
+        separates: "keeping both lets PF2e delete both once the raise makes them equal",
+    },
+    {
+        name: "identical entries at the same class rank keep the first",
+        entries: { a: { rank: 3, definition: group }, b: { rank: 3, definition: group } },
+        drop: ["b"],
+        separates: "dropping both, as PF2e's snapshot comparison does",
+    },
+    {
+        name: "different definitions, a different sameAs, and categories are left alone",
+        entries: { martial: { rank: 2 }, a: { rank: 3, definition: group }, b: { rank: 3, definition: ["item:group:bow"] }, c: { rank: 3, definition: group, sameAs: "martial" } },
+        drop: [],
+        separates: "matching on rank or group alone drops b or c",
+    },
+];
+for (const testCase of duplicateCases) {
+    const got = duplicateKeys(testCase.entries).sort();
+    if (JSON.stringify(got) !== JSON.stringify([...testCase.drop].sort())) {
+        failed += 1;
+        console.log(`  FAIL ${testCase.name}`);
+        console.log(`       expected drop ${JSON.stringify(testCase.drop)}, got ${JSON.stringify(got)}`);
+        console.log(`       this case exists because: ${testCase.separates}`);
+    } else {
+        console.log(`  ok   ${testCase.name}`);
+    }
+}
+
 if (ascendantRank(0, 20, true) !== 0) {
     failed += 1;
     console.log("  FAIL an untrained weapon stays untrained");

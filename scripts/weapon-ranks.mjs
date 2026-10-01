@@ -38,6 +38,39 @@ export function ascendantRank(base, level, expertStart) {
 }
 
 /**
+ * Keys PF2e would drop as duplicates, judged on the ranks the classes gave.
+ *
+ * `prepareMartialProficiencies` (pf2e.mjs:35049 on 8.5.1) deletes an entry when another with a
+ * deep-equal `definition` and the same `sameAs` has an equal or higher rank. It compares against a
+ * snapshot taken before the loop, so two such entries at the same rank delete each other. Raising
+ * ranks creates those ties: Fighter Weapon Mastery (Master) and Weapon Legend (Legendary) on the
+ * same group both end at Legendary, and both vanished from the sheet. Dropping the lower one before
+ * the raise leaves what PF2e leaves without it. Where the class ranks are already equal, PF2e
+ * alone would drop both; this keeps the first.
+ *
+ * @param {Record<string, {rank: number, definition?: unknown[], sameAs?: string} | null>} entries
+ * @returns {string[]}
+ */
+export function duplicateKeys(entries) {
+    const kept = new Map();
+    const drop = [];
+    for (const [key, entry] of Object.entries(entries)) {
+        if (!entry?.definition) continue;
+        const identity = `${entry.sameAs ?? ""}|${JSON.stringify([...entry.definition])}`;
+        const held = kept.get(identity);
+        if (held === undefined) {
+            kept.set(identity, key);
+        } else if (entry.rank > entries[held].rank) {
+            drop.push(held);
+            kept.set(identity, key);
+        } else {
+            drop.push(key);
+        }
+    }
+    return drop;
+}
+
+/**
  * Every attack proficiency entry's Weapon Expertise result.
  *
  * Three kinds of entry are handled differently:
