@@ -46,8 +46,10 @@ export function ascendantRank(base, level, expertStart) {
  *   `ascendantRank` from its own rank.
  * - A derived entry is one whose MartialProficiency value reads other attack ranks: Soulbound
  *   Arsenal's weapon (the highest category) and Slinger's Precision's combination weapons (a copy of
- *   the firearm entries). It takes the best result of the entries it reads, so it inherits their
- *   Expert-start ladder and their Mythic instead of getting a +1 of its own.
+ *   the firearm entries). It takes the higher of its own result and the best result of the entries
+ *   it reads, and is Expert-start if any of those is. Its own rank was copied from those entries
+ *   before class features raised them, so theirs is normally the higher; its own result stands in
+ *   when none of them is trained.
  * - A `sameAs` entry is skipped for rank: PF2e copies its rank from the named entry afterwards, in
  *   `prepareMartialProficiencies`, capped at its `maxRank`. It inherits Mythic and Expert-start from
  *   that entry, and is Mythic only where its cap allows Legendary.

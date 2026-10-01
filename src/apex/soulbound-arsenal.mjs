@@ -49,7 +49,8 @@ const MATERIALS = ["cold-iron", "silver", "adamantine", "dawnsilver", "sovereign
  * highest of the four attack ranks, read off the actor in the same phase.
  * Weapon Expertise's rule element treats this entry as derived from those
  * four: it takes their best result, Expert-start ladder and Mythic included,
- * rather than a +1 of its own. Potency and striking are ItemAlterations in `upgrade` mode on the
+ * so a Fighter's soulbound advanced weapon is Mythic at 13th with the
+ * martial category. Potency and striking are ItemAlterations in `upgrade` mode on the
  * tagged weapon; the script also writes them into the stored item, because
  * PF2e clamps property runes against the stored potency while the weapon
  * prepares itself, before any rule element runs (measured: stored potency 0

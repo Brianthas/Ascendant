@@ -5,25 +5,30 @@ import { weaponRanks } from "./weapon-ranks.mjs";
  * Weapon Expertise's ranks, as a rule element of our own.
  *
  * PF2e sets a weapon proficiency in two stages. Each class item writes the four categories, taking
- * the higher of the classes (`ClassPF2e#prepareActorData`). Then every rule element's
- * `onApplyActiveEffects` runs in priority order: MartialProficiency at 9, ActiveEffectLike `add` at
- * 20, `upgrade` at 40, `override` at 50, Slinger's Precision's copies at 41. Class features such as
- * Gunslinger Weapon Mastery are `upgrade`s in that pass. Straight after it the actor's base
- * spellcasting statistic is built (`CreaturePF2e#prepareEmbeddedDocuments`), and Strikes later.
+ * the higher of the classes (`ClassPF2e#prepareActorData`, pf2e.mjs:52047 on 8.5.1; it loops over
+ * the four categories only, so the Gunslinger's `attacks.other` is never applied). Then every rule
+ * element's `onApplyActiveEffects` runs in priority order (pf2e.mjs:32016): MartialProficiency at 9
+ * (pf2e.mjs:44116), ActiveEffectLike `add` at 20, `upgrade` at 40, `override` at 50
+ * (pf2e.mjs:39503), and Slinger's Precision's copies at 41 (set on the class feature in PF2e's
+ * pack). Class features such as Gunslinger Weapon Mastery are `upgrade`s in that pass. Straight
+ * after it the actor's base spellcasting statistic is built (pf2e.mjs:33395), and Strikes later.
  *
  * The +1 has to see every class rank, so it runs after that pass; and it has to run before the
  * spellcasting statistic, because Warmage copies weapon rank into spell rank. No method wraps that
- * gap: `prepareDataFromItems` runs before the pass and `prepareMartialProficiencies` after the
- * statistic. A rule element registered in `game.pf2e.RuleElements.custom`, which PF2e checks before
- * its own, runs inside the pass at the priority it is given. 100 is after every default above.
+ * gap: `prepareDataFromItems` runs before the pass and `prepareMartialProficiencies` (pf2e.mjs:34300)
+ * after the statistic. A rule element registered in `game.pf2e.RuleElements.custom` runs inside the
+ * pass at the priority it is given: `RuleElements.fromOwnedItem` looks a key up there before the
+ * built-ins (pf2e.mjs:45219). 100 is after every default above.
  *
  * An item copy that predates this keeps its old ActiveEffectLike rules and has no rule with this
  * key, so it keeps the old numbers until the GM refreshes it and is never given the +1 twice.
  *
  * Mythic is decided per weapon. The stored rank stops at 4, so each Mythic or Expert-start entry is
  * turned into a predicate matching the weapons it covers, the same matching PF2e's own
- * `getWeaponProficiencyRank` does: the category, `weapon-group-<g>`, `weapon-base-<b>`, or the
- * entry's `definition`. `beforePrepareData` then builds PF2e's own AdjustModifier and DamageDice rule
+ * `getWeaponProficiencyRank` does (pf2e.mjs:14459): the category, `weapon-group-<g>`,
+ * `weapon-base-<b>`, or the entry's `definition`. A weapon's roll options carry `item:base:` for
+ * both its base type and that type's equivalent (pf2e.mjs:51560), so `item:base:<b>` matches what
+ * PF2e's `weapon-base-<b>` lookup matches. `beforePrepareData` then builds PF2e's own AdjustModifier and DamageDice rule
  * elements with those predicates, so everything from there on is PF2e's code.
  */
 
@@ -154,7 +159,9 @@ function defineRuleElement() {
 
             // "At 15th level, your Strikes with those weapons gain one additional weapon damage die."
             // No dieSize: PF2e then takes the faces of the weapon's base damage after its die-size
-            // changes, so the die follows the weapon as a striking rune's does. It is its own term,
+            // changes (pf2e.mjs:547), so the die follows the weapon as a striking rune's does. Deadly
+            // counts the dice striking adds to the weapon's own damage (pf2e.mjs:19816), which this
+            // die is not part of, so it does not raise deadly's dice. It is its own term,
             // so it stacks with striking, and with no `critical` it doubles on a critical hit.
             if (this.actor.level >= 15 && this.#expertStart.length) {
                 sources.push([DamageDice, {

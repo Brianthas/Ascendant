@@ -21,7 +21,7 @@ const cases = [
         name: "Fighter martial at 1st is Master",
         level: 1, entries: { martial: { rank: 2 } }, expertStart: FIGHTER_START,
         expect: { martial: [3, true] },
-        separates: null,
+        separates: "no +1 at all gives Expert",
     },
     {
         name: "Fighter martial outside the chosen group at 5th is Legendary",
@@ -64,7 +64,7 @@ const cases = [
         name: "Wizard simple at 15th is Mythic",
         level: 15, entries: { simple: { rank: 2 } }, expertStart: NONE,
         expect: { simple: [5, false] },
-        separates: null,
+        separates: "a minimum that stops at Legendary gives 4",
     },
     {
         name: "Gunslinger firearms at 1st are Master, the martial category Expert",
@@ -76,7 +76,7 @@ const cases = [
         name: "Gunslinger firearms at 5th are Legendary",
         level: 5, entries: { "martial-firearms-crossbows": { rank: 3 } }, expertStart: GUNSLINGER_START,
         expect: { "martial-firearms-crossbows": [4, true] },
-        separates: null,
+        separates: "0.1.2 never raised keyed entries, leaving Gunslinger Weapon Mastery's Master",
     },
     {
         name: "Gunslinger at 13th: firearms Mythic, a longsword Legendary",
@@ -100,7 +100,16 @@ const cases = [
         expertStart: GUNSLINGER_START,
         derived: new Map([["slingers-precision-martial", ["martial-firearms-crossbows"]]]),
         expect: { "slingers-precision-martial": [5, true] },
-        separates: null,
+        separates: "without the derived link the copy is not Expert-start, so it gets no 15th-level die",
+    },
+    {
+        name: "a derived entry whose sources are untrained keeps its own result",
+        level: 1,
+        entries: { advanced: { rank: 0 }, "soulbound-copy": { rank: 2, definition: ["item:tag:soulbound"] } },
+        expertStart: NONE,
+        derived: new Map([["soulbound-copy", ["advanced"]]]),
+        expect: { "soulbound-copy": [3, false] },
+        separates: "taking only the sources' results gives nothing for the entry",
     },
     {
         name: "a derived entry the actor is not trained in stays out",
@@ -118,7 +127,15 @@ const cases = [
         entries: { martial: { rank: 2 }, familiarity: { rank: 0, sameAs: "martial", definition: ["item:base:dwarven-war-axe"] } },
         expertStart: FIGHTER_START,
         expect: { martial: [5, true], familiarity: [5, true] },
-        separates: null,
+        separates: "a sameAs entry left out gets neither Mythic nor the 15th-level die",
+    },
+    {
+        name: "a sameAs entry capped at Legendary can still be Mythic",
+        level: 13,
+        entries: { martial: { rank: 2 }, capped: { rank: 0, sameAs: "martial", maxRank: "legendary", definition: ["item:group:bow"] } },
+        expertStart: FIGHTER_START,
+        expect: { capped: [5, true] },
+        separates: "treating a Legendary cap as a cap on Mythic gives 4",
     },
     {
         name: "a sameAs entry capped at Master stays at Master",
@@ -127,6 +144,14 @@ const cases = [
         expertStart: FIGHTER_START,
         expect: { capped: [3, true] },
         separates: "ignoring maxRank gives Mythic",
+    },
+    {
+        name: "a sameAs entry below its cap follows its target",
+        level: 1,
+        entries: { martial: { rank: 1 }, capped: { rank: 0, sameAs: "martial", maxRank: "master", definition: ["item:group:bow"] } },
+        expertStart: NONE,
+        expect: { capped: [2, false] },
+        separates: "applying the cap as the rank gives Master",
     },
 ];
 
