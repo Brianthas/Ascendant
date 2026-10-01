@@ -1,6 +1,12 @@
 # Changelog
 
-## 0.1.3 - unreleased
+## 0.1.3 - 2026-10-01
+
+Verified live on Foundry 14.368 with PF2e 8.5.1, on test characters built from PF2e's own class
+items and class features: a Fighter at 1st, 4th, 5th, 12th, 13th and 15th, a Gunslinger at 1st,
+5th, 13th and 15th, a Wizard at 1st, 5th, 11th and 15th, a Fighter/Wizard Warmage at 1st, 12th and
+13th, and the existing 20th-level Fighter/Wizard before and after **Refresh talent rules**. A
+1st-level Fighter/Gunslinger with every boost on Dexterity reads +5, a single-class Fighter +4.
 
 - Weapon Expertise follows the revised rules. Every trained weapon proficiency is one rank above
   what the classes grant, at every level, and at least Master from 5th, Legendary from 10th and

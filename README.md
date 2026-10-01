@@ -63,9 +63,11 @@ Mythic proficiency, the sixth rank at level + 10, appears on attack rolls and sp
 
 ## What is and is not automated
 
-Every numerical rule is applied by PF2e rule elements: proficiency ladders, damage riders, Enhanced
+Every numerical rule is applied automatically: proficiency ladders, damage riders, Enhanced
 Defense, resistances and immunities, speeds, auras, degree-of-success changes, multiple attack
-penalties. Where the system has no rule element for a clause, the clause is on the item text under
+penalties. Most are PF2e rule elements. Weapon Expertise's ranks are a rule element the module
+registers with PF2e, and the Enhanced Attribute Boost picks are applied by script. Where the system
+has no rule element for a clause, the clause is on the item text under
 **For the table**, and a note appears on the roll it applies to. [MANUAL.md](MANUAL.md) lists every
 such clause with the reason.
 
