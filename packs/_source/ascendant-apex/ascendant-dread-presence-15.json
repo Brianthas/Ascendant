@@ -5,7 +5,7 @@
   "img": "icons/magic/control/fear-fright-monster-grin-green.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Enemies in your aura take a status penalty to attack rolls against you equal to their Frightened value, in addition to the normal Frightened penalty.</li></ul><p>Granted automatically by Dread Presence at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Enemies in your aura take an untyped penalty to attack rolls against you equal to their Frightened value. This is deliberately untyped so that it stacks with the penalty from the Frightened condition itself.</li></ul><p>Granted automatically by Dread Presence at 15th level.</p>",
       "gm": ""
     },
     "publication": {

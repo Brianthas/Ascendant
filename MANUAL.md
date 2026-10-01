@@ -25,7 +25,9 @@ Reasons recur, so they are named once here and cited below:
 
 - **Enhanced Attribute Boosts.** Automated in the Attribute Boosts window. The 1st-level picks use
   PF2e's own half-step rule for a score already at 18, so two half steps combine into a whole
-  modifier point as they do for PF2e's own boosts. Listed because the window's Manual Entry mode
+  modifier point as they do for PF2e's own boosts. They give +1, not +2, on a score at 18
+  (Bryan's ruling, 2026-09-30): a single-class character reaches 19 (+4) at 1st, and Dual Class's
+  second class boost makes 20 (+5) reachable. Listed because the window's Manual Entry mode
   switches the picks off along with PF2e's boosts, and the rows are hidden while it is on.
 - **Expanded Investment.** Automated; listed because the path it writes is checked live before
   release.

@@ -103,7 +103,7 @@ const { subFeats, grants } = levelChain({
         { level: 7, text: levelBlock("7th Level", ["Enemies cannot reduce their Frightened value below 2 while in your aura."]) },
         { level: 10, text: levelBlock("10th Level", ["The healing from your aura increases to your level, and may trigger twice per round.", "Creatures immune to fear or emotion effects roll normally, and creatures that are mindless or immune to mental effects become affected, treating their result as one degree better."]) },
         { level: 13, text: levelBlock("13th Level", ["Enemies cannot reduce their Frightened value below 3 while in your aura."]) },
-        { level: 15, text: levelBlock("15th Level", ["Enemies in your aura take a status penalty to attack rolls against you equal to their Frightened value, in addition to the normal Frightened penalty."]) },
+        { level: 15, text: levelBlock("15th Level", ["Enemies in your aura take an untyped penalty to attack rolls against you equal to their Frightened value. This is deliberately untyped so that it stacks with the penalty from the Frightened condition itself."]) },
         { level: 17, text: levelBlock("17th Level", ["Nothing is immune to your aura and all creatures roll normally."]) },
         { level: 20, text: levelBlock("20th Level", ["Enemies cannot willingly move closer to you while inside your aura. They may still attack, cast, and move within or out of it."]) },
     ],
@@ -126,7 +126,7 @@ ${levelBlock("5th Level", ["A creature Frightened by your aura that rolls at or 
 ${levelBlock("7th Level", ["Enemies cannot reduce their Frightened value below 2 while in your aura."])}
 ${levelBlock("10th Level", ["The healing from your aura increases to your level, and may trigger twice per round."])}
 ${levelBlock("13th Level", ["Enemies cannot reduce their Frightened value below 3 while in your aura."])}
-${levelBlock("15th Level", ["Enemies in your aura take a status penalty to attack rolls against you equal to their Frightened value, in addition to the normal Frightened penalty."])}
+${levelBlock("15th Level", ["Enemies in your aura take an untyped penalty to attack rolls against you equal to their Frightened value. This is deliberately untyped so that it stacks with the penalty from the Frightened condition itself."])}
 ${levelBlock("20th Level", ["Enemies cannot willingly move closer to you while inside your aura. They may still attack, cast, and move within or out of it."])}
 <p><em>Dropped items may be retrieved normally with an Interact action.</em></p>
 <hr />

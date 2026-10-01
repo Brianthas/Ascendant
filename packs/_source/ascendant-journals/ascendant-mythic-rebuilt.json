@@ -42,7 +42,7 @@
         "level": 1
       },
       "text": {
-        "content": "<p>These rules replace the Mythic rules entirely. Do not use both. Where Mythic grants destinies, calling, and mythic points, Ascendant grants Talents that scale across all twenty levels and require no separate resource to spend.</p>\n<p>Characters built with these rules are dramatically more powerful than standard Pathfinder Second Edition assumes. Ability scores climb higher and faster, proficiency arrives early and reaches beyond Legendary, and every character chooses three permanent Talents that define what they are.</p>\n<p>This is a deliberate escalation, not a balanced sidegrade. Player characters will land hits, resist effects, and survive punishment well beyond what the Bestiary expects. The ruleset assumes the Game Master will push back with tougher opposition. Every bonus here is a flat numerical increase or a bounded effect, so monster-side adjustments remain fully effective.</p>\n<h3>Character Creation</h3>\n<ul>\n<li>Apply Enhanced Attribute Boosts.</li>\n<li>Choose an Expertise Track.</li>\n<li>Choose one Apex Talent, one Paragon Talent, and one Adept Talent.</li>\n<li>The party agrees together on a single Party Talent.</li>\n</ul>\n<p><em>All of these choices are made at 1st level and are permanent.</em></p>\n<hr>\n",
+        "content": "<p>These rules replace the Mythic rules entirely. Do not use both. Where Mythic grants destinies, calling, and mythic points, Ascendant grants Talents that scale across all twenty levels and require no separate resource to spend.</p>\n<p>Characters built with these rules are dramatically more powerful than standard Pathfinder Second Edition assumes. Ability scores climb higher and faster, proficiency arrives early and reaches beyond Legendary, and every character chooses three permanent Talents that define what they are.</p>\n<p>This is a deliberate escalation, not a balanced sidegrade. Player characters will land hits, resist effects, and survive punishment well beyond what the Bestiary expects. The ruleset assumes the Game Master will push back with tougher opposition. Every bonus here is a flat numerical increase or a bounded effect, so monster-side adjustments remain fully effective.</p>\n<h3>Character Creation</h3>\n<ul>\n<li>Apply Enhanced Attribute Boosts.</li>\n<li>Choose an Expertise Track.</li>\n<li>Choose one Apex Talent, one Paragon Talent, and one Adept Talent.</li>\n<li>The party agrees together on a single Party Talent.</li>\n</ul>\n<p><em>All of these choices are made at 1st level and are permanent.</em></p>\n<h3>Assumed Variant Rules</h3>\n<p>Ascendant assumes three of Pathfinder&#39;s optional variant rules are in play, all of them from 1st level. The Talents and the Expertise Tracks are balanced against a character who already has them.</p>\n<ul>\n<li><strong>Dual Class.</strong> Every character has two classes, gaining the class features, class feats, and proficiencies of both, taking the better value wherever the two overlap.</li>\n<li><strong>Free Archetype.</strong> Every character gains an additional class feat at every even level, usable only for archetype feats.</li>\n<li><strong>Ancestry Paragon.</strong> Every character gains an ancestry feat at 1st level and at every odd level thereafter.</li>\n</ul>\n<p><em>Where a Talent refers to your proficiency rank being one rank higher than normal, normal means the better of your two classes.</em></p>\n<hr>\n",
         "format": 1,
         "markdown": ""
       },
@@ -73,7 +73,7 @@
         "level": 1
       },
       "text": {
-        "content": "<p>Characters gain their normal ability boosts from ancestry, background, class, and free boosts exactly as described in the Core Rulebook. In addition, they gain the following.</p>\n<h3>Initial Boosts</h3>\n<ul>\n<li>At 1st level you gain four additional ability boosts.<ul>\n<li>These follow the normal rules for ability boosts. You cannot apply more than one to the same ability score, and each increases a score by 2, or by 1 if the score is already 18 or higher.</li>\n</ul>\n</li>\n</ul>\n<h3>Continuing Boosts</h3>\n<ul>\n<li>At 5th, 10th, 15th, and 20th level you gain two additional ability boosts.<ul>\n<li>These follow no restrictions. Both may apply to the same score, and each always increases it by exactly 2 regardless of its current value.</li>\n</ul>\n</li>\n</ul>\n<h3>Attribute Caps</h3>\n<p>No ability score may exceed the following values. This cap applies to all boosts.</p>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Cap</th>\n<th>Modifier</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1st</td>\n<td>20</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>22</td>\n<td>+6</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>24</td>\n<td>+7</td>\n</tr>\n<tr>\n<td>15th</td>\n<td>26</td>\n<td>+8</td>\n</tr>\n<tr>\n<td>20th</td>\n<td>28</td>\n<td>+9</td>\n</tr>\n</tbody></table>\n<p><em>At 1st level the cap of 20 is a soft ceiling. Because the four initial boosts follow normal rules, a score already at 18 gains only +1 from each. Most characters begin play with a primary score of 18, matching standard Pathfinder.</em></p>\n<hr>\n",
+        "content": "<p>Characters gain their normal ability boosts from ancestry, background, class, and free boosts exactly as described in the Core Rulebook. In addition, they gain the following.</p>\n<h3>Initial Boosts</h3>\n<ul>\n<li>At 1st level you gain four additional ability boosts.<ul>\n<li>These follow the normal rules for ability boosts. You cannot apply more than one to the same ability score, and each increases a score by 2, or by 1 if the score is already 18 or higher.</li>\n</ul>\n</li>\n</ul>\n<h3>Continuing Boosts</h3>\n<ul>\n<li>At 5th, 10th, 15th, and 20th level you gain two additional ability boosts.<ul>\n<li>These follow no restrictions. Both may apply to the same score, and each always increases it by exactly 2 regardless of its current value.</li>\n</ul>\n</li>\n</ul>\n<h3>Attribute Caps</h3>\n<p>No ability score may exceed the following values. This cap applies to all boosts.</p>\n<table>\n<thead>\n<tr>\n<th>Level</th>\n<th>Cap</th>\n<th>Modifier</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1st</td>\n<td>20</td>\n<td>+5</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>22</td>\n<td>+6</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>24</td>\n<td>+7</td>\n</tr>\n<tr>\n<td>15th</td>\n<td>26</td>\n<td>+8</td>\n</tr>\n<tr>\n<td>20th</td>\n<td>28</td>\n<td>+9</td>\n</tr>\n</tbody></table>\n<p><em>Standard Pathfinder stops a 1st-level score at 18. A score at 18 still gains only +1 from each boost, but Dual Class adds a second class boost, so together with an initial boost a character may begin play at 20 (+5).</em></p>\n<hr>\n",
         "format": 1,
         "markdown": ""
       },
@@ -104,7 +104,7 @@
         "level": 1
       },
       "text": {
-        "content": "<p>At 1st level, choose one of the two Expertise Tracks below. This choice is permanent.</p>\n<h3>Weapon Expertise</h3>\n<p>Applies to all weapon and unarmed attacks you are trained in, regardless of group or category.</p>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>Your proficiency rank begins one rank higher than normal.</li>\n<li>Add a damage bonus to your Strikes equal to your proficiency rank.</li>\n</ul>\n<p><strong>5th / 10th / 15th Level</strong></p>\n<ul>\n<li>Master, then Legendary, then Mythic.</li>\n</ul>\n<h3>Spellcasting Expertise</h3>\n<p>Applies to spell attack rolls and spell DCs for all spells you can cast, from any tradition or source, including innate spells, focus spells, and spells cast from items.</p>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>Your proficiency rank is Expert.</li>\n<li>Add a damage bonus to each creature damaged by your spells equal to your proficiency rank.</li>\n<li>Add your spellcasting attribute modifier to the damage your spells deal to each creature.<ul>\n<li>If a spell damages the same creature in multiple instances, total that damage first, then add the modifier once.</li>\n<li>For basic saving throws, both bonuses count as part of the spell&#39;s basic damage.</li>\n</ul>\n</li>\n</ul>\n<p><strong>5th / 10th / 15th Level</strong></p>\n<ul>\n<li>Master, then Legendary, then Mythic.</li>\n</ul>\n<h3>Enhanced Defense</h3>\n<p>Both tracks grant the following.</p>\n<ul>\n<li>Your Armor Class increases by 1 at 1st level, 2 at 5th, 3 at 10th, and 4 at 15th.<ul>\n<li>This is not a bonus and stacks with all bonuses to Armor Class.</li>\n</ul>\n</li>\n</ul>\n<h3>Mythic Proficiency</h3>\n<p>Mythic is a new proficiency rank found only through this ruleset, granting a proficiency bonus equal to your level + 10.</p>\n<table>\n<thead>\n<tr>\n<th>Rank</th>\n<th>Bonus</th>\n<th>Rider</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Trained</td>\n<td>Level + 2</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>Expert</td>\n<td>Level + 4</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>Master</td>\n<td>Level + 6</td>\n<td>+6</td>\n</tr>\n<tr>\n<td>Legendary</td>\n<td>Level + 8</td>\n<td>+8</td>\n</tr>\n<tr>\n<td>Mythic</td>\n<td>Level + 10</td>\n<td>+10</td>\n</tr>\n</tbody></table>\n<h3>Expanded Investment</h3>\n<ul>\n<li>The normal limit of 10 invested magic items increases to 20.</li>\n</ul>\n<hr>\n",
+        "content": "<p>At 1st level, choose one of the two Expertise Tracks below. This choice is permanent.</p>\n<h3>Weapon Expertise</h3>\n<p>Applies to all weapon and unarmed attacks you are trained in, regardless of group or category.</p>\n<p><strong>From 1st Level</strong></p>\n<ul>\n<li>Your proficiency rank is one rank higher than your classes would normally grant, up to Mythic.</li>\n<li>Add a damage bonus to your Strikes equal to your proficiency rank.</li>\n</ul>\n<p><strong>Minimum Rank</strong></p>\n<ul>\n<li>Your proficiency rank is at least Master at 5th level, Legendary at 10th, and Mythic at 15th.</li>\n</ul>\n<p><strong>Classes That Begin at Expert</strong></p>\n<ul>\n<li>If a class makes you Expert with a weapon at 1st level, as the Fighter and Gunslinger do, you stay a rank ahead of the minimum with it: Master at 1st, Legendary at 5th, and Mythic at 13th.</li>\n<li>At 15th level, your Strikes with those weapons gain one additional weapon damage die. This stacks with striking runes.</li>\n</ul>\n<h3>Spellcasting Expertise</h3>\n<p>Applies to spell attack rolls and spell DCs for all spells you can cast, from any tradition or source, including innate spells, focus spells, and spells cast from items.</p>\n<p><strong>1st Level</strong></p>\n<ul>\n<li>Your proficiency rank is Expert.</li>\n<li>Add a damage bonus to each creature damaged by your spells equal to your proficiency rank.</li>\n<li>Add your spellcasting attribute modifier to the damage your spells deal to each creature.<ul>\n<li>If a spell damages the same creature in multiple instances, total that damage first, then add the modifier once.</li>\n<li>For basic saving throws, both bonuses count as part of the spell&#39;s basic damage.</li>\n</ul>\n</li>\n</ul>\n<p><strong>5th Level</strong></p>\n<ul>\n<li>Your proficiency rank becomes Master.</li>\n</ul>\n<p><strong>10th Level</strong></p>\n<ul>\n<li>Your proficiency rank becomes Legendary.</li>\n</ul>\n<p><strong>15th Level</strong></p>\n<ul>\n<li>Your proficiency rank becomes Mythic.</li>\n</ul>\n<h3>Enhanced Defense</h3>\n<p>Both tracks grant the following.</p>\n<ul>\n<li>Your Armor Class increases by 1 at 1st level, 2 at 5th, 3 at 10th, and 4 at 15th.<ul>\n<li>This is not a bonus and stacks with all bonuses to Armor Class.</li>\n</ul>\n</li>\n</ul>\n",
         "format": 1,
         "markdown": ""
       },
@@ -127,6 +127,68 @@
       "_key": "!journal.pages!ZUxrPtTSnShfKKci.woLF0e1RNkQji0hN"
     },
     {
+      "_id": "FR0jL7AOmAWK7EKI",
+      "name": "Mythic Proficiency",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<p>Mythic is a new proficiency rank found only through this ruleset, granting a proficiency bonus equal to your level + 10.</p>\n<table>\n<thead>\n<tr>\n<th>Rank</th>\n<th>Bonus</th>\n<th>Rider</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Trained</td>\n<td>Level + 2</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>Expert</td>\n<td>Level + 4</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>Master</td>\n<td>Level + 6</td>\n<td>+6</td>\n</tr>\n<tr>\n<td>Legendary</td>\n<td>Level + 8</td>\n<td>+8</td>\n</tr>\n<tr>\n<td>Mythic</td>\n<td>Level + 10</td>\n<td>+10</td>\n</tr>\n</tbody></table>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 400000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!ZUxrPtTSnShfKKci.FR0jL7AOmAWK7EKI"
+    },
+    {
+      "_id": "5r4QhdXKSuuGWtNT",
+      "name": "Expanded Investment",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "<ul>\n<li>The normal limit of 10 invested magic items increases to 20.</li>\n</ul>\n<hr>\n",
+        "format": 1,
+        "markdown": ""
+      },
+      "src": null,
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "system": {},
+      "category": null,
+      "sort": 500000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "pf2e"
+      },
+      "_key": "!journal.pages!ZUxrPtTSnShfKKci.5r4QhdXKSuuGWtNT"
+    },
+    {
       "_id": "da07wjy6mbIZrjdS",
       "name": "The Talents",
       "type": "text",
@@ -147,7 +209,7 @@
       },
       "system": {},
       "category": null,
-      "sort": 400000,
+      "sort": 600000,
       "ownership": {
         "default": -1
       },

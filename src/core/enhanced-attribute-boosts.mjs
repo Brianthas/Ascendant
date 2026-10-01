@@ -43,7 +43,7 @@ export const enhancedAttributeBoosts = talent({
 <tr><td>15th</td><td>26</td><td>+8</td></tr>
 <tr><td>20th</td><td>28</td><td>+9</td></tr>
 </tbody></table>
-<p><em>At 1st level the cap of 20 is a soft ceiling. Because the four initial boosts follow normal rules, a score already at 18 gains only +1 from each. Most characters begin play with a primary score of 18, matching standard Pathfinder.</em></p>
+<p><em>Standard Pathfinder stops a 1st-level score at 18. A score at 18 still gains only +1 from each boost, but Dual Class adds a second class boost, so together with an initial boost a character may begin play at 20 (+5).</em></p>
 <hr />
 <p><strong>In Foundry:</strong> open the <strong>Attribute Boosts</strong> window. Under each of PF2e's level rows there is a row labelled <em>(Ascendant)</em>: four picks at Level 1, one per attribute, and two picks at Levels 5, 10, 15 and 20, where pressing an attribute twice puts both on it. A 1st-level pick on a score already at 18 adds half a modifier point, exactly as PF2e's own boosts do, so two such half steps make a whole one. The caps are applied automatically.</p>
 `.trim(),

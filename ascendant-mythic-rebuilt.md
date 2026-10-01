@@ -23,6 +23,16 @@ This is a deliberate escalation, not a balanced sidegrade. Player characters wil
 
 *All of these choices are made at 1st level and are permanent.*
 
+### Assumed Variant Rules
+
+Ascendant assumes three of Pathfinder's optional variant rules are in play, all of them from 1st level. The Talents and the Expertise Tracks are balanced against a character who already has them.
+
+- **Dual Class.** Every character has two classes, gaining the class features, class feats, and proficiencies of both, taking the better value wherever the two overlap.
+- **Free Archetype.** Every character gains an additional class feat at every even level, usable only for archetype feats.
+- **Ancestry Paragon.** Every character gains an ancestry feat at 1st level and at every odd level thereafter.
+
+*Where a Talent refers to your proficiency rank being one rank higher than normal, normal means the better of your two classes.*
+
 ---
 
 ## Enhanced Attribute Boosts
@@ -45,13 +55,13 @@ No ability score may exceed the following values. This cap applies to all boosts
 
 | Level | Cap | Modifier |
 |---|---|---|
-| 1st | 20 | +4 |
+| 1st | 20 | +5 |
 | 5th | 22 | +6 |
 | 10th | 24 | +7 |
 | 15th | 26 | +8 |
 | 20th | 28 | +9 |
 
-*At 1st level the cap of 20 is a soft ceiling. Because the four initial boosts follow normal rules, a score already at 18 gains only +1 from each. Most characters begin play with a primary score of 18, matching standard Pathfinder.*
+*Standard Pathfinder stops a 1st-level score at 18. A score at 18 still gains only +1 from each boost, but Dual Class adds a second class boost, so together with an initial boost a character may begin play at 20 (+5).*
 
 ---
 
@@ -63,12 +73,16 @@ At 1st level, choose one of the two Expertise Tracks below. This choice is perma
 
 Applies to all weapon and unarmed attacks you are trained in, regardless of group or category.
 
-**1st Level**
-- Your proficiency rank begins one rank higher than normal.
+**From 1st Level**
+- Your proficiency rank is one rank higher than your classes would normally grant, up to Mythic.
 - Add a damage bonus to your Strikes equal to your proficiency rank.
 
-**5th / 10th / 15th Level**
-- Master, then Legendary, then Mythic.
+**Minimum Rank**
+- Your proficiency rank is at least Master at 5th level, Legendary at 10th, and Mythic at 15th.
+
+**Classes That Begin at Expert**
+- If a class makes you Expert with a weapon at 1st level, as the Fighter and Gunslinger do, you stay a rank ahead of the minimum with it: Master at 1st, Legendary at 5th, and Mythic at 13th.
+- At 15th level, your Strikes with those weapons gain one additional weapon damage die. This stacks with striking runes.
 
 ### Spellcasting Expertise
 
@@ -81,8 +95,14 @@ Applies to spell attack rolls and spell DCs for all spells you can cast, from an
   - If a spell damages the same creature in multiple instances, total that damage first, then add the modifier once.
   - For basic saving throws, both bonuses count as part of the spell's basic damage.
 
-**5th / 10th / 15th Level**
-- Master, then Legendary, then Mythic.
+**5th Level**
+- Your proficiency rank becomes Master.
+
+**10th Level**
+- Your proficiency rank becomes Legendary.
+
+**15th Level**
+- Your proficiency rank becomes Mythic.
 
 ### Enhanced Defense
 
@@ -91,7 +111,7 @@ Both tracks grant the following.
 - Your Armor Class increases by 1 at 1st level, 2 at 5th, 3 at 10th, and 4 at 15th.
   - This is not a bonus and stacks with all bonuses to Armor Class.
 
-### Mythic Proficiency
+## Mythic Proficiency
 
 Mythic is a new proficiency rank found only through this ruleset, granting a proficiency bonus equal to your level + 10.
 
@@ -103,7 +123,7 @@ Mythic is a new proficiency rank found only through this ruleset, granting a pro
 | Legendary | Level + 8 | +8 |
 | Mythic | Level + 10 | +10 |
 
-### Expanded Investment
+## Expanded Investment
 
 - The normal limit of 10 invested magic items increases to 20.
 
@@ -339,7 +359,7 @@ Choose one at 1st level, permanently.
 - Enemies cannot reduce their Frightened value below 3 while in your aura.
 
 **15th Level**
-- Enemies in your aura take a status penalty to attack rolls against you equal to their Frightened value, in addition to the normal Frightened penalty.
+- Enemies in your aura take an untyped penalty to attack rolls against you equal to their Frightened value. This is deliberately untyped so that it stacks with the penalty from the Frightened condition itself.
 
 **20th Level**
 - Enemies cannot willingly move closer to you while inside your aura. They may still attack, cast, and move within or out of it.
@@ -385,7 +405,7 @@ Choose one at 1st level, permanently.
 | Water | cold | — | Slowed 1 until the end of their next turn |
 | Air | electricity | — | Damage chains to one other creature within 15 feet |
 | Earth | bludgeoning | You cannot be moved, pushed, pulled, or knocked Prone against your will | Speeds reduced by 10 feet and cannot Fly or Leap, until the end of your next turn |
-| Metal | slashing or piercing | Counts as cold iron, dawnsilver, or adamantine, your choice | Resistances and hardness halved until the end of your next turn |
+| Metal | slashing or piercing, chosen at character creation | Counts as cold iron, dawnsilver, or adamantine, your choice | Resistances and hardness halved until the end of your next turn |
 | Wood | bludgeoning | Strikes gain grapple and trip; on a hit you may Grapple or Trip as a free action | Immobilized until they Escape, and you restore Hit Points equal to the damage dealt, once per turn |
 
 ---
@@ -1233,6 +1253,16 @@ Every figure in this section was computed against the creature-building tables i
 - **Player defence keeps pace.** Enhanced Defense reduces an Extreme attacker from 80 percent hits and 30 percent criticals against a well-built character to 60 percent and 10 percent by 15th level.
 
 *The practical consequence is narrow and specific. Your creatures need substantially more Hit Points, modestly better Armour Class and saves, and the same attack bonus they already had.*
+
+**The Variant Rules Compound This**
+
+Dual Class, Free Archetype, and Ancestry Paragon do not change the figures above, which are driven by the Expertise Tracks and the attribute caps. What they change is how often those figures apply and how many answers a character has.
+
+- **Proficiency floors rise.** Dual Class means every character takes the better weapon and spell progression of two classes. Characters already Expert in weapons run a rank ahead of the Weapon Expertise minimum until 13th level, so what was a Fighter or Gunslinger quirk becomes common.
+- **Options roughly double.** Twice the class feats, an archetype feat every even level, and an ancestry feat every odd level. Expect characters to have a prepared answer to most situations you construct.
+- **Action economy improves indirectly.** More feats means more ways to spend a turn efficiently, which compounds with Talents such as Borrowed Time and Warmage.
+
+*Plan encounters on the assumption that the party has a tool for everything. Difficulty should come from the shape of the fight rather than from the party lacking an option.*
 
 ## Raise Hit Points First
 

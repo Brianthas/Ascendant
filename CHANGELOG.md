@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.1.3 - unreleased
+
+- Weapon Expertise follows the revised rules. Every trained weapon proficiency is one rank above
+  what the classes grant, at every level, and at least Master from 5th, Legendary from 10th and
+  Mythic from 15th. A proficiency a class makes Expert at 1st (Fighter simple, martial and
+  unarmed; Gunslinger firearms and crossbows) is Master from 1st, Legendary from 5th and Mythic
+  from 13th, and from 15th its Strikes gain one die of the weapon's own damage die, stacking with
+  striking and doubling on a critical hit. The +1 previously stopped at 4th.
+- Keyed weapon proficiencies are raised too: the Gunslinger's firearms and crossbows, a Fighter's
+  weapon-group entries, Soulbound Arsenal's weapon and combination weapons. 0.1.2 raised only the
+  four categories.
+- Mythic is per weapon. 0.1.2 made every Strike Mythic at 15th, untrained ones included; now only
+  weapons you are trained in, and a Fighter's advanced weapons stay Legendary at 13th.
+- The damage bonus follows the rank of the weapon struck with. 0.1.2 used the category's rank, so
+  a Gunslinger's firearm took the martial category's bonus.
+- Warmage: the weapon-to-spell rank raise runs after Weapon Expertise, so the spell rank includes
+  the track's +1; spells go Mythic when any trained weapon is, 13th for an Expert-start weapon; the
+  Spellcasting track's Mythic reaches only weapons you are trained in.
+- Rules text and journal synced to the revised document: Weapon Expertise, the Assumed Variant
+  Rules section, the 1st-level attribute cap as +5 with its note, Spellcasting Expertise by level,
+  Mythic Proficiency and Expanded Investment as their own pages, Dread Presence's untyped penalty,
+  Metal's damage type chosen at character creation, and the Game Master Notes on the variant rules.
+- Characters built before 0.1.3 keep the old Weapon Expertise and Warmage rules until the GM runs
+  **Refresh talent rules**.
+
 ## 0.1.2 - 2026-09-22
 
 Verified on Foundry 14.368 with PF2e 8.5.1 on the two test characters: Mythic proficiency reads
