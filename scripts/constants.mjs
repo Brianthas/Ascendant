@@ -60,5 +60,11 @@ export const TIER_IDS = TIERS.map((t) => t.id);
 /** Every Item pack, in the order the build and the refresh walk them. */
 export const ITEM_PACKS = ["ascendant-core", "ascendant-apex", "ascendant-paragon", "ascendant-adept", "ascendant-party"];
 
+/**
+ * Roll option set while the actor prepares when any trained weapon proficiency is Mythic under
+ * Weapon Expertise. Warmage reads it to carry Mythic to spells. Imported by the build too.
+ */
+export const WEAPON_MYTHIC_OPTION = "ascendant-weapon-expertise-mythic";
+
 /** A predicate matching a character who holds any of the given talents, by slug. */
 export const holdsAny = (slugs) => ({ or: slugs.map((slug) => `feat:${slug}`) });

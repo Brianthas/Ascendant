@@ -30,7 +30,7 @@
             "SpellDamageAttribute": "Spellcasting Expertise (attribute)",
             "SpellDamageProficiency": "Spellcasting Expertise (proficiency)",
             "WeaponDamage": "Weapon Expertise (proficiency)",
-            "WeaponDamageMythic": "Weapon Expertise (Mythic)",
+            "WeaponExpertiseDie": "Weapon Expertise (Expert start)",
             "EnhancedDefense": "Enhanced Defense",
             "AbundantVitality": "Abundant Vitality",
             "AbundantVitalityMythic": "Abundant Vitality (Mythic)",

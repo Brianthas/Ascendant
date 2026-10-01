@@ -1,6 +1,7 @@
 import { talent, actionItem } from "../lib/item.mjs";
 import { levelChain, grantBetween, atLeast, flavour, levelBlock } from "../lib/grants.mjs";
 import { mythic } from "../lib/rules.mjs";
+import { WEAPON_MYTHIC_OPTION } from "../../scripts/constants.mjs";
 
 const PACK = "ascendant-apex";
 const SLUG = "warmage";
@@ -11,6 +12,13 @@ const SPELL_RANK = "system.proficiencies.spellcasting.rank";
 const ATTACK_RANKS = ["simple", "martial", "advanced", "unarmed"].map((c) => `system.proficiencies.attacks.${c}.rank`);
 
 /**
+ * After Weapon Expertise's rule element (priority 100), so a Weapon Expertise Warmage's spell rank is
+ * raised to the weapon rank with the track's +1 in it. At the `upgrade` default of 40 these ran
+ * first and saw the class rank only: Expert, not Master, for a Fighter/Wizard at 1st.
+ */
+const CROSS_RAISE_PRIORITY = 110;
+
+/**
  * Apex: Warmage.
  *
  * "Use the higher of your weapon statistics or your spell statistics" has two
@@ -18,7 +26,8 @@ const ATTACK_RANKS = ["simple", "martial", "advanced", "unarmed"].map((c) => `sy
  * upgraded to the spellcasting rank, and the spellcasting rank to the highest
  * attack rank, with `upgrade` so neither can lower the other. The value reads
  * the other field off the actor in the `applyAEs` phase, after PF2e has set
- * every rank from the class.
+ * every rank from the class and after Weapon Expertise has raised them
+ * (`CROSS_RAISE_PRIORITY`).
  *
  * The attribute half rides on PF2e's stacking rule: a statistic keeps only
  * the highest ability-typed modifier, so adding the other side's attribute as
@@ -117,6 +126,7 @@ ${levelBlock("20th Level", ["When you Spellstrike, you may Cast two spells rathe
             mode: "upgrade",
             path,
             phase: "applyAEs",
+            priority: CROSS_RAISE_PRIORITY,
             value: `ternary(gte(@actor.${path}, 1), max(@actor.${SPELL_RANK}, ${ATTACK_RANKS.map((p) => `@actor.${p}`).join(", ")}), 0)`,
         })),
         {
@@ -124,18 +134,22 @@ ${levelBlock("20th Level", ["When you Spellstrike, you may Cast two spells rathe
             mode: "upgrade",
             path: SPELL_RANK,
             phase: "applyAEs",
+            priority: CROSS_RAISE_PRIORITY,
             value: `max(@actor.${SPELL_RANK}, ${ATTACK_RANKS.map((p) => `@actor.${p}`).join(", ")})`,
         },
-        // Mythic crosses over too. The stored rank stops at 4, so a track's 15th-level Mythic is
-        // not in the rank the rules above copy: the weapon track overrides the Strike's proficiency
-        // modifier and the spell track adds a flat +2 (see the two track files). Each is applied
-        // to the other side here, keyed to the track the character has. Measured before this
-        // existed, 2026-09-14: a 15th-level Wizard's spell attack read 33 with Mythic and the
-        // Staff Strike 31 without it.
+        // Mythic crosses over too. The stored rank stops at 4, so a track's Mythic is not in the
+        // rank the rules above copy: the weapon track overrides the Strike's proficiency modifier
+        // and the spell track adds a flat +2 (see the two track files). Each is applied to the
+        // other side here, keyed to the track the character has. Measured before this existed,
+        // 2026-09-14: a 15th-level Wizard's spell attack read 33 with Mythic and the Staff Strike
+        // 31 without it.
+        // Spell track to Strikes: weapons you are trained in only, as on the weapon track.
         ...mythic({ selectors: ["strike-attack-roll"], level: 15 }).map((rule) => ({
             ...rule,
-            predicate: [...rule.predicate, "feat:ascendant-spellcasting-expertise"],
+            predicate: [...rule.predicate, "feat:ascendant-spellcasting-expertise", { gte: ["item:proficiency:rank", 1] }],
         })),
+        // Weapon track to spells: when any trained weapon is Mythic, which is 13th for a weapon a
+        // class made Expert at 1st and 15th otherwise. The weapon track's rule element sets the option.
         {
             key: "FlatModifier",
             selector: "spell-attack-dc",
@@ -143,7 +157,7 @@ ${levelBlock("20th Level", ["When you Spellstrike, you may Cast two spells rathe
             label: "ASCENDANT.Proficiency.Mythic",
             type: "untyped",
             value: 2,
-            predicate: [{ gte: ["self:level", 15] }, "feat:ascendant-weapon-expertise"],
+            predicate: [WEAPON_MYTHIC_OPTION],
         },
         // Attribute: on spell attacks and DCs, the best attack attribute as an ability modifier.
         // Str and Dex are the only attributes a Strike uses, so those two are offered.

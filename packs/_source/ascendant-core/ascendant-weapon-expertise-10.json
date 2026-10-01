@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/blade-tips-triple-bent-white.webp",
   "system": {
     "description": {
-      "value": "<p><strong>10th Level</strong></p><ul><li>Your weapon proficiency rank becomes <strong>Legendary</strong>.</li></ul><p>Granted automatically by Weapon Expertise at 10th level. The rank change is applied by the track itself; this feat records that it has arrived.</p>",
+      "value": "<p><strong>10th Level</strong></p><ul><li>Your weapon proficiency rank is at least <strong>Legendary</strong>.</li></ul><p>Granted automatically by Weapon Expertise at 10th level. The rank change is applied by the track itself; this feat records that it has arrived.</p>",
       "gm": ""
     },
     "publication": {

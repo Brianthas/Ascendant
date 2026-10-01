@@ -20,6 +20,7 @@
         "mode": "upgrade",
         "path": "system.proficiencies.attacks.simple.rank",
         "phase": "applyAEs",
+        "priority": 110,
         "value": "ternary(gte(@actor.system.proficiencies.attacks.simple.rank, 1), max(@actor.system.proficiencies.spellcasting.rank, @actor.system.proficiencies.attacks.simple.rank, @actor.system.proficiencies.attacks.martial.rank, @actor.system.proficiencies.attacks.advanced.rank, @actor.system.proficiencies.attacks.unarmed.rank), 0)"
       },
       {
@@ -27,6 +28,7 @@
         "mode": "upgrade",
         "path": "system.proficiencies.attacks.martial.rank",
         "phase": "applyAEs",
+        "priority": 110,
         "value": "ternary(gte(@actor.system.proficiencies.attacks.martial.rank, 1), max(@actor.system.proficiencies.spellcasting.rank, @actor.system.proficiencies.attacks.simple.rank, @actor.system.proficiencies.attacks.martial.rank, @actor.system.proficiencies.attacks.advanced.rank, @actor.system.proficiencies.attacks.unarmed.rank), 0)"
       },
       {
@@ -34,6 +36,7 @@
         "mode": "upgrade",
         "path": "system.proficiencies.attacks.advanced.rank",
         "phase": "applyAEs",
+        "priority": 110,
         "value": "ternary(gte(@actor.system.proficiencies.attacks.advanced.rank, 1), max(@actor.system.proficiencies.spellcasting.rank, @actor.system.proficiencies.attacks.simple.rank, @actor.system.proficiencies.attacks.martial.rank, @actor.system.proficiencies.attacks.advanced.rank, @actor.system.proficiencies.attacks.unarmed.rank), 0)"
       },
       {
@@ -41,6 +44,7 @@
         "mode": "upgrade",
         "path": "system.proficiencies.attacks.unarmed.rank",
         "phase": "applyAEs",
+        "priority": 110,
         "value": "ternary(gte(@actor.system.proficiencies.attacks.unarmed.rank, 1), max(@actor.system.proficiencies.spellcasting.rank, @actor.system.proficiencies.attacks.simple.rank, @actor.system.proficiencies.attacks.martial.rank, @actor.system.proficiencies.attacks.advanced.rank, @actor.system.proficiencies.attacks.unarmed.rank), 0)"
       },
       {
@@ -48,6 +52,7 @@
         "mode": "upgrade",
         "path": "system.proficiencies.spellcasting.rank",
         "phase": "applyAEs",
+        "priority": 110,
         "value": "max(@actor.system.proficiencies.spellcasting.rank, @actor.system.proficiencies.attacks.simple.rank, @actor.system.proficiencies.attacks.martial.rank, @actor.system.proficiencies.attacks.advanced.rank, @actor.system.proficiencies.attacks.unarmed.rank)"
       },
       {
@@ -64,7 +69,13 @@
               15
             ]
           },
-          "feat:ascendant-spellcasting-expertise"
+          "feat:ascendant-spellcasting-expertise",
+          {
+            "gte": [
+              "item:proficiency:rank",
+              1
+            ]
+          }
         ]
       },
       {
@@ -75,13 +86,7 @@
         "type": "untyped",
         "value": 2,
         "predicate": [
-          {
-            "gte": [
-              "self:level",
-              15
-            ]
-          },
-          "feat:ascendant-weapon-expertise"
+          "ascendant-weapon-expertise-mythic"
         ]
       },
       {

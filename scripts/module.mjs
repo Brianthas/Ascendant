@@ -15,6 +15,7 @@ import { registerContainers, syncCapacity } from "./containers.mjs";
 import { registerAttributeBoosts } from "./attribute-boosts.mjs";
 import { registerFlicker, flicker } from "./flicker.mjs";
 import { registerActionButtons } from "./actions.mjs";
+import { registerWeaponExpertise } from "./weapon-expertise.mjs";
 
 /**
  * Registration timing.
@@ -31,6 +32,7 @@ import { registerActionButtons } from "./actions.mjs";
  * after PF2e's document classes are final.
  */
 let categoriesRegistered = false;
+let weaponExpertiseRegistered = false;
 let sectionsRegistered = false;
 
 /** Run one registration, reporting a throw loudly instead of aborting the hook. */
@@ -67,6 +69,7 @@ Hooks.once("init", () => {
     attempt("attribute boosts", registerAttributeBoosts);
     attempt("flicker", registerFlicker);
     attempt("action buttons", registerActionButtons);
+    weaponExpertiseRegistered = attempt("weapon expertise", registerWeaponExpertise) === true;
     categoriesRegistered = registerFeatCategories();
     sectionsRegistered = registerFeatSections();
     console.log(
@@ -78,6 +81,18 @@ Hooks.once("init", () => {
 Hooks.once("setup", () => {
     registerRegenerationDeactivation();
     registerSecondWind();
+
+    // game.pf2e is built in PF2e's own `init`, which may run after ours. Actors were prepared
+    // before `setup` without the rule element, so they are prepared again with it.
+    if (!weaponExpertiseRegistered) {
+        weaponExpertiseRegistered = attempt("weapon expertise", registerWeaponExpertise) === true;
+        if (weaponExpertiseRegistered) {
+            for (const actor of game.actors.filter((a) => a.type === "character")) actor.reset();
+        } else {
+            console.error(`${MODULE_ID} | Weapon Expertise rule element not registered: game.pf2e.RuleElements is missing`);
+            ui.notifications?.error("Ascendant: Weapon Expertise could not register; see the console (F12).", { permanent: true });
+        }
+    }
 
     if (!categoriesRegistered) categoriesRegistered = registerFeatCategories();
     if (!sectionsRegistered) {

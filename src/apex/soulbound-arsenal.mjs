@@ -47,8 +47,9 @@ const MATERIALS = ["cold-iron", "silver", "adamantine", "dawnsilver", "sovereign
  *
  * Proficiency: a MartialProficiency scoped to the tag, whose rank is the
  * highest of the four attack ranks, read off the actor in the same phase.
- * Mythic from the Weapon Expertise track applies to every Strike and so to
- * this one. Potency and striking are ItemAlterations in `upgrade` mode on the
+ * Weapon Expertise's rule element treats this entry as derived from those
+ * four: it takes their best result, Expert-start ladder and Mythic included,
+ * rather than a +1 of its own. Potency and striking are ItemAlterations in `upgrade` mode on the
  * tagged weapon; the script also writes them into the stored item, because
  * PF2e clamps property runes against the stored potency while the weapon
  * prepares itself, before any rule element runs (measured: stored potency 0
