@@ -34,6 +34,11 @@
   marker is copied from the compendium each time it lands, and the evolution's own change is to
   `events`, which PF2e does not act on. Verified live: a failure at turn start gave a stored Frightened 1, a natural 20
   the next round gave none, and an enemy outside the aura rolled nothing.
+- **Sovereign Mind's 15th-level immunity is to mental damage, as written.** It was PF2e's
+  `mental` immunity, which also covers every effect with the mental trait. It is now a custom
+  immunity on mental damage. Verified live at 15th: not immune to a mental-only effect, 10 mental
+  damage taking nothing, 10 fire taking 10. Characters with Sovereign Mind need **Refresh talent
+  rules** run once.
 - Bonded Soul's sync read the owner's class DC as `classDC.value`, which is undefined; it is
   `classDC.dc.value`. Nothing used the value, so nothing changed at the table: the Bonded keeps
   its own level-based class DC.

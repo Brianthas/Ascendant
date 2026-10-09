@@ -61,7 +61,15 @@ ${levelBlock("15th Level", ["Immune to mental damage.", "Immune to Emotion effec
             text: "ASCENDANT.Note.SovereignMindIncapacitation",
             predicate: [atLeast(10), "item:trait:incapacitation"],
         },
-        { key: "Immunity", type: "mental", predicate: [atLeast(15)] },
+        // "Immune to mental damage": a custom immunity on the damage type. PF2e's own `mental`
+        // type also covers every effect with the mental trait (pf2e.mjs:13956).
+        {
+            key: "Immunity",
+            type: "custom",
+            definition: ["damage:type:mental"],
+            label: "ASCENDANT.Rules.SovereignMindMentalDamage",
+            predicate: [atLeast(15)],
+        },
         {
             key: "RollOption",
             domain: "all",

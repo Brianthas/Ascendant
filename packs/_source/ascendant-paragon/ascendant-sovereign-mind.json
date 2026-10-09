@@ -86,7 +86,11 @@
       },
       {
         "key": "Immunity",
-        "type": "mental",
+        "type": "custom",
+        "definition": [
+          "damage:type:mental"
+        ],
+        "label": "ASCENDANT.Rules.SovereignMindMentalDamage",
         "predicate": [
           {
             "gte": [
