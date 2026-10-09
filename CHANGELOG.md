@@ -23,7 +23,12 @@
 - **The 15th-level attack penalty never applied.** It tested `target:feat:dread-presence`, and an
   attack's target options carry no feats at all: PF2e maps only `self:` options onto the target.
   The talent now sets `self:ascendant-dread-presence` while the aura is on, and the penalty keys
-  on that.
+  on that. Its four rules, one per Frightened value, also shared a slug, and PF2e keeps one
+  modifier per slug, the largest, before checking whether it applies, so only the -4 survived and
+  the penalty worked at Frightened 4 alone. Each value now has its own slug, and only the highest
+  Frightened value counts, since a creature holding two Frightened conditions reports both.
+  Verified live on a goblin's Strike against a 15th-level owner: -3 at Frightened 3, and -4 alone
+  with Frightened 3 and 4 both present.
 - Characters who already have Dread Presence need **Refresh talent rules** run once.
 - **Bonded Soul's Dread Form rolls its save.** An enemy that begins its turn within 30 feet rolls a
   Will save against the owner's class DC (the higher of two classes'), and is Frightened 1 on a

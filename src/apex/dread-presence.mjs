@@ -104,14 +104,24 @@ const auraEffect = (slug, traits) =>
                 predicate: [DREAD_PRESENCE.save],
             },
             // 15th: a penalty equal to the frightened value against the aura's owner.
+            // One slug per value: StatisticModifier keeps one modifier per slug, the
+            // largest, before predicates are tested (pf2e.mjs:38867), so a shared slug
+            // left only the -4, which is off below Frightened 4. And only the highest
+            // value present: a creature holding two Frightened conditions emits both
+            // values, the switched-off lower one included, and untyped penalties stack.
             ...[1, 2, 3, 4].map((value) => ({
                 key: "FlatModifier",
                 selector: "attack-roll",
-                slug: `${SLUG}-frightened-penalty`,
+                slug: `${SLUG}-frightened-penalty-${value}`,
                 label: "ASCENDANT.Rules.DreadPresencePenalty",
                 type: "untyped",
                 value: -value,
-                predicate: [`self:condition:frightened:${value}`, `target:${TOGGLE}`, { gte: ["target:level", 15] }],
+                predicate: [
+                    `self:condition:frightened:${value}`,
+                    ...[value + 1, value + 2, value + 3].filter((v) => v <= 4).map((v) => ({ not: `self:condition:frightened:${v}` })),
+                    `target:${TOGGLE}`,
+                    { gte: ["target:level", 15] },
+                ],
             })),
         ],
     });
