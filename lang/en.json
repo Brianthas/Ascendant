@@ -101,6 +101,10 @@
             "AegisBlock": "<p><strong>Tireless Aegis:</strong> once per turn you may Shield Block without spending a reaction. From 15th the attacker takes damage equal to what the Aegis absorbed.</p>",
             "BattleMender": "<p><strong>Battle Mender:</strong> Battle Medicine and First Aid reach 30 feet, Treat Wounds takes 1 minute. From 10th, also reduce the target's Wounded value by 1 and remove one condition of your choice.</p>"
         },
+        "DreadForm": {
+            "SaveDC": "Dread Form DC",
+            "NoDC": "{bonded} has no linked owner with a class DC, so {target}'s Will save against Dread Form was not rolled. Roll it by hand."
+        },
         "DreadPresence": {
             "SaveDC": "Dread Presence DC",
             "NoDC": "{owner} has no Class DC or Spell DC, so {target}'s Will save against Dread Presence was not rolled. Roll it by hand.",

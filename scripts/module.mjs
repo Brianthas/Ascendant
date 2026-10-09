@@ -17,6 +17,7 @@ import { registerFlicker, flicker } from "./flicker.mjs";
 import { registerActionButtons } from "./actions.mjs";
 import { registerWeaponExpertise } from "./weapon-expertise.mjs";
 import { registerDreadPresence } from "./dread-presence.mjs";
+import { registerDreadForm } from "./dread-form.mjs";
 
 /**
  * Registration timing.
@@ -71,6 +72,7 @@ Hooks.once("init", () => {
     attempt("flicker", registerFlicker);
     attempt("action buttons", registerActionButtons);
     attempt("dread presence", registerDreadPresence);
+    attempt("dread form", registerDreadForm);
     weaponExpertiseRegistered = attempt("weapon expertise", registerWeaponExpertise) === true;
     categoriesRegistered = registerFeatCategories();
     sectionsRegistered = registerFeatSections();

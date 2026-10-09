@@ -125,8 +125,8 @@ async function rollSave(effect) {
 
     // Traits go in as roll options, both bare and as item:trait:, the way PF2e's
     // own inline save links pass them. There is deliberately no origin: an origin
-    // pulls every EphemeralEffect the owner has onto the save, Overwhelm's degrade
-    // among them, which belongs to area spells. The degree adjustments this save
+    // pulls every EphemeralEffect the owner has onto the save, each relying on its
+    // own predicate to stay out of an aura save. The degree adjustments this save
     // does need are rules on the aura effect, switched on by the options below.
     const options = [...SAVE_TRAITS, ...SAVE_TRAITS.map((trait) => `item:trait:${trait}`), DREAD_PRESENCE.save];
     if (rollsBetter(target, owner.level)) options.push(DREAD_PRESENCE.better);

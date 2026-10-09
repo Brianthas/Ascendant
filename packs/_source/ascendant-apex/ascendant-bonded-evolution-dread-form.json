@@ -29,7 +29,7 @@
             "uuid": "Compendium.ascendant.ascendant-apex.Item.Q9rCxfBKDdniZZsK",
             "affects": "enemies",
             "events": [
-              "turn-start"
+              "enter"
             ],
             "removeOnExit": true
           }

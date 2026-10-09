@@ -76,7 +76,7 @@ function statsOf(owner) {
         reflex: owner.saves.reflex.mod,
         will: owner.saves.will.mod,
         perception: owner.perception.mod,
-        classDC: owner.classDC?.value ?? null,
+        classDC: owner.classDC?.dc?.value ?? null,
         attack: Number.isFinite(attack) ? attack : 0,
         damageMod: highestAttribute,
         hpMax: owner.system.attributes.hp.max,

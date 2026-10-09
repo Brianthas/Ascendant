@@ -6,9 +6,6 @@ const PACK = "ascendant-apex";
 const SLUG = "bonded-soul";
 const IMG = "icons/magic/life/heart-cross-strong-flame-purple-orange.webp";
 
-/** PF2e's Frightened condition, read off the installed system's packs. */
-const FRIGHTENED = "Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL";
-
 /**
  * Apex: Bonded Soul.
  *
@@ -74,8 +71,8 @@ const dreadFormEffect = effectItem({
     name: "Dread Form",
     img: IMG,
     traits: ["emotion", "fear", "mental"],
-    description: `<p>You began your turn within 30 feet of a Bonded with Dread Form and failed a Will save against its owner's class DC: Frightened 1.</p><hr /><p>The aura applies Frightened 1 as the reminder; roll the save when your turn begins inside it and remove this effect on a success.</p>`,
-    rules: [{ key: "GrantItem", uuid: FRIGHTENED, inMemoryOnly: true }],
+    description: `<p>You are within 30 feet of a Bonded with Dread Form. At the start of each of your turns here, your Will save against its owner's class DC is rolled automatically, and on a failure you become <strong>Frightened 1</strong>.</p><p>This effect arrives and leaves with the aura. It does not need removing by hand.</p>`,
+    rules: [],
 });
 
 export const evolutions = [
@@ -152,7 +149,9 @@ export const evolutions = [
             slug: "bonded-dread-form",
             radius: 30,
             traits: ["emotion", "fear", "mental"],
-            effects: [{ uuid: uuidFor(PACK, "bonded-dread-form-frightened"), affects: "enemies", events: ["turn-start"], removeOnExit: true }],
+            // A marker for "inside the aura": PF2e applies it on entry whatever `events` says.
+            // scripts/dread-form.mjs rolls the save at the start of each turn spent inside.
+            effects: [{ uuid: uuidFor(PACK, "bonded-dread-form-frightened"), affects: "enemies", events: ["enter"], removeOnExit: true }],
             appearance: { border: { color: "#8b0000", alpha: 0.75 }, highlight: { color: "#8b0000", alpha: 0.2 } },
         },
     ]),

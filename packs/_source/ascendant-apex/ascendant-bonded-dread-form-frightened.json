@@ -5,7 +5,7 @@
   "img": "icons/magic/life/heart-cross-strong-flame-purple-orange.webp",
   "system": {
     "description": {
-      "value": "<p>You began your turn within 30 feet of a Bonded with Dread Form and failed a Will save against its owner's class DC: Frightened 1.</p><hr /><p>The aura applies Frightened 1 as the reminder; roll the save when your turn begins inside it and remove this effect on a success.</p>",
+      "value": "<p>You are within 30 feet of a Bonded with Dread Form. At the start of each of your turns here, your Will save against its owner's class DC is rolled automatically, and on a failure you become <strong>Frightened 1</strong>.</p><p>This effect arrives and leaves with the aura. It does not need removing by hand.</p>",
       "gm": ""
     },
     "publication": {
@@ -14,13 +14,7 @@
       "license": "ORC",
       "remaster": true
     },
-    "rules": [
-      {
-        "key": "GrantItem",
-        "uuid": "Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL",
-        "inMemoryOnly": true
-      }
-    ],
+    "rules": [],
     "slug": "ascendant-bonded-dread-form-frightened",
     "traits": {
       "otherTags": [],

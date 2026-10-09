@@ -25,6 +25,18 @@
   The talent now sets `self:ascendant-dread-presence` while the aura is on, and the penalty keys
   on that.
 - Characters who already have Dread Presence need **Refresh talent rules** run once.
+- **Bonded Soul's Dread Form rolls its save.** An enemy that begins its turn within 30 feet rolls a
+  Will save against the owner's class DC (the higher of two classes'), and is Frightened 1 on a
+  failure. PF2e applies an aura's effect on entry whatever its `events` say (they only set
+  `removeOnExit`'s default), so the old "turn-start" effect arrived on entry and came back as soon
+  as it was removed by hand. The aura effect is now a marker for being inside, and a
+  `pf2e.startTurn` hook rolls the save. A Bonded that already has Dread Form needs nothing: the
+  marker is copied from the compendium each time it lands, and the evolution's own change is to
+  `events`, which PF2e does not act on. Verified live: a failure at turn start gave a stored Frightened 1, a natural 20
+  the next round gave none, and an enemy outside the aura rolled nothing.
+- Bonded Soul's sync read the owner's class DC as `classDC.value`, which is undefined; it is
+  `classDC.dc.value`. Nothing used the value, so nothing changed at the table: the Bonded keeps
+  its own level-based class DC.
 - Verified live with forced and natural dice, at 7th, 15th and 17th: each immunity band on a goblin,
   a fear-immune Scarecrow, a mental-immune mindless Zombie Shambler and an emotion- and fear-immune
   Axiomite; the low-roll clause on the aura's save (a natural 2 at Frightened 2 taken from failure to
