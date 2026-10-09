@@ -16,6 +16,7 @@ import { registerAttributeBoosts } from "./attribute-boosts.mjs";
 import { registerFlicker, flicker } from "./flicker.mjs";
 import { registerActionButtons } from "./actions.mjs";
 import { registerWeaponExpertise } from "./weapon-expertise.mjs";
+import { registerDreadPresence } from "./dread-presence.mjs";
 
 /**
  * Registration timing.
@@ -69,6 +70,7 @@ Hooks.once("init", () => {
     attempt("attribute boosts", registerAttributeBoosts);
     attempt("flicker", registerFlicker);
     attempt("action buttons", registerActionButtons);
+    attempt("dread presence", registerDreadPresence);
     weaponExpertiseRegistered = attempt("weapon expertise", registerWeaponExpertise) === true;
     categoriesRegistered = registerFeatCategories();
     sectionsRegistered = registerFeatSections();

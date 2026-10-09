@@ -66,5 +66,24 @@ export const ITEM_PACKS = ["ascendant-core", "ascendant-apex", "ascendant-parago
  */
 export const WEAPON_MYTHIC_OPTION = "ascendant-weapon-expertise-mythic";
 
+/**
+ * Roll option scripts/dread-presence.mjs puts on the aura's Will save, with `:better` and
+ * `:low-roll` variants switching on the aura effect's degree adjustments. A plain export, so
+ * tools/lint-rules.mjs counts it as set.
+ */
+export const DREAD_PRESENCE_SAVE = "ascendant-dread-presence-save";
+
+/**
+ * Dread Presence: the talent's slug, the two effects its aura hands over (below and from the
+ * owner's 10th level), and the save's roll options. Imported by the build too.
+ */
+export const DREAD_PRESENCE = Object.freeze({
+    talent: "ascendant-dread-presence",
+    effects: Object.freeze(["ascendant-dread-presence-frightened", "ascendant-dread-presence-frightened-all"]),
+    save: DREAD_PRESENCE_SAVE,
+    better: `${DREAD_PRESENCE_SAVE}:better`,
+    lowRoll: `${DREAD_PRESENCE_SAVE}:low-roll`,
+});
+
 /** A predicate matching a character who holds any of the given talents, by slug. */
 export const holdsAny = (slugs) => ({ or: slugs.map((slug) => `feat:${slug}`) });

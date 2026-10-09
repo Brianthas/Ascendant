@@ -5,7 +5,7 @@
   "img": "icons/magic/control/fear-fright-monster-grin-green.webp",
   "system": {
     "description": {
-      "value": "<blockquote><p><em>Something in you registers below thought, in the part of the mind that predates language and still knows what it is to be prey. Brave creatures find their hands unsteady near you, and the mindless, who should feel nothing at all, discover they would rather be elsewhere.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>As a free action once per round, activate or deactivate an aura with a radius of 10 feet + 5 feet per even level.</li><li>When an enemy first enters the aura, or your movement first places them inside, they attempt a Will save against the higher of your Class DC or Spell DC.<ul><li><strong>Critical Success</strong> Frightened 1. <strong>Success</strong> Frightened 2. <strong>Failure</strong> Frightened 3.</li><li><strong>Critical Failure</strong> Frightened 4. The creature drops anything it is holding and cannot use reactions while in your aura.</li><li>While inside the aura, and for 1 round after leaving, they cannot reduce their Frightened value below the result rolled. On a critical failure this lasts 1 minute.</li><li>An enemy that leaves and re-enters rerolls, taking the worse result.</li></ul></li><li>Creatures immune to fear or emotion effects are not immune to your aura, but treat their save result as one degree better.<ul><li>At 10th level they roll normally, and creatures that are mindless or immune to mental effects become affected, treating their result as one degree better.</li><li>At 17th level, nothing is immune to your aura and all creatures roll normally.</li></ul></li></ul>\n<p><strong>3rd Level</strong></p><ul><li>Creatures affected by your aura are Off-Guard to you.</li><li>When a creature Frightened by your aura is reduced to 0 Hit Points by any source, you restore Hit Points equal to half your level. This triggers no more than once per round.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>A creature Frightened by your aura that rolls at or below its Frightened value on a save against any of your effects treats the result as one degree worse.</li></ul>\n<p><strong>7th Level</strong></p><ul><li>Enemies cannot reduce their Frightened value below 2 while in your aura.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>The healing from your aura increases to your level, and may trigger twice per round.</li></ul>\n<p><strong>13th Level</strong></p><ul><li>Enemies cannot reduce their Frightened value below 3 while in your aura.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Enemies in your aura take an untyped penalty to attack rolls against you equal to their Frightened value. This is deliberately untyped so that it stacks with the penalty from the Frightened condition itself.</li></ul>\n<p><strong>20th Level</strong></p><ul><li>Enemies cannot willingly move closer to you while inside your aura. They may still attack, cast, and move within or out of it.</li></ul>\n<p><em>Dropped items may be retrieved normally with an Interact action.</em></p>\n<hr />\n<p><strong>In Foundry:</strong> switch <em>Dread Presence</em> on in your effects panel. The aura is drawn at the right radius and applies <strong>Frightened 1</strong> to enemies inside it, which ends when they leave; fear- and mental-immune creatures are skipped until the level at which the rules bring them in. Affected creatures are Off-Guard to your attacks from 3rd. From 5th, an affected creature saving against any effect of yours that rolls its Frightened value or less on the die has the result worsened one degree. From 15th their attacks against you take the extra penalty.</p>\n<p>For the table: roll the Will save when an enemy first enters and raise their Frightened value to match, apply the floors on reducing it, the healing when one drops, and the 20th-level approach ban. PF2e's aura save is pass or fail and it has no floor on a condition.</p>",
+      "value": "<blockquote><p><em>Something in you registers below thought, in the part of the mind that predates language and still knows what it is to be prey. Brave creatures find their hands unsteady near you, and the mindless, who should feel nothing at all, discover they would rather be elsewhere.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>As a free action once per round, activate or deactivate an aura with a radius of 10 feet + 5 feet per even level.</li><li>When an enemy first enters the aura, or your movement first places them inside, they attempt a Will save against the higher of your Class DC or Spell DC.<ul><li><strong>Critical Success</strong> Frightened 1. <strong>Success</strong> Frightened 2. <strong>Failure</strong> Frightened 3.</li><li><strong>Critical Failure</strong> Frightened 4. The creature drops anything it is holding and cannot use reactions while in your aura.</li><li>While inside the aura, and for 1 round after leaving, they cannot reduce their Frightened value below the result rolled. On a critical failure this lasts 1 minute.</li><li>An enemy that leaves and re-enters rerolls, taking the worse result.</li></ul></li><li>Creatures immune to fear or emotion effects are not immune to your aura, but treat their save result as one degree better.<ul><li>At 10th level they roll normally, and creatures that are mindless or immune to mental effects become affected, treating their result as one degree better.</li><li>At 17th level, nothing is immune to your aura and all creatures roll normally.</li></ul></li></ul>\n<p><strong>3rd Level</strong></p><ul><li>Creatures affected by your aura are Off-Guard to you.</li><li>When a creature Frightened by your aura is reduced to 0 Hit Points by any source, you restore Hit Points equal to half your level. This triggers no more than once per round.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>A creature Frightened by your aura that rolls at or below its Frightened value on a save against any of your effects treats the result as one degree worse.</li></ul>\n<p><strong>7th Level</strong></p><ul><li>Enemies cannot reduce their Frightened value below 2 while in your aura.</li></ul>\n<p><strong>10th Level</strong></p><ul><li>The healing from your aura increases to your level, and may trigger twice per round.</li></ul>\n<p><strong>13th Level</strong></p><ul><li>Enemies cannot reduce their Frightened value below 3 while in your aura.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Enemies in your aura take an untyped penalty to attack rolls against you equal to their Frightened value. This is deliberately untyped so that it stacks with the penalty from the Frightened condition itself.</li></ul>\n<p><strong>20th Level</strong></p><ul><li>Enemies cannot willingly move closer to you while inside your aura. They may still attack, cast, and move within or out of it.</li></ul>\n<p><em>Dropped items may be retrieved normally with an Interact action.</em></p>\n<hr />\n<p><strong>In Foundry:</strong> switch <em>Dread Presence</em> on at the top of the Encounter section of your Actions tab. The aura is drawn at the right radius. When an enemy enters it, or is inside when you switch it on, its Will save against the higher of your Class DC and Spell DC is rolled automatically and its Frightened value set from the result. That value cannot be reduced while it stays inside, nor below 2 from your 7th level or 3 from your 13th once it has reached them. When it leaves, or you switch the aura off, it keeps its Frightened value, and a <em>Dread Presence: Lingering</em> effect stops it dropping below the result rolled for 1 round, or 1 minute after a critical failure. Re-entering rolls again, and the higher Frightened value wins. Creatures the rules make \"not immune\" are brought in at the right level and roll one degree better where the rules say so.</p>\n<p>Affected creatures are Off-Guard to your attacks from 3rd. From 5th, an affected creature that rolls its Frightened value or less on the die has the result worsened one degree, on the aura's own save and on any other save against your effects. From 15th their attacks against you take the extra penalty.</p>\n<p>For the table: a critical failure's dropped items and lost reactions (the save's chat card says so), the healing when a frightened creature drops, and the 20th-level approach ban. A creature immune to the Frightened condition itself stays unaffected at 17th: PF2e will not grant it.</p>",
       "gm": ""
     },
     "publication": {
@@ -22,6 +22,14 @@
         "label": "ASCENDANT.Rules.DreadPresenceToggle",
         "toggleable": true,
         "value": false
+      },
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "self:ascendant-dread-presence",
+        "predicate": [
+          "ascendant-dread-presence"
+        ]
       },
       {
         "key": "Aura",
@@ -43,11 +51,7 @@
             "removeOnExit": true,
             "predicate": [
               {
-                "nor": [
-                  "target:immunity:mental",
-                  "target:immunity:fear",
-                  "target:immunity:emotion"
-                ]
+                "not": "target:trait:mindless"
               }
             ]
           }
@@ -84,61 +88,7 @@
         ],
         "effects": [
           {
-            "uuid": "Compendium.ascendant.ascendant-apex.Item.I0jDdPAMuex0n1av",
-            "affects": "enemies",
-            "events": [
-              "enter"
-            ],
-            "removeOnExit": true,
-            "predicate": [
-              {
-                "nor": [
-                  "target:immunity:mental",
-                  "target:trait:mindless"
-                ]
-              }
-            ]
-          }
-        ],
-        "appearance": {
-          "border": {
-            "color": "#8b0000",
-            "alpha": 0.75
-          },
-          "highlight": {
-            "color": "#8b0000",
-            "alpha": 0.25
-          }
-        },
-        "predicate": [
-          "ascendant-dread-presence",
-          {
-            "gte": [
-              "self:level",
-              10
-            ]
-          },
-          {
-            "lt": [
-              "self:level",
-              17
-            ]
-          }
-        ]
-      },
-      {
-        "key": "Aura",
-        "slug": "dread-presence-17",
-        "radius": "10 + (floor(@actor.level / 2) * 5)",
-        "traits": [
-          "emotion",
-          "fear",
-          "mental",
-          "visual"
-        ],
-        "effects": [
-          {
-            "uuid": "Compendium.ascendant.ascendant-apex.Item.I0jDdPAMuex0n1av",
+            "uuid": "Compendium.ascendant.ascendant-apex.Item.iRW5DKnJdsEycenA",
             "affects": "enemies",
             "events": [
               "enter"
@@ -162,7 +112,7 @@
           {
             "gte": [
               "self:level",
-              17
+              10
             ]
           }
         ]
@@ -183,7 +133,12 @@
               3
             ]
           },
-          "target:effect:ascendant-dread-presence-frightened"
+          {
+            "or": [
+              "target:effect:ascendant-dread-presence-frightened",
+              "target:effect:ascendant-dread-presence-frightened-all"
+            ]
+          }
         ]
       },
       {

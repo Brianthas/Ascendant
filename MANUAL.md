@@ -63,12 +63,13 @@ Reasons recur, so they are named once here and cited below:
 - The two resistance dials may be changed at any time; the daily-preparations limit is on the player
   (same ruling).
 
-**Dread Presence** (not modelled: PF2e's aura save is pass or fail with no condition floor)
-- The four-outcome Will save when an enemy first enters; the aura sets Frightened 1 as the floor.
-- The floor on reducing Frightened (and the 7th/13th floors of 2 and 3), the 1-round and 1-minute
-  persistence, re-entry rerolls, dropped items and lost reactions on a critical failure.
-- Fear- and mental-immune creatures rolling one degree better rather than being immune; the aura
-  excludes them until the level at which the rules bring them in.
+**Dread Presence**
+- Dropped items and lost reactions on a critical failure. The save's chat card says so.
+- A creature immune to the Frightened condition itself stays unaffected at 17th: PF2e will not
+  grant it the condition.
+- The 7th and 13th floors stop reductions only. A critical success inside a 7th-level aura stays
+  Frightened 1; the floor of 2 applies once the creature's Frightened has reached 2, from any
+  source (Bryan's ruling, 2026-10-08).
 - Healing when a frightened creature drops (other actor).
 - 20th: enemies unable to approach.
 

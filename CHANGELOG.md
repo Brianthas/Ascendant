@@ -1,6 +1,38 @@
 # Changelog
 
-## 0.1.3 - 2026-10-01
+## Unreleased
+
+- **Dread Presence rolls the Will save.** When an enemy enters the aura, or is inside it when the
+  aura is switched on, its Will save against the higher of the owner's Class DC and Spell DC is
+  rolled with no dialog, and the aura effect on it shows the result as a badge. Frightened cannot
+  be lowered below the badge while it stays inside. From 7th the badge rises to 2 (3 from 13th)
+  once the creature's Frightened has reached that value from any source; a critical success stays
+  at 1 (ruling recorded in MANUAL.md). On leaving, or when the aura is switched off, the creature
+  keeps its Frightened value, and a *Dread Presence: Lingering* effect holds the rolled result
+  through its next turn, or its next ten after a critical failure. Re-entering rolls again, and
+  the higher Frightened wins. A critical failure's card notes the dropped items and lost reactions.
+- The immunity ladder is applied as written rather than by skipping creatures. PF2e drops an
+  effect whose traits the actor is immune to, so below 10th the aura effect is mental only:
+  fear- and emotion-immune creatures are affected and roll one degree better, mental-immune and
+  mindless ones stay out. From 10th a second effect with only the aura trait reaches everything;
+  mental-immune and mindless creatures roll one degree better until 17th. Previously the effect
+  carried the fear, emotion and mental traits at every level, so PF2e kept those creatures out even
+  from 17th, where the rules say nothing is immune; the `target:immunity:` predicates meant to do
+  the banding never matched, because PF2e emits no immunity roll options.
+- The 5th-level low-roll clause now covers the aura's own save, which is one of "your effects".
+- **The 15th-level attack penalty never applied.** It tested `target:feat:dread-presence`, and an
+  attack's target options carry no feats at all: PF2e maps only `self:` options onto the target.
+  The talent now sets `self:ascendant-dread-presence` while the aura is on, and the penalty keys
+  on that.
+- Characters who already have Dread Presence need **Refresh talent rules** run once.
+- Verified live with forced and natural dice, at 7th, 15th and 17th: each immunity band on a goblin,
+  a fear-immune Scarecrow, a mental-immune mindless Zombie Shambler and an emotion- and fear-immune
+  Axiomite; the low-roll clause on the aura's save (a natural 2 at Frightened 2 taken from failure to
+  critical failure); a critical success staying at 1 at 7th and the badge rising to 2 when a stored
+  Frightened 2 arrived; the 15th floor of 3 holding as a stored Frightened 4 was lowered to 1;
+  leaving with a stored value and a Lingering at the rolled result; and the attack penalty against
+  the owner, with a Strike against another creature as the control. Lingering's round counting is
+  shared with a sibling implementation and was verified across three rounds of combat there.
 
 Verified live on Foundry 14.368 with PF2e 8.5.1, on test characters built from PF2e's own class
 items and class features: a Fighter at 1st, 4th, 5th, 12th, 13th and 15th, a Gunslinger at 1st,

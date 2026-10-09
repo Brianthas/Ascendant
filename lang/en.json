@@ -76,6 +76,7 @@
             "CharmedLifeFlatCheck": "<p><strong>Charmed Life:</strong> roll a flat check (DC 11, or DC 6 from 10th level). On a success this save is one degree better.</p>",
             "DeathlessUnconscious": "<p><strong>Deathless:</strong> at 0 Hit Points you are Slowed 1 rather than Unconscious while your regeneration is active.</p>",
             "DreadPresenceHealing": "<p><strong>Dread Presence:</strong> if a creature frightened by your aura is reduced to 0 Hit Points, you regain half your level in Hit Points (your level from 10th), once per round (twice from 10th).</p>",
+            "DreadPresenceCriticalFailure": "<p><strong>Dread Presence:</strong> the creature drops anything it is holding and cannot use reactions while in the aura.</p>",
             "ElementalDamage": "<p><strong>Elemental Embodiment:</strong> your element's damage ignores resistance (and immunity from 20th, for half damage). From 13th, creatures damaged by it suffer your element's rider.</p>",
             "FlickerStepUnwilling": "<p><strong>Flicker Step:</strong> you may bring one creature within your reach against its will: it attempts a Will save against the higher of your Class DC and Spell DC, and on a failure is teleported with you and Off-Guard until the end of your next turn.</p>",
             "FarHandMove": "<p><strong>Far Hand:</strong> once per round on a hit, move the creature up to 10 feet (15 from 15th) in any direction as a free action.</p>",
@@ -99,6 +100,12 @@
             "AbundantVitalityTargets": "<p><strong>Abundant Vitality:</strong> a spell targeting one willing creature other than yourself may target a second (and from 5th, you as well); from 15th, any number of willing creatures. From 10th beneficial spells of 1 minute or less last twice as long, Sustain is a free action once per round, and compositions last 1 minute.</p>",
             "AegisBlock": "<p><strong>Tireless Aegis:</strong> once per turn you may Shield Block without spending a reaction. From 15th the attacker takes damage equal to what the Aegis absorbed.</p>",
             "BattleMender": "<p><strong>Battle Mender:</strong> Battle Medicine and First Aid reach 30 feet, Treat Wounds takes 1 minute. From 10th, also reduce the target's Wounded value by 1 and remove one condition of your choice.</p>"
+        },
+        "DreadPresence": {
+            "SaveDC": "Dread Presence DC",
+            "NoDC": "{owner} has no Class DC or Spell DC, so {target}'s Will save against Dread Presence was not rolled. Roll it by hand.",
+            "Lingering": "Dread Presence: Lingering",
+            "LingeringText": "<p>You left an enemy's <strong>Dread Presence</strong>. Your <strong>Frightened</strong> value cannot drop below the value on this effect until it ends: through your next turn, or your next ten after a critical failure.</p>"
         },
         "Effect": {
             "RegenerationDeactivated": "Regeneration Deactivated",
