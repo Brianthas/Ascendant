@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.4 - 2026-10-09
 
 - **Dread Presence rolls the Will save.** When an enemy enters the aura, or is inside it when the
   aura is switched on, its Will save against the higher of the owner's Class DC and Spell DC is
@@ -55,6 +55,8 @@
   leaving with a stored value and a Lingering at the rolled result; and the attack penalty against
   the owner, with a Strike against another creature as the control. Lingering's round counting is
   shared with a sibling implementation and was verified across three rounds of combat there.
+
+## 0.1.3 - 2026-10-01
 
 Verified live on Foundry 14.368 with PF2e 8.5.1, on test characters built from PF2e's own class
 items and class features: a Fighter at 1st, 4th, 5th, 12th, 13th and 15th, a Gunslinger at 1st,
