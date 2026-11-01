@@ -47,9 +47,12 @@ export function registerLadders() {
 
       // Another package's ladder for the same slots is stood down only where this module is
       // supplying them itself: a generic class ladder when this character has one per class, and an
-      // Ancestry Paragon section when the setting here is on.
+      // Ancestry Paragon section when the setting here is on. Keyed on the per-class sections, not
+      // on `extra` as a whole, which also holds Know-It-All's skill section on a single-class
+      // character.
+      const perClass = extra.some((section) => section.id.startsWith(`${SECTION_PREFIX.CLASS}-`));
       const stoodDown = [
-        ...(extra.length ? removeGenericClassSections(sections) : []),
+        ...(perClass ? removeGenericClassSections(sections) : []),
         ...(paragon ? removeSectionsFor(sections, ["ancestry"]) : [])
       ];
       sections.push(...extra);
