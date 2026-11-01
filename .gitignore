@@ -7,5 +7,8 @@ node_modules/
 packs/*
 !packs/_source/
 
-# Release zips are filed in Supporting Documents, never here.
+# Release zips are never committed.
 *.zip
+
+# Agent instructions stay local.
+CLAUDE.md

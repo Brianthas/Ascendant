@@ -11,6 +11,8 @@
   *Know-It-All (2nd)* grant carries the 2nd-level line.
 - **Level grants show their level heading once.** Every talent's level grants (*Talent (5th)* and
   so on) printed the level heading twice at the top of their description. 140 grants are fixed.
+- **Manifest and download URLs.** `module.json` now points at the GitHub repo's latest release,
+  so Foundry can install and update the module from its manifest URL.
 
 ## 0.1.4 - 2026-10-09
 
