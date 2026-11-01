@@ -5,7 +5,7 @@
   "img": "icons/magic/symbols/runes-carved-stone-purple.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Your spells remove the incapacitation trait.</li></ul><p>Granted automatically by Unbound Casting at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>Your spells remove the incapacitation trait.</li></ul><p>Granted automatically by Unbound Casting at 15th level.</p>",
       "gm": ""
     },
     "publication": {

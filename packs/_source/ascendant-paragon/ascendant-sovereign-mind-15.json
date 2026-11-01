@@ -5,7 +5,7 @@
   "img": "icons/magic/perception/eye-ringed-glow-angry-small-red.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Immune to mental damage.</li><li>Immune to Emotion effects unless you choose otherwise.</li></ul><p>Granted automatically by Sovereign Mind at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>Immune to mental damage.</li><li>Immune to Emotion effects unless you choose otherwise.</li></ul><p>Granted automatically by Sovereign Mind at 15th level.</p>",
       "gm": ""
     },
     "publication": {

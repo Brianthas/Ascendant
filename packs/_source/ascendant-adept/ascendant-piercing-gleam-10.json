@@ -5,7 +5,7 @@
   "img": "icons/magic/light/beam-rays-yellow.webp",
   "system": {
     "description": {
-      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>Creatures within your aura cannot be Concealed, Hidden, or Undetected from you or your allies.</li><li>You and your allies in the aura improve your degree of success by one on saves against effects that would make you Fascinated, Confused, or Controlled.</li></ul><p>Granted automatically by Piercing Gleam at 10th level.</p>",
+      "value": "<p><strong>10th Level</strong></p><ul><li>Creatures within your aura cannot be Concealed, Hidden, or Undetected from you or your allies.</li><li>You and your allies in the aura improve your degree of success by one on saves against effects that would make you Fascinated, Confused, or Controlled.</li></ul><p>Granted automatically by Piercing Gleam at 10th level.</p>",
       "gm": ""
     },
     "publication": {

@@ -5,7 +5,7 @@
   "img": "icons/commodities/tech/dial-meter-gauge-blue.webp",
   "system": {
     "description": {
-      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>You gain access to the esoteric group: force, mental, poison, spirit, vitality, and void.</li><li>You may also change your attunement as a free action when you roll initiative.</li></ul><p>Granted automatically by Shape of Harm at 10th level.</p>",
+      "value": "<p><strong>10th Level</strong></p><ul><li>You gain access to the esoteric group: force, mental, poison, spirit, vitality, and void.</li><li>You may also change your attunement as a free action when you roll initiative.</li></ul><p>Granted automatically by Shape of Harm at 10th level.</p>",
       "gm": ""
     },
     "publication": {

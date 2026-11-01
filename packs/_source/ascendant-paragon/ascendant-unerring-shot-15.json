@@ -5,7 +5,7 @@
   "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Aim has no frequency limit.</li><li>Your ranged Strikes and spell attacks cannot be blocked, redirected, or targeted by reactions.</li></ul><p>Granted automatically by Unerring Shot at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>Aim has no frequency limit.</li><li>Your ranged Strikes and spell attacks cannot be blocked, redirected, or targeted by reactions.</li></ul><p>Granted automatically by Unerring Shot at 15th level.</p>",
       "gm": ""
     },
     "publication": {

@@ -5,7 +5,7 @@
   "img": "icons/magic/symbols/runes-carved-stone-purple.webp",
   "system": {
     "description": {
-      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>You may Cast a Spell even while Paralyzed, Stunned, Slowed, or otherwise unable to act, though you must still be conscious.</li><li>Learn another spellshape.</li></ul><p>Granted automatically by Unbound Casting at 10th level.</p>",
+      "value": "<p><strong>10th Level</strong></p><ul><li>You may Cast a Spell even while Paralyzed, Stunned, Slowed, or otherwise unable to act, though you must still be conscious.</li><li>Learn another spellshape.</li></ul><p>Granted automatically by Unbound Casting at 10th level.</p>",
       "gm": ""
     },
     "publication": {

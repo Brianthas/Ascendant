@@ -5,7 +5,7 @@
   "img": "icons/magic/perception/shadow-stealth-eyes-purple.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Gain Shadowstep.<ul><li><strong>Shadowstep</strong> [1 action] Teleport to any shadow or area of dim light you can see within 120 feet.</li></ul></li></ul><p>Granted automatically by Living Shadow at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>Gain Shadowstep.<ul><li><strong>Shadowstep</strong> [1 action] Teleport to any shadow or area of dim light you can see within 120 feet.</li></ul></li></ul><p>Granted automatically by Living Shadow at 15th level.</p>",
       "gm": ""
     },
     "publication": {

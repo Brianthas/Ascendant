@@ -5,7 +5,7 @@
   "img": "icons/magic/earth/barrier-stone-explosion-debris.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Aura increases to 30 feet.</li><li>You cannot be knocked from a surface, including while climbing or flying.</li><li>Enemies cannot teleport into, out of, or within your aura.</li></ul><p>Granted automatically by Immovable at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>Aura increases to 30 feet.</li><li>You cannot be knocked from a surface, including while climbing or flying.</li><li>Enemies cannot teleport into, out of, or within your aura.</li></ul><p>Granted automatically by Immovable at 15th level.</p>",
       "gm": ""
     },
     "publication": {

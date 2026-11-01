@@ -5,7 +5,7 @@
   "img": "icons/equipment/shield/round-wooden-boss-steel-brown.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>Once per turn, you may Shield Block without spending a reaction.</li></ul><p>Granted automatically by Tireless Aegis at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>Once per turn, you may Shield Block without spending a reaction.</li></ul><p>Granted automatically by Tireless Aegis at 5th level.</p>",
       "gm": ""
     },
     "publication": {

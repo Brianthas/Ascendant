@@ -5,7 +5,7 @@
   "img": "icons/magic/control/fear-fright-monster-grin-green.webp",
   "system": {
     "description": {
-      "value": "<p><strong>3rd Level</strong></p><p><strong>3rd Level</strong></p><ul><li>Creatures affected by your aura are Off-Guard to you.</li><li>When a creature Frightened by your aura is reduced to 0 Hit Points by any source, you restore Hit Points equal to half your level. This triggers no more than once per round.</li></ul><p>Granted automatically by Dread Presence at 3rd level.</p>",
+      "value": "<p><strong>3rd Level</strong></p><ul><li>Creatures affected by your aura are Off-Guard to you.</li><li>When a creature Frightened by your aura is reduced to 0 Hit Points by any source, you restore Hit Points equal to half your level. This triggers no more than once per round.</li></ul><p>Granted automatically by Dread Presence at 3rd level.</p>",
       "gm": ""
     },
     "publication": {

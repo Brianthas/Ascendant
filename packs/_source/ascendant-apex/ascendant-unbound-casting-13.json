@@ -5,7 +5,7 @@
   "img": "icons/magic/symbols/runes-carved-stone-purple.webp",
   "system": {
     "description": {
-      "value": "<p><strong>13th Level</strong></p><p><strong>13th Level</strong></p><ul><li>You may apply two spellshapes to the same spell, rather than one. This limit does not increase.</li><li>Learn another spellshape.</li></ul><p>Granted automatically by Unbound Casting at 13th level.</p>",
+      "value": "<p><strong>13th Level</strong></p><ul><li>You may apply two spellshapes to the same spell, rather than one. This limit does not increase.</li><li>Learn another spellshape.</li></ul><p>Granted automatically by Unbound Casting at 13th level.</p>",
       "gm": ""
     },
     "publication": {

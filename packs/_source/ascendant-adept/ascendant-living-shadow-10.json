@@ -5,7 +5,7 @@
   "img": "icons/magic/perception/shadow-stealth-eyes-purple.webp",
   "system": {
     "description": {
-      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>Your movement makes no sound.</li><li>You cannot be detected by hearing, scent, tremorsense, or lifesense, and you leave no tracks.</li><li>Your invisibility no longer ends when you take a hostile action, only if you leave dim light.</li></ul><p>Granted automatically by Living Shadow at 10th level.</p>",
+      "value": "<p><strong>10th Level</strong></p><ul><li>Your movement makes no sound.</li><li>You cannot be detected by hearing, scent, tremorsense, or lifesense, and you leave no tracks.</li><li>Your invisibility no longer ends when you take a hostile action, only if you leave dim light.</li></ul><p>Granted automatically by Living Shadow at 10th level.</p>",
       "gm": ""
     },
     "publication": {

@@ -5,7 +5,7 @@
   "img": "icons/magic/life/heart-shadow-red.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>Bonded allies gain your resistances and immunities while within the bond's range.</li></ul><p>Granted automatically by Lifeline at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>Bonded allies gain your resistances and immunities while within the bond's range.</li></ul><p>Granted automatically by Lifeline at 5th level.</p>",
       "gm": ""
     },
     "publication": {

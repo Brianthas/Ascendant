@@ -5,7 +5,7 @@
   "img": "icons/sundries/books/book-worn-brown.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>Capacity increases to 30 Bulk per member.</li><li>Retrieving or storing items is a free action once per round.</li></ul><p>Granted automatically by The Ledger at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>Capacity increases to 30 Bulk per member.</li><li>Retrieving or storing items is a free action once per round.</li></ul><p>Granted automatically by The Ledger at 5th level.</p>",
       "gm": ""
     },
     "publication": {

@@ -5,7 +5,7 @@
   "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>Gain Aim.<ul><li><strong>Aim</strong> [free action, once per round] Your next ranged Strike or spell attack this turn treats a failure as a success.</li></ul></li></ul><p>Granted automatically by Unerring Shot at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>Gain Aim.<ul><li><strong>Aim</strong> [free action, once per round] Your next ranged Strike or spell attack this turn treats a failure as a success.</li></ul></li></ul><p>Granted automatically by Unerring Shot at 5th level.</p>",
       "gm": ""
     },
     "publication": {

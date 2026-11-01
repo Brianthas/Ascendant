@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/strike-polearm-glowing-white.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>Your reach increases by another 5 feet.</li><li>You may Interact with objects anywhere within your reach.</li></ul><p>Granted automatically by Far Hand at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>Your reach increases by another 5 feet.</li><li>You may Interact with objects anywhere within your reach.</li></ul><p>Granted automatically by Far Hand at 5th level.</p>",
       "gm": ""
     },
     "publication": {

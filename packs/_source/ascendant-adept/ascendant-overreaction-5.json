@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/strike-sword-slashing-red.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>You may use reactions even while Off-Guard, Prone, or Grabbed.</li><li>You may use Reactive Strike when a creature within your reach Casts a Spell, whether or not that spell has the manipulate trait.</li></ul><p>Granted automatically by Overreaction at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>You may use reactions even while Off-Guard, Prone, or Grabbed.</li><li>You may use Reactive Strike when a creature within your reach Casts a Spell, whether or not that spell has the manipulate trait.</li></ul><p>Granted automatically by Overreaction at 5th level.</p>",
       "gm": ""
     },
     "publication": {

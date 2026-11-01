@@ -5,7 +5,7 @@
   "img": "icons/magic/time/hourglass-yellow-green.webp",
   "system": {
     "description": {
-      "value": "<p><strong>7th Level</strong></p><p><strong>7th Level</strong></p><ul><li>One extra flourish action per round, paying its normal action cost.</li></ul><p>Granted automatically by Borrowed Time at 7th level.</p>",
+      "value": "<p><strong>7th Level</strong></p><ul><li>One extra flourish action per round, paying its normal action cost.</li></ul><p>Granted automatically by Borrowed Time at 7th level.</p>",
       "gm": ""
     },
     "publication": {

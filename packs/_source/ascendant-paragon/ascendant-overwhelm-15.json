@@ -5,7 +5,7 @@
   "img": "icons/magic/fire/explosion-fireball-large-orange.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>The effect from 5th level now also applies to creatures that critically succeed, reducing their result to a success.</li></ul><p>Granted automatically by Overwhelm at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>The effect from 5th level now also applies to creatures that critically succeed, reducing their result to a success.</li></ul><p>Granted automatically by Overwhelm at 15th level.</p>",
       "gm": ""
     },
     "publication": {

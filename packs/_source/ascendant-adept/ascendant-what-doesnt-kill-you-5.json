@@ -5,7 +5,7 @@
   "img": "icons/magic/defensive/barrier-shield-dome-deflect-teal.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>The first time each day you take environmental damage or gain an environmental condition, you adapt to it. For the next 24 hours you are immune to that source.<ul><li>You may be adapted to any number of sources at once.</li></ul></li><li>You gain a climb Speed and a swim Speed equal to your land Speed, and act normally underwater without penalty.</li></ul><p>Granted automatically by What Doesn't Kill You at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>The first time each day you take environmental damage or gain an environmental condition, you adapt to it. For the next 24 hours you are immune to that source.<ul><li>You may be adapted to any number of sources at once.</li></ul></li><li>You gain a climb Speed and a swim Speed equal to your land Speed, and act normally underwater without penalty.</li></ul><p>Granted automatically by What Doesn't Kill You at 5th level.</p>",
       "gm": ""
     },
     "publication": {

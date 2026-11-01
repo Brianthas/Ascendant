@@ -5,7 +5,7 @@
   "img": "icons/magic/control/fear-fright-monster-grin-green.webp",
   "system": {
     "description": {
-      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>The healing from your aura increases to your level, and may trigger twice per round.</li><li>Creatures immune to fear or emotion effects roll normally, and creatures that are mindless or immune to mental effects become affected, treating their result as one degree better.</li></ul><p>Granted automatically by Dread Presence at 10th level.</p>",
+      "value": "<p><strong>10th Level</strong></p><ul><li>The healing from your aura increases to your level, and may trigger twice per round.</li><li>Creatures immune to fear or emotion effects roll normally, and creatures that are mindless or immune to mental effects become affected, treating their result as one degree better.</li></ul><p>Granted automatically by Dread Presence at 10th level.</p>",
       "gm": ""
     },
     "publication": {

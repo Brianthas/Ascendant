@@ -5,7 +5,7 @@
   "img": "icons/magic/perception/third-eye-blue-red.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>Your focus pool increases by 1 more.</li><li>Once per encounter, you may Refocus as a 3-action activity.</li></ul><p>Granted automatically by Renewed Focus at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>Your focus pool increases by 1 more.</li><li>Once per encounter, you may Refocus as a 3-action activity.</li></ul><p>Granted automatically by Renewed Focus at 5th level.</p>",
       "gm": ""
     },
     "publication": {

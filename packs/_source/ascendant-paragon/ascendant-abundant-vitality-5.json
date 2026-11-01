@@ -5,7 +5,7 @@
   "img": "icons/magic/life/heart-cross-strong-flame-purple-orange.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>When you Cast a Spell that targets a single willing creature, you may include yourself as an additional target at no cost.</li></ul><p>Granted automatically by Abundant Vitality at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>When you Cast a Spell that targets a single willing creature, you may include yourself as an additional target at no cost.</li></ul><p>Granted automatically by Abundant Vitality at 5th level.</p>",
       "gm": ""
     },
     "publication": {

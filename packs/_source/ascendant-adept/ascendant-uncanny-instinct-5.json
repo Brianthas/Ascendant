@@ -5,7 +5,7 @@
   "img": "icons/magic/perception/eye-ringed-glow-angry-red.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>You automatically Seek in a 30-foot emanation at the start of each of your turns without spending an action.</li></ul><p>Granted automatically by Uncanny Instinct at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>You automatically Seek in a 30-foot emanation at the start of each of your turns without spending an action.</li></ul><p>Granted automatically by Uncanny Instinct at 5th level.</p>",
       "gm": ""
     },
     "publication": {

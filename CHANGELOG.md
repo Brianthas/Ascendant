@@ -9,6 +9,8 @@
   5th-level Recall Knowledge success counting as a critical success. The free Recall Knowledge
   once per turn from 5th and the two extra skill feats per level are unchanged. A new
   *Know-It-All (2nd)* grant carries the 2nd-level line.
+- **Level grants show their level heading once.** Every talent's level grants (*Talent (5th)* and
+  so on) printed the level heading twice at the top of their description. 140 grants are fixed.
 
 ## 0.1.4 - 2026-10-09
 

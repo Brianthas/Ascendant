@@ -5,7 +5,7 @@
   "img": "icons/sundries/books/book-open-purple.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>Once per turn, you may Recall Knowledge as a free action.</li></ul><p>Granted automatically by Know-It-All at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>Once per turn, you may Recall Knowledge as a free action.</li></ul><p>Granted automatically by Know-It-All at 5th level.</p>",
       "gm": ""
     },
     "publication": {

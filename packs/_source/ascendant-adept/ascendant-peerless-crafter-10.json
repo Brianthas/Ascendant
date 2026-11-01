@@ -5,7 +5,7 @@
   "img": "icons/tools/smithing/anvil.webp",
   "system": {
     "description": {
-      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>You may Craft during a 10-minute rest.</li><li>Salvaging an item recovers 75% of its value in materials rather than half.</li><li>You may transfer or swap runes during a 10-minute rest at no cost, regardless of the rune's level or your proficiency rank.</li></ul><p>Granted automatically by Peerless Crafter at 10th level.</p>",
+      "value": "<p><strong>10th Level</strong></p><ul><li>You may Craft during a 10-minute rest.</li><li>Salvaging an item recovers 75% of its value in materials rather than half.</li><li>You may transfer or swap runes during a 10-minute rest at no cost, regardless of the rune's level or your proficiency rank.</li></ul><p>Granted automatically by Peerless Crafter at 10th level.</p>",
       "gm": ""
     },
     "publication": {

@@ -5,7 +5,7 @@
   "img": "icons/magic/perception/eye-ringed-glow-angry-small-red.webp",
   "system": {
     "description": {
-      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>Immune to Incapacitation effects that call for a Will save.</li></ul><p>Granted automatically by Sovereign Mind at 10th level.</p>",
+      "value": "<p><strong>10th Level</strong></p><ul><li>Immune to Incapacitation effects that call for a Will save.</li></ul><p>Granted automatically by Sovereign Mind at 10th level.</p>",
       "gm": ""
     },
     "publication": {

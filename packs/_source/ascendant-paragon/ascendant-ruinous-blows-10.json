@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/strike-hammer-destructive-orange.webp",
   "system": {
     "description": {
-      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>When you critically hit a creature, its resistances are halved against all damage until the end of your next turn.</li><li>When you critically hit a creature or object, you may attempt to counteract one magical effect on it, once per round.<ul><li>Your counteract rank is half your level rounded up, and your counteract check is your attack roll modifier with the weapon you used.</li></ul></li></ul><p>Granted automatically by Ruinous Blows at 10th level.</p>",
+      "value": "<p><strong>10th Level</strong></p><ul><li>When you critically hit a creature, its resistances are halved against all damage until the end of your next turn.</li><li>When you critically hit a creature or object, you may attempt to counteract one magical effect on it, once per round.<ul><li>Your counteract rank is half your level rounded up, and your counteract check is your attack roll modifier with the weapon you used.</li></ul></li></ul><p>Granted automatically by Ruinous Blows at 10th level.</p>",
       "gm": ""
     },
     "publication": {

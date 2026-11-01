@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/strikes-sword-scimitar.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Conditions that reduce the number of actions you gain at the start of your turn have no effect on you.</li></ul><p>Granted automatically by Unbroken Tempo at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>Conditions that reduce the number of actions you gain at the start of your turn have no effect on you.</li></ul><p>Granted automatically by Unbroken Tempo at 15th level.</p>",
       "gm": ""
     },
     "publication": {

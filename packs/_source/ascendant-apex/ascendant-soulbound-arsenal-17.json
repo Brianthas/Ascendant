@@ -5,7 +5,7 @@
   "img": "icons/weapons/swords/sword-guard-purple.webp",
   "system": {
     "description": {
-      "value": "<p><strong>17th Level</strong></p><p><strong>17th Level</strong></p><ul><li>+4 major striking, four property runes.</li></ul><p>Granted automatically by Soulbound Arsenal at 17th level.</p>",
+      "value": "<p><strong>17th Level</strong></p><ul><li>+4 major striking, four property runes.</li></ul><p>Granted automatically by Soulbound Arsenal at 17th level.</p>",
       "gm": ""
     },
     "publication": {

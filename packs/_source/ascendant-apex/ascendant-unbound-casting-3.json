@@ -5,7 +5,7 @@
   "img": "icons/magic/symbols/runes-carved-stone-purple.webp",
   "system": {
     "description": {
-      "value": "<p><strong>3rd Level</strong></p><p><strong>3rd Level</strong></p><ul><li>Your spells lose the concentrate trait.</li><li>Learn another spellshape.</li></ul><p>Granted automatically by Unbound Casting at 3rd level.</p>",
+      "value": "<p><strong>3rd Level</strong></p><ul><li>Your spells lose the concentrate trait.</li><li>Learn another spellshape.</li></ul><p>Granted automatically by Unbound Casting at 3rd level.</p>",
       "gm": ""
     },
     "publication": {

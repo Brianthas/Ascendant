@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/strike-polearm-glowing-white.webp",
   "system": {
     "description": {
-      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>Once per round, when you hit a creature within your reach, you may move it up to 10 feet in any direction as a free action.</li></ul><p>Granted automatically by Far Hand at 10th level.</p>",
+      "value": "<p><strong>10th Level</strong></p><ul><li>Once per round, when you hit a creature within your reach, you may move it up to 10 feet in any direction as a free action.</li></ul><p>Granted automatically by Far Hand at 10th level.</p>",
       "gm": ""
     },
     "publication": {

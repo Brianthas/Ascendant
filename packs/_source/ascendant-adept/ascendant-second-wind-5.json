@@ -5,7 +5,7 @@
   "img": "icons/magic/life/heart-glowing-red.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>When this triggers, you also gain regeneration 5 for 1 minute.</li><li>You do not increase your Wounded value.</li></ul><p>Granted automatically by Second Wind at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>When this triggers, you also gain regeneration 5 for 1 minute.</li><li>You do not increase your Wounded value.</li></ul><p>Granted automatically by Second Wind at 5th level.</p>",
       "gm": ""
     },
     "publication": {

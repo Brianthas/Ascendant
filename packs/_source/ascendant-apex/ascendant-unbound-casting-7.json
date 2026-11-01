@@ -5,7 +5,7 @@
   "img": "icons/magic/symbols/runes-carved-stone-purple.webp",
   "system": {
     "description": {
-      "value": "<p><strong>7th Level</strong></p><p><strong>7th Level</strong></p><ul><li>All your spells are considered subtle.</li><li>Learn another spellshape.</li></ul><p>Granted automatically by Unbound Casting at 7th level.</p>",
+      "value": "<p><strong>7th Level</strong></p><ul><li>All your spells are considered subtle.</li><li>Learn another spellshape.</li></ul><p>Granted automatically by Unbound Casting at 7th level.</p>",
       "gm": ""
     },
     "publication": {

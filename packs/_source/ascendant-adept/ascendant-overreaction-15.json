@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/strike-sword-slashing-red.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>You gain a third additional reaction.</li><li>You may use reactions on other creatures' turns even when their triggers would normally be denied to you.</li><li>You cannot be prevented from taking reactions by any effect.</li></ul><p>Granted automatically by Overreaction at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>You gain a third additional reaction.</li><li>You may use reactions on other creatures' turns even when their triggers would normally be denied to you.</li><li>You cannot be prevented from taking reactions by any effect.</li></ul><p>Granted automatically by Overreaction at 15th level.</p>",
       "gm": ""
     },
     "publication": {

@@ -5,7 +5,7 @@
   "img": "icons/weapons/swords/sword-guard-purple.webp",
   "system": {
     "description": {
-      "value": "<p><strong>7th Level</strong></p><p><strong>7th Level</strong></p><ul><li>+2 striking, two property runes.</li></ul><p>Granted automatically by Soulbound Arsenal at 7th level.</p>",
+      "value": "<p><strong>7th Level</strong></p><ul><li>+2 striking, two property runes.</li></ul><p>Granted automatically by Soulbound Arsenal at 7th level.</p>",
       "gm": ""
     },
     "publication": {

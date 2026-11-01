@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/strike-hammer-destructive-orange.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>Your Strikes against objects deal double damage to their Hit Points.<ul><li>Magical barriers and wall effects count as objects for this purpose, and you may Strike and damage them even if they are immune to physical damage, immune to being damaged, or otherwise impervious to attack.</li></ul></li><li>The AC penalty increases to -2.</li></ul><p>Granted automatically by Ruinous Blows at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>Your Strikes against objects deal double damage to their Hit Points.<ul><li>Magical barriers and wall effects count as objects for this purpose, and you may Strike and damage them even if they are immune to physical damage, immune to being damaged, or otherwise impervious to attack.</li></ul></li><li>The AC penalty increases to -2.</li></ul><p>Granted automatically by Ruinous Blows at 5th level.</p>",
       "gm": ""
     },
     "publication": {

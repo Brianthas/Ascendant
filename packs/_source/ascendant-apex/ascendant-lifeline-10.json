@@ -5,7 +5,7 @@
   "img": "icons/magic/life/heart-shadow-red.webp",
   "system": {
     "description": {
-      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>The bond's range increases to 120 feet.</li><li>When you Cast a Spell that targets a single creature and does not restore Hit Points, deal damage, or impose a condition, every bonded ally gains its effects as well.</li><li>A 2-action spell restoring Hit Points to a single bonded ally costs 1 action instead and ignores the spell's normal range.</li></ul><p>Granted automatically by Lifeline at 10th level.</p>",
+      "value": "<p><strong>10th Level</strong></p><ul><li>The bond's range increases to 120 feet.</li><li>When you Cast a Spell that targets a single creature and does not restore Hit Points, deal damage, or impose a condition, every bonded ally gains its effects as well.</li><li>A 2-action spell restoring Hit Points to a single bonded ally costs 1 action instead and ignores the spell's normal range.</li></ul><p>Granted automatically by Lifeline at 10th level.</p>",
       "gm": ""
     },
     "publication": {

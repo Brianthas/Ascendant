@@ -5,7 +5,7 @@
   "img": "icons/creatures/magical/spirit-fire-orange.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>You become your element. You are immune to precision damage and critical hits, and cannot be Grabbed or Restrained.</li><li>You gain a fly Speed equal to your land Speed. The manner of this flight suits your element: borne on flame, carried on wind, riding a wave, floating on a plinth of stone.</li><li>You may pass through any gap your element could.</li></ul><p>Granted automatically by Elemental Embodiment at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>You become your element. You are immune to precision damage and critical hits, and cannot be Grabbed or Restrained.</li><li>You gain a fly Speed equal to your land Speed. The manner of this flight suits your element: borne on flame, carried on wind, riding a wave, floating on a plinth of stone.</li><li>You may pass through any gap your element could.</li></ul><p>Granted automatically by Elemental Embodiment at 15th level.</p>",
       "gm": ""
     },
     "publication": {

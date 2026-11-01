@@ -5,7 +5,7 @@
   "img": "icons/magic/life/heart-shadow-red.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>When a bonded ally would gain a condition, you may gain it yourself instead.</li><li>Bonded allies cannot be reduced below 1 Hit Point while you are conscious and above 0 Hit Points.</li></ul><p>Granted automatically by Lifeline at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>When a bonded ally would gain a condition, you may gain it yourself instead.</li><li>Bonded allies cannot be reduced below 1 Hit Point while you are conscious and above 0 Hit Points.</li></ul><p>Granted automatically by Lifeline at 15th level.</p>",
       "gm": ""
     },
     "publication": {

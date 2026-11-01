@@ -5,7 +5,7 @@
   "img": "icons/magic/control/fear-fright-monster-grin-green.webp",
   "system": {
     "description": {
-      "value": "<p><strong>7th Level</strong></p><p><strong>7th Level</strong></p><ul><li>Enemies cannot reduce their Frightened value below 2 while in your aura.</li></ul><p>Granted automatically by Dread Presence at 7th level.</p>",
+      "value": "<p><strong>7th Level</strong></p><ul><li>Enemies cannot reduce their Frightened value below 2 while in your aura.</li></ul><p>Granted automatically by Dread Presence at 7th level.</p>",
       "gm": ""
     },
     "publication": {

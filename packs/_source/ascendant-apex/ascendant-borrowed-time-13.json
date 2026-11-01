@@ -5,7 +5,7 @@
   "img": "icons/magic/time/hourglass-yellow-green.webp",
   "system": {
     "description": {
-      "value": "<p><strong>13th Level</strong></p><p><strong>13th Level</strong></p><ul><li>Any number of flourish actions per round.</li></ul><p>Granted automatically by Borrowed Time at 13th level.</p>",
+      "value": "<p><strong>13th Level</strong></p><ul><li>Any number of flourish actions per round.</li></ul><p>Granted automatically by Borrowed Time at 13th level.</p>",
       "gm": ""
     },
     "publication": {

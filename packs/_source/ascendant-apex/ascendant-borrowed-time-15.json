@@ -5,7 +5,7 @@
   "img": "icons/magic/time/hourglass-yellow-green.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Speed bonus increases to +50 feet.</li></ul><p>Granted automatically by Borrowed Time at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>Speed bonus increases to +50 feet.</li></ul><p>Granted automatically by Borrowed Time at 15th level.</p>",
       "gm": ""
     },
     "publication": {

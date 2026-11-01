@@ -5,7 +5,7 @@
   "img": "icons/magic/control/fear-fright-monster-grin-green.webp",
   "system": {
     "description": {
-      "value": "<p><strong>20th Level</strong></p><p><strong>20th Level</strong></p><ul><li>Enemies cannot willingly move closer to you while inside your aura. They may still attack, cast, and move within or out of it.</li></ul><p>Granted automatically by Dread Presence at 20th level.</p>",
+      "value": "<p><strong>20th Level</strong></p><ul><li>Enemies cannot willingly move closer to you while inside your aura. They may still attack, cast, and move within or out of it.</li></ul><p>Granted automatically by Dread Presence at 20th level.</p>",
       "gm": ""
     },
     "publication": {

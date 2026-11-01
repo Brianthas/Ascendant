@@ -5,7 +5,7 @@
   "img": "icons/magic/perception/eye-ringed-glow-angry-red.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Once per round, when you are hit by an attack, you may reduce the damage by half as a reaction.</li></ul><p>Granted automatically by Uncanny Instinct at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>Once per round, when you are hit by an attack, you may reduce the damage by half as a reaction.</li></ul><p>Granted automatically by Uncanny Instinct at 15th level.</p>",
       "gm": ""
     },
     "publication": {

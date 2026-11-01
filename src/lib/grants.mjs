@@ -18,7 +18,8 @@ import { talent, uuidFor, GRANT_TAG } from "./item.mjs";
  * @param {string} options.name Base talent name.
  * @param {string} options.img
  * @param {Array<{level:number, text:string, rules?:object[], extra?:object}>} options.levels
- *   `text` is the HTML for the bullet list at that level; `rules` any rule elements that live on
+ *   `text` is the HTML for that level, usually a `levelBlock()`; text without its own heading gets
+ *   `<p><strong>Nth Level</strong></p>` in front. `rules` any rule elements that live on
  *   the sub-feat; `extra` any further talent() options (e.g. flags).
  * @returns {{ subFeats: object[], grants: object[] }}
  */
@@ -31,7 +32,7 @@ export function levelChain({ pack, slug, name, img, levels }) {
             otherTags: [GRANT_TAG],
             level,
             img,
-            description: `<p><strong>${ordinal(level)} Level</strong></p>${text}<p>Granted automatically by ${name} at ${ordinal(level)} level.</p>`,
+            description: `${text.startsWith("<p><strong>") ? "" : `<p><strong>${ordinal(level)} Level</strong></p>`}${text}<p>Granted automatically by ${name} at ${ordinal(level)} level.</p>`,
             rules,
             ...extra,
         }),

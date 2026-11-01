@@ -5,7 +5,7 @@
   "img": "icons/sundries/books/book-worn-brown.webp",
   "system": {
     "description": {
-      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>During daily preparations, you may transfer a rune from one item in the inventory to another without a check or cost.</li><li>You may transform any item into another of the same category of equal or lower level and price.</li><li>Once per week, you may requisition an item of a level no greater than the party's average +2 at full price. This item may be uncommon or rare.</li></ul><p>Granted automatically by The Ledger at 10th level.</p>",
+      "value": "<p><strong>10th Level</strong></p><ul><li>During daily preparations, you may transfer a rune from one item in the inventory to another without a check or cost.</li><li>You may transform any item into another of the same category of equal or lower level and price.</li><li>Once per week, you may requisition an item of a level no greater than the party's average +2 at full price. This item may be uncommon or rare.</li></ul><p>Granted automatically by The Ledger at 10th level.</p>",
       "gm": ""
     },
     "publication": {

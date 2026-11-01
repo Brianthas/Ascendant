@@ -5,7 +5,7 @@
   "img": "icons/skills/movement/feet-winged-boots-brown.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>Move normally through difficult terrain.</li><li>Immune to Immobilized.</li></ul><p>Granted automatically by Elusive at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>Move normally through difficult terrain.</li><li>Immune to Immobilized.</li></ul><p>Granted automatically by Elusive at 5th level.</p>",
       "gm": ""
     },
     "publication": {

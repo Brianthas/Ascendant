@@ -5,7 +5,7 @@
   "img": "icons/magic/fire/dagger-rune-enchant-flame-blue-yellow.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>Spellstrike costs 1 action.</li></ul><p>Granted automatically by Warmage at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>Spellstrike costs 1 action.</li></ul><p>Granted automatically by Warmage at 5th level.</p>",
       "gm": ""
     },
     "publication": {

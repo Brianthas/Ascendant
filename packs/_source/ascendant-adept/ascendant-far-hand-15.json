@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/strike-polearm-glowing-white.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Your reach increases by another 5 feet.</li><li>The forced movement increases to 15 feet.</li><li>Once per round, you may Grab, Shove, Trip, or Disarm a creature within your reach as a free action.</li></ul><p>Granted automatically by Far Hand at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>Your reach increases by another 5 feet.</li><li>The forced movement increases to 15 feet.</li><li>Once per round, you may Grab, Shove, Trip, or Disarm a creature within your reach as a free action.</li></ul><p>Granted automatically by Far Hand at 15th level.</p>",
       "gm": ""
     },
     "publication": {

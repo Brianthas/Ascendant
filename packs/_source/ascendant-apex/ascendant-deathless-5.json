@@ -5,7 +5,7 @@
   "img": "icons/magic/life/heart-shadow-red.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>Chosen resistances increase to 10.</li></ul><p>Granted automatically by Deathless at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>Chosen resistances increase to 10.</li></ul><p>Granted automatically by Deathless at 5th level.</p>",
       "gm": ""
     },
     "publication": {

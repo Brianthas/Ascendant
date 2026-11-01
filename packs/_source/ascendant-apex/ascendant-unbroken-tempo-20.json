@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/strikes-sword-scimitar.webp",
   "system": {
     "description": {
-      "value": "<p><strong>20th Level</strong></p><p><strong>20th Level</strong></p><ul><li>Once per round, when you critically hit with a Strike, you may immediately make another Strike against the same target with the same weapon as a free action.</li></ul><p>Granted automatically by Unbroken Tempo at 20th level.</p>",
+      "value": "<p><strong>20th Level</strong></p><ul><li>Once per round, when you critically hit with a Strike, you may immediately make another Strike against the same target with the same weapon as a free action.</li></ul><p>Granted automatically by Unbroken Tempo at 20th level.</p>",
       "gm": ""
     },
     "publication": {

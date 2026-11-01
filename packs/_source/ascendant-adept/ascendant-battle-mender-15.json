@@ -5,7 +5,7 @@
   "img": "icons/magic/life/cross-worn-green.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Once per day, you may return a creature that died within the last minute to life at 1 Hit Point.</li></ul><p>Granted automatically by Battle Mender at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>Once per day, you may return a creature that died within the last minute to life at 1 Hit Point.</li></ul><p>Granted automatically by Battle Mender at 15th level.</p>",
       "gm": ""
     },
     "publication": {

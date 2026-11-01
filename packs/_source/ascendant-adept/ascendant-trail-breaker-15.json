@@ -5,7 +5,7 @@
   "img": "icons/skills/movement/figure-running-gray.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>You may Hover as a free action.</li><li>Allies traveling with you may use your fly Speed.</li></ul><p>Granted automatically by Trail Breaker at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>You may Hover as a free action.</li><li>Allies traveling with you may use your fly Speed.</li></ul><p>Granted automatically by Trail Breaker at 15th level.</p>",
       "gm": ""
     },
     "publication": {

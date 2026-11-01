@@ -5,7 +5,7 @@
   "img": "icons/weapons/swords/sword-guard-purple.webp",
   "system": {
     "description": {
-      "value": "<p><strong>19th Level</strong></p><p><strong>19th Level</strong></p><ul><li>You may change the weapon's form any number of times per round.</li></ul><p>Granted automatically by Soulbound Arsenal at 19th level.</p>",
+      "value": "<p><strong>19th Level</strong></p><ul><li>You may change the weapon's form any number of times per round.</li></ul><p>Granted automatically by Soulbound Arsenal at 19th level.</p>",
       "gm": ""
     },
     "publication": {

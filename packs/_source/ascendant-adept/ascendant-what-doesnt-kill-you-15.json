@@ -5,7 +5,7 @@
   "img": "icons/magic/defensive/barrier-shield-dome-deflect-teal.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Adaptations you gain become permanent.</li><li>You may travel through the void, the depths, or any environment you have previously survived indefinitely, without rest, shelter, or supplies.</li></ul><p>Granted automatically by What Doesn't Kill You at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>Adaptations you gain become permanent.</li><li>You may travel through the void, the depths, or any environment you have previously survived indefinitely, without rest, shelter, or supplies.</li></ul><p>Granted automatically by What Doesn't Kill You at 15th level.</p>",
       "gm": ""
     },
     "publication": {

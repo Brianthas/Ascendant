@@ -5,7 +5,7 @@
   "img": "icons/creatures/magical/spirit-fire-orange.webp",
   "system": {
     "description": {
-      "value": "<p><strong>20th Level</strong></p><p><strong>20th Level</strong></p><ul><li>Your element's damage ignores immunity, dealing half damage instead of none.</li><li>The damaging area around you extends to 20 feet.</li></ul><p>Granted automatically by Elemental Embodiment at 20th level.</p>",
+      "value": "<p><strong>20th Level</strong></p><ul><li>Your element's damage ignores immunity, dealing half damage instead of none.</li><li>The damaging area around you extends to 20 feet.</li></ul><p>Granted automatically by Elemental Embodiment at 20th level.</p>",
       "gm": ""
     },
     "publication": {

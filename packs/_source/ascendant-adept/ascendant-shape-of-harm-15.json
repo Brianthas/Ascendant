@@ -5,7 +5,7 @@
   "img": "icons/commodities/tech/dial-meter-gauge-blue.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>You may attune to two types at once from any group.</li><li>Your attacks count as both types for overcoming resistances, weaknesses, and immunities, and deal damage as whichever of the two is more effective against the target.</li></ul><p>Granted automatically by Shape of Harm at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>You may attune to two types at once from any group.</li><li>Your attacks count as both types for overcoming resistances, weaknesses, and immunities, and deal damage as whichever of the two is more effective against the target.</li></ul><p>Granted automatically by Shape of Harm at 15th level.</p>",
       "gm": ""
     },
     "publication": {

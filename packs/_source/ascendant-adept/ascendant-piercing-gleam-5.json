@@ -5,7 +5,7 @@
   "img": "icons/magic/light/beam-rays-yellow.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>You and your allies within the aura see through illusions, morphs, and polymorphs, perceiving things as they truly are.</li><li>You and your allies within it are immune to visual illusion effects.<ul><li>This never reveals an ally who wishes to remain hidden, and never helps an enemy see through anything.</li></ul></li></ul><p>Granted automatically by Piercing Gleam at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>You and your allies within the aura see through illusions, morphs, and polymorphs, perceiving things as they truly are.</li><li>You and your allies within it are immune to visual illusion effects.<ul><li>This never reveals an ally who wishes to remain hidden, and never helps an enemy see through anything.</li></ul></li></ul><p>Granted automatically by Piercing Gleam at 5th level.</p>",
       "gm": ""
     },
     "publication": {

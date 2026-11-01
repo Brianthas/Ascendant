@@ -5,7 +5,7 @@
   "img": "icons/magic/life/heart-cross-strong-flame-purple-orange.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>When you Cast a Spell that targets willing creatures, you may target any number of willing creatures within range.</li></ul><p>Granted automatically by Abundant Vitality at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>When you Cast a Spell that targets willing creatures, you may target any number of willing creatures within range.</li></ul><p>Granted automatically by Abundant Vitality at 15th level.</p>",
       "gm": ""
     },
     "publication": {

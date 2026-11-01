@@ -5,7 +5,7 @@
   "img": "icons/magic/life/heart-shadow-red.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>You no longer need to breathe.</li><li>Choose a second type to become immune to.</li></ul><p><strong>In Foundry:</strong> choose the type when this arrives. It must be one of your two chosen resistances and cannot be your deactivating type.</p><p>Granted automatically by Deathless at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>You no longer need to breathe.</li><li>Choose a second type to become immune to.</li></ul><p><strong>In Foundry:</strong> choose the type when this arrives. It must be one of your two chosen resistances and cannot be your deactivating type.</p><p>Granted automatically by Deathless at 15th level.</p>",
       "gm": ""
     },
     "publication": {

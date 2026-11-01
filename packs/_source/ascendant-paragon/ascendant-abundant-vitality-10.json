@@ -5,7 +5,7 @@
   "img": "icons/magic/life/heart-cross-strong-flame-purple-orange.webp",
   "system": {
     "description": {
-      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>Beneficial spells you cast with a duration of 1 minute or less last twice as long.</li><li>Sustaining a spell is a free action once per round.</li><li>Compositions you cast last 1 minute rather than until the end of your next turn, and once per round you may cast a composition as a free action.<ul><li>This does not stack with other effects that reduce the action cost of focus spells.</li></ul></li></ul><p>Granted automatically by Abundant Vitality at 10th level.</p>",
+      "value": "<p><strong>10th Level</strong></p><ul><li>Beneficial spells you cast with a duration of 1 minute or less last twice as long.</li><li>Sustaining a spell is a free action once per round.</li><li>Compositions you cast last 1 minute rather than until the end of your next turn, and once per round you may cast a composition as a free action.<ul><li>This does not stack with other effects that reduce the action cost of focus spells.</li></ul></li></ul><p>Granted automatically by Abundant Vitality at 10th level.</p>",
       "gm": ""
     },
     "publication": {

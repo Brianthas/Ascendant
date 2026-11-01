@@ -5,7 +5,7 @@
   "img": "icons/magic/life/heart-cross-strong-flame-purple-orange.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Its Strikes gain another additional damage die.</li></ul><p>Granted automatically by Bonded Soul at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>Its Strikes gain another additional damage die.</li></ul><p>Granted automatically by Bonded Soul at 15th level.</p>",
       "gm": ""
     },
     "publication": {

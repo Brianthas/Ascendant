@@ -5,7 +5,7 @@
   "img": "icons/magic/life/heart-glowing-red.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>When this triggers, you also reduce your Doomed value by 1.</li><li>You gain a +2 status bonus to attack rolls and saves until the end of your next turn.</li></ul><p>Granted automatically by Second Wind at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>When this triggers, you also reduce your Doomed value by 1.</li><li>You gain a +2 status bonus to attack rolls and saves until the end of your next turn.</li></ul><p>Granted automatically by Second Wind at 15th level.</p>",
       "gm": ""
     },
     "publication": {

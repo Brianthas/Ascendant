@@ -5,7 +5,7 @@
   "img": "icons/magic/perception/third-eye-blue-red.webp",
   "system": {
     "description": {
-      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>Once per round, reduce the action cost of a focus spell by 1.<ul><li>A focus spell that costs 1 action becomes a free action.</li></ul></li></ul><p>Granted automatically by Renewed Focus at 10th level.</p>",
+      "value": "<p><strong>10th Level</strong></p><ul><li>Once per round, reduce the action cost of a focus spell by 1.<ul><li>A focus spell that costs 1 action becomes a free action.</li></ul></li></ul><p>Granted automatically by Renewed Focus at 10th level.</p>",
       "gm": ""
     },
     "publication": {

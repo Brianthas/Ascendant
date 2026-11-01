@@ -5,7 +5,7 @@
   "img": "icons/magic/light/beam-rays-yellow.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Your aura is imperceptible to enemies. They gain no benefit from its light and cannot tell it exists.</li><li>You and your allies within it automatically succeed at saves against illusion and mental effects of a rank equal to or lower than half your level.</li></ul><p>Granted automatically by Piercing Gleam at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>Your aura is imperceptible to enemies. They gain no benefit from its light and cannot tell it exists.</li><li>You and your allies within it automatically succeed at saves against illusion and mental effects of a rank equal to or lower than half your level.</li></ul><p>Granted automatically by Piercing Gleam at 15th level.</p>",
       "gm": ""
     },
     "publication": {

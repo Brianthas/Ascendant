@@ -5,7 +5,7 @@
   "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
   "system": {
     "description": {
-      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>Ignore greater cover entirely.</li><li>Target creatures you can sense but not see with no flat check.</li></ul><p>Granted automatically by Unerring Shot at 10th level.</p>",
+      "value": "<p><strong>10th Level</strong></p><ul><li>Ignore greater cover entirely.</li><li>Target creatures you can sense but not see with no flat check.</li></ul><p>Granted automatically by Unerring Shot at 10th level.</p>",
       "gm": ""
     },
     "publication": {

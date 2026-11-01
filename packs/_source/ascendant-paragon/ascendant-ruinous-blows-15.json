@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/strike-hammer-destructive-orange.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Your Strikes ignore immunity to your damage type, dealing half damage instead of none.</li><li>The AC penalty increases to -3.</li></ul><p>Granted automatically by Ruinous Blows at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>Your Strikes ignore immunity to your damage type, dealing half damage instead of none.</li><li>The AC penalty increases to -3.</li></ul><p>Granted automatically by Ruinous Blows at 15th level.</p>",
       "gm": ""
     },
     "publication": {

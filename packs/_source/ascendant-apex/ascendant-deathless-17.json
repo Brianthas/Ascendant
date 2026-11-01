@@ -5,7 +5,7 @@
   "img": "icons/magic/life/heart-shadow-red.webp",
   "system": {
     "description": {
-      "value": "<p><strong>17th Level</strong></p><p><strong>17th Level</strong></p><ul><li>Chosen resistances increase to 20.</li><li>Resist All increases to 10.</li></ul><p>Granted automatically by Deathless at 17th level.</p>",
+      "value": "<p><strong>17th Level</strong></p><ul><li>Chosen resistances increase to 20.</li><li>Resist All increases to 10.</li></ul><p>Granted automatically by Deathless at 17th level.</p>",
       "gm": ""
     },
     "publication": {

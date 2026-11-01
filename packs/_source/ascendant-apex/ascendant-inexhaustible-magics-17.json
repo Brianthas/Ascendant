@@ -5,7 +5,7 @@
   "img": "icons/magic/symbols/rune-sigil-black-pink.webp",
   "system": {
     "description": {
-      "value": "<p><strong>17th Level</strong></p><p><strong>17th Level</strong></p><ul><li>Refocus takes 1 round.</li></ul><p>Granted automatically by Inexhaustible Magics at 17th level.</p>",
+      "value": "<p><strong>17th Level</strong></p><ul><li>Refocus takes 1 round.</li></ul><p>Granted automatically by Inexhaustible Magics at 17th level.</p>",
       "gm": ""
     },
     "publication": {

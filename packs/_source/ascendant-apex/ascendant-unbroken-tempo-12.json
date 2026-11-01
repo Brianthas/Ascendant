@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/strikes-sword-scimitar.webp",
   "system": {
     "description": {
-      "value": "<p><strong>12th Level</strong></p><p><strong>12th Level</strong></p><ul><li>You are no longer subject to multiattack penalties.</li></ul><p>Granted automatically by Unbroken Tempo at 12th level.</p>",
+      "value": "<p><strong>12th Level</strong></p><ul><li>You are no longer subject to multiattack penalties.</li></ul><p>Granted automatically by Unbroken Tempo at 12th level.</p>",
       "gm": ""
     },
     "publication": {

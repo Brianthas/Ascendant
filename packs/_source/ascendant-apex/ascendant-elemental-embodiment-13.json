@@ -5,7 +5,7 @@
   "img": "icons/creatures/magical/spirit-fire-orange.webp",
   "system": {
     "description": {
-      "value": "<p><strong>13th Level</strong></p><p><strong>13th Level</strong></p><ul><li>Creatures damaged by your element suffer your element's rider.</li></ul><p>Granted automatically by Elemental Embodiment at 13th level.</p>",
+      "value": "<p><strong>13th Level</strong></p><ul><li>Creatures damaged by your element suffer your element's rider.</li></ul><p>Granted automatically by Elemental Embodiment at 13th level.</p>",
       "gm": ""
     },
     "publication": {

@@ -5,7 +5,7 @@
   "img": "icons/magic/fire/explosion-fireball-large-orange.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>Once per round, when you Cast a Spell with an area, creatures in that area treat their degree of success as one lower, to a minimum of a failure.<ul><li>Creatures that critically succeed or critically fail are unaffected.</li></ul></li></ul><p>Granted automatically by Overwhelm at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>Once per round, when you Cast a Spell with an area, creatures in that area treat their degree of success as one lower, to a minimum of a failure.<ul><li>Creatures that critically succeed or critically fail are unaffected.</li></ul></li></ul><p>Granted automatically by Overwhelm at 5th level.</p>",
       "gm": ""
     },
     "publication": {

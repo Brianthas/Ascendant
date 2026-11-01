@@ -5,7 +5,7 @@
   "img": "icons/skills/movement/feet-winged-boots-brown.webp",
   "system": {
     "description": {
-      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>At the start of your turn, gain an extra action usable only for actions with the move trait.<ul><li>When you are Slowed, this extra action is lost first, and the Slowed value is reduced by 1 for determining how many of your remaining actions you lose.</li></ul></li><li>Move normally through greater difficult terrain.</li><li>Immune to Restrained.</li></ul><p>Granted automatically by Elusive at 10th level.</p>",
+      "value": "<p><strong>10th Level</strong></p><ul><li>At the start of your turn, gain an extra action usable only for actions with the move trait.<ul><li>When you are Slowed, this extra action is lost first, and the Slowed value is reduced by 1 for determining how many of your remaining actions you lose.</li></ul></li><li>Move normally through greater difficult terrain.</li><li>Immune to Restrained.</li></ul><p>Granted automatically by Elusive at 10th level.</p>",
       "gm": ""
     },
     "publication": {

@@ -5,7 +5,7 @@
   "img": "icons/magic/symbols/rune-sigil-black-pink.webp",
   "system": {
     "description": {
-      "value": "<p><strong>7th Level</strong></p><p><strong>7th Level</strong></p><ul><li>Refocus takes 5 minutes.</li></ul><p>Granted automatically by Inexhaustible Magics at 7th level.</p>",
+      "value": "<p><strong>7th Level</strong></p><ul><li>Refocus takes 5 minutes.</li></ul><p>Granted automatically by Inexhaustible Magics at 7th level.</p>",
       "gm": ""
     },
     "publication": {

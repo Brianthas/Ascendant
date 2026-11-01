@@ -5,7 +5,7 @@
   "img": "icons/environment/settlement/house-two-stories-small.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>Nothing within Haven ages, spoils, or decays. Afflictions do not progress, conditions with durations do not advance, and dying creatures remain stable.</li><li>Haven's rooms include whatever workspace a member requires, such as a forge, a laboratory, a library, or a shrine, and count as a fully equipped workshop for any downtime or crafting activity.</li></ul><p>Granted automatically by Haven at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>Nothing within Haven ages, spoils, or decays. Afflictions do not progress, conditions with durations do not advance, and dying creatures remain stable.</li><li>Haven's rooms include whatever workspace a member requires, such as a forge, a laboratory, a library, or a shrine, and count as a fully equipped workshop for any downtime or crafting activity.</li></ul><p>Granted automatically by Haven at 5th level.</p>",
       "gm": ""
     },
     "publication": {

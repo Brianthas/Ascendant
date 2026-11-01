@@ -5,7 +5,7 @@
   "img": "icons/magic/earth/barrier-stone-explosion-debris.webp",
   "system": {
     "description": {
-      "value": "<p><strong>10th Level</strong></p><p><strong>10th Level</strong></p><ul><li>Aura increases to 20 feet.</li><li>A creature that fails to move you or an ally in your aura takes damage equal to twice your level.</li><li>Enemies cannot Step within your aura.</li><li>Enemies that end their turn in your aura are Off-Guard until the end of their next turn.</li></ul><p>Granted automatically by Immovable at 10th level.</p>",
+      "value": "<p><strong>10th Level</strong></p><ul><li>Aura increases to 20 feet.</li><li>A creature that fails to move you or an ally in your aura takes damage equal to twice your level.</li><li>Enemies cannot Step within your aura.</li><li>Enemies that end their turn in your aura are Off-Guard until the end of their next turn.</li></ul><p>Granted automatically by Immovable at 10th level.</p>",
       "gm": ""
     },
     "publication": {

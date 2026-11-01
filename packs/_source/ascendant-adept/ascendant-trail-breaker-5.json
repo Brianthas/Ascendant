@@ -5,7 +5,7 @@
   "img": "icons/skills/movement/figure-running-gray.webp",
   "system": {
     "description": {
-      "value": "<p><strong>5th Level</strong></p><p><strong>5th Level</strong></p><ul><li>Your climb and swim Speeds equal your land Speed.</li><li>You automatically succeed at Acrobatics checks to Balance and Athletics checks to Climb or Swim against DCs of your level or lower.</li></ul><p>Granted automatically by Trail Breaker at 5th level.</p>",
+      "value": "<p><strong>5th Level</strong></p><ul><li>Your climb and swim Speeds equal your land Speed.</li><li>You automatically succeed at Acrobatics checks to Balance and Athletics checks to Climb or Swim against DCs of your level or lower.</li></ul><p>Granted automatically by Trail Breaker at 5th level.</p>",
       "gm": ""
     },
     "publication": {

@@ -5,7 +5,7 @@
   "img": "icons/magic/control/fear-fright-monster-grin-green.webp",
   "system": {
     "description": {
-      "value": "<p><strong>17th Level</strong></p><p><strong>17th Level</strong></p><ul><li>Nothing is immune to your aura and all creatures roll normally.</li></ul><p>Granted automatically by Dread Presence at 17th level.</p>",
+      "value": "<p><strong>17th Level</strong></p><ul><li>Nothing is immune to your aura and all creatures roll normally.</li></ul><p>Granted automatically by Dread Presence at 17th level.</p>",
       "gm": ""
     },
     "publication": {

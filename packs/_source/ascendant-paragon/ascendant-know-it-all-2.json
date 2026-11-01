@@ -5,7 +5,7 @@
   "img": "icons/sundries/books/book-open-purple.webp",
   "system": {
     "description": {
-      "value": "<p><strong>2nd Level</strong></p><p><strong>2nd Level</strong></p><ul><li>Expert in all non-Lore skills and Universal Lore.</li></ul><p>Granted automatically by Know-It-All at 2nd level.</p>",
+      "value": "<p><strong>2nd Level</strong></p><ul><li>Expert in all non-Lore skills and Universal Lore.</li></ul><p>Granted automatically by Know-It-All at 2nd level.</p>",
       "gm": ""
     },
     "publication": {

@@ -5,7 +5,7 @@
   "img": "icons/environment/settlement/house-two-stories-small.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><p><strong>15th Level</strong></p><ul><li>Haven and its contents persist between visits and may be entered from anywhere in the world.</li><li>A creature that died within the last day may be brought inside. After a full rest there it returns to life at 1 Hit Point, once per week.</li></ul><p>Granted automatically by Haven at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>Haven and its contents persist between visits and may be entered from anywhere in the world.</li><li>A creature that died within the last day may be brought inside. After a full rest there it returns to life at 1 Hit Point, once per week.</li></ul><p>Granted automatically by Haven at 15th level.</p>",
       "gm": ""
     },
     "publication": {
