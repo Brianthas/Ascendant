@@ -37,7 +37,7 @@ const { subFeats, grants } = levelChain({
     levels: [
         { level: 5, text: levelBlock("5th Level", ["Your focus pool increases by 1 more.", "Once per encounter, you may Refocus as a 3-action activity."]) },
         { level: 10, text: levelBlock("10th Level", ["Once per round, reduce the action cost of a focus spell by 1.<ul><li>A focus spell that costs 1 action becomes a free action.</li></ul>"]) },
-        { level: 15, text: levelBlock("15th Level", ["Once per round, casting a focus spell costs no Focus Point."]) },
+        { level: 15, text: levelBlock("15th Level", ["Once per round, casting a focus spell costs no Focus Points."]) },
     ],
 });
 
@@ -52,7 +52,7 @@ ${flavour("The reserve that other practitioners must retreat and rebuild returns
 ${levelBlock("1st Level", ["Your focus pool increases by 1, exceeding the normal maximum.", "Refocus takes 1 minute instead of 10, and restores all spent Focus Points."])}
 ${levelBlock("5th Level", ["Your focus pool increases by 1 more.", "Once per encounter, you may Refocus as a 3-action activity."])}
 ${levelBlock("10th Level", ["Once per round, reduce the action cost of a focus spell by 1.<ul><li>A focus spell that costs 1 action becomes a free action.</li></ul>"])}
-${levelBlock("15th Level", ["Once per round, casting a focus spell costs no Focus Point."])}
+${levelBlock("15th Level", ["Once per round, casting a focus spell costs no Focus Points."])}
 <hr />
 <p><strong>In Foundry:</strong> your focus pool maximum is raised by 1, and by 2 from 5th, past PF2e's usual ceiling of three. The 3-action Refocus is on your Actions tab from 5th.</p>
 <p>For the table: Refocus taking 1 minute and restoring every point (set your focus points to the maximum by hand), the once-per-round action discount from 10th, and the free cast from 15th. A note on every focus spell reminds you of the last two.</p>

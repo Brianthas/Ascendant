@@ -70,7 +70,7 @@ function isStoredFrightened(item) {
 }
 
 /**
- * The talent's DC: "the higher of your Class DC or Spell DC".
+ * The talent's DC: "the higher of your class DC or spell DC".
  *
  * PF2e's classOrSpellDC is exactly that for one class: the primary class DC,
  * raised by every spellcasting entry's DC (an NPC's starts from its level-based

@@ -5,7 +5,7 @@
   "img": "icons/magic/fire/projectile-fireball-orange-yellow.webp",
   "system": {
     "description": {
-      "value": "<p><strong>10th Level</strong></p><ul><li>Your multiattack penalty is -3 instead of -5, and -6 instead of -10.</li></ul><p>Granted automatically by Spell Volley at 10th level.</p>",
+      "value": "<p><strong>10th Level</strong></p><ul><li>Your multiple attack penalty is -3 instead of -5, and -6 instead of -10.</li></ul><p>Granted automatically by Spell Volley at 10th level.</p>",
       "gm": ""
     },
     "publication": {

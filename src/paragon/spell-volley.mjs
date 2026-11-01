@@ -32,9 +32,9 @@ const { subFeats, grants } = levelChain({
     name: "Spell Volley",
     img: IMG,
     levels: [
-        { level: 5, text: levelBlock("5th Level", ["Your multiattack penalty is -4 instead of -5, and -8 instead of -10."]) },
-        { level: 10, text: levelBlock("10th Level", ["Your multiattack penalty is -3 instead of -5, and -6 instead of -10."]) },
-        { level: 15, text: levelBlock("15th Level", ["Your multiattack penalty is -2 instead of -5, and -4 instead of -10.", "Any attack-trait spell costs 1 action."]) },
+        { level: 5, text: levelBlock("5th Level", ["Your multiple attack penalty is -4 instead of -5, and -8 instead of -10."]) },
+        { level: 10, text: levelBlock("10th Level", ["Your multiple attack penalty is -3 instead of -5, and -6 instead of -10."]) },
+        { level: 15, text: levelBlock("15th Level", ["Your multiple attack penalty is -2 instead of -5, and -4 instead of -10.", "Any attack-trait spell costs 1 action."]) },
     ],
 });
 
@@ -46,10 +46,10 @@ export const spellVolley = talent({
     description: `
 ${flavour("Casting was never meant to be this fast. The words compress, the gestures fall away, and what should have been one careful working becomes three, each arriving with the same unhurried accuracy as if you had taken your time.")}
 ${levelBlock("1st Level", ["Single-target spells and cantrips with the attack trait that cost 2 or more actions instead cost 1 action."])}
-${levelBlock("5th Level", ["Your multiattack penalty is -4 instead of -5, and -8 instead of -10."])}
-${levelBlock("10th Level", ["Your multiattack penalty is -3 instead of -5, and -6 instead of -10."])}
-${levelBlock("15th Level", ["Your multiattack penalty is -2 instead of -5, and -4 instead of -10.", "Any attack-trait spell costs 1 action."])}
-<p><em>These reductions apply only to your spell attack rolls and Spellstrikes, not to ordinary Strikes, even though all of them share the same multiattack penalty.</em></p>
+${levelBlock("5th Level", ["Your multiple attack penalty is -4 instead of -5, and -8 instead of -10."])}
+${levelBlock("10th Level", ["Your multiple attack penalty is -3 instead of -5, and -6 instead of -10."])}
+${levelBlock("15th Level", ["Your multiple attack penalty is -2 instead of -5, and -4 instead of -10.", "Any attack-trait spell costs 1 action."])}
+<p><em>These reductions apply only to your spell attack rolls and Spellstrikes, not to ordinary Strikes, even though all of them share the same multiple attack penalty.</em></p>
 <hr />
 <p><strong>In Foundry:</strong> the reduced multiple attack penalty applies to your spell attack rolls (and to Spellstrikes, if you are a Warmage) from 5th level.</p>
 <p>For the table: the action cost. PF2e cannot change what a spell costs, so cast the spell and spend one action. A note on every attack-trait spell reminds you which ones this covers.</p>

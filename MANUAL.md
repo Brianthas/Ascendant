@@ -151,9 +151,9 @@ Reasons recur, so they are named once here and cited below:
 **Ironhide**: fully automated.
 
 **Know-It-All**
-- "You do not gain Skill Increases": do not spend them.
+- "You do not gain skill increases": do not spend them.
 - Universal Lore is used only to Recall Knowledge. Its DC against a creature is one of the two
-  Applicable Lore DCs PF2e shows on the creature's sheet; the GM picks which.
+  applicable Lore DCs PF2e shows on the creature's sheet; the GM picks which.
 - Recall Knowledge as a free action once per turn (no hook).
 
 **Overwhelm** (targeting)
@@ -240,7 +240,10 @@ Reasons recur, so they are named once here and cited below:
 
 **Haven**: the refuge is GM-run. Each member gets a storage container sized to 20 Bulk per member.
 
-**The Ledger**: the party stash on the Party sheet is the shared inventory (Bryan's ruling,
-2026-09-14: it is already shared, unencumbering and reachable from anywhere). The Bulk cap (20 per
-member, 30 from 5th, 40 from 15th), retrieval at distance, identification, rune transfers,
-transformation, requisition and the restored consumable are GM-run.
+**The Ledger**: a container named The Ledger in the stash on the Party sheet is the shared
+inventory (Bryan's rulings: the Party stash, 2026-09-14, because it is already shared,
+unencumbering and reachable from anywhere; a container there carrying the Bulk cap, 2026-11-01).
+The GM's client creates it once any party member has the talent, and sets its capacity to 20, 30
+or 40 Bulk per member by the level of the highest-level member with the talent. It is never
+deleted automatically. Retrieval at distance, identification, rune transfers, transformation,
+requisition and the restored consumable are GM-run.

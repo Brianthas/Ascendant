@@ -11,6 +11,7 @@ import { registerMismatchWarning } from "./mismatch.mjs";
 import { registerLevelGate } from "./level-gate.mjs";
 import { registerClassChoices } from "./class-choices.mjs";
 import { registerPlannerSlots } from "./planner-slots.mjs";
+import { mirrorLegacyClasses } from "./util.mjs";
 
 /**
  * The three variant rules Ascendant is played with: Dual Class (with the third
@@ -49,6 +50,18 @@ export function registerVariants() {
 
     if (game.modules.get(LEGACY_MODULE_ID)?.active) {
         console.log(`${MODULE_ID} | ${LEGACY_MODULE_ID} is active; it provides the variant rules and Ascendant's copy stands down`);
+        // Keep Ascendant's class flag in step with that module's, so turning it off later
+        // leaves every character with the classes it had. The client that made the change
+        // writes; at `ready`, the active GM catches up characters changed before this existed.
+        Hooks.on("updateActor", (actor, changes, _options, userId) => {
+            if (userId === game.user.id && foundry.utils.hasProperty(changes, `flags.${LEGACY_MODULE_ID}`)) mirrorLegacyClasses(actor);
+        });
+        Hooks.once("ready", async () => {
+            if (!game.users.activeGM?.isSelf) return;
+            for (const actor of game.actors.filter((a) => a.type === "character")) {
+                if (await mirrorLegacyClasses(actor)) console.log(`${MODULE_ID} | ${actor.name}: class flag brought in step with ${LEGACY_MODULE_ID}`);
+            }
+        });
         return false;
     }
 

@@ -1,19 +1,63 @@
-import { talent } from "../lib/item.mjs";
+import { talent, idFor, PUBLICATION } from "../lib/item.mjs";
 import { levelChain, flavour, levelBlock } from "../lib/grants.mjs";
 
 const PACK = "ascendant-party";
 const SLUG = "the-ledger";
 const IMG = "icons/sundries/books/book-worn-brown.webp";
+const STASH = "ascendant-ledger";
 
 /**
  * Party: The Ledger. A shared inventory is what PF2e's Party actor already
  * provides: its stash is one inventory every member can reach from anywhere,
- * and items in it count toward nobody's Bulk. So the talent is the party
+ * and items in it count toward nobody's Bulk. So the talent lives in the party
  * stash (Bryan's ruling, 2026-09-14: a container on one member's sheet would
- * break "any member, from any distance"). The Bulk cap, retrieval at
- * distance, the identification, rune transfers, transformation, requisition
- * and the daily consumable are GM-run and on the text.
+ * break "any member, from any distance"), as a container there that carries
+ * the Bulk cap (Bryan, 2026-11-01). scripts/containers.mjs creates it and
+ * keeps its capacity. Retrieval at distance, the identification, rune
+ * transfers, transformation, requisition and the daily consumable are GM-run
+ * and on the text.
  */
+export const ledgerStash = {
+    _id: idFor(STASH),
+    name: "The Ledger",
+    type: "backpack",
+    img: IMG,
+    system: {
+        description: {
+            value: `
+<p>The party's shared extradimensional inventory. It holds 20 Bulk per party member, 30 from 5th level and 40 from 15th, and nothing inside spoils, rots, rusts, decays or ages.</p>
+<hr />
+<p>It sits in the stash on the Party sheet. Its capacity follows the party's size and the level of the highest-level member with The Ledger on its own.</p>
+`.trim(),
+            gm: "",
+        },
+        publication: PUBLICATION,
+        rules: [],
+        slug: STASH,
+        traits: { otherTags: [], value: ["extradimensional", "magical"], rarity: "unique" },
+        level: { value: 1 },
+        quantity: 1,
+        baseItem: null,
+        bulk: { value: 0, heldOrStowed: 0, capacity: 20, ignored: 999 },
+        hp: { value: 0, max: 0 },
+        hardness: 0,
+        price: { value: {} },
+        equipped: { carryType: "worn", invested: null },
+        containerId: null,
+        size: "med",
+        material: { type: null, grade: null },
+        identification: { status: "identified", unidentified: { data: {}, img: "", name: "" }, misidentified: {} },
+        collapsed: false,
+        stowing: true,
+        usage: { value: "worn" },
+        subitems: [],
+    },
+    folder: null,
+    sort: 0,
+    ownership: { default: 0 },
+    flags: {},
+    _stats: { systemId: "pf2e" },
+};
 
 const { subFeats, grants } = levelChain({
     pack: PACK,
@@ -46,10 +90,10 @@ ${levelBlock("10th Level", ["During daily preparations, you may transfer a rune 
 ${levelBlock("15th Level", ["Capacity increases to 40 Bulk per member.", "Requisition becomes a daily activity and costs three-quarters of the item's price.", "Once per day, one consumable expended from the inventory is restored to it."])}
 <p><em>Categories are weapons, armor, shields, consumables, worn items, held items, and materials. An item can only be transformed into another of its own category.</em></p>
 <hr />
-<p><strong>In Foundry:</strong> the party stash on the Party sheet is the Ledger: every member can open it from anywhere, and items in it count toward nobody's Bulk. Add this talent to every member.</p>
-<p>For the table: the Bulk cap on the stash (20 per member, 30 from 5th, 40 from 15th), retrieval at distance, identification at daily preparations, and from 10th the rune transfers, transformations, requisitions and the restored consumable.</p>
+<p><strong>In Foundry:</strong> add this talent to every member. A container named <em>The Ledger</em> appears in the stash on the Party sheet, where every member can open it from anywhere and items count toward nobody's Bulk. Its capacity is 20, 30 or 40 Bulk per party member, by the level of the highest-level member with this talent, and follows the party on its own.</p>
+<p>For the table: retrieval at distance, identification at daily preparations, and from 10th the rune transfers, transformations, requisitions and the restored consumable.</p>
 `.trim(),
     rules: [...grants],
 });
 
-export default [theLedger, ...subFeats];
+export default [theLedger, ledgerStash, ...subFeats];

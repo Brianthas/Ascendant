@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/strikes-sword-scimitar.webp",
   "system": {
     "description": {
-      "value": "<p><strong>7th Level</strong></p><ul><li>Your multiattack penalty is -2, or -1 with agile weapons.</li></ul><p>Granted automatically by Unbroken Tempo at 7th level.</p>",
+      "value": "<p><strong>7th Level</strong></p><ul><li>Your multiple attack penalty is -2, or -1 with agile weapons.</li></ul><p>Granted automatically by Unbroken Tempo at 7th level.</p>",
       "gm": ""
     },
     "publication": {

@@ -90,7 +90,7 @@ const { subFeats, grants } = levelChain({
     img: IMG,
     levels: [
         { level: 5, text: levelBlock("5th Level", ["Spellstrike costs 1 action."]) },
-        { level: 10, text: levelBlock("10th Level", ["On a critical hit with the Strike, a spell delivered against that target is also critical.", "Spellstrike no longer counts against your multiattack penalty."]) },
+        { level: 10, text: levelBlock("10th Level", ["On a critical hit with the Strike, a spell delivered against that target is also critical.", "Spellstrike no longer counts against your multiple attack penalty."]) },
         { level: 15, text: levelBlock("15th Level", ["Gain Reactive Spellstrike.<ul><li><strong>Reactive Spellstrike</strong> [reaction] <strong>Trigger</strong> A creature within your reach uses an action that would trigger a Reactive Strike, or moves within your reach. <strong>Effect</strong> You Spellstrike that creature.</li></ul>"]) },
         { level: 20, text: levelBlock("20th Level", ["When you Spellstrike, you may Cast two spells rather than one."]) },
     ],
@@ -107,7 +107,7 @@ export const warmage = talent({
 ${flavour("You were never able to see why the choice was necessary. The blade goes where the spell goes, arrives in the same instant, and draws on the same trained certainty, and the enemy who prepared for one of them prepared for half a problem.")}
 ${levelBlock("1st Level", ["For all Strikes, spell attack rolls, and spell DCs, use the higher of your weapon statistics or your spell statistics, covering both proficiency rank and attribute modifier.", "Gain Spellstrike.<ul><li><strong>Spellstrike</strong> [2 actions] Make a melee Strike and Cast a Spell as part of the same activity. The spell may be any spell you can cast with a casting time of 3 actions or fewer, targeting whatever it normally targets.</li><li>If the spell requires a spell attack roll against the creature you Struck, use the Strike's attack roll for both.</li></ul>"])}
 ${levelBlock("5th Level", ["Spellstrike costs 1 action."])}
-${levelBlock("10th Level", ["On a critical hit with the Strike, a spell delivered against that target is also critical.", "Spellstrike no longer counts against your multiattack penalty."])}
+${levelBlock("10th Level", ["On a critical hit with the Strike, a spell delivered against that target is also critical.", "Spellstrike no longer counts against your multiple attack penalty."])}
 ${levelBlock("15th Level", ["Gain Reactive Spellstrike.<ul><li><strong>Reactive Spellstrike</strong> [reaction] <strong>Trigger</strong> A creature within your reach uses an action that would trigger a Reactive Strike, or moves within your reach. <strong>Effect</strong> You Spellstrike that creature.</li></ul>"])}
 ${levelBlock("20th Level", ["When you Spellstrike, you may Cast two spells rather than one."])}
 <hr />

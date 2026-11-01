@@ -5,7 +5,7 @@
   "img": "icons/magic/movement/trail-streak-zigzag-teal.webp",
   "system": {
     "description": {
-      "value": "<p><strong>15th Level</strong></p><ul><li>Range increases to one mile.</li><li>When you Flicker, you may bring one creature within your reach against its will. It attempts a Will save against your Class DC or Spell DC, whichever is higher.<ul><li>On a failure it is teleported with you and is Off-Guard until the end of your next turn.</li></ul></li></ul><p>Granted automatically by Flicker Step at 15th level.</p>",
+      "value": "<p><strong>15th Level</strong></p><ul><li>Range increases to one mile.</li><li>When you Flicker, you may bring one creature within your reach against its will. It attempts a Will save against your class DC or spell DC, whichever is higher.<ul><li>On a failure it is teleported with you and is Off-Guard until the end of your next turn.</li></ul></li></ul><p>Granted automatically by Flicker Step at 15th level.</p>",
       "gm": ""
     },
     "publication": {

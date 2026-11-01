@@ -5,7 +5,7 @@ import { MODULE_ID } from "./constants.mjs";
  *
  * "20 Bulk per member". The member count is the Party actor's, which PF2e
  * keeps as `game.actors.party.members`; without a Party actor it is 1. The
- * Ledger has no container: it is the Party stash itself.
+ * Ledger's container is the Party actor's, below.
  */
 const CONTAINERS = {
     "ascendant-haven-storage": (level, members) => 20 * members,
@@ -68,24 +68,101 @@ export async function syncCapacity(actor) {
     return Object.keys(written).length ? written : null;
 }
 
+/**
+ * The Ledger's container, in the Party actor's stash so every member reaches it.
+ *
+ * Capacity is per party member, at the rung of the highest-level member who has the talent
+ * (Bryan, 2026-11-01). The container is created the first time a member has the talent, and is
+ * never deleted here: losing the talent leaves it, and what is in it, where it is.
+ */
+const LEDGER = "ascendant-ledger";
+const LEDGER_TALENT = "ascendant-the-ledger";
+const ledgerPerMember = (level) => (level >= 15 ? 40 : level >= 5 ? 30 : 20);
+
+const hasLedger = (actor) => actor?.itemTypes?.feat?.some((f) => f.slug === LEDGER_TALENT) ?? false;
+
+/** The Ledger's capacity for this party, or null when no member has the talent. */
+export function ledgerCapacity(party) {
+    const members = party?.members ?? [];
+    const levels = members.filter(hasLedger).map((a) => a.level).filter(Number.isFinite);
+    if (!levels.length) return null;
+    return ledgerPerMember(Math.max(...levels)) * members.length;
+}
+
+async function packItem(slug) {
+    const pack = game.packs.get(`${MODULE_ID}.ascendant-party`);
+    if (!pack) return null;
+    const index = await pack.getIndex({ fields: ["system.slug"] });
+    const entry = index.find((e) => e.system?.slug === slug);
+    return entry ? (await pack.getDocument(entry._id))?.toObject() : null;
+}
+
+/** Create the Ledger's container if a member has the talent, and set its capacity. */
+export async function syncLedger() {
+    const party = game.actors?.party;
+    const wanted = ledgerCapacity(party);
+    if (wanted === null) return null;
+
+    const container = party.itemTypes?.backpack?.find((i) => i.slug === LEDGER);
+    if (!container) {
+        const source = await packItem(LEDGER);
+        if (!source) {
+            console.error(`${MODULE_ID} | The Ledger: container ${LEDGER} not found in the party pack`);
+            return null;
+        }
+        source.system.bulk.capacity = wanted;
+        await party.createEmbeddedDocuments("Item", [source]);
+        return wanted;
+    }
+    if (container.system.bulk.capacity === wanted) return null;
+    await container.update({ "system.bulk.capacity": wanted, "system.stowing": true });
+    return wanted;
+}
+
+// One sync at a time: `ready`, a level-up and a talent arriving can fire together, and two
+// overlapping syncs would each find no container and create one.
+let ledgerQueue = Promise.resolve();
+function queueLedger() {
+    ledgerQueue = ledgerQueue.then(syncLedger).catch((err) => console.error(`${MODULE_ID} | The Ledger sync failed`, err));
+    return ledgerQueue;
+}
+
+const inParty = (actor) => game.actors?.party?.members?.includes(actor) ?? false;
+const isLedgerTalent = (item) => item.type === "feat" && item.slug === LEDGER_TALENT;
+
 /** Every character carrying one of our containers. */
 const carriers = () => game.actors.filter((a) => a.type === "character" && containersOf(a).length);
 
 export function registerContainers() {
     Hooks.on("updateActor", (actor, changes) => {
         if (!shouldWrite()) return;
-        if (foundry.utils.hasProperty(changes, "system.details.level.value")) syncCapacity(actor);
+        if (foundry.utils.hasProperty(changes, "system.details.level.value")) {
+            syncCapacity(actor);
+            if (inParty(actor)) queueLedger();
+        }
         // The party roster changed: every carrier's capacity moves with it.
         if (actor.type === "party" && foundry.utils.hasProperty(changes, "system.details.members")) {
             for (const carrier of carriers()) syncCapacity(carrier);
+            queueLedger();
         }
     });
 
     // Granted by the talent, so it can arrive on a character already past 1st level.
     Hooks.on("createItem", (item) => {
         if (!shouldWrite()) return;
+        if (isLedgerTalent(item) && inParty(item.actor)) queueLedger();
         if (!item.slug || !(item.slug in CONTAINERS) || !item.actor) return;
         syncCapacity(item.actor);
+    });
+
+    // The highest-level holder may be the one losing the talent.
+    Hooks.on("deleteItem", (item) => {
+        if (shouldWrite() && isLedgerTalent(item) && inParty(item.actor)) queueLedger();
+    });
+
+    // A party that already has the talent, from before this container existed.
+    Hooks.once("ready", () => {
+        if (shouldWrite()) queueLedger();
     });
 
     console.log(`${MODULE_ID} | party containers registered`);

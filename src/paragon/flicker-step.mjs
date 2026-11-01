@@ -27,7 +27,7 @@ export const flicker = activity("flicker", "Flicker", {
 <ul>
 <li>5th: range 250 feet.</li>
 <li>10th: range 500 feet. You no longer need knowledge of your destination; you may specify a direction and distance instead. As you pass through, you perceive the destination. If it cannot hold you, the GM tells you before you commit, and you may redirect or abort without spending the action.</li>
-<li>15th: range one mile. You may bring one creature within your reach against its will. It attempts a Will save against your Class DC or Spell DC, whichever is higher. On a failure it is teleported with you and is Off-Guard until the end of your next turn.</li>
+<li>15th: range one mile. You may bring one creature within your reach against its will. It attempts a Will save against your class DC or spell DC, whichever is higher. On a failure it is teleported with you and is Off-Guard until the end of your next turn.</li>
 </ul>
 <hr />
 <p>The range is ${RANGES}.</p>
@@ -62,7 +62,7 @@ const { subFeats, grants } = levelChain({
     levels: [
         { level: 5, text: levelBlock("5th Level", ["Gain Flicker Strike.<ul><li><strong>Flicker Strike</strong> [1 action] (concentrate, teleportation) Flicker, then Strike.</li></ul>", "Range increases to 250 feet."]) },
         { level: 10, text: levelBlock("10th Level", ["Range increases to 500 feet.", "Flicker is a free action once per round.", "You no longer need knowledge of your destination; you may specify a direction and distance instead.<ul><li>As you pass through, you perceive the destination. If it cannot hold you, the GM tells you before you commit, and you may redirect or abort without spending the action.</li></ul>"]) },
-        { level: 15, text: levelBlock("15th Level", ["Range increases to one mile.", "When you Flicker, you may bring one creature within your reach against its will. It attempts a Will save against your Class DC or Spell DC, whichever is higher.<ul><li>On a failure it is teleported with you and is Off-Guard until the end of your next turn.</li></ul>"]) },
+        { level: 15, text: levelBlock("15th Level", ["Range increases to one mile.", "When you Flicker, you may bring one creature within your reach against its will. It attempts a Will save against your class DC or spell DC, whichever is higher.<ul><li>On a failure it is teleported with you and is Off-Guard until the end of your next turn.</li></ul>"]) },
     ],
 });
 
@@ -76,7 +76,7 @@ ${flavour("Distance has become a formality you observe only when convenient. You
 ${levelBlock("1st Level", ["Gain Flicker.<ul><li><strong>Flicker</strong> [1 action] (concentrate, teleportation) Teleport up to 100 feet to a space you can see or have seen. You do not need line of effect, only knowledge of the destination. Your arrival does not trigger reactions.</li></ul>", "You may bring up to four willing creatures within your reach with you, placing them in spaces adjacent to your arrival."])}
 ${levelBlock("5th Level", ["Gain Flicker Strike.<ul><li><strong>Flicker Strike</strong> [1 action] (concentrate, teleportation) Flicker, then Strike.</li></ul>", "Range increases to 250 feet."])}
 ${levelBlock("10th Level", ["Range increases to 500 feet.", "Flicker is a free action once per round.", "You no longer need knowledge of your destination; you may specify a direction and distance instead.<ul><li>As you pass through, you perceive the destination. If it cannot hold you, the GM tells you before you commit, and you may redirect or abort without spending the action.</li></ul>"])}
-${levelBlock("15th Level", ["Range increases to one mile.", "When you Flicker, you may bring one creature within your reach against its will. It attempts a Will save against your Class DC or Spell DC, whichever is higher.<ul><li>On a failure it is teleported with you and is Off-Guard until the end of your next turn.</li></ul>"])}
+${levelBlock("15th Level", ["Range increases to one mile.", "When you Flicker, you may bring one creature within your reach against its will. It attempts a Will save against your class DC or spell DC, whichever is higher.<ul><li>On a failure it is teleported with you and is Off-Guard until the end of your next turn.</li></ul>"])}
 <hr />
 <p><strong>In Foundry:</strong> Flicker is on your Actions tab from 1st, Flicker Strike from 5th, and a free-action Flicker with a per-round counter from 10th. Each entry states the range for your level. Press <strong>Use</strong> on one, or the <strong>Choose destination</strong> button on its chat card, and a ring shows your range on the map: click a square inside it and your token teleports there, with a puff of smoke at each end. Until 10th the square must be one your token can see; from 10th any square in range will do. To bring allies, <strong>target</strong> them before you pick: up to four targeted creatures within your reach come with you, keeping their places around you. Reach is your own, so a talent that extends it (Far Hand) widens who can come. The 15th-level unwilling passenger and its Will save are yours to run.</p>
 <p>For the table: the teleport itself (move the tokens), passengers, and the 15th-level Will save against an unwilling one.</p>

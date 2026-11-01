@@ -102,7 +102,7 @@ export const deathless = talent({
     category: "ascendant-apex",
     img: IMG,
     description: `
-${flavour("Whatever governs the closing of wounds has decided, in your case, to be generous. Bones knit while the blow that broke them is still landing, and the slow indignities that wear other bodies down: plague, venom, exhaustion, age itself, find nothing in you willing to yield.")}
+${flavour("Whatever governs the closing of wounds has decided, in your case, to be generous. Bones knit while the blow that broke them is still landing, and the slow indignities that wear other bodies down (plague, venom, exhaustion, age itself) find nothing in you willing to yield.")}
 ${levelBlock("1st Level", [
     "Regeneration equal to twice your level.<ul><li>Choose spirit, vitality, or void at character creation. That damage type deactivates it.</li></ul>",
     "Immune to all persistent damage, poison, and disease.",

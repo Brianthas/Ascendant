@@ -1,0 +1,82 @@
+{
+  "_id": "8z831mdAY8QSfnLE",
+  "name": "The Ledger",
+  "type": "backpack",
+  "img": "icons/sundries/books/book-worn-brown.webp",
+  "system": {
+    "description": {
+      "value": "<p>The party's shared extradimensional inventory. It holds 20 Bulk per party member, 30 from 5th level and 40 from 15th, and nothing inside spoils, rots, rusts, decays or ages.</p>\n<hr />\n<p>It sits in the stash on the Party sheet. Its capacity follows the party's size and the level of the highest-level member with The Ledger on its own.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "Ascendant: Mythic Rebuilt",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "ascendant-ledger",
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "extradimensional",
+        "magical"
+      ],
+      "rarity": "unique"
+    },
+    "level": {
+      "value": 1
+    },
+    "quantity": 1,
+    "baseItem": null,
+    "bulk": {
+      "value": 0,
+      "heldOrStowed": 0,
+      "capacity": 20,
+      "ignored": 999
+    },
+    "hp": {
+      "value": 0,
+      "max": 0
+    },
+    "hardness": 0,
+    "price": {
+      "value": {}
+    },
+    "equipped": {
+      "carryType": "worn",
+      "invested": null
+    },
+    "containerId": null,
+    "size": "med",
+    "material": {
+      "type": null,
+      "grade": null
+    },
+    "identification": {
+      "status": "identified",
+      "unidentified": {
+        "data": {},
+        "img": "",
+        "name": ""
+      },
+      "misidentified": {}
+    },
+    "collapsed": false,
+    "stowing": true,
+    "usage": {
+      "value": "worn"
+    },
+    "subitems": []
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "pf2e"
+  },
+  "_key": "!items!8z831mdAY8QSfnLE"
+}

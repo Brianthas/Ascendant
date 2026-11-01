@@ -333,7 +333,7 @@ Choose one at 1st level, permanently.
 
 **1st Level**
 - As a free action once per round, activate or deactivate an aura with a radius of 10 feet + 5 feet per even level.
-- When an enemy first enters the aura, or your movement first places them inside, they attempt a Will save against the higher of your Class DC or Spell DC.
+- When an enemy first enters the aura, or your movement first places them inside, they attempt a Will save against the higher of your class DC or spell DC.
   - **Critical Success** Frightened 1. **Success** Frightened 2. **Failure** Frightened 3.
   - **Critical Failure** Frightened 4. The creature drops anything it is holding and cannot use reactions while in your aura.
   - While inside the aura, and for 1 round after leaving, they cannot reduce their Frightened value below the result rolled. On a critical failure this lasts 1 minute.
@@ -477,7 +477,7 @@ Choose one at 1st level, permanently.
 - Whenever you change its form, choose one precious material. It counts as that material for overcoming resistances, weaknesses, and immunities.
   - It gains none of that material's other properties, and its grade is the highest available at your level.
 - The weapon gains its own reaction each round, separate from yours, usable only for Bonded Strike.
-  - **Bonded Strike** [reaction] — **Trigger** An enemy moves within the weapon's reach. **Effect** The weapon Strikes that enemy. This Strike neither counts toward nor against your multiattack penalty.
+  - **Bonded Strike** [reaction] — **Trigger** An enemy moves within the weapon's reach. **Effect** The weapon Strikes that enemy. This Strike neither counts toward nor against your multiple attack penalty.
 
 **5th Level**
 - +1 striking with one property rune.
@@ -563,16 +563,16 @@ Choose one at 1st level, permanently.
 > *There is a rhythm to violence, and it is built around the assumption that a fighter must recover between blows. You have never needed the recovery, so the second strike lands as true as the first, and the third as true as the second.*
 
 **1st Level**
-- Your multiattack penalty is -4, or -3 with agile weapons.
+- Your multiple attack penalty is -4, or -3 with agile weapons.
 
 **3rd Level**
-- Your multiattack penalty is -3, or -2 with agile weapons.
+- Your multiple attack penalty is -3, or -2 with agile weapons.
 
 **7th Level**
-- Your multiattack penalty is -2, or -1 with agile weapons.
+- Your multiple attack penalty is -2, or -1 with agile weapons.
 
 **12th Level**
-- You are no longer subject to multiattack penalties.
+- You are no longer subject to the multiple attack penalty.
 
 **15th Level**
 - Conditions that reduce the number of actions you gain at the start of your turn have no effect on you.
@@ -597,7 +597,7 @@ Choose one at 1st level, permanently.
 
 **10th Level**
 - On a critical hit with the Strike, a spell delivered against that target is also critical.
-- Spellstrike no longer counts against your multiattack penalty.
+- Spellstrike no longer counts against your multiple attack penalty.
 
 **15th Level**
 - Gain Reactive Spellstrike.
@@ -682,7 +682,7 @@ Choose one at 1st level, permanently.
 
 **15th Level**
 - Range increases to one mile.
-- When you Flicker, you may bring one creature within your reach against its will. It attempts a Will save against your Class DC or Spell DC, whichever is higher.
+- When you Flicker, you may bring one creature within your reach against its will. It attempts a Will save against your class DC or spell DC, whichever is higher.
   - On a failure it is teleported with you and is Off-Guard until the end of your next turn.
 
 ---
@@ -723,10 +723,10 @@ Choose one at 1st level, permanently.
 - Resist All equal to 2 + half your level.
 
 **5th Level**
-- Immune to Precision damage.
+- Immune to precision damage.
 
 **10th Level**
-- Immune to Persistent damage.
+- Immune to persistent damage.
 
 **15th Level**
 - Critical hits against you are treated as normal hits.
@@ -738,9 +738,9 @@ Choose one at 1st level, permanently.
 > *There is no subject on which you lack an opinion, and irritatingly, you are usually right. Locks, languages, lineages, poisons, the tensile strength of a rope bridge — you have read about all of it, and you will explain it now whether or not anyone asked.*
 
 **1st Level**
-- You do not gain Skill Increases. Instead you are Trained in all non-Lore skills.
+- You do not gain skill increases. Instead you are Trained in all non-Lore skills.
 - You are Trained in Universal Lore, a Lore skill that can be used only to Recall Knowledge, but on any topic. It counts as an applicable Lore for Recall Knowledge DCs.
-- You gain two extra Skill Feats every level.
+- You gain two extra skill feats every level.
 
 **2nd Level**
 - Expert in all non-Lore skills and Universal Lore.
@@ -815,11 +815,11 @@ Choose one at 1st level, permanently.
 - Immune to Confused and Stupefied.
 
 **10th Level**
-- Immune to Incapacitation effects that call for a Will save.
+- Immune to incapacitation effects that call for a Will save.
 
 **15th Level**
 - Immune to mental damage.
-- Immune to Emotion effects unless you choose otherwise.
+- Immune to emotion effects unless you choose otherwise.
 
 ---
 
@@ -831,16 +831,16 @@ Choose one at 1st level, permanently.
 - Single-target spells and cantrips with the attack trait that cost 2 or more actions instead cost 1 action.
 
 **5th Level**
-- Your multiattack penalty is -4 instead of -5, and -8 instead of -10.
+- Your multiple attack penalty is -4 instead of -5, and -8 instead of -10.
 
 **10th Level**
-- Your multiattack penalty is -3 instead of -5, and -6 instead of -10.
+- Your multiple attack penalty is -3 instead of -5, and -6 instead of -10.
 
 **15th Level**
-- Your multiattack penalty is -2 instead of -5, and -4 instead of -10.
+- Your multiple attack penalty is -2 instead of -5, and -4 instead of -10.
 - Any attack-trait spell costs 1 action.
 
-*These reductions apply only to your spell attack rolls and Spellstrikes, not to ordinary Strikes, even though all of them share the same multiattack penalty.*
+*These reductions apply only to your spell attack rolls and Spellstrikes, not to ordinary Strikes, even though all of them share the same multiple attack penalty.*
 
 ---
 
@@ -1061,7 +1061,7 @@ Choose one at 1st level, permanently.
   - A focus spell that costs 1 action becomes a free action.
 
 **15th Level**
-- Once per round, casting a focus spell costs no Focus Point.
+- Once per round, casting a focus spell costs no Focus Points.
 
 ---
 
@@ -1195,7 +1195,7 @@ Choose one at 1st level, permanently.
   - Private rooms are accessible only to their owners.
 - When you open the door, choose a mode.
   - **Fortress** — The refuge is undetectable and unenterable from outside. You cannot perceive anything outside it. Reopening the door is a 10-minute activity.
-  - **Peephole** — A door remains visible outside, and you can see and hear through it as though standing in the doorway. Creatures outside may find it with a Perception check against DC 10 + the highest Level + key ability modifier + proficiency bonus in the party. Once found, it can be opened with a successful counteract check against that DC.
+  - **Peephole** — A door remains visible outside, and you can see and hear through it as though standing in the doorway. Creatures outside may find it with a Perception check against DC 10 + the highest level + key ability modifier + proficiency bonus in the party. Once found, it can be opened with a successful counteract check against that DC.
 
 **5th Level**
 - Nothing within Haven ages, spoils, or decays. Afflictions do not progress, conditions with durations do not advance, and dying creatures remain stable.

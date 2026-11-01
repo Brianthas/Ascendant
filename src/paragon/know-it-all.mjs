@@ -20,7 +20,7 @@ const SKILLS = [
  * key is slug-shaped and carries a label, and marks it a Lore because the key
  * is not a core skill (pf2e.mjs:34487). It climbs the same ladder. The two
  * skill feats per level are a feat group added to the character's sheet by
- * scripts/skill-feats.mjs. "You do not gain Skill Increases", the Lore DC and
+ * scripts/skill-feats.mjs. "You do not gain skill increases", the Lore DC and
  * the free Recall Knowledge are on the table.
  */
 const LADDER = byLevel([
@@ -50,14 +50,14 @@ export const knowItAll = talent({
     img: IMG,
     description: `
 ${flavour("There is no subject on which you lack an opinion, and irritatingly, you are usually right. Locks, languages, lineages, poisons, the tensile strength of a rope bridge: you have read about all of it, and you will explain it now whether or not anyone asked.")}
-${levelBlock("1st Level", ["You do not gain Skill Increases. Instead you are Trained in all non-Lore skills.", "You are Trained in Universal Lore, a Lore skill that can be used only to Recall Knowledge, but on any topic. It counts as an applicable Lore for Recall Knowledge DCs.", "You gain two extra Skill Feats every level."])}
+${levelBlock("1st Level", ["You do not gain skill increases. Instead you are Trained in all non-Lore skills.", "You are Trained in Universal Lore, a Lore skill that can be used only to Recall Knowledge, but on any topic. It counts as an applicable Lore for Recall Knowledge DCs.", "You gain two extra skill feats every level."])}
 ${levelBlock("2nd Level", ["Expert in all non-Lore skills and Universal Lore."])}
 ${levelBlock("5th Level", ["Once per turn, you may Recall Knowledge as a free action."])}
 ${levelBlock("7th Level", ["Master in all non-Lore skills and Universal Lore."])}
 ${levelBlock("15th Level", ["Legendary in all non-Lore skills and Universal Lore."])}
 <hr />
 <p><strong>In Foundry:</strong> every non-Lore skill is at least Trained, Expert from 2nd, Master from 7th and Legendary from 15th. Universal Lore appears among your Lore skills, Intelligence-based, on the same ranks. A <em>Know-It-All</em> feat group with two skill feat slots per level appears on your Feats tab.</p>
-<p>For the table: do not spend your class's skill increases. Use Universal Lore only to Recall Knowledge; against a creature, the GM picks one of the two Applicable Lore DCs on its sheet. Recall Knowledge as a free action once per turn from 5th.</p>
+<p>For the table: do not spend your class's skill increases. Use Universal Lore only to Recall Knowledge; against a creature, the GM picks one of the two applicable Lore DCs on its sheet. Recall Knowledge as a free action once per turn from 5th.</p>
 `.trim(),
     rules: [
         ...SKILLS.map((skill) => ({

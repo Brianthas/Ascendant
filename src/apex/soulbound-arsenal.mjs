@@ -90,7 +90,7 @@ export const bondedStrike = actionItem({
     img: IMG,
     description: `
 <p><strong>Trigger</strong> An enemy moves within the weapon's reach.</p>
-<p><strong>Effect</strong> The weapon Strikes that enemy. This Strike neither counts toward nor against your multiattack penalty.</p>
+<p><strong>Effect</strong> The weapon Strikes that enemy. This Strike neither counts toward nor against your multiple attack penalty.</p>
 <hr />
 <p>The weapon has its own reaction each round for this, separate from yours; a second from 15th level. From 9th it may use Bonded Strike even while you are Grabbed, Restrained, Immobilized, or unconscious. Roll the Strike from your Actions tab and ignore the multiple attack penalty on it.</p>
 `.trim(),
@@ -124,7 +124,7 @@ export const soulboundArsenal = talent({
     description: `
 ${flavour("The weapon is not carried so much as recalled. It answers to a shape you hold in mind rather than a shape it was forged into, it cannot be taken from you by any means, and on the days you are too broken to lift it, it has been known to fight on without you.")}
 ${levelBlock("1st Level", ["Gain a bonded weapon. As a free action once per round it takes the form of any simple, martial, or advanced melee or ranged weapon.<ul><li>Ranged forms generate their own ammunition and never need reloading.</li></ul>", "It cannot be disarmed, stolen, or left behind, and returns to your hand at the start of your turn.", "It is a +1 striking weapon.", "Your proficiency rank with it equals your highest weapon or unarmed proficiency rank, regardless of its current form."])}
-${levelBlock("3rd Level", ["Whenever you change its form, choose one precious material. It counts as that material for overcoming resistances, weaknesses, and immunities.<ul><li>It gains none of that material's other properties, and its grade is the highest available at your level.</li></ul>", "The weapon gains its own reaction each round, separate from yours, usable only for Bonded Strike.<ul><li><strong>Bonded Strike</strong> [reaction] <strong>Trigger</strong> An enemy moves within the weapon's reach. <strong>Effect</strong> The weapon Strikes that enemy. This Strike neither counts toward nor against your multiattack penalty.</li></ul>"])}
+${levelBlock("3rd Level", ["Whenever you change its form, choose one precious material. It counts as that material for overcoming resistances, weaknesses, and immunities.<ul><li>It gains none of that material's other properties, and its grade is the highest available at your level.</li></ul>", "The weapon gains its own reaction each round, separate from yours, usable only for Bonded Strike.<ul><li><strong>Bonded Strike</strong> [reaction] <strong>Trigger</strong> An enemy moves within the weapon's reach. <strong>Effect</strong> The weapon Strikes that enemy. This Strike neither counts toward nor against your multiple attack penalty.</li></ul>"])}
 ${levelBlock("5th Level", ["+1 striking with one property rune.", "Choose a weapon group. You gain its critical specialization effect with this weapon in any form, and may change the group whenever you change its form."])}
 ${levelBlock("7th Level", ["+2 striking, two property runes."])}
 ${levelBlock("9th Level", ["+2 greater striking, two property runes.", "The weapon acts independently using your statistics, and may use Bonded Strike even while you are Grabbed, Restrained, Immobilized, or unconscious."])}

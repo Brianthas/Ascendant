@@ -17,7 +17,7 @@ const HP = byLevel(Array.from({ length: 20 }, (_, i) => [i + 1, 30 + 10 * i]));
  * The Aegis is a real shield item, granted with the talent, so Shield Block
  * works through PF2e's own damage buttons. Its hardness and maximum HP are
  * ItemAlterations on the talent keyed to the owner's level (verified live);
- * PF2e derives the broken threshold as half the
+ * PF2e derives the Broken Threshold as half the
  * maximum itself. Reforming when destroyed and the regeneration from 10th are
  * scripts/aegis.mjs on `pf2e.startTurn`, because nothing alters an item's
  * current hit points.
@@ -37,9 +37,9 @@ export const aegisShield = {
         description: {
             value: `
 <p>A shield that is never lowered. +3 circumstance bonus to AC, permanently active; it takes no hands and functions with weapons in both hands. It cannot be sundered, disarmed, or left behind, and reforms at full Hit Points at the start of your turn if destroyed.</p>
-<p>Its <strong>Hardness</strong> is 5 plus 2 per character level above 1st, and its <strong>Hit Points</strong> are 30 plus 10 per character level above 1st, with a broken threshold of half that.</p>
+<p>Its <strong>Hardness</strong> is 5 plus 2 per character level above 1st, and its <strong>Hit Points</strong> are 30 plus 10 per character level above 1st, with a Broken Threshold of half that.</p>
 <hr />
-<p>Hardness and hit points follow your level on their own. Shield Block with PF2e's button on a damage card as normal; you do not need to Raise it, the +3 is already on your AC.</p>
+<p>Hardness and Hit Points follow your level on their own. Shield Block with PF2e's button on a damage card as normal; you do not need to Raise it, the +3 is already on your AC.</p>
 `.trim(),
             gm: "",
         },
@@ -96,7 +96,7 @@ ${levelBlock("5th Level", ["Once per turn, you may Shield Block without spending
 ${levelBlock("10th Level", ["The Aegis gains Regeneration equal to your level."])}
 ${levelBlock("15th Level", ["The Aegis covers you from every direction. You cannot be flanked, and you gain its bonus against attacks from any source.", "When you Shield Block, the attacker takes damage equal to the amount the Aegis absorbed."])}
 <hr />
-<p><strong>In Foundry:</strong> the +3 circumstance bonus is on your AC at all times and <em>The Aegis</em> is in your inventory with hardness and hit points that follow your level. Shield Block from PF2e's damage-card button; a destroyed Aegis reforms at the start of your turn, and from 10th it regenerates then too. From 15th you cannot be flanked.</p>
+<p><strong>In Foundry:</strong> the +3 circumstance bonus is on your AC at all times and <em>The Aegis</em> is in your inventory with hardness and Hit Points that follow your level. Shield Block from PF2e's damage-card button; a destroyed Aegis reforms at the start of your turn, and from 10th it regenerates then too. From 15th you cannot be flanked.</p>
 <p>For the table: blocking once per turn without a reaction from 5th, and the reflected damage from 15th.</p>
 `.trim(),
     rules: [

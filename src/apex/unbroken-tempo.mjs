@@ -37,9 +37,9 @@ const { subFeats, grants } = levelChain({
     name: "Unbroken Tempo",
     img: IMG,
     levels: [
-        { level: 3, text: levelBlock("3rd Level", ["Your multiattack penalty is -3, or -2 with agile weapons."]) },
-        { level: 7, text: levelBlock("7th Level", ["Your multiattack penalty is -2, or -1 with agile weapons."]) },
-        { level: 12, text: levelBlock("12th Level", ["You are no longer subject to multiattack penalties."]) },
+        { level: 3, text: levelBlock("3rd Level", ["Your multiple attack penalty is -3, or -2 with agile weapons."]) },
+        { level: 7, text: levelBlock("7th Level", ["Your multiple attack penalty is -2, or -1 with agile weapons."]) },
+        { level: 12, text: levelBlock("12th Level", ["You are no longer subject to the multiple attack penalty."]) },
         { level: 15, text: levelBlock("15th Level", ["Conditions that reduce the number of actions you gain at the start of your turn have no effect on you."]) },
         { level: 20, text: levelBlock("20th Level", ["Once per round, when you critically hit with a Strike, you may immediately make another Strike against the same target with the same weapon as a free action."]) },
     ],
@@ -52,10 +52,10 @@ export const unbrokenTempo = talent({
     img: IMG,
     description: `
 ${flavour("There is a rhythm to violence, and it is built around the assumption that a fighter must recover between blows. You have never needed the recovery, so the second strike lands as true as the first, and the third as true as the second.")}
-${levelBlock("1st Level", ["Your multiattack penalty is -4, or -3 with agile weapons."])}
-${levelBlock("3rd Level", ["Your multiattack penalty is -3, or -2 with agile weapons."])}
-${levelBlock("7th Level", ["Your multiattack penalty is -2, or -1 with agile weapons."])}
-${levelBlock("12th Level", ["You are no longer subject to multiattack penalties."])}
+${levelBlock("1st Level", ["Your multiple attack penalty is -4, or -3 with agile weapons."])}
+${levelBlock("3rd Level", ["Your multiple attack penalty is -3, or -2 with agile weapons."])}
+${levelBlock("7th Level", ["Your multiple attack penalty is -2, or -1 with agile weapons."])}
+${levelBlock("12th Level", ["You are no longer subject to the multiple attack penalty."])}
 ${levelBlock("15th Level", ["Conditions that reduce the number of actions you gain at the start of your turn have no effect on you."])}
 ${levelBlock("20th Level", ["Once per round, when you critically hit with a Strike, you may immediately make another Strike against the same target with the same weapon as a free action."])}
 <hr />

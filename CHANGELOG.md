@@ -1,5 +1,23 @@
 # Changelog
 
+## Unreleased
+
+- **The Ledger has a container in the Party stash.** It appears once any party member has the
+  talent and holds 20 Bulk per member, 30 from 5th level and 40 from 15th, by the level of the
+  highest-level member with The Ledger. Its capacity follows level-ups and the party roster. It is
+  never removed automatically, so dropping the talent cannot lose what is inside.
+- **Class records stay in step with the Dual Class module.** While that module is active, a
+  class added, swapped or removed there is copied to Ascendant's own record, and the GM's client
+  brings any character already out of step into line at load. Before this, a character whose
+  second class was swapped under the Dual Class module showed no second class once that module
+  was turned off.
+- **Spelling and grammar.** "costs no Focus Points" (Renewed Focus); class DC, spell DC, the
+  multiple attack penalty, precision and persistent damage, incapacitation and emotion effects,
+  skill increases and skill feats, Broken Threshold and Hit Points written as PF2e writes them,
+  in the rules text and on the cards; Deathless's flavour sentence repaired. Three messages that
+  read wrongly for some names: the misplaced-feat warning ("a Alchemist feat"), the note shown
+  when a character is created with several classes, and the Soulbound Arsenal reshape notice.
+
 ## 1.0.0 - 2026-11-01
 
 - **Know-It-All rewritten.** Every non-Lore skill is Trained at 1st and Expert at 2nd (previously

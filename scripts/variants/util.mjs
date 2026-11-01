@@ -105,6 +105,31 @@ export async function writeExtraClasses(actor, ids) {
 }
 
 /**
+ * Ascendant addition: while the Dual Class module is active, copy its class list onto
+ * Ascendant's scope.
+ *
+ * That module writes only its own scope, and Ascendant reads its own first. Without this, a class
+ * swapped there leaves Ascendant's flag naming the deleted class, and the character loses its
+ * second class the moment that module is turned off. Every character Ascendant has built carries
+ * both scopes, so an absent list in that module's scope means it removed the classes.
+ *
+ * @param {ActorPF2e} actor
+ */
+export async function mirrorLegacyClasses(actor) {
+  if (actor?.type !== "character") return false;
+  const legacy = actor.flags?.[LEGACY_MODULE_ID]?.[EXTRA_CLASSES_FLAG];
+  const own = actor.flags?.[MODULE_ID]?.[EXTRA_CLASSES_FLAG];
+  const wanted = Array.isArray(legacy) ? legacy : undefined;
+  if (JSON.stringify(wanted) === JSON.stringify(Array.isArray(own) ? own : undefined)) return false;
+  await actor.update(
+    wanted
+      ? { [`flags.${MODULE_ID}.${EXTRA_CLASSES_FLAG}`]: wanted }
+      : { [`flags.${MODULE_ID}.-=${EXTRA_CLASSES_FLAG}`]: null },
+  );
+  return true;
+}
+
+/**
  * Every class item beyond the first, in flag order, with any id that no longer resolves dropped.
  *
  * @param {ActorPF2e} actor

@@ -5,7 +5,7 @@
   "img": "icons/weapons/swords/sword-guard-purple.webp",
   "system": {
     "description": {
-      "value": "<p><strong>Trigger</strong> An enemy moves within the weapon's reach.</p>\n<p><strong>Effect</strong> The weapon Strikes that enemy. This Strike neither counts toward nor against your multiattack penalty.</p>\n<hr />\n<p>The weapon has its own reaction each round for this, separate from yours; a second from 15th level. From 9th it may use Bonded Strike even while you are Grabbed, Restrained, Immobilized, or unconscious. Roll the Strike from your Actions tab and ignore the multiple attack penalty on it.</p>",
+      "value": "<p><strong>Trigger</strong> An enemy moves within the weapon's reach.</p>\n<p><strong>Effect</strong> The weapon Strikes that enemy. This Strike neither counts toward nor against your multiple attack penalty.</p>\n<hr />\n<p>The weapon has its own reaction each round for this, separate from yours; a second from 15th level. From 9th it may use Bonded Strike even while you are Grabbed, Restrained, Immobilized, or unconscious. Roll the Strike from your Actions tab and ignore the multiple attack penalty on it.</p>",
       "gm": ""
     },
     "publication": {
