@@ -38,7 +38,7 @@ Seven compendiums under **Ascendant: Mythic Rebuilt**:
 | Ascendant: Apex Talents | The twelve Apex Talents, their level features, and the Bonded Soul evolutions |
 | Ascendant: Paragon Talents | The twelve Paragon Talents and their level features |
 | Ascendant: Adept Talents | The twelve Adept Talents and their level features |
-| Ascendant: Party Talents | Haven and The Ledger |
+| Ascendant: Party Talents | Haven and The Ledger, with Haven's storage and The Ledger's Party stash container |
 | Ascendant: Bonded Souls | The six Bonded Soul base forms, as NPC actors |
 | Ascendant: Rules | The full rules text, one journal per chapter |
 
@@ -84,7 +84,8 @@ The world settings page carries **Enable Dual Class**, **Allow a Third Class**, 
 Permissions**, **Show the Skill Proficiencies Panel**, **Enable Ancestry Paragon** and **Enable Free
 Archetype**. If the separate Dual Class Items module is also active, Ascendant leaves the first
 five to it and says so in the console; a character built under that module opens with both classes
-here.
+here. While it is active, every class change made there is copied to Ascendant's own record, so
+turning it off later leaves each character with the classes it had.
 
 The copy carries that module's two PF2e Leveler bridges: classes created together in one write are
 recorded as dual class, and second-class feats Leveler files under `xdy_dualclass` move into the

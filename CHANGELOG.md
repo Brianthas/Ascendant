@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.0.1 - 2026-11-01
 
 - **The Ledger has a container in the Party stash.** It appears once any party member has the
   talent and holds 20 Bulk per member, 30 from 5th level and 40 from 15th, by the level of the
