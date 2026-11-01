@@ -19,9 +19,14 @@ optional third class), Ancestry Paragon and Free Archetype, as settings.
 
 Requires the [libWrapper](https://foundryvtt.com/packages/lib-wrapper) module.
 
-Copy the `ascendant` folder from the release zip into `Data/modules/`, restart Foundry, and enable
-**Ascendant: Mythic Rebuilt (PF2e)** in the world's module settings. Foundry v12 or later, PF2e
-8.0.0 or later; verified on Foundry 14.368 with PF2e 8.5.1.
+In Foundry's **Add-on Modules** tab, choose **Install Module** and paste this manifest URL:
+
+```
+https://github.com/Brianthas/Ascendant/releases/latest/download/module.json
+```
+
+Then enable **Ascendant: Mythic Rebuilt (PF2e)** in the world's module settings. Foundry v14 and
+PF2e 8.5.0 or later; verified on Foundry 14.369 with PF2e 8.6.1.
 
 ## What it adds
 

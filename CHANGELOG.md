@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.0.0 - 2026-11-01
 
 - **Know-It-All rewritten.** Every non-Lore skill is Trained at 1st and Expert at 2nd (previously
   Expert at 1st), then Master at 7th and Legendary at 15th as before. New: Universal Lore, an
@@ -13,6 +13,22 @@
   so on) printed the level heading twice at the top of their description. 140 grants are fixed.
 - **Manifest and download URLs.** `module.json` now points at the GitHub repo's latest release,
   so Foundry can install and update the module from its manifest URL.
+- **Variant rules brought up to date with the Dual Class module (1.0.0).** These apply when
+  Ascendant's own copy is running, that is without the Dual Class module active:
+  - The skill panel counts the extra skill increases from Additional Lore (3rd, 7th, 15th),
+    Stylish Tricks (3rd, 7th, 15th), Thaumaturgic Expertise (9th) and Thaumaturgic Mastery
+    (17th), per copy, and lists them by source. A character spending them no longer reads over
+    budget.
+  - Another module's feat section marked as extra slots on top of every ladder is no longer
+    removed as a duplicate. Before this, such sections for extra class feats disappeared from a
+    dual-class character's Feats tab, and those for extra ancestry feats from every character
+    while Ancestry Paragon was on.
+- **Know-It-All no longer hides another module's class feat section.** On a single-class
+  character with Know-It-All, a generic class feat ladder from another module (PF2e Leveler's
+  dual class section) was removed as though the character were dual class. It is now removed
+  only on a dual-class character.
+- **Compatibility declared as tested:** Foundry v14 and PF2e 8.5.0 or later, verified on Foundry
+  14.369 with PF2e 8.6.1. The previous minimums, Foundry 12 and PF2e 8.0.0, were never run.
 
 ## 0.1.4 - 2026-10-09
 
