@@ -16,7 +16,8 @@
         "check-lang": "node tools/check-lang.mjs",
         "test": "node tools/check-imports.mjs && node tools/test-reorder.mjs && node tools/test-fold.mjs && node tools/test-weapon-ranks.mjs",
         "check": "node tools/build-packs.mjs && node tools/lint-rules.mjs && node tools/check-imports.mjs && node tools/check-lang.mjs",
-        "release:zip": "node tools/package-release.mjs"
+        "release:zip": "node tools/package-release.mjs",
+        "sync:variants": "node tools/sync-variants.mjs"
     },
     "devDependencies": {
         "@eslint/js": "^10.0.1",
