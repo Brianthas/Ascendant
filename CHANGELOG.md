@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+- **Know-It-All rewritten.** Every non-Lore skill is Trained at 1st and Expert at 2nd (previously
+  Expert at 1st), then Master at 7th and Legendary at 15th as before. New: Universal Lore, an
+  Intelligence-based Lore skill used only to Recall Knowledge, on any topic, at an applicable
+  Lore's DC, on the same ranks. Removed: background Lore skills matching the ladder, and the
+  5th-level Recall Knowledge success counting as a critical success. The free Recall Knowledge
+  once per turn from 5th and the two extra skill feats per level are unchanged. A new
+  *Know-It-All (2nd)* grant carries the 2nd-level line.
+
 ## 0.1.4 - 2026-10-09
 
 - **Dread Presence rolls the Will save.** When an enemy enters the aura, or is inside it when the

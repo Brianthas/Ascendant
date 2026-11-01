@@ -1,6 +1,6 @@
 import { talent } from "../lib/item.mjs";
 import { byLevel, RANK_VALUE } from "../lib/rules.mjs";
-import { levelChain, atLeast, flavour, levelBlock } from "../lib/grants.mjs";
+import { levelChain, flavour, levelBlock } from "../lib/grants.mjs";
 
 const PACK = "ascendant-paragon";
 const SLUG = "know-it-all";
@@ -14,14 +14,21 @@ const SKILLS = [
 
 /**
  * Paragon: Know-It-All. Sixteen `upgrade` writes on `system.skills.<slug>.rank`
- * (verified live), Expert at 1st, Master at
- * 7th, Legendary at 15th. The two skill feats per level are a feat group
- * added to the character's sheet by scripts/skill-feats.mjs. Recall Knowledge
- * as a free action, and the success-to-critical from 5th, are an
- * AdjustDegreeOfSuccess on Recall Knowledge checks plus a note. "You do not
- * gain Skill Increases" and the background Lore ranks are on the player.
+ * (verified live), Trained at 1st, Expert at 2nd, Master at 7th, Legendary at
+ * 15th. Universal Lore is an `override` write of a whole `system.skills` entry,
+ * the construction PF2e's own Bardic Lore uses; the actor keeps an entry whose
+ * key is slug-shaped and carries a label, and marks it a Lore because the key
+ * is not a core skill (pf2e.mjs:34487). It climbs the same ladder. The two
+ * skill feats per level are a feat group added to the character's sheet by
+ * scripts/skill-feats.mjs. "You do not gain Skill Increases", the Lore DC and
+ * the free Recall Knowledge are on the table.
  */
-const LADDER = byLevel([[1, RANK_VALUE.expert], [7, RANK_VALUE.master], [15, RANK_VALUE.legendary]]);
+const LADDER = byLevel([
+    [1, RANK_VALUE.trained],
+    [2, RANK_VALUE.expert],
+    [7, RANK_VALUE.master],
+    [15, RANK_VALUE.legendary],
+]);
 
 const { subFeats, grants } = levelChain({
     pack: PACK,
@@ -29,9 +36,10 @@ const { subFeats, grants } = levelChain({
     name: "Know-It-All",
     img: IMG,
     levels: [
-        { level: 5, text: levelBlock("5th Level", ["Once per turn, you may Recall Knowledge as a free action.", "When you Recall Knowledge, treat a success as a critical success."]) },
-        { level: 7, text: levelBlock("7th Level", ["Master in all non-Lore skills."]) },
-        { level: 15, text: levelBlock("15th Level", ["Legendary in all non-Lore skills."]) },
+        { level: 2, text: levelBlock("2nd Level", ["Expert in all non-Lore skills and Universal Lore."]) },
+        { level: 5, text: levelBlock("5th Level", ["Once per turn, you may Recall Knowledge as a free action."]) },
+        { level: 7, text: levelBlock("7th Level", ["Master in all non-Lore skills and Universal Lore."]) },
+        { level: 15, text: levelBlock("15th Level", ["Legendary in all non-Lore skills and Universal Lore."]) },
     ],
 });
 
@@ -42,13 +50,14 @@ export const knowItAll = talent({
     img: IMG,
     description: `
 ${flavour("There is no subject on which you lack an opinion, and irritatingly, you are usually right. Locks, languages, lineages, poisons, the tensile strength of a rope bridge: you have read about all of it, and you will explain it now whether or not anyone asked.")}
-${levelBlock("1st Level", ["You do not gain Skill Increases. Instead you are Expert in all non-Lore skills.<ul><li>Lore skills from your background match these ranks.</li></ul>", "You gain two extra Skill Feats every level."])}
-${levelBlock("5th Level", ["Once per turn, you may Recall Knowledge as a free action.", "When you Recall Knowledge, treat a success as a critical success."])}
-${levelBlock("7th Level", ["Master in all non-Lore skills."])}
-${levelBlock("15th Level", ["Legendary in all non-Lore skills."])}
+${levelBlock("1st Level", ["You do not gain Skill Increases. Instead you are Trained in all non-Lore skills.", "You are Trained in Universal Lore, a Lore skill that can be used only to Recall Knowledge, but on any topic. It counts as an applicable Lore for Recall Knowledge DCs.", "You gain two extra Skill Feats every level."])}
+${levelBlock("2nd Level", ["Expert in all non-Lore skills and Universal Lore."])}
+${levelBlock("5th Level", ["Once per turn, you may Recall Knowledge as a free action."])}
+${levelBlock("7th Level", ["Master in all non-Lore skills and Universal Lore."])}
+${levelBlock("15th Level", ["Legendary in all non-Lore skills and Universal Lore."])}
 <hr />
-<p><strong>In Foundry:</strong> every non-Lore skill is at least Expert, Master from 7th and Legendary from 15th. A <em>Know-It-All</em> feat group with two skill feat slots per level appears on your Feats tab. From 5th a Recall Knowledge success is a critical success on the roll.</p>
-<p>For the table: do not spend your class's skill increases; raise your background Lore skills to match by hand; and Recall Knowledge as a free action once per turn.</p>
+<p><strong>In Foundry:</strong> every non-Lore skill is at least Trained, Expert from 2nd, Master from 7th and Legendary from 15th. Universal Lore appears among your Lore skills, Intelligence-based, on the same ranks. A <em>Know-It-All</em> feat group with two skill feat slots per level appears on your Feats tab.</p>
+<p>For the table: do not spend your class's skill increases. Use Universal Lore only to Recall Knowledge; against a creature, the GM picks one of the two Applicable Lore DCs on its sheet. Recall Knowledge as a free action once per turn from 5th.</p>
 `.trim(),
     rules: [
         ...SKILLS.map((skill) => ({
@@ -58,10 +67,10 @@ ${levelBlock("15th Level", ["Legendary in all non-Lore skills."])}
             value: LADDER,
         })),
         {
-            key: "AdjustDegreeOfSuccess",
-            selector: "skill-check",
-            adjustment: { success: "one-degree-better" },
-            predicate: [atLeast(5), "action:recall-knowledge"],
+            key: "ActiveEffectLike",
+            mode: "override",
+            path: "system.skills.universal-lore",
+            value: { attribute: "int", label: "Universal Lore", rank: LADDER },
         },
         ...grants,
     ],

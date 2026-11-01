@@ -5,7 +5,7 @@
   "img": "icons/sundries/books/book-open-purple.webp",
   "system": {
     "description": {
-      "value": "<p><strong>7th Level</strong></p><p><strong>7th Level</strong></p><ul><li>Master in all non-Lore skills.</li></ul><p>Granted automatically by Know-It-All at 7th level.</p>",
+      "value": "<p><strong>7th Level</strong></p><p><strong>7th Level</strong></p><ul><li>Master in all non-Lore skills and Universal Lore.</li></ul><p>Granted automatically by Know-It-All at 7th level.</p>",
       "gm": ""
     },
     "publication": {

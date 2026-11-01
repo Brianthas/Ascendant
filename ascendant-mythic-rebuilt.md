@@ -738,19 +738,21 @@ Choose one at 1st level, permanently.
 > *There is no subject on which you lack an opinion, and irritatingly, you are usually right. Locks, languages, lineages, poisons, the tensile strength of a rope bridge — you have read about all of it, and you will explain it now whether or not anyone asked.*
 
 **1st Level**
-- You do not gain Skill Increases. Instead you are Expert in all non-Lore skills.
-  - Lore skills from your background match these ranks.
+- You do not gain Skill Increases. Instead you are Trained in all non-Lore skills.
+- You are Trained in Universal Lore, a Lore skill that can be used only to Recall Knowledge, but on any topic. It counts as an applicable Lore for Recall Knowledge DCs.
 - You gain two extra Skill Feats every level.
+
+**2nd Level**
+- Expert in all non-Lore skills and Universal Lore.
 
 **5th Level**
 - Once per turn, you may Recall Knowledge as a free action.
-- When you Recall Knowledge, treat a success as a critical success.
 
 **7th Level**
-- Master in all non-Lore skills.
+- Master in all non-Lore skills and Universal Lore.
 
 **15th Level**
-- Legendary in all non-Lore skills.
+- Legendary in all non-Lore skills and Universal Lore.
 
 ---
 

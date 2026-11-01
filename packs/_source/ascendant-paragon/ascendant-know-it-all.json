@@ -5,7 +5,7 @@
   "img": "icons/sundries/books/book-open-purple.webp",
   "system": {
     "description": {
-      "value": "<blockquote><p><em>There is no subject on which you lack an opinion, and irritatingly, you are usually right. Locks, languages, lineages, poisons, the tensile strength of a rope bridge: you have read about all of it, and you will explain it now whether or not anyone asked.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>You do not gain Skill Increases. Instead you are Expert in all non-Lore skills.<ul><li>Lore skills from your background match these ranks.</li></ul></li><li>You gain two extra Skill Feats every level.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>Once per turn, you may Recall Knowledge as a free action.</li><li>When you Recall Knowledge, treat a success as a critical success.</li></ul>\n<p><strong>7th Level</strong></p><ul><li>Master in all non-Lore skills.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Legendary in all non-Lore skills.</li></ul>\n<hr />\n<p><strong>In Foundry:</strong> every non-Lore skill is at least Expert, Master from 7th and Legendary from 15th. A <em>Know-It-All</em> feat group with two skill feat slots per level appears on your Feats tab. From 5th a Recall Knowledge success is a critical success on the roll.</p>\n<p>For the table: do not spend your class's skill increases; raise your background Lore skills to match by hand; and Recall Knowledge as a free action once per turn.</p>",
+      "value": "<blockquote><p><em>There is no subject on which you lack an opinion, and irritatingly, you are usually right. Locks, languages, lineages, poisons, the tensile strength of a rope bridge: you have read about all of it, and you will explain it now whether or not anyone asked.</em></p></blockquote>\n<p><strong>1st Level</strong></p><ul><li>You do not gain Skill Increases. Instead you are Trained in all non-Lore skills.</li><li>You are Trained in Universal Lore, a Lore skill that can be used only to Recall Knowledge, but on any topic. It counts as an applicable Lore for Recall Knowledge DCs.</li><li>You gain two extra Skill Feats every level.</li></ul>\n<p><strong>2nd Level</strong></p><ul><li>Expert in all non-Lore skills and Universal Lore.</li></ul>\n<p><strong>5th Level</strong></p><ul><li>Once per turn, you may Recall Knowledge as a free action.</li></ul>\n<p><strong>7th Level</strong></p><ul><li>Master in all non-Lore skills and Universal Lore.</li></ul>\n<p><strong>15th Level</strong></p><ul><li>Legendary in all non-Lore skills and Universal Lore.</li></ul>\n<hr />\n<p><strong>In Foundry:</strong> every non-Lore skill is at least Trained, Expert from 2nd, Master from 7th and Legendary from 15th. Universal Lore appears among your Lore skills, Intelligence-based, on the same ranks. A <em>Know-It-All</em> feat group with two skill feat slots per level appears on your Feats tab.</p>\n<p>For the table: do not spend your class's skill increases. Use Universal Lore only to Recall Knowledge; against a creature, the GM picks one of the two Applicable Lore DCs on its sheet. Recall Knowledge as a free action once per turn from 5th.</p>",
       "gm": ""
     },
     "publication": {
@@ -19,112 +19,120 @@
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.skills.acrobatics.rank",
-        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+        "value": "match(when(btwn(@actor.level, 1, 1), 1), when(btwn(@actor.level, 2, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.skills.arcana.rank",
-        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+        "value": "match(when(btwn(@actor.level, 1, 1), 1), when(btwn(@actor.level, 2, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.skills.athletics.rank",
-        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+        "value": "match(when(btwn(@actor.level, 1, 1), 1), when(btwn(@actor.level, 2, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.skills.crafting.rank",
-        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+        "value": "match(when(btwn(@actor.level, 1, 1), 1), when(btwn(@actor.level, 2, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.skills.deception.rank",
-        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+        "value": "match(when(btwn(@actor.level, 1, 1), 1), when(btwn(@actor.level, 2, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.skills.diplomacy.rank",
-        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+        "value": "match(when(btwn(@actor.level, 1, 1), 1), when(btwn(@actor.level, 2, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.skills.intimidation.rank",
-        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+        "value": "match(when(btwn(@actor.level, 1, 1), 1), when(btwn(@actor.level, 2, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.skills.medicine.rank",
-        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+        "value": "match(when(btwn(@actor.level, 1, 1), 1), when(btwn(@actor.level, 2, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.skills.nature.rank",
-        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+        "value": "match(when(btwn(@actor.level, 1, 1), 1), when(btwn(@actor.level, 2, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.skills.occultism.rank",
-        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+        "value": "match(when(btwn(@actor.level, 1, 1), 1), when(btwn(@actor.level, 2, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.skills.performance.rank",
-        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+        "value": "match(when(btwn(@actor.level, 1, 1), 1), when(btwn(@actor.level, 2, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.skills.religion.rank",
-        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+        "value": "match(when(btwn(@actor.level, 1, 1), 1), when(btwn(@actor.level, 2, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.skills.society.rank",
-        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+        "value": "match(when(btwn(@actor.level, 1, 1), 1), when(btwn(@actor.level, 2, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.skills.stealth.rank",
-        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+        "value": "match(when(btwn(@actor.level, 1, 1), 1), when(btwn(@actor.level, 2, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.skills.survival.rank",
-        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+        "value": "match(when(btwn(@actor.level, 1, 1), 1), when(btwn(@actor.level, 2, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
         "path": "system.skills.thievery.rank",
-        "value": "match(when(btwn(@actor.level, 1, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+        "value": "match(when(btwn(@actor.level, 1, 1), 1), when(btwn(@actor.level, 2, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
       },
       {
-        "key": "AdjustDegreeOfSuccess",
-        "selector": "skill-check",
-        "adjustment": {
-          "success": "one-degree-better"
-        },
+        "key": "ActiveEffectLike",
+        "mode": "override",
+        "path": "system.skills.universal-lore",
+        "value": {
+          "attribute": "int",
+          "label": "Universal Lore",
+          "rank": "match(when(btwn(@actor.level, 1, 1), 1), when(btwn(@actor.level, 2, 6), 2), when(btwn(@actor.level, 7, 14), 3), when(gte(@actor.level, 15), 4))"
+        }
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.ascendant.ascendant-paragon.Item.cD6L0hffYatyiao2",
+        "allowDuplicate": false,
+        "reevaluateOnUpdate": true,
         "predicate": [
           {
             "gte": [
               "self:level",
-              5
+              2
             ]
-          },
-          "action:recall-knowledge"
+          }
         ]
       },
       {

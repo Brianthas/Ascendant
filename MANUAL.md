@@ -151,7 +151,9 @@ Reasons recur, so they are named once here and cited below:
 **Ironhide**: fully automated.
 
 **Know-It-All**
-- "You do not gain Skill Increases": do not spend them. Background Lore ranks: raise by hand.
+- "You do not gain Skill Increases": do not spend them.
+- Universal Lore is used only to Recall Knowledge. Its DC against a creature is one of the two
+  Applicable Lore DCs PF2e shows on the creature's sheet; the GM picks which.
 - Recall Knowledge as a free action once per turn (no hook).
 
 **Overwhelm** (targeting)
