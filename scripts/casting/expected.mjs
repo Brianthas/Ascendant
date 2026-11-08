@@ -47,6 +47,21 @@ export function archetypeRow({ level, cantrips, basic, expert, master }) {
     return row;
 }
 
+/**
+ * A Breadth feat on an archetype row: "Increase the spell slots you gain from wizard archetype feats
+ * by 1 for each spell rank other than your two highest." Added to the row itself, so Inexhaustible
+ * Magics triples it with the rest (Bryan, 2026-11-07), and a spontaneous archetype's repertoire,
+ * which reads the same row, grows by the same spells ("Increase the number of spells in your
+ * repertoire and number of spell slots", Bloodline Breadth).
+ */
+export function withBreadth(row) {
+    const ranks = [];
+    for (let rank = 1; rank <= 10; rank++) if (row[rank] > 0) ranks.push(rank);
+    const widened = [...row];
+    for (const rank of ranks.slice(0, Math.max(0, ranks.length - 2))) widened[rank] += 1;
+    return widened;
+}
+
 /** Signature spells an archetype repertoire allows: one each from basic (at 6th), expert and master. */
 export function archetypeSignatures({ level, basic, expert, master }) {
     return (basic && level >= 6 ? 1 : 0) + (expert ? 1 : 0) + (master ? 1 : 0);

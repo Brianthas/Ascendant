@@ -6,7 +6,7 @@
  * 5 | 3, row 19's 10th is 1; Wizard row 1 is 5 | 2; Animist row 1 is 2+2 | 1+1; Magus has no 10th
  * column), not off the generated file. Each case names the wrong model it separates.
  */
-import { expectedSlots, expectedKnown, countKnown, signatureAllowed, planSync, syncRank, nextValue, archetypeRow, archetypeSignatures, SLOT_KEYS } from "../scripts/casting/expected.mjs";
+import { expectedSlots, expectedKnown, countKnown, signatureAllowed, planSync, syncRank, nextValue, archetypeRow, archetypeSignatures, withBreadth, SLOT_KEYS } from "../scripts/casting/expected.mjs";
 import { parseBloodlineGifts, parseGrantedSpells, parsePsiCantrips, parseMuseSpell, parseStudiousSpells } from "../scripts/casting/granted.mjs";
 import { parseSlotTable, fontRow } from "../scripts/casting/modifiers.mjs";
 
@@ -174,6 +174,20 @@ check("Inexhaustible Magics triples a spontaneous archetype's cantrips known, no
     pick(expectedKnown({ classSlug: "sorcerer", pool: "archetype", level: 6, tripled: true, row: arch(6, { basic: true }) }), "slot0", "slot1", "slot2"),
     { slot0: 6, slot1: 1, slot2: 1 },
     "tripling the archetype's repertoire, or leaving its cantrips untripled");
+check("Breadth: +1 at every archetype rank but the two highest (12th: ranks 1-4, so 1 and 2 gain)",
+    withBreadth(arch(12, { basic: true, expert: true })).slice(0, 6), [2, 2, 2, 1, 1, 0],
+    "widening every rank, or the cantrips");
+check("Breadth with only two ranks widens nothing",
+    withBreadth(arch(6, { basic: true })).slice(1, 3), [1, 1],
+    "a negative slice adding to the top ranks");
+check("Breadth slots are tripled with the archetype's (Bryan, 2026-11-07): (1 + 1) x 3 at ranks 1-2",
+    pick(expectedSlots({ classSlug: "wizard", pool: "archetype", type: "prepared", level: 12, tripled: true, row: withBreadth(arch(12, { basic: true, expert: true })) }), "slot1", "slot3"),
+    { slot1: 6, slot3: 3 },
+    "Breadth added on top untripled (4), against Bryan's ruling");
+check("Bloodline Breadth grows the repertoire by the same spells, untripled",
+    pick(expectedKnown({ classSlug: "sorcerer", pool: "archetype", level: 12, tripled: true, row: withBreadth(arch(12, { basic: true, expert: true })) }), "slot1", "slot3"),
+    { slot1: 2, slot3: 1 },
+    "tripling spells known, or leaving the repertoire unwidened");
 check("Archetype signature spells: one from basic at 6th, one each from expert and master",
     [archetypeSignatures({ level: 4, basic: true }), archetypeSignatures({ level: 6, basic: true }), archetypeSignatures({ level: 18, basic: true, expert: true, master: true })], [0, 1, 3],
     "a signature at 4th, before the rule grants one");

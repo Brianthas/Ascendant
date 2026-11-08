@@ -121,7 +121,9 @@ World setting **Spellcasting: automate entries and slots**, off by default. With
   own, "<Class> Archetype Spells", with the dedication's cantrips and the Player Core basic,
   expert and master spellcasting benefits by level: 1st-rank slot with the basic feat, 2nd at 6th,
   3rd at 8th; 4th with the expert feat, 5th at 14th, 6th at 16th; 7th with the master feat, 8th at
-  20th. Inexhaustible Magics triples them, cantrips included.
+  20th. A Breadth feat (Arcane, Bloodline, Divine, Mysterious, Occult, Patron's, Primal) adds
+  one slot at every rank but the two highest, and one repertoire spell for a spontaneous
+  archetype. Inexhaustible Magics triples them, cantrips and Breadth slots included.
 - Infernal Pactbreaker, Prophet of Kalistrade and Rivethun Involutionist get an archetype entry
   the same way. Hedge Mage, Beast Gunner, Cathartic Mage, Eldritch Archer and the pervasive magic
   line let the player choose a tradition that PF2e does not record, so their entry is not created:

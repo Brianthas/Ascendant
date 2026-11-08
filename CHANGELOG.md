@@ -15,7 +15,8 @@
 - **Archetype spellcasting**, with spellcasting automation on: the twelve class archetypes get
   their own entry, with cantrips and slots by the basic, expert and master spellcasting benefits.
   So do Infernal Pactbreaker, Prophet of Kalistrade and Rivethun Involutionist; the archetypes
-  whose tradition is the player's choice manage an entry the player builds.
+  whose tradition is the player's choice manage an entry the player builds. Breadth feats add
+  their slots, tripled with the archetype's under Inexhaustible Magics.
 - **Granted spells**, with spellcasting automation on: a sorcerer's bloodline gifts, a cleric's
   deity spells, an oracle's mystery spells, a psychic's conscious mind spells and psi cantrips, a
   bard's muse spell and a magus's studious spells are added as each rank or level opens.

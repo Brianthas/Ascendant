@@ -14,8 +14,8 @@
 import { MODULE_ID } from "../constants.mjs";
 import { SECTION_PREFIX } from "../variants/constants.mjs";
 import { hasTalent } from "../spell-slots.mjs";
-import { CASTING_CLASSES, CASTING_ARCHETYPES, OTHER_ARCHETYPES, TRADITIONS } from "./classes.mjs";
-import { expectedSlots, planSync, syncRank, nextValue, archetypeRow, archetypeSignatures, SLOT_KEYS } from "./expected.mjs";
+import { CASTING_CLASSES, CASTING_ARCHETYPES, OTHER_ARCHETYPES, BREADTH, TRADITIONS } from "./classes.mjs";
+import { expectedSlots, planSync, syncRank, nextValue, archetypeRow, archetypeSignatures, withBreadth, SLOT_KEYS } from "./expected.mjs";
 import { castingAutomationOn } from "./settings.mjs";
 import { grantSpells } from "./granted.mjs";
 import { parseSlotTable, fontRow } from "./modifiers.mjs";
@@ -160,7 +160,8 @@ function wantedArchetypes(actor, tripled) {
         const meta = CASTING_CLASSES[classSlug];
         const type = Object.values(meta.pools)[0];
         const tiers = { basic, expert: held.has(`expert-${classSlug}-spellcasting`), master: held.has(`master-${classSlug}-spellcasting`) };
-        const row = archetypeRow({ level: actor.level, cantrips: archetype.cantrips, ...tiers });
+        const base = archetypeRow({ level: actor.level, cantrips: archetype.cantrips, ...tiers });
+        const row = BREADTH[classSlug] && held.has(BREADTH[classSlug]) ? withBreadth(base) : base;
         wanted.push({
             source: `archetype:${classSlug}`,
             classSlug,
