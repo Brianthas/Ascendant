@@ -14,7 +14,8 @@
  */
 export const CASTING_CLASSES = {
     bard: { attribute: "cha", tradition: "occult", pools: { bard: "spontaneous" } },
-    cleric: { attribute: "wis", tradition: "divine", pools: { cleric: "prepared" } },
+    // `font` is Divine Font's heal or harm slots, an entry of its own (`modifiers.mjs` fontRow).
+    cleric: { attribute: "wis", tradition: "divine", pools: { cleric: "prepared", font: "prepared" } },
     druid: { attribute: "wis", tradition: "primal", pools: { druid: "prepared" } },
     witch: { attribute: "int", tradition: "patron", pools: { witch: "prepared" } },
     wizard: { attribute: "int", tradition: "arcane", pools: { wizard: "prepared" } },

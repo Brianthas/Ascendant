@@ -71,6 +71,47 @@ check("Levels outside 1-20 clamp",
     [2, expectedSlots({ ...wizard, level: 20 }).slot10],
     "an index of -1 or 24 returning undefined");
 
+// Additions on top of the table (scripts/casting/modifiers.mjs)
+const battle = new Set(["arcane-school", "school-of-battle-magic"]);
+const unified = new Set(["arcane-school", "school-of-unified-magical-theory"]);
+check("Wizard curriculum adds a cantrip and a 1st-rank slot at 1st",
+    pick(expectedSlots({ ...wizard, level: 1, slugs: battle }), "slot0", "slot1", "slot2"), { slot0: 6, slot1: 3, slot2: 0 },
+    "the table alone, which the Wizard page's Paizo clarification says leaves the curriculum out");
+check("Unified Magical Theory has no curriculum",
+    pick(expectedSlots({ ...wizard, level: 1, slugs: unified }), "slot0", "slot1"), { slot0: 5, slot1: 2 },
+    "matching every school-of- slug, Unified included");
+check("Curriculum adds one slot at each rank the table has, none above it",
+    (() => {
+        const base = expectedSlots({ ...wizard, level: 3 });
+        const withSchool = expectedSlots({ ...wizard, level: 3, slugs: battle });
+        return [withSchool.slot1 - base.slot1, withSchool.slot2 - base.slot2, withSchool.slot3 - base.slot3];
+    })(), [1, 1, 0],
+    "a curriculum slot at a rank the wizard cannot cast yet");
+check("Cantrip Expansion adds two prepared cantrips, untripled",
+    [expectedSlots({ ...wizard, level: 2, slugs: new Set(["cantrip-expansion"]) }).slot0,
+        expectedSlots({ ...wizard, level: 2, tripled: true, slugs: new Set(["cantrip-expansion"]) }).slot0], [7, 17],
+    "tripling the feat's two into six, which Bryan ruled out on 2026-11-07");
+check("Cantrip Expansion gives a spontaneous entry no cantrip slots",
+    expectedSlots({ ...sorcerer, level: 2, slugs: new Set(["cantrip-expansion"]) }).slot0, 0,
+    "applying the prepared half to a repertoire caster");
+check("A 20th-level feat's extra 10th-rank slot lands on top of the tripled table",
+    [expectedSlots({ ...sorcerer, level: 20, slugs: new Set(["bloodline-perfection"]) }).slot10,
+        expectedSlots({ ...sorcerer, level: 20, tripled: true, slugs: new Set(["bloodline-perfection"]) }).slot10], [2, 4],
+    "ignoring the feat, or tripling it to 6");
+check("Another class's 20th-level feat adds nothing",
+    expectedSlots({ ...sorcerer, level: 20, slugs: new Set(["archwizards-might"]) }).slot10, 1,
+    "matching any extra-10th feat regardless of class");
+
+const font = { classSlug: "cleric", pool: "font", type: "prepared" };
+const fontAt = (level) => Object.entries(expectedSlots({ ...font, level })).filter(([, n]) => n > 0);
+check("Divine Font: 4 slots at the highest rank, 5 from 5th, 6 from 15th, nothing else",
+    [fontAt(1), fontAt(5), fontAt(15), fontAt(19)], [[["slot1", 4]], [["slot3", 5]], [["slot8", 6]], [["slot10", 6]]],
+    "putting font slots at every rank, a fixed count, or cantrips in the font entry");
+check("Divine Font stays untripled while the class-feature question is open",
+    fontAt(1).concat(Object.entries(expectedSlots({ ...font, level: 1, tripled: true })).filter(([, n]) => n > 0)),
+    [["slot1", 4], ["slot1", 4]],
+    "tripling a class feature's slots before Bryan has ruled on them");
+
 // planSync
 const zeros = Object.fromEntries(SLOT_KEYS.map((k) => [k, 0]));
 const at = (level) => expectedSlots({ ...sorcerer, level });

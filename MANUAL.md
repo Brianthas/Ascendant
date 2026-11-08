@@ -85,7 +85,8 @@ Reasons recur, so they are named once here and cited below:
 - With spellcasting automation off, tripling is a button: press **Triple Spell Slots** after
   spellcasting entries exist and again after adding one. Slot maxima are stored data no rule element
   reaches. With it on, the sync writes the tripled slots and cantrips itself and the button is
-  hidden. Spells known are not tripled.
+  hidden. Only the class or archetype table is tripled: 4 slots of a rank become 12, and slots or
+  cantrips a feat adds (Cantrip Expansion) land on top untripled. Spells known are not tripled.
 - Refocus restoring every point and the shorter Refocus times: PF2e's Refocus restores one point
   and has no hook. Set focus points to the maximum by hand.
 

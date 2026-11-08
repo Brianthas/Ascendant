@@ -121,6 +121,7 @@
             "SettingHint": "Creates a spellcasting entry when a character takes a casting class and keeps its spell slots on the class table as the character levels. A slot count edited by hand is kept and marked with a red ! and a sync button. Off by default.",
             "EntryName": "{class} Spells",
             "ApparitionEntryName": "Apparition Spells",
+            "FontEntryName": "Divine Font",
             "SyncButton": "Sync Spellcasting",
             "Created": "created {names}.",
             "Adopted": "now managing {names}.",

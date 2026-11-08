@@ -105,6 +105,10 @@ World setting **Spellcasting: automate entries and slots**, off by default. With
 - Spell slots follow the class's Spells per Day table at each level, tripled with Inexhaustible
   Magics. A prepared entry's cantrip slots are included; a spontaneous entry casts cantrips without
   slots.
+- On top of the table: a wizard's curriculum cantrip and one curriculum slot per rank (not for
+  Unified Magical Theory), Cantrip Expansion's two prepared cantrips, and the extra 10th-rank slot
+  from a class's 20th-level feat. These are not tripled. A cleric's Divine Font gets an entry of its
+  own holding only the font slots at the highest rank.
 - A slot count changed by hand is kept. Each rank that differs from the table shows a red **!** and
   a sync button that sets it to the table value. Levelling up moves every other rank.
 - An entry built before the setting was turned on is taken over by **Sync Spellcasting** in the

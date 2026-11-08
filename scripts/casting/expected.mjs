@@ -3,18 +3,27 @@
  * `tools/test-casting-sync.mjs` runs it in node.
  */
 import { SLOT_TABLES } from "./slot-tables.mjs";
+import { slotAdditions, fontRow, CLASS_FEATURE_SLOTS_TRIPLED } from "./modifiers.mjs";
 
 /** `system.slots` keys, cantrips first. PF2e's template has slot0 to slot11; 11 is never used. */
 export const SLOT_KEYS = Array.from({ length: 11 }, (_, i) => `slot${i}`);
 
-/** Inexhaustible Magics: "Triple the spell slots and cantrips you gain." Repertoire is not tripled. */
+/**
+ * Inexhaustible Magics: "Triple the spell slots and cantrips you gain from every spellcasting class
+ * or archetype." The class table, not feat additions, and not the repertoire (Bryan, 2026-11-07).
+ */
 const TRIPLE = 3;
 
+function clampLevel(level) {
+    return Math.min(Math.max(Math.trunc(level) || 1, 1), 20);
+}
+
+/** The table row for a pool. `font` is Divine Font, derived from the Cleric row. */
 function tableRow(classSlug, pool, level) {
+    if (pool === "font") return fontRow(tableRow(classSlug, classSlug, level), clampLevel(level));
     const rows = SLOT_TABLES[classSlug]?.pools?.[pool];
     if (!rows) throw new Error(`no slot table for ${classSlug}/${pool}`);
-    const clamped = Math.min(Math.max(Math.trunc(level) || 1, 1), 20);
-    return rows[clamped - 1];
+    return rows[clampLevel(level) - 1];
 }
 
 /**
@@ -22,12 +31,22 @@ function tableRow(classSlug, pool, level) {
  *
  * A prepared entry's slot0 is the cantrips it prepares. A spontaneous entry casts cantrips without
  * slots, so its slot0 is 0 and its cantrip count is a repertoire size instead (`expectedKnown`).
+ *
+ * Inexhaustible Magics triples the table; feat additions (`modifiers.mjs`) land on top untripled.
+ * Divine Font is a class feature, so it follows `CLASS_FEATURE_SLOTS_TRIPLED` with the curriculum.
+ *
+ * @param {Set<string>} [slugs] feats and features attributed to this class, for `slotAdditions`
  */
-export function expectedSlots({ classSlug, pool, type, level, tripled }) {
+export function expectedSlots({ classSlug, pool, type, level, tripled, slugs = new Set() }) {
     const row = tableRow(classSlug, pool, level);
-    const factor = tripled ? TRIPLE : 1;
+    const tableFactor = tripled && (pool !== "font" || CLASS_FEATURE_SLOTS_TRIPLED) ? TRIPLE : 1;
+    const featureFactor = tripled && CLASS_FEATURE_SLOTS_TRIPLED ? TRIPLE : 1;
+    const { feat, feature } = slotAdditions({ classSlug, pool, type, baseRow: row, slugs });
     return Object.fromEntries(
-        SLOT_KEYS.map((key, rank) => [key, rank === 0 && type !== "prepared" ? 0 : row[rank] * factor]),
+        SLOT_KEYS.map((key, rank) => {
+            if (rank === 0 && type !== "prepared") return [key, 0];
+            return [key, row[rank] * tableFactor + (feature[key] ?? 0) * featureFactor + (feat[key] ?? 0)];
+        }),
     );
 }
 

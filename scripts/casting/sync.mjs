@@ -12,6 +12,7 @@
  * table moved from one a player edited.
  */
 import { MODULE_ID } from "../constants.mjs";
+import { SECTION_PREFIX } from "../variants/constants.mjs";
 import { hasTalent } from "../spell-slots.mjs";
 import { CASTING_CLASSES, TRADITIONS } from "./classes.mjs";
 import { expectedSlots, planSync, syncRank, SLOT_KEYS } from "./expected.mjs";
@@ -53,15 +54,40 @@ function sourceKey(classSlug, pool) {
     return pool === classSlug ? `class:${classSlug}` : `class:${classSlug}:${pool}`;
 }
 
+/**
+ * The slugs of every feat and class feature, grouped by the class each belongs to.
+ *
+ * An item belongs to the actor's class named in its traits. A Dual Class character can hold two
+ * classes sharing a feat (Cantrip Expansion carries eight class traits), so the feat's sheet slot
+ * decides: an extra class's ladder slots are `<SECTION_PREFIX.CLASS>-<slug>-<level>`, the ids
+ * variants/planner-slots.mjs builds. Otherwise it goes to the first matching class.
+ */
+function slugsByClass(actor, classSlugs) {
+    const groups = new Map(classSlugs.map((s) => [s, new Set()]));
+    for (const item of actor.itemTypes.feat) {
+        const slug = item.slug ?? game.pf2e.system.sluggify(item.name);
+        const owners = classSlugs.filter((s) => item.system.traits?.value?.includes(s));
+        if (owners.length === 0) continue;
+        const location = typeof item.system.location === "string" ? item.system.location : "";
+        const owner = owners.find((s) => location.startsWith(`${SECTION_PREFIX.CLASS}-${s}-`)) ?? owners[0];
+        groups.get(owner).add(slug);
+    }
+    return groups;
+}
+
 /** Every entry the actor's casting classes call for, with what each should hold now. */
 function wantedEntries(actor) {
     const tripled = hasTalent(actor);
     const wanted = [];
-    for (const classItem of actor.itemTypes.class) {
+    const classItems = actor.itemTypes.class;
+    const groups = slugsByClass(actor, classItems.map(classSlugOf));
+    for (const classItem of classItems) {
         const classSlug = classSlugOf(classItem);
         const meta = CASTING_CLASSES[classSlug];
         if (!meta) continue;
+        const slugs = groups.get(classSlug);
         for (const [pool, type] of Object.entries(meta.pools)) {
+            if (pool === "font" && !slugs.has("divine-font")) continue;
             wanted.push({
                 source: sourceKey(classSlug, pool),
                 classSlug,
@@ -70,7 +96,7 @@ function wantedEntries(actor) {
                 className: classItem.name,
                 tradition: resolveTradition(actor, meta.tradition),
                 attribute: resolveAttribute(actor, meta.attribute),
-                expected: expectedSlots({ classSlug, pool, type, level: actor.level, tripled }),
+                expected: expectedSlots({ classSlug, pool, type, level: actor.level, tripled, slugs }),
             });
         }
     }
@@ -88,6 +114,7 @@ function storedMaxima(entry) {
 
 function entryName(want) {
     if (want.pool === "apparition") return game.i18n.localize("ASCENDANT.Casting.ApparitionEntryName");
+    if (want.pool === "font") return game.i18n.localize("ASCENDANT.Casting.FontEntryName");
     return game.i18n.format("ASCENDANT.Casting.EntryName", { class: want.className });
 }
 
