@@ -9,6 +9,8 @@
   built before the setting was on. Slots added by the wizard curriculum, Cantrip Expansion and the
   20th-level extra 10th-rank feats are counted on top of the table, untripled; a cleric's Divine
   Font has its own entry.
+- **Archetype spellcasting**, with spellcasting automation on: the twelve class archetypes get
+  their own entry, with cantrips and slots by the basic, expert and master spellcasting benefits.
 - **Granted spells**, with spellcasting automation on: a sorcerer's bloodline gifts and a cleric's
   deity spells are added as each rank opens.
 - **Spells known and signature counts** on spontaneous entries, with spellcasting automation on,

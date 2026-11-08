@@ -38,10 +38,13 @@ export function repertoireState(actor) {
         if (!want || want.type !== "spontaneous" || want.pool === "apparition") continue;
         const expected = expectedKnown({
             classSlug: want.classSlug, pool: want.pool, level: actor.level, tripled: want.tripled,
-            slugs: want.slugs, granted: grantedOnTop(entry),
+            slugs: want.slugs, granted: grantedOnTop(entry), row: want.row,
         });
         const { known, signature } = countKnown(repertoireOf(entry));
-        const signatures = want.slugs.has("signature-spells") ? signatureAllowed(want.expected) : null;
+        // An archetype counts its own (one each from basic, expert, master); a class needs Signature Spells.
+        const signatures = want.signatureCount !== undefined
+            ? (want.signatureCount || null)
+            : want.slugs.has("signature-spells") ? signatureAllowed(want.expected) : null;
         states.push({ entry, want, expected, known, signature, signatures });
     }
     return states;

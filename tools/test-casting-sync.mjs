@@ -6,7 +6,7 @@
  * 5 | 3, row 19's 10th is 1; Wizard row 1 is 5 | 2; Animist row 1 is 2+2 | 1+1; Magus has no 10th
  * column), not off the generated file. Each case names the wrong model it separates.
  */
-import { expectedSlots, expectedKnown, countKnown, signatureAllowed, planSync, syncRank, nextValue, SLOT_KEYS } from "../scripts/casting/expected.mjs";
+import { expectedSlots, expectedKnown, countKnown, signatureAllowed, planSync, syncRank, nextValue, archetypeRow, archetypeSignatures, SLOT_KEYS } from "../scripts/casting/expected.mjs";
 import { parseBloodlineGifts } from "../scripts/casting/granted.mjs";
 
 let failed = 0;
@@ -151,6 +151,30 @@ check("countKnown counts a heightened copy at its own rank, and signatures among
 check("One signature spell per rank with slots, 10th included",
     [signatureAllowed(expectedSlots({ ...sorcerer, level: 3 })), signatureAllowed(expectedSlots({ ...sorcerer, level: 19 }))], [2, 10],
     "counting the cantrip column, or stopping at 9th");
+
+// Archetypes (archetypeRow, archetypeSignatures), from Player Core's spellcasting archetype rules.
+const arch = (level, tiers, cantrips = 2) => archetypeRow({ level, cantrips, basic: false, expert: false, master: false, ...tiers });
+check("Dedication only: cantrips, no slots",
+    arch(2, {}), [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "slots before the basic feat");
+check("Basic at 4th: one 1st-rank slot; at 6th a 2nd; at 8th a 3rd",
+    [arch(4, { basic: true }).slice(1, 4), arch(6, { basic: true }).slice(1, 4), arch(8, { basic: true }).slice(1, 4)], [[1, 0, 0], [1, 1, 0], [1, 1, 1]],
+    "all three ranks at once, or the 2nd rank at the feat's own level");
+check("Basic taken late at 6th (the magus feat's level) gives 1st and 2nd together",
+    arch(6, { basic: true }).slice(1, 3), [1, 1],
+    "counting levels from when the feat was taken");
+check("Expert at 12th, 14th, 16th; master at 18th, 20th",
+    [arch(12, { basic: true, expert: true }).slice(4, 7), arch(16, { basic: true, expert: true }).slice(4, 7),
+        arch(18, { basic: true, expert: true, master: true }).slice(7, 9), arch(20, { basic: true, expert: true, master: true }).slice(7, 10)],
+    [[1, 0, 0], [1, 1, 1], [1, 0], [1, 1, 0]],
+    "a 9th-rank archetype slot, or expert ranks without the feat");
+check("Inexhaustible Magics triples an archetype's slots and cantrips (Bryan: archetypes are the exception)",
+    pick(expectedSlots({ classSlug: "wizard", pool: "archetype", type: "prepared", level: 6, tripled: true, row: arch(6, { basic: true }) }), "slot0", "slot1", "slot2"),
+    { slot0: 6, slot1: 3, slot2: 3 },
+    "leaving archetype slots untripled, or adding the class's curriculum to an archetype");
+check("Archetype signature spells: one from basic at 6th, one each from expert and master",
+    [archetypeSignatures({ level: 4, basic: true }), archetypeSignatures({ level: 6, basic: true }), archetypeSignatures({ level: 18, basic: true, expert: true, master: true })], [0, 1, 3],
+    "a signature at 4th, before the rule grants one");
 
 // Bloodline gifts (parseBloodlineGifts), on excerpts of the installed PF2e 8.6.1 markup.
 const L = (id) => `@UUID[Compendium.pf2e.spells-srd.Item.${id}]{x}`;

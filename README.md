@@ -115,6 +115,11 @@ World setting **Spellcasting: automate entries and slots**, off by default. With
   sheet header when its preparation type and tradition match the class. Ranks that already match
   follow the table from then on; the rest are marked.
 - Entries are never deleted. Removing a class leaves its entry as it is.
+- The twelve class archetypes (Bard Dedication through Summoner Dedication) get an entry of their
+  own, "<Class> Archetype Spells", with the dedication's cantrips and the Player Core basic,
+  expert and master spellcasting benefits by level: 1st-rank slot with the basic feat, 2nd at 6th,
+  3rd at 8th; 4th with the expert feat, 5th at 14th, 6th at 16th; 7th with the master feat, 8th at
+  20th. Inexhaustible Magics triples them, cantrips included.
 - A sorcerer's bloodline gifts are added to the repertoire as each rank opens, including the ones
   Draconic, Elemental and Genie bloodlines set by exemplar, element or genie. They count among the
   spells the table gives. A cleric's deity spells go into the spellbook as each rank opens. A

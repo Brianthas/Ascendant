@@ -28,5 +28,36 @@ export const CASTING_CLASSES = {
     summoner: { attribute: "cha", tradition: "eidolon", pools: { summoner: "spontaneous" } },
 };
 
+/**
+ * The class-named spellcasting archetypes, read off each dedication and Basic Spellcasting feat in
+ * the installed PF2e 8.6.1 feats pack on 2026-11-07. Each archetype's entry takes the class's
+ * preparation type, attribute and tradition rule (the dedications say so: "Your key spellcasting
+ * attribute for wizard archetype spells is Intelligence, and they are arcane wizard spells"), with
+ * two exceptions recorded here:
+ *
+ * - `cantrips`: how many the dedication gives. Two for most; Witch Dedication "can prepare one
+ *   cantrip each day from your familiar"; Psychic Dedication gives "one standard psi cantrip".
+ * - `cantripsAt`: Summoner's come with Basic Summoner Spellcasting ("You gain a spell repertoire
+ *   and two cantrips"), and its dedication grants no casting.
+ * - Psychic's attribute is "the attribute you used to qualify for the archetype" (Intelligence or
+ *   Charisma), read as the higher of the two.
+ *
+ * Feat slugs follow `<class>-dedication` and `basic-|expert-|master-<class>-spellcasting`.
+ */
+export const CASTING_ARCHETYPES = {
+    bard: { cantrips: 2 },
+    cleric: { cantrips: 2 },
+    druid: { cantrips: 2 },
+    witch: { cantrips: 1 },
+    wizard: { cantrips: 2 },
+    oracle: { cantrips: 2 },
+    sorcerer: { cantrips: 2 },
+    animist: { cantrips: 2 },
+    psychic: { cantrips: 1, attribute: "qualify" },
+    magus: { cantrips: 2 },
+    necromancer: { cantrips: 2 },
+    summoner: { cantrips: 2, cantripsAt: "basic" },
+};
+
 /** Traditions a choice can resolve to. Anything else read off an actor is treated as unresolved. */
 export const TRADITIONS = ["arcane", "divine", "occult", "primal"];

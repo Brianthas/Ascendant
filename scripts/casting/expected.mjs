@@ -18,8 +18,43 @@ function clampLevel(level) {
     return Math.min(Math.max(Math.trunc(level) || 1, 1), 20);
 }
 
+/**
+ * An archetype's slots and cantrips, as a table row. Player Core's spellcasting archetype rules:
+ * the basic feat grants "a 1st-rank spell slot. At 6th level ... a 2nd-rank spell slot ... At 8th
+ * level ... a 3rd-rank spell slot"; the expert feat "a 4th-rank spell slot ... At 14th level ... a
+ * 5th-rank ... at 16th level ... a 6th-rank"; the master feat "a 7th-rank spell slot ... At 20th
+ * level ... an 8th-rank spell slot". The levels are character levels.
+ *
+ * @param {{ level: number, cantrips: number, basic: boolean, expert: boolean, master: boolean }} facts
+ */
+export function archetypeRow({ level, cantrips, basic, expert, master }) {
+    const row = Array(11).fill(0);
+    row[0] = cantrips;
+    if (basic) {
+        row[1] = 1;
+        if (level >= 6) row[2] = 1;
+        if (level >= 8) row[3] = 1;
+    }
+    if (expert) {
+        row[4] = 1;
+        if (level >= 14) row[5] = 1;
+        if (level >= 16) row[6] = 1;
+    }
+    if (master) {
+        row[7] = 1;
+        if (level >= 20) row[8] = 1;
+    }
+    return row;
+}
+
+/** Signature spells an archetype repertoire allows: one each from basic (at 6th), expert and master. */
+export function archetypeSignatures({ level, basic, expert, master }) {
+    return (basic && level >= 6 ? 1 : 0) + (expert ? 1 : 0) + (master ? 1 : 0);
+}
+
 /** The table row for a pool. `font` is Divine Font, derived from the Cleric row. */
-function tableRow(classSlug, pool, level) {
+function tableRow(classSlug, pool, level, row) {
+    if (row) return row;
     if (pool === "font") return fontRow(tableRow(classSlug, classSlug, level), clampLevel(level));
     const rows = SLOT_TABLES[classSlug]?.pools?.[pool];
     if (!rows) throw new Error(`no slot table for ${classSlug}/${pool}`);
@@ -36,9 +71,11 @@ function tableRow(classSlug, pool, level) {
  * and Divine Font land on top untripled (Bryan, 2026-11-07).
  *
  * @param {Set<string>} [slugs] feats and features attributed to this class, for `slotAdditions`
+ * @param {number[]} [row] a row to use instead of the class table: an archetype's (`archetypeRow`),
+ *   tripled whole, cantrips included, by Inexhaustible Magics (Bryan, 2026-11-07)
  */
-export function expectedSlots({ classSlug, pool, type, level, tripled, slugs = new Set() }) {
-    const row = tableRow(classSlug, pool, level);
+export function expectedSlots({ classSlug, pool, type, level, tripled, slugs = new Set(), row: given }) {
+    const row = tableRow(classSlug, pool, level, given);
     const factor = tripled && pool !== "font" ? TRIPLE : 1;
     const added = slotAdditions({ classSlug, pool, type, baseRow: row, slugs });
     return Object.fromEntries(
@@ -60,8 +97,8 @@ export function expectedSlots({ classSlug, pool, type, level, tripled, slugs = n
  * feature added on top of the table (an oracle's mystery spells, a bard's muse spell), which
  * `granted.mjs` marks on the spells it creates.
  */
-export function expectedKnown({ classSlug, pool, level, tripled, slugs = new Set(), granted = {} }) {
-    const row = tableRow(classSlug, pool, level);
+export function expectedKnown({ classSlug, pool, level, tripled, slugs = new Set(), granted = {}, row: given }) {
+    const row = tableRow(classSlug, pool, level, given);
     const added = knownAdditions({ classSlug, pool, type: "spontaneous", baseRow: row, slugs });
     return Object.fromEntries(SLOT_KEYS.map((key, rank) => [
         key,

@@ -122,6 +122,7 @@
             "EntryName": "{class} Spells",
             "ApparitionEntryName": "Apparition Spells",
             "FontEntryName": "Divine Font",
+            "ArchetypeName": "{class} Archetype",
             "SyncButton": "Sync Spellcasting",
             "Created": "created {names}.",
             "Adopted": "now managing {names}.",

@@ -14,8 +14,8 @@
 import { MODULE_ID } from "../constants.mjs";
 import { SECTION_PREFIX } from "../variants/constants.mjs";
 import { hasTalent } from "../spell-slots.mjs";
-import { CASTING_CLASSES, TRADITIONS } from "./classes.mjs";
-import { expectedSlots, planSync, syncRank, nextValue, SLOT_KEYS } from "./expected.mjs";
+import { CASTING_CLASSES, CASTING_ARCHETYPES, TRADITIONS } from "./classes.mjs";
+import { expectedSlots, planSync, syncRank, nextValue, archetypeRow, archetypeSignatures, SLOT_KEYS } from "./expected.mjs";
 import { castingAutomationOn } from "./settings.mjs";
 import { grantSpells } from "./granted.mjs";
 
@@ -102,6 +102,45 @@ export function wantedEntries(actor) {
                 expected: expectedSlots({ classSlug, pool, type, level: actor.level, tripled, slugs }),
             });
         }
+    }
+    wanted.push(...wantedArchetypes(actor, tripled));
+    return wanted;
+}
+
+/** Psychic Dedication: "the attribute you used to qualify for the archetype", Intelligence or Charisma. */
+function qualifyingAttribute(actor) {
+    const int = actor.system.abilities?.int?.mod ?? 0;
+    const cha = actor.system.abilities?.cha?.mod ?? 0;
+    return cha > int ? "cha" : "int";
+}
+
+/** One entry per class-named spellcasting archetype the character has taken (classes.mjs CASTING_ARCHETYPES). */
+function wantedArchetypes(actor, tripled) {
+    const held = new Set(actor.itemTypes.feat.map((f) => f.slug ?? game.pf2e.system.sluggify(f.name)));
+    const wanted = [];
+    for (const [classSlug, archetype] of Object.entries(CASTING_ARCHETYPES)) {
+        const basic = held.has(`basic-${classSlug}-spellcasting`);
+        const dedication = held.has(`${classSlug}-dedication`);
+        if (!(archetype.cantripsAt === "basic" ? basic : dedication)) continue;
+        const meta = CASTING_CLASSES[classSlug];
+        const type = Object.values(meta.pools)[0];
+        const tiers = { basic, expert: held.has(`expert-${classSlug}-spellcasting`), master: held.has(`master-${classSlug}-spellcasting`) };
+        const row = archetypeRow({ level: actor.level, cantrips: archetype.cantrips, ...tiers });
+        wanted.push({
+            source: `archetype:${classSlug}`,
+            classSlug,
+            pool: "archetype",
+            type,
+            // CONFIG.PF2E.classTraits maps a class slug to its label key ("bard" to PF2E.TraitBard).
+            className: game.i18n.format("ASCENDANT.Casting.ArchetypeName", { class: game.i18n.localize(CONFIG.PF2E.classTraits?.[classSlug] ?? classSlug) }),
+            slugs: new Set(),
+            tripled,
+            row,
+            signatureCount: type === "spontaneous" ? archetypeSignatures({ level: actor.level, ...tiers }) : null,
+            tradition: resolveTradition(actor, meta.tradition),
+            attribute: archetype.attribute === "qualify" ? qualifyingAttribute(actor) : resolveAttribute(actor, meta.attribute),
+            expected: expectedSlots({ classSlug, pool: "archetype", type, level: actor.level, tripled, row }),
+        });
     }
     return wanted;
 }
