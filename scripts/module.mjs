@@ -20,6 +20,7 @@ import { registerDreadPresence } from "./dread-presence.mjs";
 import { registerDreadForm } from "./dread-form.mjs";
 import { registerCastingSetting } from "./casting/settings.mjs";
 import { registerCastingSync, syncActor } from "./casting/sync.mjs";
+import { registerPrepareSpells, openPrepareSpells } from "./casting/prepare-app.mjs";
 
 /**
  * Registration timing.
@@ -65,6 +66,7 @@ Hooks.once("init", () => {
     attempt("spell slots", registerSpellSlotButton);
     attempt("spellcasting setting", registerCastingSetting);
     attempt("spellcasting sync", registerCastingSync);
+    attempt("prepare spells window", registerPrepareSpells);
     attempt("know-it-all slots", () => registerKnowItAllSlots({ variantsActive }));
     attempt("shape of harm", registerShapeOfHarm);
     attempt("bonded soul", registerBonded);
@@ -145,5 +147,6 @@ Hooks.once("ready", async () => {
         syncCapacity,
         flicker,
         syncSpellcasting: syncActor,
+        openPrepareSpells,
     };
 });

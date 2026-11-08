@@ -75,3 +75,130 @@ button.attribute-button .ascendant-boost-count {
 .ascendant-slot-sync {
     margin-left: 0.25em;
 }
+
+/* Spellcasting automation: the Prepare Spells window. Each column scrolls on its own. */
+.ascendant-prepare .window-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.ascendant-prepare .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    flex: 1;
+    min-height: 0;
+}
+
+.ascendant-prepare .column {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.ascendant-prepare .column h3 {
+    margin: 0 0 0.25rem;
+}
+
+.ascendant-prepare .scroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 0.25rem;
+}
+
+.ascendant-prepare .hint {
+    font-size: var(--font-size-12);
+    margin: 0.25rem 0;
+}
+
+.ascendant-prepare h4 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0 0.25rem;
+    border-bottom: 1px solid var(--color-border-light-tertiary, #999);
+}
+
+.ascendant-prepare ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ascendant-prepare li {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.15rem 0.25rem;
+    border-radius: 3px;
+    min-height: 28px;
+}
+
+.ascendant-prepare li img {
+    width: 24px;
+    height: 24px;
+    border: none;
+    flex: 0 0 24px;
+}
+
+.ascendant-prepare li .name {
+    flex: 1;
+}
+
+.ascendant-prepare .book-spell {
+    cursor: grab;
+}
+
+.ascendant-prepare .book-spell:hover,
+.ascendant-prepare .slot:hover {
+    background: rgba(128, 128, 128, 0.15);
+}
+
+.ascendant-prepare .book-spell.picked {
+    outline: 2px solid #7e57c2;
+    background: rgba(126, 87, 194, 0.15);
+}
+
+.ascendant-prepare .book-spell .uses {
+    font-weight: bold;
+    padding: 0 0.35rem;
+    border-radius: 8px;
+    background: rgba(126, 87, 194, 0.3);
+}
+
+.ascendant-prepare .slot {
+    border: 1px dashed rgba(128, 128, 128, 0.5);
+    margin-bottom: 0.2rem;
+    cursor: pointer;
+}
+
+.ascendant-prepare .slot.filled {
+    border-style: solid;
+}
+
+.ascendant-prepare .slot.expended .name {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.ascendant-prepare .slot.drop-target {
+    outline: 2px solid #7e57c2;
+}
+
+.ascendant-prepare .slot .empty {
+    opacity: 0.6;
+    font-style: italic;
+}
+
+.ascendant-prepare .slot .heightened {
+    font-size: var(--font-size-11);
+    padding: 0 0.3rem;
+    border-radius: 6px;
+    background: rgba(126, 87, 194, 0.3);
+}
+
+.ascendant-prepare .slot .expend.on {
+    color: #c62828;
+}

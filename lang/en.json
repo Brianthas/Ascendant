@@ -132,7 +132,28 @@
             "NoClass": "{entry} no longer matches a class on this character.",
             "SyncFailed": "Ascendant: spellcasting sync failed for {actor}; see the console (F12).",
             "MismatchTooltip": "Differs from the class table ({expected})",
-            "SyncRankTooltip": "Set to the class table ({expected})"
+            "SyncRankTooltip": "Set to the class table ({expected})",
+            "Prepare": {
+                "Title": "Prepare Spells: {entry} ({actor})",
+                "Spellbook": "Spellbook",
+                "Slots": "Today's slots",
+                "Search": "Search the spellbook",
+                "Hint": "Drag a spell onto a slot, or click a spell and then a slot. A spell in a higher slot is cast at that slot's rank. Spells can also be dragged in from the compendium.",
+                "PickHint": "Click, then click a slot",
+                "UsesTooltip": "Prepared in {count} slot(s)",
+                "Cantrips": "Cantrips",
+                "Rank": "Rank {rank}",
+                "EmptySlot": "Empty",
+                "EmptyBook": "No spells in this spellbook yet. Drag some in from the compendium.",
+                "NoSlots": "This entry has no slots.",
+                "Heightened": "Rank {rank}",
+                "HeightenedTooltip": "A rank {base} spell, cast at rank {rank} from this slot",
+                "Expend": "Mark as cast",
+                "Unexpend": "Mark as not cast",
+                "Unprepare": "Remove from this slot",
+                "NotASpell": "Only spells can go in a spell slot.",
+                "WrongRank": "{spell} (rank {rank}) cannot go in a rank {slot} slot. Cantrips go in cantrip slots; a spell goes in a slot of its rank or higher."
+            }
         },
         "Slots": {
             "TripleButton": "Triple Spell Slots",

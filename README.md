@@ -115,6 +115,12 @@ World setting **Spellcasting: automate entries and slots**, off by default. With
   sheet header when its preparation type and tradition match the class. Ranks that already match
   follow the table from then on; the rest are marked.
 - Entries are never deleted. Removing a class leaves its entry as it is.
+- A prepared entry's **Prepare Spells** button opens a two-column window: the spellbook on the
+  left, every slot by rank on the right. Drag a spell onto a slot, or click it and then a slot. A
+  spell can come from the compendium, and goes into the spellbook on the way. A spell in a slot
+  above its rank is marked with the rank it will be cast at. Each slot can be marked cast or
+  emptied. A rank lists its filled slots first, as PF2e does. Flexible entries keep the system's
+  window.
 
 The tables are parsed from the class pages on Archives of Nethys by
 `tools/fetch-casting-tables.mjs` (`npm run tables:casting`).
