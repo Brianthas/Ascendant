@@ -32,8 +32,8 @@ export const CASTING_CLASSES = {
  * The class-named spellcasting archetypes, read off each dedication and Basic Spellcasting feat in
  * the installed PF2e 8.6.1 feats pack on 2026-11-07. Each archetype's entry takes the class's
  * preparation type, attribute and tradition rule (the dedications say so: "Your key spellcasting
- * attribute for wizard archetype spells is Intelligence, and they are arcane wizard spells"), with
- * two exceptions recorded here:
+ * attribute for wizard archetype spells is Intelligence, and they are arcane wizard spells"). The
+ * fields here record what differs per archetype:
  *
  * - `cantrips`: how many the dedication gives. Two for most; Witch Dedication "can prepare one
  *   cantrip each day from your familiar"; Psychic Dedication gives "one standard psi cantrip".

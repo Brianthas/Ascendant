@@ -93,9 +93,9 @@ export function expectedSlots({ classSlug, pool, type, level, tripled, slugs = n
  * spell repertoire of the same rank", so the slot table is the repertoire table. Cantrips known
  * are tripled by Inexhaustible Magics; ranked spells known are not (Bryan, 2026-11-07).
  *
- * Feats and capstones add on top (`knownAdditions`). `granted` counts, per rank, the spells a class
- * feature added on top of the table (an oracle's mystery spells, a bard's muse spell), which
- * `granted.mjs` marks on the spells it creates.
+ * Feats and capstones add on top (`knownAdditions`). `granted` counts, per rank, spells a class
+ * feature adds on top of the table, read off `flags.ascendant.granted.onTop`. The grants built so
+ * far (sorcerer gifts, cleric deity spells) all sit inside the table, so it is empty today.
  */
 export function expectedKnown({ classSlug, pool, level, tripled, slugs = new Set(), granted = {}, row: given }) {
     const row = tableRow(classSlug, pool, level, given);

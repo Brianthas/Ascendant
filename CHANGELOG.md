@@ -8,7 +8,9 @@
   **!** and a per-rank sync button. **Sync Spellcasting** in the sheet header takes over an entry
   built before the setting was on. Slots added by the wizard curriculum, Cantrip Expansion and the
   20th-level extra 10th-rank feats are counted on top of the table, untripled; a cleric's Divine
-  Font has its own entry.
+  Font has its own entry. While it is on, the sync does Inexhaustible Magics' tripling and the
+  **Triple Spell Slots** button is hidden.
+- **Triple Spell Slots** makes the slots it adds available at once; before, they waited for a rest.
 - **Archetype spellcasting**, with spellcasting automation on: the twelve class archetypes get
   their own entry, with cantrips and slots by the basic, expert and master spellcasting benefits.
 - **Granted spells**, with spellcasting automation on: a sorcerer's bloodline gifts and a cleric's

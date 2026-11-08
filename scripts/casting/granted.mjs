@@ -69,7 +69,7 @@ function variantKeysOf(item) {
 }
 
 /** What one managed entry should be granted now, as `[{ uuid, rank, source, onTop }]`. */
-function wantedGrants(actor, entry, want) {
+function wantedGrants(actor, want) {
     const open = (rank) => (rank === 0 ? true : (want.expected[`slot${rank}`] ?? 0) > 0);
     const grants = [];
     if (want.classSlug === "sorcerer" && want.pool === "sorcerer") {
@@ -99,7 +99,7 @@ export async function grantSpells(actor, entry, want) {
     const done = new Set(entry.flags?.[MODULE_ID]?.casting?.grantedDone ?? []);
     const creates = [];
     const added = [];
-    for (const grant of wantedGrants(actor, entry, want)) {
+    for (const grant of wantedGrants(actor, want)) {
         const key = `${grant.uuid}@${grant.rank}`;
         if (done.has(key)) continue;
         const spell = await fromUuid(grant.uuid);

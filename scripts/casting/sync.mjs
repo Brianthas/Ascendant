@@ -7,9 +7,9 @@
  * Arithmetic lives in `expected.mjs`; this file reads the actor and writes.
  *
  * An entry Ascendant manages carries `flags.ascendant.casting`:
- *   { source: "class:<slug>[:<pool>]", classSlug, pool, synced: { slotN: n } }
+ *   { source: "class:<slug>[:<pool>]" | "archetype:<slug>", classSlug, pool, synced: { slotN: n }, grantedDone: [] }
  * `synced` is what was last written or accepted per rank; `planSync` uses it to tell a rank the
- * table moved from one a player edited.
+ * table moved from one a player edited. `grantedDone` is written by `granted.mjs`.
  */
 import { MODULE_ID } from "../constants.mjs";
 import { SECTION_PREFIX } from "../variants/constants.mjs";

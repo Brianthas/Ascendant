@@ -48,6 +48,8 @@ async function tripleSlots(actor) {
             if (max <= 0) continue;
             record[key] = max;
             update[`system.slots.${key}.max`] = max * 3;
+            // The new slots are available at once, as the automated sync makes them.
+            update[`system.slots.${key}.value`] = (Number(data?.value) || 0) + max * 2;
         }
 
         if (Object.keys(record).length > 0) {

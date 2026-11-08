@@ -86,9 +86,9 @@ Reasons recur, so they are named once here and cited below:
   spellcasting entries exist and again after adding one. Slot maxima are stored data no rule element
   reaches. With it on, the sync writes the tripled slots and cantrips itself and the button is
   hidden. Only the class's Spells per Day table and an archetype's spellcasting benefits are
-  tripled (an archetype's cantrips too): 4 slots of a rank become 12. Slots or cantrips a feat or class feature adds (Cantrip
-  Expansion, the wizard curriculum, Divine Font) land on top untripled. Spells known are not
-  tripled.
+  tripled (an archetype's cantrips too): 4 slots of a rank become 12. Slots or cantrips a feat or
+  class feature adds (Cantrip Expansion, the wizard curriculum, Divine Font) land on top untripled.
+  Spells known are not tripled. Either way, the slots tripling adds are available at once.
 - Refocus restoring every point and the shorter Refocus times: PF2e's Refocus restores one point
   and has no hook. Set focus points to the maximum by hand.
 

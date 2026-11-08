@@ -69,7 +69,7 @@ check("Magus has no 10th column, so slot10 is 0 at 20th",
     "a short row shifting or reading undefined");
 check("Levels outside 1-20 clamp",
     [expectedSlots({ ...wizard, level: 0 }).slot1, expectedSlots({ ...wizard, level: 25 }).slot10],
-    [2, expectedSlots({ ...wizard, level: 20 }).slot10],
+    [2, 1],
     "an index of -1 or 24 returning undefined");
 
 // Additions on top of the table (scripts/casting/modifiers.mjs)
@@ -135,10 +135,10 @@ check("Deep Lore belongs to the bard: a sorcerer holding the slug gains nothing"
 check("The 10th-rank capstone: one slot, two known",
     [expectedSlots({ ...sorcerer, level: 19 }).slot10, expectedKnown({ ...sorcerer, level: 19 }).slot10], [1, 2],
     "known equal to slots at 10th, against 'Add two common 10th-rank spells'");
-check("Spells a class feature granted on top of the table raise the known count at their rank",
+check("The granted parameter adds its counts per rank (no grant built so far supplies it)",
     pick(expectedKnown({ classSlug: "oracle", pool: "oracle", level: 1, granted: { slot0: 1, slot1: 1 } }), "slot0", "slot1"),
     { slot0: 6, slot1: 4 },
-    "an oracle's mystery spells shown as one over the table");
+    "the addition dropped or applied to the wrong rank");
 check("countKnown counts a heightened copy at its own rank, and signatures among ranked spells only",
     countKnown([
         { isCantrip: true, rank: 1, signature: false },
@@ -160,9 +160,6 @@ check("Dedication only: cantrips, no slots",
 check("Basic at 4th: one 1st-rank slot; at 6th a 2nd; at 8th a 3rd",
     [arch(4, { basic: true }).slice(1, 4), arch(6, { basic: true }).slice(1, 4), arch(8, { basic: true }).slice(1, 4)], [[1, 0, 0], [1, 1, 0], [1, 1, 1]],
     "all three ranks at once, or the 2nd rank at the feat's own level");
-check("Basic taken late at 6th (the magus feat's level) gives 1st and 2nd together",
-    arch(6, { basic: true }).slice(1, 3), [1, 1],
-    "counting levels from when the feat was taken");
 check("Expert at 12th, 14th, 16th; master at 18th, 20th",
     [arch(12, { basic: true, expert: true }).slice(4, 7), arch(16, { basic: true, expert: true }).slice(4, 7),
         arch(18, { basic: true, expert: true, master: true }).slice(7, 9), arch(20, { basic: true, expert: true, master: true }).slice(7, 10)],
@@ -172,6 +169,10 @@ check("Inexhaustible Magics triples an archetype's slots and cantrips (Bryan: ar
     pick(expectedSlots({ classSlug: "wizard", pool: "archetype", type: "prepared", level: 6, tripled: true, row: arch(6, { basic: true }) }), "slot0", "slot1", "slot2"),
     { slot0: 6, slot1: 3, slot2: 3 },
     "leaving archetype slots untripled, or adding the class's curriculum to an archetype");
+check("Inexhaustible Magics triples a spontaneous archetype's cantrips known, not its spells known",
+    pick(expectedKnown({ classSlug: "sorcerer", pool: "archetype", level: 6, tripled: true, row: arch(6, { basic: true }) }), "slot0", "slot1", "slot2"),
+    { slot0: 6, slot1: 1, slot2: 1 },
+    "tripling the archetype's repertoire, or leaving its cantrips untripled");
 check("Archetype signature spells: one from basic at 6th, one each from expert and master",
     [archetypeSignatures({ level: 4, basic: true }), archetypeSignatures({ level: 6, basic: true }), archetypeSignatures({ level: 18, basic: true, expert: true, master: true })], [0, 1, 3],
     "a signature at 4th, before the rule grants one");
