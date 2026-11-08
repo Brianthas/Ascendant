@@ -122,6 +122,13 @@ World setting **Spellcasting: automate entries and slots**, off by default. With
   expert and master spellcasting benefits by level: 1st-rank slot with the basic feat, 2nd at 6th,
   3rd at 8th; 4th with the expert feat, 5th at 14th, 6th at 16th; 7th with the master feat, 8th at
   20th. Inexhaustible Magics triples them, cantrips included.
+- Infernal Pactbreaker, Prophet of Kalistrade and Rivethun Involutionist get an archetype entry
+  the same way. Hedge Mage, Beast Gunner, Cathartic Mage, Eldritch Archer and the pervasive magic
+  line let the player choose a tradition that PF2e does not record, so their entry is not created:
+  build it with the system's dialog, then **Sync Spellcasting** takes it over when it is the only
+  unmanaged entry of its preparation type. Prophet, Beast Gunner, Cathartic Mage and Eldritch
+  Archer give no cantrips of their own to a character with a casting class. Captivator's spells
+  are innate and have no slots.
 - A sorcerer's bloodline gifts are added to the repertoire as each rank opens, including the ones
   Draconic, Elemental and Genie bloodlines set by exemplar, element or genie. They count among the
   spells the table gives. A cleric's deity spells go into the spellbook as each rank opens. An

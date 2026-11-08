@@ -14,7 +14,7 @@
 import { MODULE_ID } from "../constants.mjs";
 import { SECTION_PREFIX } from "../variants/constants.mjs";
 import { hasTalent } from "../spell-slots.mjs";
-import { CASTING_CLASSES, CASTING_ARCHETYPES, TRADITIONS } from "./classes.mjs";
+import { CASTING_CLASSES, CASTING_ARCHETYPES, OTHER_ARCHETYPES, TRADITIONS } from "./classes.mjs";
 import { expectedSlots, planSync, syncRank, nextValue, archetypeRow, archetypeSignatures, SLOT_KEYS } from "./expected.mjs";
 import { castingAutomationOn } from "./settings.mjs";
 import { grantSpells } from "./granted.mjs";
@@ -177,6 +177,32 @@ function wantedArchetypes(actor, tripled) {
             expected: expectedSlots({ classSlug, pool: "archetype", type, level: actor.level, tripled, row }),
         });
     }
+
+    // Archetypes not named for a class (classes.mjs OTHER_ARCHETYPES).
+    const castsFromSlots = actor.itemTypes.class.some((c) => CASTING_CLASSES[classSlugOf(c)]);
+    for (const [key, archetype] of Object.entries(OTHER_ARCHETYPES)) {
+        if (!held.has(archetype.dedication ?? `${key}-dedication`)) continue;
+        const tier = (name) => held.has(archetype.tiers ? `${name}-${archetype.tiers}-spellcasting` : `${name}-spellcasting`);
+        const tiers = { basic: tier("basic"), expert: tier("expert"), master: tier("master") };
+        const cantrips = archetype.noCantripsIfCaster && castsFromSlots ? 0 : archetype.cantrips;
+        const row = archetypeRow({ level: actor.level, cantrips, ...tiers });
+        wanted.push({
+            source: `archetype:${key}`,
+            classSlug: key,
+            pool: "archetype",
+            type: archetype.type,
+            className: game.i18n.format("ASCENDANT.Casting.ArchetypeName", { class: archetype.label }),
+            slugs: new Set(),
+            tripled,
+            row,
+            signatureCount: archetype.type === "spontaneous" ? archetypeSignatures({ level: actor.level, ...tiers }) : null,
+            tradition: archetype.tradition,
+            attribute: archetype.attribute,
+            // Its tradition is a choice PF2e does not record: only an entry the player built is managed.
+            adoptOnly: archetype.tradition === null,
+            expected: expectedSlots({ classSlug: key, pool: "archetype", type: archetype.type, level: actor.level, tripled, row }),
+        });
+    }
     return wanted;
 }
 
@@ -237,13 +263,23 @@ export async function syncActor(actor) {
         let entry = managed.find((e) => e.flags[MODULE_ID][FLAG].source === want.source);
 
         if (!entry) {
-            if (!want.tradition || !want.attribute) {
+            if (want.adoptOnly) {
+                // The player chose the tradition and PF2e did not record it: adopt the entry they
+                // built, but only when it is the one unclaimed entry of this type, never a guess.
+                const candidates = actor.itemTypes.spellcastingEntry.filter((e) => !claimed.has(e.id) && e.system.prepared?.value === want.type);
+                entry = candidates.length === 1 ? candidates[0] : null;
+                if (!entry) {
+                    report.waiting.push(want.className);
+                    continue;
+                }
+            } else if (!want.tradition || !want.attribute) {
                 report.waiting.push(want.className);
                 continue;
+            } else {
+                entry = actor.itemTypes.spellcastingEntry.find(
+                    (e) => !claimed.has(e.id) && e.system.prepared?.value === want.type && e.system.tradition?.value === want.tradition,
+                );
             }
-            entry = actor.itemTypes.spellcastingEntry.find(
-                (e) => !claimed.has(e.id) && e.system.prepared?.value === want.type && e.system.tradition?.value === want.tradition,
-            );
             if (entry) {
                 claimed.add(entry.id);
                 const plan = planSync(storedMaxima(entry), {}, want.expected);

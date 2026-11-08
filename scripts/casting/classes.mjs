@@ -59,5 +59,49 @@ export const CASTING_ARCHETYPES = {
     summoner: { cantrips: 2, cantripsAt: "basic" },
 };
 
+/**
+ * Spellcasting archetypes not named for a class, read off their dedications and tier feats in the
+ * installed PF2e 8.6.1 feats pack on 2026-11-07. Each tier feat grants "the basic (expert, master)
+ * spellcasting benefits", so the slots follow `archetypeRow` like the class archetypes.
+ *
+ * - `tiers`: the middle of the tier slugs, `basic-<tiers>-spellcasting` and so on; pervasive magic's
+ *   are `basic-spellcasting`, `expert-spellcasting`, `master-spellcasting`.
+ * - `tradition` / `attribute`: null where the dedication lets the player choose and PF2e records the
+ *   choice nowhere (Hedge Mage: "a tradition associated with the skill chosen"; Beast Gunner:
+ *   "either Charisma or Intelligence, chosen when you take this feat"). Those entries are not
+ *   created; one the player builds is adopted (sync.mjs).
+ * - `cantrips`: the dedication's. `noCantripsIfCaster`: "if you don't already cast spells from spell
+ *   slots, you ... gain a spell repertoire with ..." cantrips, so a character with a casting class
+ *   gets none here.
+ *
+ * Captivator is left out: its spells are innate ("You can cast this spell as an innate occult
+ * spell"), with no slots.
+ */
+export const OTHER_ARCHETYPES = {
+    "infernal-pactbreaker": { label: "Infernal Pactbreaker", tiers: "pactbreaker", type: "prepared", tradition: "divine", attribute: "int", cantrips: 2 },
+    "prophet-of-kalistrade": { label: "Prophet of Kalistrade", tiers: "prophet", type: "spontaneous", tradition: "occult", attribute: "cha", cantrips: 3, noCantripsIfCaster: true },
+    "rivethun-involutionist": { label: "Rivethun Involutionist", tiers: "rivethun", type: "spontaneous", tradition: "divine", attribute: "wis", cantrips: 2 },
+    "hedge-mage": { label: "Hedge Mage", tiers: "hedge-mage", type: "prepared", tradition: null, attribute: null, cantrips: 2 },
+    "beast-gunner": { label: "Beast Gunner", tiers: "beast-gunner", type: "spontaneous", tradition: null, attribute: null, cantrips: 1, noCantripsIfCaster: true },
+    "cathartic-mage": { label: "Cathartic Mage", tiers: "cathartic", type: "spontaneous", tradition: null, attribute: "cha", cantrips: 1, noCantripsIfCaster: true },
+    "eldritch-archer": { label: "Eldritch Archer", tiers: "eldritch-archer", type: "spontaneous", tradition: null, attribute: "cha", cantrips: 1, noCantripsIfCaster: true },
+    "pervasive-magic": { label: "Pervasive Magic", dedication: "cantrip-casting", tiers: null, type: "spontaneous", tradition: null, attribute: null, cantrips: 2 },
+};
+
+/**
+ * Breadth feats: "Increase the spell slots you gain from wizard archetype feats by 1 for each spell
+ * rank other than your two highest"; the repertoire ones (Bloodline, Occult, Mysterious) add as many
+ * spells to the repertoire too.
+ */
+export const BREADTH = {
+    wizard: "arcane-breadth",
+    sorcerer: "bloodline-breadth",
+    witch: "patrons-breadth",
+    cleric: "divine-breadth",
+    bard: "occult-breadth",
+    druid: "primal-breadth",
+    oracle: "mysterious-breadth",
+};
+
 /** Traditions a choice can resolve to. Anything else read off an actor is treated as unresolved. */
 export const TRADITIONS = ["arcane", "divine", "occult", "primal"];
