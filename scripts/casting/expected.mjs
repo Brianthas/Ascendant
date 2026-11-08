@@ -3,7 +3,7 @@
  * `tools/test-casting-sync.mjs` runs it in node.
  */
 import { SLOT_TABLES } from "./slot-tables.mjs";
-import { slotAdditions, fontRow } from "./modifiers.mjs";
+import { slotAdditions, knownAdditions, fontRow } from "./modifiers.mjs";
 
 /** `system.slots` keys, cantrips first. PF2e's template has slot0 to slot11; 11 is never used. */
 export const SLOT_KEYS = Array.from({ length: 11 }, (_, i) => `slot${i}`);
@@ -55,10 +55,43 @@ export function expectedSlots({ classSlug, pool, type, level, tripled, slugs = n
  * Every spontaneous class page says "each time you get a spell slot ... you add a spell to your
  * spell repertoire of the same rank", so the slot table is the repertoire table. Cantrips known
  * are tripled by Inexhaustible Magics; ranked spells known are not (Bryan, 2026-11-07).
+ *
+ * Feats and capstones add on top (`knownAdditions`). `granted` counts, per rank, the spells a class
+ * feature added on top of the table (an oracle's mystery spells, a bard's muse spell), which
+ * `granted.mjs` marks on the spells it creates.
  */
-export function expectedKnown({ classSlug, pool, level, tripled }) {
+export function expectedKnown({ classSlug, pool, level, tripled, slugs = new Set(), granted = {} }) {
     const row = tableRow(classSlug, pool, level);
-    return Object.fromEntries(SLOT_KEYS.map((key, rank) => [key, rank === 0 && tripled ? row[0] * TRIPLE : row[rank]]));
+    const added = knownAdditions({ classSlug, pool, type: "spontaneous", baseRow: row, slugs });
+    return Object.fromEntries(SLOT_KEYS.map((key, rank) => [
+        key,
+        (rank === 0 && tripled ? row[0] * TRIPLE : row[rank]) + (added[key] ?? 0) + (granted[key] ?? 0),
+    ]));
+}
+
+/**
+ * Count a repertoire by rank, and its signature spells.
+ *
+ * Each spell is `{ isCantrip, rank, signature }`, where `rank` is the rank it is known at (a copy
+ * learned heightened counts at its heightened rank, as the repertoire rules count it). Signature
+ * spells are counted among ranked spells only; a cantrip cannot be one.
+ *
+ * @returns {{ known: Record<string, number>, signature: number }}
+ */
+export function countKnown(spells) {
+    const known = Object.fromEntries(SLOT_KEYS.map((k) => [k, 0]));
+    let signature = 0;
+    for (const spell of spells) {
+        const key = spell.isCantrip ? "slot0" : `slot${spell.rank}`;
+        if (key in known) known[key] += 1;
+        if (!spell.isCantrip && spell.signature) signature += 1;
+    }
+    return { known, signature };
+}
+
+/** Signature Spells: "For each spell rank you have access to, choose one spell of that rank." */
+export function signatureAllowed(slots) {
+    return SLOT_KEYS.slice(1).filter((key) => (slots[key] ?? 0) > 0).length;
 }
 
 /**
@@ -94,6 +127,15 @@ export function planSync(stored, synced, expected) {
         }
     }
     return { writes, synced: next, mismatches };
+}
+
+/**
+ * A rank's remaining slots after its maximum moves from `oldMax` to `max`: a gained slot is
+ * available at once, and the remainder never exceeds the new maximum.
+ */
+export function nextValue(oldMax, oldValue, max) {
+    const raised = max > oldMax ? oldValue + (max - oldMax) : oldValue;
+    return Math.min(Math.max(raised, 0), max);
 }
 
 /** Accept the expected value for one rank: what the per-rank sync button does. */

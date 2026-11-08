@@ -6,7 +6,7 @@
  * 5 | 3, row 19's 10th is 1; Wizard row 1 is 5 | 2; Animist row 1 is 2+2 | 1+1; Magus has no 10th
  * column), not off the generated file. Each case names the wrong model it separates.
  */
-import { expectedSlots, expectedKnown, planSync, syncRank, SLOT_KEYS } from "../scripts/casting/expected.mjs";
+import { expectedSlots, expectedKnown, countKnown, signatureAllowed, planSync, syncRank, nextValue, SLOT_KEYS } from "../scripts/casting/expected.mjs";
 
 let failed = 0;
 
@@ -113,6 +113,43 @@ check("Divine Font is not tripled",
 check("The curriculum slot is not tripled",
     pick(expectedSlots({ ...wizard, level: 1, tripled: true, slugs: battle }), "slot0", "slot1"), { slot0: 16, slot1: 7 },
     "tripling table and curriculum together (18 and 9), which Bryan ruled out on 2026-11-07");
+
+// Remaining slots when a maximum moves (nextValue)
+check("A gained slot is available at once; a lost one takes the remainder down with it",
+    [nextValue(3, 3, 4), nextValue(3, 1, 4), nextValue(12, 12, 4), nextValue(12, 2, 4), nextValue(4, 4, 4)], [4, 2, 4, 2, 4],
+    "lowering the maximum alone, which left 12 of 4 slots live on 2026-11-07");
+
+// Spells known (expectedKnown with knownAdditions, countKnown, signatureAllowed)
+check("Cantrip Expansion adds two cantrips known to a spontaneous caster, untripled",
+    [expectedKnown({ ...sorcerer, level: 2, slugs: new Set(["cantrip-expansion"]) }).slot0,
+        expectedKnown({ ...sorcerer, level: 2, tripled: true, slugs: new Set(["cantrip-expansion"]) }).slot0], [7, 17],
+    "no addition, or tripling the feat's two");
+check("Greater Mental Evolution adds one known spell at each rank with slots",
+    pick(expectedKnown({ ...sorcerer, level: 3, slugs: new Set(["greater-mental-evolution"]) }), "slot1", "slot2", "slot3"),
+    { slot1: 5, slot2: 4, slot3: 0 },
+    "adding at ranks the sorcerer cannot cast yet, or at none");
+check("Deep Lore belongs to the bard: a sorcerer holding the slug gains nothing",
+    expectedKnown({ ...sorcerer, level: 3, slugs: new Set(["deep-lore"]) }).slot1, 4,
+    "matching the feat regardless of class");
+check("The 10th-rank capstone: one slot, two known",
+    [expectedSlots({ ...sorcerer, level: 19 }).slot10, expectedKnown({ ...sorcerer, level: 19 }).slot10], [1, 2],
+    "known equal to slots at 10th, against 'Add two common 10th-rank spells'");
+check("Spells a class feature granted on top of the table raise the known count at their rank",
+    pick(expectedKnown({ classSlug: "oracle", pool: "oracle", level: 1, granted: { slot0: 1, slot1: 1 } }), "slot0", "slot1"),
+    { slot0: 6, slot1: 4 },
+    "an oracle's mystery spells shown as one over the table");
+check("countKnown counts a heightened copy at its own rank, and signatures among ranked spells only",
+    countKnown([
+        { isCantrip: true, rank: 1, signature: false },
+        { isCantrip: false, rank: 1, signature: true },
+        { isCantrip: false, rank: 3, signature: false },
+        { isCantrip: false, rank: 1, signature: false },
+    ]),
+    { known: { ...Object.fromEntries(SLOT_KEYS.map((k) => [k, 0])), slot0: 1, slot1: 2, slot3: 1 }, signature: 1 },
+    "counting the copy at its base rank, or a cantrip as a 1st-rank spell");
+check("One signature spell per rank with slots, 10th included",
+    [signatureAllowed(expectedSlots({ ...sorcerer, level: 3 })), signatureAllowed(expectedSlots({ ...sorcerer, level: 19 }))], [2, 10],
+    "counting the cantrip column, or stopping at 9th");
 
 // planSync
 const zeros = Object.fromEntries(SLOT_KEYS.map((k) => [k, 0]));

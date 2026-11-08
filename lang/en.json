@@ -133,6 +133,22 @@
             "SyncFailed": "Ascendant: spellcasting sync failed for {actor}; see the console (F12).",
             "MismatchTooltip": "Differs from the class table ({expected})",
             "SyncRankTooltip": "Set to the class table ({expected})",
+            "Known": {
+                "Badge": "Known {known} / {expected}",
+                "Tooltip": "Spells known at this rank match the class table and your feats ({expected})",
+                "OffTooltip": "{known} known at this rank; the class table and your feats give {expected}"
+            },
+            "Signature": {
+                "Label": "Signature",
+                "Tooltip": "{count} of {allowed} signature spells chosen: one per spell rank you can cast",
+                "OverTooltip": "{count} signature spells for {allowed} spell ranks: one per rank"
+            },
+            "Learn": {
+                "Tooltip": "Learn this spell at another rank",
+                "Title": "Learn {spell} at another rank",
+                "Hint": "Adds a copy of the spell to your repertoire at the chosen rank. It takes one of that rank's repertoire spots. A signature spell does not need this: it heightens freely.",
+                "Confirm": "Learn"
+            },
             "Prepare": {
                 "Title": "Prepare Spells: {entry} ({actor})",
                 "Spellbook": "Spellbook",

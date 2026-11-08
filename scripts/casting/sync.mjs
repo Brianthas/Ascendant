@@ -15,7 +15,7 @@ import { MODULE_ID } from "../constants.mjs";
 import { SECTION_PREFIX } from "../variants/constants.mjs";
 import { hasTalent } from "../spell-slots.mjs";
 import { CASTING_CLASSES, TRADITIONS } from "./classes.mjs";
-import { expectedSlots, planSync, syncRank, SLOT_KEYS } from "./expected.mjs";
+import { expectedSlots, planSync, syncRank, nextValue, SLOT_KEYS } from "./expected.mjs";
 import { castingAutomationOn } from "./settings.mjs";
 
 const FLAG = "casting";
@@ -76,7 +76,7 @@ function slugsByClass(actor, classSlugs) {
 }
 
 /** Every entry the actor's casting classes call for, with what each should hold now. */
-function wantedEntries(actor) {
+export function wantedEntries(actor) {
     const tripled = hasTalent(actor);
     const wanted = [];
     const classItems = actor.itemTypes.class;
@@ -94,6 +94,8 @@ function wantedEntries(actor) {
                 pool,
                 type,
                 className: classItem.name,
+                slugs,
+                tripled,
                 tradition: resolveTradition(actor, meta.tradition),
                 attribute: resolveAttribute(actor, meta.attribute),
                 expected: expectedSlots({ classSlug, pool, type, level: actor.level, tripled, slugs }),
@@ -103,7 +105,7 @@ function wantedEntries(actor) {
     return wanted;
 }
 
-function managedEntries(actor) {
+export function managedEntries(actor) {
     return actor.itemTypes.spellcastingEntry.filter((e) => typeof e.flags?.[MODULE_ID]?.[FLAG]?.source === "string");
 }
 
@@ -118,15 +120,20 @@ function entryName(want) {
     return game.i18n.format("ASCENDANT.Casting.EntryName", { class: want.className });
 }
 
-/** The update that writes these maxima, raising `value` by what each rank gained. */
+/**
+ * The update that writes these maxima, with each rank's remaining slots (`value`) moved too.
+ *
+ * PF2e clamps `value` to `max` only when the update carries `value` (`_preUpdate`, pf2e.mjs:53812),
+ * so lowering a maximum alone leaves more slots remaining than the rank has: measured live, 12 of 4
+ * after Inexhaustible Magics was removed, and the next cast then wrote 11 and was clamped to 4.
+ */
 function slotUpdate(entry, writes) {
     const update = {};
     const source = entry?._source.system?.slots ?? {};
     for (const [key, max] of Object.entries(writes)) {
         update[`system.slots.${key}.max`] = max;
-        const oldMax = Number(source[key]?.max) || 0;
-        const oldValue = Number(source[key]?.value) || 0;
-        if (max > oldMax) update[`system.slots.${key}.value`] = oldValue + (max - oldMax);
+        const value = nextValue(Number(source[key]?.max) || 0, Number(source[key]?.value) || 0, max);
+        if (value !== (Number(source[key]?.value) || 0)) update[`system.slots.${key}.value`] = value;
     }
     return update;
 }

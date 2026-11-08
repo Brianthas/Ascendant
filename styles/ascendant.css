@@ -76,6 +76,25 @@ button.attribute-button .ascendant-boost-count {
     margin-left: 0.25em;
 }
 
+/* Spellcasting automation: spells known per rank and signature spells on a spontaneous entry. */
+.ascendant-known {
+    margin-left: 0.5em;
+    font-size: var(--font-size-11);
+    opacity: 0.8;
+    white-space: nowrap;
+}
+
+.ascendant-known.off,
+.ascendant-signature.off .value {
+    color: #c62828;
+    font-weight: bold;
+    opacity: 1;
+}
+
+.ascendant-signature {
+    text-align: center;
+}
+
 /* Spellcasting automation: the Prepare Spells window. Each column scrolls on its own. */
 .ascendant-prepare .window-content {
     display: flex;

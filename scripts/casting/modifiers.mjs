@@ -61,6 +61,41 @@ export function slotAdditions({ classSlug, pool, type, baseRow, slugs }) {
 }
 
 /**
+ * Feats that add spells to a repertoire, on top of the one spell per slot the class table gives:
+ * "If a feat or other ability adds a spell to your spell repertoire, it wouldn't give you another
+ * spell slot" (every spontaneous class page).
+ */
+const PLUS_ONE_PER_RANK = {
+    // "Add one spell to your repertoire of each spell rank you can cast."
+    bard: "deep-lore",
+    // "Add one spell to your spell repertoire for each spell rank you can cast."
+    sorcerer: "greater-mental-evolution",
+};
+
+/**
+ * Additions to one spontaneous entry's spells known, as `{ slotN: n }` (slot0 is cantrips).
+ *
+ * The 10th-rank capstones (Magnum Opus, Oracular Clarity, Bloodline Paragon, Infinite Mind) each
+ * say "Add two common 10th-rank ... spells to your repertoire" against "a single 10th-rank spell
+ * slot", so a table row with a 10th-rank slot knows one more spell than it has slots.
+ *
+ * @param {object} facts as for `slotAdditions`
+ */
+export function knownAdditions({ classSlug, pool, type, baseRow, slugs }) {
+    const added = {};
+    const add = (key, n) => (added[key] = (added[key] ?? 0) + n);
+    if (pool !== classSlug || type !== "spontaneous") return added;
+
+    // "Spontaneous: Add two additional cantrips from your spell list to your repertoire."
+    if (slugs.has("cantrip-expansion")) add("slot0", 2);
+    if (PLUS_ONE_PER_RANK[classSlug] && slugs.has(PLUS_ONE_PER_RANK[classSlug])) {
+        for (let rank = 1; rank <= 10; rank++) if (baseRow[rank] > 0) add(`slot${rank}`, 1);
+    }
+    if (baseRow[10] > 0) add("slot10", 1);
+    return added;
+}
+
+/**
  * Divine Font: "You gain 4 additional spell slots each day at your highest rank of cleric spell
  * slots. You can prepare only heal spells in these slots. At 5th level, the number of additional
  * slots increases to 5, and at 15th level ... 6." Its own entry, so the slots hold nothing else.

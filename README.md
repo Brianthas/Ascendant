@@ -115,6 +115,12 @@ World setting **Spellcasting: automate entries and slots**, off by default. With
   sheet header when its preparation type and tradition match the class. Ranks that already match
   follow the table from then on; the rest are marked.
 - Entries are never deleted. Removing a class leaves its entry as it is.
+- A spontaneous entry shows, on each rank's header, the spells known at that rank against what the
+  class table and feats give (Cantrip Expansion, Deep Lore, Greater Mental Evolution, the 10th-rank
+  capstone's two spells), in red when they differ. A spell learned again at a higher rank counts
+  at that rank. Once the character has Signature Spells, the entry also shows signature spells
+  chosen against one per rank. Each non-signature spell has a control that adds it to the
+  repertoire again at a higher rank. Apparition entries show no counts.
 - A prepared entry's **Prepare Spells** button opens a two-column window: the spellbook on the
   left, every slot by rank on the right. Drag a spell onto a slot, or click it and then a slot. A
   spell can come from the compendium, and goes into the spellbook on the way. A spell in a slot
