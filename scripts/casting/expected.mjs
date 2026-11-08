@@ -3,7 +3,7 @@
  * `tools/test-casting-sync.mjs` runs it in node.
  */
 import { SLOT_TABLES } from "./slot-tables.mjs";
-import { slotAdditions, fontRow, CLASS_FEATURE_SLOTS_TRIPLED } from "./modifiers.mjs";
+import { slotAdditions, fontRow } from "./modifiers.mjs";
 
 /** `system.slots` keys, cantrips first. PF2e's template has slot0 to slot11; 11 is never used. */
 export const SLOT_KEYS = Array.from({ length: 11 }, (_, i) => `slot${i}`);
@@ -32,20 +32,19 @@ function tableRow(classSlug, pool, level) {
  * A prepared entry's slot0 is the cantrips it prepares. A spontaneous entry casts cantrips without
  * slots, so its slot0 is 0 and its cantrip count is a repertoire size instead (`expectedKnown`).
  *
- * Inexhaustible Magics triples the table; feat additions (`modifiers.mjs`) land on top untripled.
- * Divine Font is a class feature, so it follows `CLASS_FEATURE_SLOTS_TRIPLED` with the curriculum.
+ * Inexhaustible Magics triples the class table. Feat and class-feature additions (`modifiers.mjs`)
+ * and Divine Font land on top untripled (Bryan, 2026-11-07).
  *
  * @param {Set<string>} [slugs] feats and features attributed to this class, for `slotAdditions`
  */
 export function expectedSlots({ classSlug, pool, type, level, tripled, slugs = new Set() }) {
     const row = tableRow(classSlug, pool, level);
-    const tableFactor = tripled && (pool !== "font" || CLASS_FEATURE_SLOTS_TRIPLED) ? TRIPLE : 1;
-    const featureFactor = tripled && CLASS_FEATURE_SLOTS_TRIPLED ? TRIPLE : 1;
-    const { feat, feature } = slotAdditions({ classSlug, pool, type, baseRow: row, slugs });
+    const factor = tripled && pool !== "font" ? TRIPLE : 1;
+    const added = slotAdditions({ classSlug, pool, type, baseRow: row, slugs });
     return Object.fromEntries(
         SLOT_KEYS.map((key, rank) => {
             if (rank === 0 && type !== "prepared") return [key, 0];
-            return [key, row[rank] * tableFactor + (feature[key] ?? 0) * featureFactor + (feat[key] ?? 0)];
+            return [key, row[rank] * factor + (added[key] ?? 0)];
         }),
     );
 }

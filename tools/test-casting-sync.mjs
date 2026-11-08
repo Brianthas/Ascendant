@@ -107,10 +107,12 @@ const fontAt = (level) => Object.entries(expectedSlots({ ...font, level })).filt
 check("Divine Font: 4 slots at the highest rank, 5 from 5th, 6 from 15th, nothing else",
     [fontAt(1), fontAt(5), fontAt(15), fontAt(19)], [[["slot1", 4]], [["slot3", 5]], [["slot8", 6]], [["slot10", 6]]],
     "putting font slots at every rank, a fixed count, or cantrips in the font entry");
-check("Divine Font stays untripled while the class-feature question is open",
-    fontAt(1).concat(Object.entries(expectedSlots({ ...font, level: 1, tripled: true })).filter(([, n]) => n > 0)),
-    [["slot1", 4], ["slot1", 4]],
-    "tripling a class feature's slots before Bryan has ruled on them");
+check("Divine Font is not tripled",
+    Object.entries(expectedSlots({ ...font, level: 1, tripled: true })).filter(([, n]) => n > 0), [["slot1", 4]],
+    "tripling a class feature's slots, which Bryan ruled out on 2026-11-07");
+check("The curriculum slot is not tripled",
+    pick(expectedSlots({ ...wizard, level: 1, tripled: true, slugs: battle }), "slot0", "slot1"), { slot0: 16, slot1: 7 },
+    "tripling table and curriculum together (18 and 9), which Bryan ruled out on 2026-11-07");
 
 // planSync
 const zeros = Object.fromEntries(SLOT_KEYS.map((k) => [k, 0]));

@@ -1,16 +1,13 @@
 /**
  * Slots that class features and feats add on top of a class's Spells per Day table.
  *
- * Inexhaustible Magics triples the table only. Additions from feats are not tripled: "if you have 4
- * spells per level, you now have 12", and Cantrip Expansion adds its two on top (Bryan,
- * 2026-11-07). `CLASS_FEATURE_SLOTS_TRIPLED` records the open question for slots that come from
- * class features (Wizard curriculum, Divine Font) until he rules on it.
+ * Inexhaustible Magics triples the class's table only, and an archetype's spellcasting benefits.
+ * Nothing here is tripled, feats and class features alike: "if you have 4 spells per level, you now
+ * have 12"; Cantrip Expansion, the curriculum and Divine Font add on top (Bryan, 2026-11-07).
  *
  * Every addition below quotes its item, read off the installed PF2e packs on 2026-11-07. Free of
  * Foundry globals so `tools/test-casting-sync.mjs` runs it.
  */
-
-export const CLASS_FEATURE_SLOTS_TRIPLED = false;
 
 /** "You gain an additional 10th-rank spell slot." Each is a 20th-level feat of one class. */
 const EXTRA_TENTH = {
@@ -34,8 +31,7 @@ function hasCurriculum(slugs) {
 }
 
 /**
- * Additions to one entry's slots, as `{ feat: {slotN: n}, feature: {slotN: n} }`, split so the
- * caller can triple the class-feature part if that is ruled in.
+ * Additions to one entry's slots, as `{ slotN: n }`.
  *
  * @param {object} facts
  * @param {string} facts.classSlug
@@ -45,24 +41,23 @@ function hasCurriculum(slugs) {
  * @param {Set<string>} facts.slugs  slugs of the feats and features attributed to this class
  */
 export function slotAdditions({ classSlug, pool, type, baseRow, slugs }) {
-    const feat = {};
-    const feature = {};
-    const add = (target, key, n) => (target[key] = (target[key] ?? 0) + n);
+    const added = {};
+    const add = (key, n) => (added[key] = (added[key] ?? 0) + n);
 
-    if (pool !== classSlug) return { feat, feature };
+    if (pool !== classSlug) return added;
 
     // "Prepared: You can prepare two additional cantrips each day." The spontaneous half adds to
     // the repertoire, not to slots.
-    if (type === "prepared" && slugs.has("cantrip-expansion")) add(feat, "slot0", 2);
+    if (type === "prepared" && slugs.has("cantrip-expansion")) add("slot0", 2);
 
-    if (EXTRA_TENTH[classSlug] && slugs.has(EXTRA_TENTH[classSlug])) add(feat, "slot10", 1);
+    if (EXTRA_TENTH[classSlug] && slugs.has(EXTRA_TENTH[classSlug])) add("slot10", 1);
 
     if (classSlug === "wizard" && hasCurriculum(slugs)) {
-        add(feature, "slot0", 1);
+        add("slot0", 1);
         // Curriculum lists stop at 9th rank; the 10th-rank slot is the capstone's.
-        for (let rank = 1; rank <= 9; rank++) if (baseRow[rank] > 0) add(feature, `slot${rank}`, 1);
+        for (let rank = 1; rank <= 9; rank++) if (baseRow[rank] > 0) add(`slot${rank}`, 1);
     }
-    return { feat, feature };
+    return added;
 }
 
 /**
