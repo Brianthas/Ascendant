@@ -44,6 +44,7 @@ export function prepareSpellsApp() {
                 assign: AscendantPrepareSpells.#onAssign,
                 unprepare: AscendantPrepareSpells.#onUnprepare,
                 expend: AscendantPrepareSpells.#onExpend,
+                browse: AscendantPrepareSpells.#onBrowse,
             },
         };
 
@@ -137,9 +138,10 @@ export function prepareSpellsApp() {
                 </section>`)
                 .join("") || `<p class="hint">${escape(t("ASCENDANT.Casting.Prepare.EmptyBook"))}</p>`;
 
+            const browse = (rank) => `<a class="browse" data-action="browse" data-rank="${rank}" data-tooltip="${escape(t("ASCENDANT.Casting.Prepare.Browse"))}"><i class="fa-solid fa-fw fa-search"></i></a>`;
             const slots = groups
                 .map((group) => `<section class="slot-rank">
-                    <h4>${escape(this.#rankLabel(group.rank))}<span class="count">${group.filled} / ${group.slots.length}</span></h4>
+                    <h4><span>${escape(this.#rankLabel(group.rank))}</span><span class="count">${group.filled} / ${group.slots.length} ${browse(group.rank)}</span></h4>
                     <ol>${group.slots.map((slot) => {
                         const heightened = slot.spell && !slot.spell.isCantrip && slot.spell.baseRank < group.rank;
                         const body = slot.spell
@@ -155,7 +157,7 @@ export function prepareSpellsApp() {
 
             return `<div class="columns">
                 <div class="column book">
-                    <h3>${escape(t("ASCENDANT.Casting.Prepare.Spellbook"))}</h3>
+                    <h3>${escape(t("ASCENDANT.Casting.Prepare.Spellbook"))} ${browse("all")}</h3>
                     <input type="search" class="search" placeholder="${escape(t("ASCENDANT.Casting.Prepare.Search"))}" value="${escape(this.#search)}">
                     <p class="hint">${escape(t("ASCENDANT.Casting.Prepare.Hint"))}</p>
                     <div class="scroll">${book}</div>
@@ -243,6 +245,19 @@ export function prepareSpellsApp() {
             const spell = this.actor.items.get(this.#picked);
             if (!spell) return;
             await this.#prepare(spell, Number(target.dataset.rank), Number(target.dataset.index));
+        }
+
+        /**
+         * The compendium browser, filtered the way the sheet's own browse button filters it
+         * (pf2e.mjs:22704): this entry's tradition, cantrips for the cantrip row, spells up to the
+         * row's rank otherwise, every rank the entry has for the spellbook's button.
+         */
+        static #onBrowse(event, target) {
+            const browser = game.pf2e.compendiumBrowser;
+            const rank = target.dataset.rank;
+            if (rank === "0") return browser.openSpellTab(this.entry, 1, "cantrip");
+            if (rank === "all") return browser.openSpellTab(this.entry, Math.max(1, this.entry.spells?.highestRank ?? 1));
+            return browser.openSpellTab(this.entry, Number(rank), "spell");
         }
 
         static async #onUnprepare(event, target) {

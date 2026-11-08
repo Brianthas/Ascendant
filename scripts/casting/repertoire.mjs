@@ -100,13 +100,15 @@ function draw(sheet, element) {
             ));
         }
 
-        const block = root.querySelector(`[data-container-id="${entry.id}"] .spell-ability-data`);
+        // Beside the Spell DC, built the way PF2e builds that one (a skill-data section in
+        // .statistic-values), so it takes the same spacing.
+        const block = root.querySelector(`[data-container-id="${entry.id}"] .spell-ability-data .statistic-values`);
         if (state.signatures !== null && block && !block.querySelector(".ascendant-signature")) {
             const off = state.signature > state.signatures;
             const section = document.createElement("section");
-            section.className = `ascendant-signature${off ? " off" : ""}`;
+            section.className = `skill-data ascendant-signature${off ? " off" : ""}`;
             section.dataset.tooltip = t(off ? "ASCENDANT.Casting.Signature.OverTooltip" : "ASCENDANT.Casting.Signature.Tooltip", { count: state.signature, allowed: state.signatures });
-            section.innerHTML = `<span class="value">${state.signature} / ${state.signatures}</span><h4>${t("ASCENDANT.Casting.Signature.Label")}</h4>`;
+            section.innerHTML = `<span class="skill-score value">${state.signature} / ${state.signatures}</span><h4>${t("ASCENDANT.Casting.Signature.Label")}</h4>`;
             block.append(section);
         }
 
@@ -115,8 +117,10 @@ function draw(sheet, element) {
         for (const row of root.querySelectorAll(`li.spell[data-entry-id="${entry.id}"]:not(.virtual)`)) {
             const spell = actor.items.get(row.dataset.itemId);
             if (!spell || spell.isCantrip || spell.isFocusSpell || spell.system.location?.signature) continue;
-            const controls = row.querySelector(".item-controls");
-            if (!controls || controls.querySelector(".ascendant-learn")) continue;
+            // Beside the name: PF2e's controls column is 48px, three icons, and a fourth pushed the
+            // row's controls over the Cast button.
+            const name = row.querySelector(".item-name h4.name");
+            if (!name || name.querySelector(".ascendant-learn")) continue;
             const ranks = [];
             for (let r = spell.baseRank; r <= highest; r++) {
                 if (r === spell.rank) continue;
@@ -133,7 +137,7 @@ function draw(sheet, element) {
                 event.stopPropagation();
                 learnAtRank(entry, spell, ranks);
             });
-            controls.prepend(link);
+            name.append(link);
         }
     }
 }

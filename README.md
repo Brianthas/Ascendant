@@ -147,7 +147,8 @@ World setting **Spellcasting: automate entries and slots**, off by default. With
   repertoire again at a higher rank. Apparition entries show no counts.
 - A prepared entry's **Prepare Spells** button opens a two-column window: the spellbook on the
   left, every slot by rank on the right. Drag a spell onto a slot, or click it and then a slot. A
-  spell can come from the compendium, and goes into the spellbook on the way. A spell in a slot
+  spell can come from the compendium, and goes into the spellbook on the way: each rank's search
+  icon opens the compendium browser filtered to the entry's tradition and that rank. A spell in a slot
   above its rank is marked with the rank it will be cast at. Each slot can be marked cast or
   emptied. A rank lists its filled slots first, as PF2e does. Flexible entries keep the system's
   window.

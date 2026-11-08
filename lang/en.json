@@ -154,6 +154,7 @@
             "Prepare": {
                 "Title": "Prepare Spells: {entry} ({actor})",
                 "Spellbook": "Spellbook",
+                "Browse": "Browse the compendium for this entry's spells; drag one onto a slot",
                 "Slots": "Today's slots",
                 "Search": "Search the spellbook",
                 "Hint": "Drag a spell onto a slot, or click a spell and then a slot. A spell in a higher slot is cast at that slot's rank. Spells can also be dragged in from the compendium.",

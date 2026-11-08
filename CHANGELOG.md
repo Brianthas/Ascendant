@@ -25,7 +25,7 @@
 - **Prepare Spells window**, with spellcasting automation on. Each slot takes a drop of its own,
   so a spell dropped on a 2nd-rank slot is prepared there, heightened. The system's window adds a
   dropped spell to the spellbook and ignores which slot it landed on. Click-to-assign, a spellbook
-  search, and per-rank counts of filled slots.
+  search, per-rank counts of filled slots, and a compendium browse button on each rank.
 
 ## 1.0.1 - 2026-11-01
 
