@@ -18,6 +18,7 @@ import { CASTING_CLASSES, CASTING_ARCHETYPES, TRADITIONS } from "./classes.mjs";
 import { expectedSlots, planSync, syncRank, nextValue, archetypeRow, archetypeSignatures, SLOT_KEYS } from "./expected.mjs";
 import { castingAutomationOn } from "./settings.mjs";
 import { grantSpells } from "./granted.mjs";
+import { parseSlotTable, fontRow } from "./modifiers.mjs";
 
 const FLAG = "casting";
 
@@ -98,9 +99,13 @@ export function wantedEntries(actor) {
         const meta = CASTING_CLASSES[classSlug];
         if (!meta) continue;
         const slugs = groups.get(classSlug);
+        const replaced = replacementRow(actor, classSlug, slugs);
         for (const [pool, type] of Object.entries(meta.pools)) {
             if (pool === "font" && !slugs.has("divine-font")) continue;
+            // Battle Creed's own table stands in for the class's, and Divine Font sits at its highest rank.
+            const row = replaced ? (pool === "font" ? fontRow(replaced, actor.level) : replaced) : undefined;
             wanted.push({
+                row,
                 source: sourceKey(classSlug, pool),
                 classSlug,
                 pool,
@@ -110,12 +115,31 @@ export function wantedEntries(actor) {
                 tripled,
                 tradition: resolveTradition(actor, meta.tradition),
                 attribute: resolveAttribute(actor, meta.attribute),
-                expected: expectedSlots({ classSlug, pool, type, level: actor.level, tripled, slugs }),
+                expected: expectedSlots({ classSlug, pool, type, level: actor.level, tripled, slugs, row }),
             });
         }
     }
     wanted.push(...wantedArchetypes(actor, tripled));
     return wanted;
+}
+
+/** Class features that replace a class's Spells per Day table with one in their own text. */
+const REPLACING_TABLES = { cleric: "battle-creed" };
+const unreadable = new Set();
+
+/** This level's row of a replacing table the class holds, or undefined to use the class table. */
+function replacementRow(actor, classSlug, slugs) {
+    const slug = REPLACING_TABLES[classSlug];
+    if (!slug || !slugs.has(slug)) return undefined;
+    const feature = actor.itemTypes.feat.find((f) => f.slug === slug);
+    const table = parseSlotTable(feature?.system.description.value);
+    if (!table) {
+        // Loud once per actor: the class table is used instead, and every rank it gets wrong shows a !.
+        if (!unreadable.has(actor.id)) console.error(`${MODULE_ID} | ${actor.name}: no Spells per Day table could be read from ${feature?.name ?? slug}; using the ${classSlug} table`);
+        unreadable.add(actor.id);
+        return undefined;
+    }
+    return table[Math.min(Math.max(actor.level, 1), 20) - 1];
 }
 
 /** Psychic Dedication: "the attribute you used to qualify for the archetype", Intelligence or Charisma. */

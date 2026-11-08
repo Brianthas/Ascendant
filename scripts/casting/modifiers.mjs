@@ -96,6 +96,27 @@ export function knownAdditions({ classSlug, pool, type, baseRow, slugs }) {
 }
 
 /**
+ * A Spells per Day table carried in an item's own description, as `rows[level - 1][column]`
+ * (column 0 cantrips, 1 to 10 ranks), or null when it is not a 20-row table of counts.
+ *
+ * The Battle Creed doctrine replaces the Cleric table with its own ("shown in Battle Harbinger
+ * Spells per Day"), and PF2e carries it as an HTML table in the feature's description: a header of
+ * Your Level, Cantrips, 1st to 9th, then 20 rows with "-" for none (read 2026-11-07).
+ */
+export function parseSlotTable(html) {
+    const body = (html ?? "").match(/<tbody>([\s\S]*?)<\/tbody>/)?.[1];
+    if (!body) return null;
+    const rows = [...body.matchAll(/<tr>([\s\S]*?)<\/tr>/g)].map((m) => [...m[1].matchAll(/<td>([\s\S]*?)<\/td>/g)].map((c) => c[1].replace(/<[^>]*>/g, "").trim()));
+    if (rows.length !== 20 || rows.some((cells, i) => cells[0] !== String(i + 1))) return null;
+    const parsed = rows.map((cells) => {
+        const counts = cells.slice(1).map((c) => (c === "-" ? 0 : Number(c.replace(/\D+$/, ""))));
+        while (counts.length < 11) counts.push(0);
+        return counts.slice(0, 11);
+    });
+    return parsed.every((row) => row.every((n) => Number.isInteger(n) && n >= 0)) ? parsed : null;
+}
+
+/**
  * Divine Font: "You gain 4 additional spell slots each day at your highest rank of cleric spell
  * slots. You can prepare only heal spells in these slots. At 5th level, the number of additional
  * slots increases to 5, and at 15th level ... 6." Its own entry, so the slots hold nothing else.

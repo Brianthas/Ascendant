@@ -8,6 +8,7 @@
  */
 import { expectedSlots, expectedKnown, countKnown, signatureAllowed, planSync, syncRank, nextValue, archetypeRow, archetypeSignatures, SLOT_KEYS } from "../scripts/casting/expected.mjs";
 import { parseBloodlineGifts, parseGrantedSpells, parsePsiCantrips, parseMuseSpell, parseStudiousSpells } from "../scripts/casting/granted.mjs";
+import { parseSlotTable, fontRow } from "../scripts/casting/modifiers.mjs";
 
 let failed = 0;
 
@@ -236,6 +237,19 @@ check("Studious spells by character level: Gecko Grip and the study's at 7th, Ha
     ).map((s) => `${s.level}:${s.uuid.split(".").at(-1)}`).sort(),
     ["11:AMEu5zzLN7uCX645", "11:o6YCGx4lycsYpww4", "13:A2JfEKe6BZcTG1S8", "13:VlNcjmYyu95vOUe8", "7:3JG1t3T4mWn6vTke", "7:5KobTMrZeZxuXMgl"].sort(),
     "reading the study's 7th/11th/13th as spell ranks, or taking Haste and Fly at 7th");
+
+// A table carried in a feature's description (parseSlotTable), as Battle Creed carries its own.
+const battleRows = Array.from({ length: 20 }, (_, i) => `<tr><td>${i + 1}</td><td>5</td><td>${i === 0 ? 1 : 2}</td>${"<td>-</td>".repeat(8)}</tr>`).join("");
+const battleHtml = `<table class="pf2e lost-omens"><thead><tr><th>Your Level</th><th>Cantrips</th><th>1st</th></tr></thead><tbody>${battleRows}</tbody></table>`;
+check("A 20-row table in a description: '-' is none, the 9-column table padded to 10th",
+    [parseSlotTable(battleHtml)[0], parseSlotTable(battleHtml)[19].length], [[5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], 11],
+    "a dash read as NaN, or a short row shifting the ranks");
+check("A table with a missing level row is refused, not half-read",
+    parseSlotTable(battleHtml.replace("<tr><td>20</td>", "<tr><td>21</td>")), null,
+    "a 19-row table taken as complete");
+check("Divine Font follows the replacing table's highest rank",
+    fontRow([5, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0], 3), [0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0],
+    "font slots at the cleric table's rank instead");
 
 // planSync
 const zeros = Object.fromEntries(SLOT_KEYS.map((k) => [k, 0]));

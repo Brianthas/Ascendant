@@ -11,6 +11,7 @@
   Font has its own entry. While it is on, the sync does Inexhaustible Magics' tripling and the
   **Triple Spell Slots** button is hidden.
 - **Triple Spell Slots** makes the slots it adds available at once; before, they waited for a rest.
+- A Battle Creed cleric's slots follow the doctrine's own table.
 - **Archetype spellcasting**, with spellcasting automation on: the twelve class archetypes get
   their own entry, with cantrips and slots by the basic, expert and master spellcasting benefits.
 - **Granted spells**, with spellcasting automation on: a sorcerer's bloodline gifts, a cleric's
