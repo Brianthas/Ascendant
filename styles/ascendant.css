@@ -63,3 +63,15 @@ button.attribute-button .ascendant-boost-count {
     margin: 0.5em 0;
     padding-left: 1.5em;
 }
+
+/* Spellcasting automation: a slot rank that differs from the class table. */
+.ascendant-slot-mismatch {
+    color: #c62828;
+    font-weight: bold;
+    margin-left: 0.25em;
+    cursor: help;
+}
+
+.ascendant-slot-sync {
+    margin-left: 0.25em;
+}

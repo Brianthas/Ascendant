@@ -116,6 +116,23 @@
             "RegenerationDeactivated": "Regeneration Deactivated",
             "RegenerationDeactivatedText": "<p>Damage of your deactivating type ({type}) landed. Your regeneration is off until the end of your next turn.</p>"
         },
+        "Casting": {
+            "SettingName": "Spellcasting: automate entries and slots",
+            "SettingHint": "Creates a spellcasting entry when a character takes a casting class and keeps its spell slots on the class table as the character levels. A slot count edited by hand is kept and marked with a red ! and a sync button. Off by default.",
+            "EntryName": "{class} Spells",
+            "ApparitionEntryName": "Apparition Spells",
+            "SyncButton": "Sync Spellcasting",
+            "Created": "created {names}.",
+            "Adopted": "now managing {names}.",
+            "RanksWritten": "updated {count} slot rank(s).",
+            "Waiting": "{names}: no entry yet; choose the bloodline, patron, eidolon or key attribute first, then press Sync Spellcasting.",
+            "Mismatched": "{count} rank(s) differ from the table; each is marked with a red ! on the Spellcasting tab.",
+            "UpToDate": "spellcasting is up to date.",
+            "NoClass": "{entry} no longer matches a class on this character.",
+            "SyncFailed": "Ascendant: spellcasting sync failed for {actor}; see the console (F12).",
+            "MismatchTooltip": "Differs from the class table ({expected})",
+            "SyncRankTooltip": "Set to the class table ({expected})"
+        },
         "Slots": {
             "TripleButton": "Triple Spell Slots",
             "RestoreButton": "Restore Spell Slots",

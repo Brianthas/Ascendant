@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- **Spellcasting automation**, a world setting, off by default. A casting class creates its
+  spellcasting entry, and its spell slots follow the class's Spells per Day table at every level,
+  tripled with Inexhaustible Magics. A slot count edited by hand is kept and marked with a red
+  **!** and a per-rank sync button. **Sync Spellcasting** in the sheet header takes over an entry
+  built before the setting was on.
+
 ## 1.0.1 - 2026-11-01
 
 - **The Ledger has a container in the Party stash.** It appears once any party member has the

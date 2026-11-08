@@ -63,7 +63,8 @@ Mythic proficiency, the sixth rank at level + 10, appears on attack rolls and sp
    macro or a script, has no slot and lists under **Bonus Feats** instead; drag it onto its
    section to seat it.
 4. Read the talent's **In Foundry** paragraph. Some need one more step: Inexhaustible Magics'
-   **Triple Spell Slots** button once the spellcasting entries exist, Soulbound Arsenal's tag on
+   **Triple Spell Slots** button once the spellcasting entries exist (not needed with
+   [spellcasting automation](#spellcasting-automation) on), Soulbound Arsenal's tag on
    a weapon, Bonded Soul's **Link Bonded** button after importing a base form.
 
 ## What is and is not automated
@@ -91,6 +92,28 @@ The copy carries that module's two PF2e Leveler bridges: classes created togethe
 recorded as dual class, and second-class feats Leveler files under `xdy_dualclass` move into the
 class's own ladder. Both verified live in each module on 2026-09-17, on a Monk/Guardian created in
 one batch.
+
+## Spellcasting automation
+
+World setting **Spellcasting: automate entries and slots**, off by default. With it on:
+
+- A character that takes Bard, Cleric, Druid, Witch, Wizard, Oracle, Sorcerer, Animist, Psychic,
+  Magus, Necromancer or Summoner gets that class's spellcasting entry, with its tradition and
+  attribute. Animist gets two, its own and its apparition entry. A sorcerer, witch or summoner's
+  entry waits for the bloodline, patron or eidolon that sets its tradition, and a psychic's for its
+  key attribute.
+- Spell slots follow the class's Spells per Day table at each level, tripled with Inexhaustible
+  Magics. A prepared entry's cantrip slots are included; a spontaneous entry casts cantrips without
+  slots.
+- A slot count changed by hand is kept. Each rank that differs from the table shows a red **!** and
+  a sync button that sets it to the table value. Levelling up moves every other rank.
+- An entry built before the setting was turned on is taken over by **Sync Spellcasting** in the
+  sheet header when its preparation type and tradition match the class. Ranks that already match
+  follow the table from then on; the rest are marked.
+- Entries are never deleted. Removing a class leaves its entry as it is.
+
+The tables are parsed from the class pages on Archives of Nethys by
+`tools/fetch-casting-tables.mjs` (`npm run tables:casting`).
 
 ## Updating
 

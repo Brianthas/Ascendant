@@ -18,6 +18,8 @@ import { registerActionButtons } from "./actions.mjs";
 import { registerWeaponExpertise } from "./weapon-expertise.mjs";
 import { registerDreadPresence } from "./dread-presence.mjs";
 import { registerDreadForm } from "./dread-form.mjs";
+import { registerCastingSetting } from "./casting/settings.mjs";
+import { registerCastingSync, syncActor } from "./casting/sync.mjs";
 
 /**
  * Registration timing.
@@ -61,6 +63,8 @@ Hooks.once("init", () => {
     const variantsActive = attempt("variants", registerVariants) === true;
     attempt("refresh button", registerRefreshButton);
     attempt("spell slots", registerSpellSlotButton);
+    attempt("spellcasting setting", registerCastingSetting);
+    attempt("spellcasting sync", registerCastingSync);
     attempt("know-it-all slots", () => registerKnowItAllSlots({ variantsActive }));
     attempt("shape of harm", registerShapeOfHarm);
     attempt("bonded soul", registerBonded);
@@ -140,5 +144,6 @@ Hooks.once("ready", async () => {
         repairAegis,
         syncCapacity,
         flicker,
+        syncSpellcasting: syncActor,
     };
 });

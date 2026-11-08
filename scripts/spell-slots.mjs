@@ -1,4 +1,5 @@
 import { MODULE_ID } from "./constants.mjs";
+import { castingAutomationOn } from "./casting/settings.mjs";
 
 /** Slug of the Apex talent that triples spell slots and cantrips. */
 const TALENT_SLUG = "ascendant-inexhaustible-magics";
@@ -95,11 +96,15 @@ async function restoreSlots(actor) {
  * A Triple/Restore button on the sheet, only for a character that holds the
  * talent. PF2e's character sheet is an ApplicationV1, so this is the V1 header
  * button hook and shape.
+ *
+ * Hidden while spellcasting automation is on: the sync then writes the tripled
+ * values itself (`casting/expected.mjs`), and a second writer would fight it.
  */
 export function registerSpellSlotButton() {
     Hooks.on("getActorSheetPF2eHeaderButtons", (sheet, buttons) => {
         const actor = sheet.actor;
         if (actor?.type !== "character" || !actor.isOwner) return;
+        if (castingAutomationOn()) return;
         if (!hasTalent(actor)) return;
 
         const tripled = isTripled(actor);

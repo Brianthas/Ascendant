@@ -82,8 +82,10 @@ Reasons recur, so they are named once here and cited below:
 - 15th: passing through gaps. 20th: half damage through immunity (defender-side).
 
 **Inexhaustible Magics**
-- Tripling is a button, not automatic: press **Triple Spell Slots** after spellcasting entries exist
-  and again after adding one. Slot maxima are stored data no rule element reaches.
+- With spellcasting automation off, tripling is a button: press **Triple Spell Slots** after
+  spellcasting entries exist and again after adding one. Slot maxima are stored data no rule element
+  reaches. With it on, the sync writes the tripled slots and cantrips itself and the button is
+  hidden. Spells known are not tripled.
 - Refocus restoring every point and the shorter Refocus times: PF2e's Refocus restores one point
   and has no hook. Set focus points to the maximum by hand.
 
