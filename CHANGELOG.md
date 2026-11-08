@@ -9,6 +9,8 @@
   built before the setting was on. Slots added by the wizard curriculum, Cantrip Expansion and the
   20th-level extra 10th-rank feats are counted on top of the table, untripled; a cleric's Divine
   Font has its own entry.
+- **Granted spells**, with spellcasting automation on: a sorcerer's bloodline gifts and a cleric's
+  deity spells are added as each rank opens.
 - **Spells known and signature counts** on spontaneous entries, with spellcasting automation on,
   and a control to learn a known spell again at a higher rank.
 - **Prepare Spells window**, with spellcasting automation on. Each slot takes a drop of its own,

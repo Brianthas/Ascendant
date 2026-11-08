@@ -115,6 +115,10 @@ World setting **Spellcasting: automate entries and slots**, off by default. With
   sheet header when its preparation type and tradition match the class. Ranks that already match
   follow the table from then on; the rest are marked.
 - Entries are never deleted. Removing a class leaves its entry as it is.
+- A sorcerer's bloodline gifts are added to the repertoire as each rank opens, including the ones
+  Draconic, Elemental and Genie bloodlines set by exemplar, element or genie. They count among the
+  spells the table gives. A cleric's deity spells go into the spellbook as each rank opens. A
+  granted spell the player deletes is not added again.
 - A spontaneous entry shows, on each rank's header, the spells known at that rank against what the
   class table and feats give (Cantrip Expansion, Deep Lore, Greater Mental Evolution, the 10th-rank
   capstone's two spells), in red when they differ. A spell learned again at a higher rank counts

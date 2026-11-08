@@ -17,6 +17,7 @@ import { hasTalent } from "../spell-slots.mjs";
 import { CASTING_CLASSES, TRADITIONS } from "./classes.mjs";
 import { expectedSlots, planSync, syncRank, nextValue, SLOT_KEYS } from "./expected.mjs";
 import { castingAutomationOn } from "./settings.mjs";
+import { grantSpells } from "./granted.mjs";
 
 const FLAG = "casting";
 
@@ -145,10 +146,12 @@ function slotUpdate(entry, writes) {
  * (an entry the player built before the setting was on), and moves every managed rank. Never
  * deletes an entry: a class that leaves takes its entry out of management only.
  *
- * @returns {Promise<{created: string[], adopted: string[], ranksWritten: number, mismatched: number, waiting: string[]}>}
+ * Then adds the spells the class grants by name (`granted.mjs`).
+ *
+ * @returns {Promise<{created: string[], adopted: string[], ranksWritten: number, mismatched: number, waiting: string[], granted: string[]}>}
  */
 export async function syncActor(actor) {
-    const report = { created: [], adopted: [], ranksWritten: 0, mismatched: 0, waiting: [] };
+    const report = { created: [], adopted: [], ranksWritten: 0, mismatched: 0, waiting: [], granted: [] };
     if (!castingAutomationOn() || actor?.type !== "character" || !actor.isOwner) return report;
 
     const managed = managedEntries(actor);
@@ -209,6 +212,13 @@ export async function syncActor(actor) {
 
     if (creates.length) await actor.createEmbeddedDocuments("Item", creates);
     if (updates.length) await actor.updateEmbeddedDocuments("Item", updates);
+
+    // Granted spells go in once the entry exists and its ranks are current.
+    const wantedNow = wantedEntries(actor);
+    for (const entry of managedEntries(actor)) {
+        const want = wantedNow.find((w) => w.source === entry.flags[MODULE_ID][FLAG].source);
+        if (want) report.granted.push(...(await grantSpells(actor, entry, want)));
+    }
     return report;
 }
 
@@ -229,6 +239,7 @@ function notifyReport(report, { always }) {
     if (report.created.length) parts.push(game.i18n.format("ASCENDANT.Casting.Created", { names: report.created.join(", ") }));
     if (report.adopted.length) parts.push(game.i18n.format("ASCENDANT.Casting.Adopted", { names: report.adopted.join(", ") }));
     if (report.ranksWritten) parts.push(game.i18n.format("ASCENDANT.Casting.RanksWritten", { count: report.ranksWritten }));
+    if (report.granted.length) parts.push(game.i18n.format("ASCENDANT.Casting.Granted", { names: report.granted.join(", ") }));
     if (report.waiting.length) parts.push(game.i18n.format("ASCENDANT.Casting.Waiting", { names: report.waiting.join(", ") }));
     if (report.mismatched) parts.push(game.i18n.format("ASCENDANT.Casting.Mismatched", { count: report.mismatched }));
     if (parts.length === 0 && always) parts.push(game.i18n.localize("ASCENDANT.Casting.UpToDate"));
@@ -246,7 +257,7 @@ function scheduleSync(actor) {
         pending.delete(actor.id);
         try {
             const report = await syncActor(actor);
-            if (report.created.length || report.adopted.length || report.ranksWritten || report.waiting.length) notifyReport(report, { always: false });
+            if (report.created.length || report.adopted.length || report.ranksWritten || report.waiting.length || report.granted.length) notifyReport(report, { always: false });
         } catch (error) {
             console.error(`${MODULE_ID} | spellcasting sync failed for ${actor.name}`, error);
             ui.notifications.error(game.i18n.format("ASCENDANT.Casting.SyncFailed", { actor: actor.name }));

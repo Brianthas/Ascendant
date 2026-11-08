@@ -7,6 +7,7 @@
  * column), not off the generated file. Each case names the wrong model it separates.
  */
 import { expectedSlots, expectedKnown, countKnown, signatureAllowed, planSync, syncRank, nextValue, SLOT_KEYS } from "../scripts/casting/expected.mjs";
+import { parseBloodlineGifts } from "../scripts/casting/granted.mjs";
 
 let failed = 0;
 
@@ -150,6 +151,39 @@ check("countKnown counts a heightened copy at its own rank, and signatures among
 check("One signature spell per rank with slots, 10th included",
     [signatureAllowed(expectedSlots({ ...sorcerer, level: 3 })), signatureAllowed(expectedSlots({ ...sorcerer, level: 19 }))], [2, 10],
     "counting the cantrip column, or stopping at 9th");
+
+// Bloodline gifts (parseBloodlineGifts), on excerpts of the installed PF2e 8.6.1 markup.
+const L = (id) => `@UUID[Compendium.pf2e.spells-srd.Item.${id}]{x}`;
+const nymph = `<p><strong>Granted Spells</strong> cantrip: ${L("uZK2BYzPnxUBnDjr")}; 1st: ${L("vLA0q0WOK2YPuJs6")}; 2nd: ${L("b515AZlB0sridKSq")}; 9th: ${L("fkDeKktdmbeplYRY")}</p>
+<p><strong>Bloodline Spells</strong> initial: ${L("pHrVvoTKygXeczVG")}</p>`;
+const draconic = `<p><strong>Sorcerous Gifts</strong> cantrip: ${L("TVKNbcgTee19PXZR")}; 1st: ${L("4koZzrnMXhhosn0D")}; 2nd: see Draconic Exemplars below; 3rd: ${L("o6YCGx4lycsYpww4")}</p>
+<p><strong>Bloodline Spells</strong> initial: ${L("K8vvrOgW4bGakXxm")}</p><ul>
+<li><strong>Arcane&mdash;Tradition</strong> arcane; <strong>Sorcerous Gifts</strong> 2nd: ${L("ZxHC7V7HtjUsB8zH")}</li>
+<li><strong>Divine&mdash;Tradition</strong> divine; <strong>Sorcerous Gifts</strong> 2nd: ${L("41TZEjhO6D1nWw2X")}</li></ul>`;
+const elemental = `<p><strong>Sorcerous Gifts</strong> cantrip: see Elemental Influences below; 2nd: ${L("Fr58LDSrbndgld9n")}; 6th :see Elemental Influences below</p><ul>
+<li><strong>Air&mdash;Sorcerous Gifts</strong> cantrip: ${L("dDiOnjcsBFbAvP6t")}; 6th: ${L("TDNlDWbYb58Y55Da")}</li>
+<li><strong>Earth&mdash;Sorcerous Gifts</strong> cantrip: ${L("zA0jNIBRgLsyTpbm")}; 6th: ${L("znv4ECL7ZtuiagtA")}</li></ul>`;
+const genie = `<p><strong>Granted Spells</strong> cantrip: ${L("gpzpAAAJ1Lza2JVl")}; 2nd: variable (see Genie Type below)</p><ul>
+<li><strong>Janni</strong> 2nd: ${L("Mt6ZzkVX8Q4xigFq")}</li><li><strong>Jaathoom</strong> 2nd: ${L("XXqE1eY3w3z6xJCB")}</li></ul>`;
+const id = (s) => `Compendium.pf2e.spells-srd.Item.${s}`;
+check("Granted Spells list: every linked rank, Bloodline Spells (focus) left out",
+    parseBloodlineGifts(nymph).gifts, { 0: id("uZK2BYzPnxUBnDjr"), 1: id("vLA0q0WOK2YPuJs6"), 2: id("b515AZlB0sridKSq"), 9: id("fkDeKktdmbeplYRY") },
+    "reading the focus spells' initial link, or stopping at the first rank");
+check("Draconic: a red exemplar's 2nd-rank gift comes from the Arcane item (slug first, then tradition)",
+    parseBloodlineGifts(draconic, ["red", "arcane"]).gifts[2], id("ZxHC7V7HtjUsB8zH"),
+    "skipping 'see Draconic Exemplars below', or taking the first exemplar item");
+check("Draconic: a divine exemplar gets the Divine item's spell",
+    parseBloodlineGifts(draconic, ["empyreal", "divine"]).gifts[2], id("41TZEjhO6D1nWw2X"),
+    "matching every key against every item");
+check("Elemental: the air influence fills cantrip and 6th, including the '6th :see' spacing",
+    pick(parseBloodlineGifts(elemental, ["air"]).gifts, "0", "2", "6"), { 0: id("dDiOnjcsBFbAvP6t"), 2: id("Fr58LDSrbndgld9n"), 6: id("TDNlDWbYb58Y55Da") },
+    "an ordinal pattern that needs the colon right after the rank");
+check("Genie: Janni's 2nd-rank spell",
+    parseBloodlineGifts(genie, ["janni"]).gifts[2], id("Mt6ZzkVX8Q4xigFq"),
+    "the variable rank left empty");
+check("No choice made yet: the variant ranks are reported missing, not filled from the first item",
+    parseBloodlineGifts(genie, []).missing.includes(2), true,
+    "silently taking Janni for every genie sorcerer");
 
 // planSync
 const zeros = Object.fromEntries(SLOT_KEYS.map((k) => [k, 0]));
