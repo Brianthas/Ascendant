@@ -94,8 +94,9 @@ export function expectedSlots({ classSlug, pool, type, level, tripled, slugs = n
  * are tripled by Inexhaustible Magics; ranked spells known are not (Bryan, 2026-11-07).
  *
  * Feats and capstones add on top (`knownAdditions`). `granted` counts, per rank, spells a class
- * feature adds on top of the table, read off `flags.ascendant.granted.onTop`. The grants built so
- * far (sorcerer gifts, cleric deity spells) all sit inside the table, so it is empty today.
+ * feature adds on top of the table (an oracle's mystery spells, a psychic's granted spells and psi
+ * cantrips, a bard's muse spell), read off `flags.ascendant.granted.onTop` on the spells
+ * `granted.mjs` creates.
  */
 export function expectedKnown({ classSlug, pool, level, tripled, slugs = new Set(), granted = {}, row: given }) {
     const row = tableRow(classSlug, pool, level, given);

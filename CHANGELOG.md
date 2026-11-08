@@ -13,8 +13,9 @@
 - **Triple Spell Slots** makes the slots it adds available at once; before, they waited for a rest.
 - **Archetype spellcasting**, with spellcasting automation on: the twelve class archetypes get
   their own entry, with cantrips and slots by the basic, expert and master spellcasting benefits.
-- **Granted spells**, with spellcasting automation on: a sorcerer's bloodline gifts and a cleric's
-  deity spells are added as each rank opens.
+- **Granted spells**, with spellcasting automation on: a sorcerer's bloodline gifts, a cleric's
+  deity spells, an oracle's mystery spells, a psychic's conscious mind spells and psi cantrips, a
+  bard's muse spell and a magus's studious spells are added as each rank or level opens.
 - **Spells known and signature counts** on spontaneous entries, with spellcasting automation on,
   and a control to learn a known spell again at a higher rank.
 - **Prepare Spells window**, with spellcasting automation on. Each slot takes a drop of its own,

@@ -122,8 +122,12 @@ World setting **Spellcasting: automate entries and slots**, off by default. With
   20th. Inexhaustible Magics triples them, cantrips included.
 - A sorcerer's bloodline gifts are added to the repertoire as each rank opens, including the ones
   Draconic, Elemental and Genie bloodlines set by exemplar, element or genie. They count among the
-  spells the table gives. A cleric's deity spells go into the spellbook as each rank opens. A
-  granted spell the player deletes is not added again.
+  spells the table gives. A cleric's deity spells go into the spellbook as each rank opens. An
+  oracle's mystery spells, a psychic's conscious mind spells and psi cantrips (the deeper one at
+  6th, the deepest at 10th), and a bard's muse spell are added the same way and count on top of
+  the table. A magus's studious spells go into the spellbook at 7th, 11th and 13th. A granted
+  spell the player deletes is not added again, and one already known is not added twice. A
+  psychic's attribute is read from its subconscious mind's text, since PF2e does not set it.
 - A spontaneous entry shows, on each rank's header, the spells known at that rank against what the
   class table and feats give (Cantrip Expansion, Deep Lore, Greater Mental Evolution, the 10th-rank
   capstone's two spells), in red when they differ. A spell learned again at a higher rank counts

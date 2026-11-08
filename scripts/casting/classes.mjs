@@ -7,7 +7,7 @@
  * animist spells using your apparition spell slots or vice versa".
  *
  * `attribute` is the one the page names for spell attack and DC. Psychic's comes from its
- * subconscious mind, which sets the key attribute, so it is read off the actor (`"key"`).
+ * subconscious mind (`"key"`), which states it only in its text; `sync.mjs` reads it there.
  *
  * `tradition` is fixed, or names the choice that sets it: a sorcerer's bloodline, a witch's patron,
  * a summoner's eidolon. `scripts/casting/sync.mjs` reads those off the actor.

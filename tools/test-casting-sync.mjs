@@ -7,7 +7,7 @@
  * column), not off the generated file. Each case names the wrong model it separates.
  */
 import { expectedSlots, expectedKnown, countKnown, signatureAllowed, planSync, syncRank, nextValue, archetypeRow, archetypeSignatures, SLOT_KEYS } from "../scripts/casting/expected.mjs";
-import { parseBloodlineGifts } from "../scripts/casting/granted.mjs";
+import { parseBloodlineGifts, parseGrantedSpells, parsePsiCantrips, parseMuseSpell, parseStudiousSpells } from "../scripts/casting/granted.mjs";
 
 let failed = 0;
 
@@ -209,6 +209,33 @@ check("Genie: Janni's 2nd-rank spell",
 check("No choice made yet: the variant ranks are reported missing, not filled from the first item",
     parseBloodlineGifts(genie, []).missing.includes(2), true,
     "silently taking Janni for every genie sorcerer");
+
+// Oracle, psychic, bard and magus grant sources, on raw excerpts of the installed PF2e 8.6.1 markup.
+const blight = `<p><strong>Granted Spells</strong></p><ul><li><strong>cantrip:</strong> ${L("thAHF1zxNplLCJPO")}</li><li><strong>1st:</strong> ${L("1meVElIu1CEVYWkv")}</li><li><strong>2nd:</strong> ${L("3VxVbZqIRvpKkg3O")}</li><li><strong>5th:</strong> ${L("MlpbeZ61Euhl0d60")}</li></ul><p><strong>Revelation Spells</strong></p><ul><li><strong>initial:</strong> ${L("DnVTBGCsai6zqMwL")}</li></ul>`;
+const grasp = `<p><strong>Granted Spells</strong></p><ul><li>1st: ${L("sPHcuLIKj9SDaDAD")}</li><li>2nd: ${L("mrDi3v933gsmnw25")}</li><li>9th: ${L("4WS7HrFjwNvTn8T2")}</li></ul><hr /><p><strong>Standard Psi Cantrips</strong></p>
+<p>${L("pwzdSlJgYqN7bs2w")}</p><p><strong>Amp</strong> You attempt to @UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{Shove} the target.</p><p>${L("60sgbuMWN0268dB7")}</p><p><strong>Unique Psi Cantrips</strong></p>
+<p>surface: @UUID[Compendium.pf2e.spells-srd.Item.yyz029C9eqfY38PT]</p><p><strong>Amp</strong> A creature that critically fails is also @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix].</p>
+<p>deeper: @UUID[Compendium.pf2e.spells-srd.Item.a0AMgATvQGwDR5dR]</p><p>deepest: @UUID[Compendium.pf2e.spells-srd.Item.ViqzVEprQVzCXZ9f]</p>`;
+check("Mystery: bold rank labels inside Granted Spells, revelation (focus) spells left out",
+    parseGrantedSpells(blight), { 0: id("thAHF1zxNplLCJPO"), 1: id("1meVElIu1CEVYWkv"), 2: id("3VxVbZqIRvpKkg3O"), 5: id("MlpbeZ61Euhl0d60") },
+    "ending the section at the first bold label, or reading 'initial:' as a rank");
+check("Conscious mind: plain rank lines, stopping before the psi cantrips",
+    parseGrantedSpells(grasp), { 1: id("sPHcuLIKj9SDaDAD"), 2: id("mrDi3v933gsmnw25"), 9: id("4WS7HrFjwNvTn8T2") },
+    "running on into the cantrips");
+check("Psi cantrips: two standard and the surface one at 1st, deeper at 6th, deepest at 10th; no action or condition links",
+    parsePsiCantrips(grasp).map((c) => `${c.level}:${c.uuid.split(".").at(-1)}`),
+    ["1:pwzdSlJgYqN7bs2w", "1:60sgbuMWN0268dB7", "1:yyz029C9eqfY38PT", "6:a0AMgATvQGwDR5dR", "10:ViqzVEprQVzCXZ9f"],
+    "all five at 1st (measured live on 2026-11-07), or the amp's Shove taken as a spell");
+check("Muse spell",
+    parseMuseSpell(`<p><strong>Muse Spell</strong> ${L("Gb7SeieEvd0pL2Eh")}</p>`), id("Gb7SeieEvd0pL2Eh"),
+    "no link found after the heading");
+check("Studious spells by character level: Gecko Grip and the study's at 7th, Haste and Fly at 11th and 13th",
+    parseStudiousSpells(
+        `<p>you can use @UUID[Compendium.pf2e.actionspf2e.Item.HbejhIywqIufrmVM]{Arcane Cascade} ... Your studious spells are ${L("5KobTMrZeZxuXMgl")} and an additional spell depending on your hybrid study.</p>\n<p>At 11th level, add ${L("o6YCGx4lycsYpww4")} and an additional spell. At 13th level, add ${L("A2JfEKe6BZcTG1S8")} and an additional spell.</p>`,
+        `<p><strong>Studious Spells</strong> 7th: ${L("3JG1t3T4mWn6vTke")}; 11th: ${L("AMEu5zzLN7uCX645")}; 13th: ${L("VlNcjmYyu95vOUe8")}</p>`,
+    ).map((s) => `${s.level}:${s.uuid.split(".").at(-1)}`).sort(),
+    ["11:AMEu5zzLN7uCX645", "11:o6YCGx4lycsYpww4", "13:A2JfEKe6BZcTG1S8", "13:VlNcjmYyu95vOUe8", "7:3JG1t3T4mWn6vTke", "7:5KobTMrZeZxuXMgl"].sort(),
+    "reading the study's 7th/11th/13th as spell ranks, or taking Haste and Fly at 7th");
 
 // planSync
 const zeros = Object.fromEntries(SLOT_KEYS.map((k) => [k, 0]));

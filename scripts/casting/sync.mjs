@@ -45,8 +45,19 @@ function resolveTradition(actor, rule) {
     return TRADITIONS.includes(value) ? value : null;
 }
 
+/**
+ * A psychic's attribute is set by its subconscious mind, which says so only in its text ("Key
+ * Attribute Your key attribute is Intelligence", Precise Discipline; "... is Charisma", Wandering
+ * Reverie). PF2e applies none of it: the Psychic class item offers no key attribute
+ * (`keyAbility.value` is empty), so a fresh psychic's derived key reads "str" (measured
+ * 2026-11-07). The actor's own key is the fallback when it is one of the two.
+ */
 function resolveAttribute(actor, rule) {
     if (rule !== "key") return rule;
+    const mind = actor.itemTypes.feat.find((f) => f.system.traits?.otherTags?.includes("psychic-subconscious-mind"));
+    // The label is bold: "<strong>Key Attribute</strong> Your key attribute is Intelligence."
+    const stated = (mind?.system.description.value ?? "").match(/Key Attribute(?:<[^>]*>|\s)*Your key attribute(?: score)? is (Intelligence|Charisma)/);
+    if (stated) return stated[1] === "Intelligence" ? "int" : "cha";
     const key = actor.system.details?.keyability?.value;
     return key === "int" || key === "cha" ? key : null;
 }
