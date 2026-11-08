@@ -128,7 +128,7 @@
             "Adopted": "now managing {names}.",
             "RanksWritten": "updated {count} slot rank(s).",
             "Granted": "added {names}.",
-            "Waiting": "{names}: no entry yet. Choose the bloodline, patron, eidolon or key attribute first; for an archetype whose tradition you choose, create its spellcasting entry yourself. Then press Sync Spellcasting.",
+            "Waiting": "{names}: no entry yet. Choose the bloodline, patron, eidolon or subconscious mind first; for an archetype whose tradition you choose, create its spellcasting entry yourself. Then press Sync Spellcasting.",
             "Mismatched": "{count} rank(s) differ from the table; each is marked with a red ! on the Spellcasting tab.",
             "UpToDate": "spellcasting is up to date.",
             "NoClass": "{entry} no longer matches a class on this character.",

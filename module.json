@@ -2,7 +2,7 @@
     "id": "ascendant",
     "title": "Ascendant: Mythic Rebuilt (PF2e)",
     "description": "A Mythic alternative for Pathfinder Second Edition. Replaces the official Mythic rules with Expertise Tracks, Apex, Paragon, Adept and Party Talents that scale to 20th level, Mythic proficiency, enhanced attribute boosts and an expanded investiture limit. Carries the Dual Class, Ancestry Paragon and Free Archetype variant rules the ruleset is played with.",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "compatibility": {
         "minimum": "14",
         "verified": "14"

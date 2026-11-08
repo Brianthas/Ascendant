@@ -100,8 +100,8 @@ World setting **Spellcasting: automate entries and slots**, off by default. With
 - A character that takes Bard, Cleric, Druid, Witch, Wizard, Oracle, Sorcerer, Animist, Psychic,
   Magus, Necromancer or Summoner gets that class's spellcasting entry, with its tradition and
   attribute. Animist gets two, its own and its apparition entry. A sorcerer, witch or summoner's
-  entry waits for the bloodline, patron or eidolon that sets its tradition, and a psychic's for its
-  key attribute.
+  entry waits for the bloodline, patron or eidolon that sets its tradition, and a psychic's for the
+  subconscious mind that sets its attribute.
 - Spell slots follow the class's Spells per Day table at each level, tripled with Inexhaustible
   Magics. A prepared entry's cantrip slots are included; a spontaneous entry casts cantrips without
   slots.

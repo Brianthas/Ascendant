@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.1.0 - 2026-11-08
 
 - **Spellcasting automation**, a world setting, off by default. A casting class creates its
   spellcasting entry, and its spell slots follow the class's Spells per Day table at every level,
